@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "./searchbar.css";
 
-export const SearchBar = ({ handleChange }) => {
+export const SearchBar = ({ handleChangeInputCityValue, handleChangeInputCountryValue }) => {
   const [toggleInput, setToggleInput] = useState(true);
+ 
 
   const handleToggle = () => {
     console.log(toggleInput);
@@ -13,13 +14,16 @@ export const SearchBar = ({ handleChange }) => {
     setToggleInput(true);
   };
 
+
   return (
     <form className="SearchBar__form">
       {/*
       <div className="SearchBar__form__div--container-parametter-degree">
         <button className="SearchBar__form__div--container__button"><i className="fas fa-ruler-combined"></i></button>
       </div>
-      */}
+      */
+       // console.log(inputCountryValue + " " + inputCityValue)
+      }
       <div className="SearchBar__form__div--find-city-container">
         <input
           className="SearchBar__form__div--find-city-container__input--city"
@@ -27,6 +31,8 @@ export const SearchBar = ({ handleChange }) => {
           name="city"
           placeholder={toggleInput ? "Trouvez votre ville" : "Votre ville"}
           onClick={handleToggle}
+        //  value={inputCityValue}
+          onChange={handleChangeInputCityValue}
         />
         <button
           className="SearchBar__form__div--container__button"
@@ -45,6 +51,8 @@ export const SearchBar = ({ handleChange }) => {
           type="text"
           name="country"
           placeholder="Votre pays"
+         // value={inputCountryValue}
+          onChange={handleChangeInputCountryValue}
         />
 
         <button className="SearchBar__form__div--find-country-container__submit">Submit</button>

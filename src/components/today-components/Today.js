@@ -1,34 +1,38 @@
 import React, { Component } from "react";
+import axios from "axios";
 import "./Today.css"
 import { TodayTimesList } from "./today-time-list/TodayTimesList"
 import { Pannel } from "./pannel-time-today/Pannel";
 
-class Day extends Component {
+class Today extends Component {
   constructor() {
     super();
     this.state = {
-      today: [],
-      searchField: "Paris",
+      today: []
     };
   }
 
   componentDidMount() {
     fetch(
-      `https://api.aladhan.com/v1/timingsByCity?country=France&method=2&city=${this.state.searchField}`
+      `https://api.aladhan.com/v1/timingsByCity?country=${this.props.country}&method=2&city=${this.props.city}`
     )
       .then((Response) => Response.json())
       .then((result) => this.setState({ today: [result] }));
   }
 
   render() {
+    {console.log(this.props.city)} 
+    {console.log(this.props.country)} 
+    {console.log(this.state.today)}
+
     return (
       <div className="Today__div--container-list-pannel">
         <TodayTimesList today={this.state.today} />
-        <Pannel today={this.state.today} searchField={this.state.searchField} />
-
+        <Pannel today={this.state.today} searchField={this.props.city} />
+      
       </div>
     );
   }
 }
 
-export default Day;
+export default Today;

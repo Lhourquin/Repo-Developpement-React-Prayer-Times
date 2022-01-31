@@ -10,18 +10,30 @@ import { Routes, Route } from "react-router-dom";
 import "./App.css";
 
 class App extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      inputCityValue : "lol",
+      inputCountryValue : "ok"
+    }
+ 
+  }
+
   render() {
     return (
       <>
         <header>
           <NavBar />
-          <SearchBar />
+          <SearchBar 
+          handleChangeInputCityValue={(e)=> this.setState({inputCityValue : e.target.value})} 
+          handleChangeInputCountryValue={(e)=> this.setState( {inputCountryValue : e.target.value})}/>
         </header>
         <NavBarTodayAndMounth />
 
         <Routes>
-          <Route path="/" element={<Today />} />
-          <Route path="/calendar" element={<Calendar />} />
+          <Route path="/" element={<Today city={this.state.inputCityValue} country={this.state.inputCountryValue}/>} />
+          <Route path="/calendar" element={<Calendar city={this.state.inputCityValue} country={this.state.inputCountryValue}/>} />
         </Routes>
       </>
     );
