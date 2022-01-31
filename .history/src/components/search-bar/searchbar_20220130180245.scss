@@ -1,0 +1,17 @@
+.SearchBar__form{
+  display: flex;
+  flex-direction: column;
+}
+// efect //@at-root
+.isClose{
+  display : none;
+}
+.isOpen{
+  display: block;
+}
+.cross{
+  position: absolute;
+  margin-top: -19px;
+  margin-left: 41%;
+
+}

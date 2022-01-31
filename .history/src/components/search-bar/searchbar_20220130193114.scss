@@ -1,0 +1,61 @@
+.SearchBar__form {
+  display: flex;
+  flex-direction: column;
+  height: 50px;
+  width: 60%;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 45px;
+
+  .SearchBar__form__div--find-city-container {
+    display: flex;
+    justify-content: center;
+
+    .SearchBar__form__div--find-city-container__input--city {
+      width: 100%;
+      border-radius: 3px;
+      border: 1.4px solid #605b56;
+      height: 25px;
+      color: #605b56;
+    }
+
+    .SearchBar__form__div--container__button {
+      color: #eaeaea;
+      border: 1.4px solid #605b56;
+
+      .localisation-marker {
+        color: #605b56;
+        font-size : 17px;
+      }
+    }
+  }
+
+  .SearchBar__form__div--find-country-container {
+    .SearchBar__form__div--find-country-container__input-country,
+    .SearchBar__form__div--find-country-container__submit {
+      border-radius: 3px;
+      border: 1.4px solid #605b56;
+      margin-top: 7px;
+      height: 25px;
+      color: #605b56;
+    }
+  }
+}
+// efect //@at-root
+.isClose {
+  display: none;
+}
+.isOpen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.cross {
+  position: absolute;
+  margin-top: -96px;
+  margin-left: 62%;
+  color: #605b56;
+  font-size: 22px;
+}

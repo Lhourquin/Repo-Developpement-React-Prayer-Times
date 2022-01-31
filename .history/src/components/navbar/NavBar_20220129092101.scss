@@ -1,0 +1,23 @@
+@media (max-width: 470px) {
+  .NavBar__nav {
+    display: flex;
+    justify-content: space-between;
+
+    .NavBar__nav__ul {
+        color : red;
+      display: none;
+    }
+  }
+
+  .NavBar__nav__i--button-burger {
+    display: block;
+    color: black;
+  }
+
+  /*effect open navbar*/
+  .openNavigation {
+    .NavBar__nav__ul {
+        display: block;
+      }
+  }
+}

@@ -1,0 +1,61 @@
+@media (max-width: 470px) {
+  .NavBar__nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #605b56;
+    width: 100%;
+    height: 40px;
+ 
+
+    .NavBar__nav__span--site-name {
+      margin: 7px;
+      font-size: 19px;
+      font-weight: bold;
+    }
+  }
+
+  .NavBar__nav__button--button-burger {
+    cursor: pointer;
+    display: block;
+    margin: 6px 0px 0px 90%;
+    position: fixed;
+  }
+
+  .NavBar__nav__button__i--button-burger {
+    color: #605b56;
+    font-size: 21px;
+  }
+
+  .openNavigation {
+    display: flex;
+    color: #eaeaea;
+    position: fixed;
+    margin-top: 55px;
+    padding-left: 40%;
+    list-style: none;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    max-height: 65em;
+    transition-duration: 30s, 5s, 3s, 5s;
+  }
+
+  .closeNavigation {
+    display: none;
+  }
+
+  //effect //@at-root
+  .navbar-collapse{
+    max-height: 0px;
+transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+background: #d5d5d5;
+overflow: hidden;
+display: block;
+    margin-top: 0.5em;
+}
+.navbar-collapse.in {
+
+    max-height: 65em;
+    transition: max-height 1s ease-in-out;
+}
+}

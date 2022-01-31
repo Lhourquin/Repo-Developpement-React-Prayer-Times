@@ -1,0 +1,10 @@
+@media (max-width: 470px) {
+  .button-burger {
+    display: block;
+    /*color: black;*/
+  }
+}
+
+.button-burger {
+}
+/*# sourceMappingURL=NavBar.css.map */

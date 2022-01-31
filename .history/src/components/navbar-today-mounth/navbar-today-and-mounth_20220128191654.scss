@@ -1,0 +1,106 @@
+// Small devices (portrait phones, less than 768px)
+@media (max-width: 470px) {
+
+  
+  //
+  .NavBarTodayAndMounth__nav {
+    display: flex;
+    justify-content: center;
+
+    .NavBarTodayAndMounth__nav__ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0%;
+      font-size: 10px;
+      width: 100%;
+      text-align: center;
+      text-decoration: none;
+
+      .NavBarTodayAndMounth__nav__ul__li__Link {
+        text-decoration-line: none;
+        color: #eaeaea;
+      }
+
+      .NavBarTodayAndMounth__nav__ul__li--today {
+        border-top: 0;
+        border-bottom: 0;
+        border-left: 0;
+        border-right: 0;
+        border-style: solid;
+        border-radius: 29px 0 0 29px;
+        padding: 3%;
+        background-color: rgb(30, 73, 103);
+        box-shadow: 0px 2px 4px rgb(48, 67, 61);
+      }
+      .NavBarTodayAndMounth__nav__ul__li--month {
+        border-top: 0;
+        border-bottom: 0;
+        border-left: 0;
+        border-right: 0;
+        border-style: solid;
+        border-radius: 0 29px 29px 0;
+        padding: 3%;
+        background-color: rgb(144, 154, 150);
+        box-shadow: 0px 2px 4px rgb(48, 67, 61);
+      }
+    }
+  }
+}
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) { 
+
+  //
+  .NavBarTodayAndMounth__nav {
+    display: flex;
+    justify-content: center;
+
+    .NavBarTodayAndMounth__nav__ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0%;
+      font-size: 12px;
+      width: 100%;
+      text-align: center;
+      text-decoration: none;
+
+      .NavBarTodayAndMounth__nav__ul__li__Link {
+        text-decoration-line: none;
+        color: #eaeaea;
+      }
+
+      .NavBarTodayAndMounth__nav__ul__li--today {
+        border-top: 0;
+        border-bottom: 0;
+        border-left: 0;
+        border-right: 0;
+        border-style: solid;
+        border-radius: 29px 0 0 29px;
+        padding: 3%;
+        background-color: rgb(30, 73, 103);
+        box-shadow: 0px 2px 4px rgb(48, 67, 61);
+      }
+      .NavBarTodayAndMounth__nav__ul__li--month {
+        border-top: 0;
+        border-bottom: 0;
+        border-left: 0;
+        border-right: 0;
+        border-style: solid;
+        border-radius: 0 29px 29px 0;
+        padding: 3%;
+        background-color: rgb(144, 154, 150);
+        box-shadow: 0px 2px 4px rgb(48, 67, 61);
+      }
+    }
+  }
+ }
+
+
+//effect
+  // Size can also be negative; see how it's smaller than the element
+  .raise:hover,
+  .raise:focus {
+    box-shadow: 0 0.2em 0.2em -0.2em var(--hover);
+    transform: translateY(-0.03em);
+  }

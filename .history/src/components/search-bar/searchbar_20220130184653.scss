@@ -1,0 +1,28 @@
+.SearchBar__form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  height: 100px;
+  width: 50%;
+
+  .SearchBar__form__div--find-city-container{
+    display: flex;
+    justify-content: center;
+  }
+}
+// efect //@at-root
+.isClose{
+  display : none;
+}
+.isOpen{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.cross{
+  position: absolute;
+  margin-top: -19px;
+  margin-left: 71%;
+
+}
