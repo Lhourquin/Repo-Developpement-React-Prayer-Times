@@ -1,0 +1,18 @@
+.TodayTimesList__ul-times-list {
+  width: 25%;
+  color: white;
+  background-color: blue;
+
+  .TodayTimesList__ul-times-list__li {
+    width: 100%;
+    background-color: #acc18a;
+    list-style: none;
+    height: 50px;
+    border-radius: 13px;
+    text-align: center;
+    margin-bottom: 8px;
+    display: flex;
+flex-direction: column;
+justify-content: space-around;
+  }
+}

@@ -3,7 +3,7 @@ import { NavBar } from "./components/navbar/NavBar";
 import { SearchBar } from "./components/search-bar/SearchBar";
 import NavBarTodayAndMounth from "./components/navbar-today-mounth/NavBarTodayAndMounth";
 import Calendar from "./components/Calendar";
-import Day from "./components/Day";
+import Today from "./components/today-components/Today";
 import { Routes, Route } from "react-router-dom";
 
 //import { HorairesList } from "./components/day-list/horaires.list";
@@ -20,7 +20,7 @@ class App extends Component {
         <NavBarTodayAndMounth />
 
         <Routes>
-          <Route path="/" element={<Day />} />
+          <Route path="/" element={<Today />} />
           <Route path="/calendar" element={<Calendar />} />
         </Routes>
       </>
