@@ -11,7 +11,7 @@ class Calendar extends Component {
 
   componentDidMount() {
     fetch(
-      `http://api.aladhan.com/v1/calendarByCity?country=France&method=2&city=Tourcoing`
+      `http://api.aladhan.com/v1/calendarByCity?country=${this.props.country}&method=2&city=${this.props.city}`
     )
       .then((Response) => Response.json())
       .then((obj) => obj.data)
