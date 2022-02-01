@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { NavBar } from "./components/navbar/NavBar";
 import { SearchBar } from "./components/search-bar/SearchBar";
 import NavBarTodayAndMounth from "./components/navbar-today-mounth/NavBarTodayAndMounth";
-import Calendar from "./components/Calendar";
+import {Calendar} from "./components/calendar-components/Calendar"
 import { Today } from "./components/today-components/Today";
 import { Routes, Route } from "react-router-dom";
 
@@ -61,8 +61,8 @@ class App extends Component {
             path="/calendar"
             element={
               <Calendar
-                city={this.state.inputCityValue}
-                country={this.state.inputCountryValue}
+                city={this.state.city}
+                country={this.state.country}
               />
             }
           />

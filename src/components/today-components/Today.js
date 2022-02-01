@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Today.css";
 import { TodayTimesList } from "./today-time-list/TodayTimesList";
@@ -7,9 +7,6 @@ import { Pannel } from "./pannel-time-today/Pannel";
 export const Today = ({ city, country }) => {
   const [today, setToday] = useState([]);
   const [inputCity, setInputCity] = useState("");
-  const [inputCountry, setInputCountry] = useState("");
-
-
 
   setTimeout(() => {
     setInputCity(city);
@@ -43,7 +40,7 @@ export const Today = ({ city, country }) => {
 
   return (
     <div className="Today__div--container-list-pannel">
-      {/*<TodayTimesList today={today} />*/}
+      <TodayTimesList today={today} />
       <Pannel today={today} searchField={inputCity} />
       {/* <TodayTimesList today={this.state.today} />
       <Pannel today={this.state.today} searchField={this.props.city} />*/}

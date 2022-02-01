@@ -1,10 +1,10 @@
 import React from "react";
 import "./TodayTimesList.css";
-export const TodayTimesList = (props) => {
+export const TodayTimesList = ({today}) => {
   //console.log(props.map(x=> x.data.data.timings.Fajr))
   return (
     <>
-      {props.today.map((obj, index) => (
+      {today.map((obj, index) => (
         <ul className="TodayTimesList__ul-times-list" key={index}>
           <li className="TodayTimesList__ul-times-list__li">
             <span>
