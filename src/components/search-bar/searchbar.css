@@ -7,12 +7,10 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    height: 50px;
     width: 60%;
     margin-top: 60px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 45px;
   }
   .SearchBar__form .SearchBar__form__div--find-city-container {
     display: -webkit-box;
@@ -84,12 +82,10 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    height: 50px;
     width: 60%;
     margin-top: 80px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 81px;
   }
   .SearchBar__form .SearchBar__form__div--find-city-container {
     display: -webkit-box;
@@ -172,12 +168,10 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    height: 50px;
     width: 60%;
     margin-top: 80px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 81px;
   }
   .SearchBar__form .SearchBar__form__div--find-city-container {
     display: -webkit-box;
