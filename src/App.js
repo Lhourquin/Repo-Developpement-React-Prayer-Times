@@ -36,10 +36,9 @@ class App extends Component {
             handleSubmitValue={(event) => {
               event.preventDefault();
 
-              this.setState({city : this.state.inputCityValue})
-              this.setState({country : this.state.inputCountryValue})
-              console.log(this.state.country);
-              console.log(this.state.city);
+              this.setState({city : this.state.inputCityValue});
+              this.setState({country : this.state.inputCountryValue});
+      
 
 
             }

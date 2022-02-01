@@ -10,6 +10,7 @@ export const Today = ({ city, country }) => {
   const [inputCountry, setInputCountry] = useState("");
 
 
+
   setTimeout(() => {
     setInputCity(city);
 
@@ -43,7 +44,6 @@ export const Today = ({ city, country }) => {
   return (
     <div className="Today__div--container-list-pannel">
       {/*<TodayTimesList today={today} />*/}
-      {console.log(today)}
       <Pannel today={today} searchField={inputCity} />
       {/* <TodayTimesList today={this.state.today} />
       <Pannel today={this.state.today} searchField={this.props.city} />*/}

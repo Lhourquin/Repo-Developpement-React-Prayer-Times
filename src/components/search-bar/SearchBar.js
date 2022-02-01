@@ -6,7 +6,6 @@ export const SearchBar = ({ handleChangeInputCityValue, handleChangeInputCountry
  
 
   const handleToggle = () => {
-    console.log(toggleInput);
     setToggleInput(false);
   };
 

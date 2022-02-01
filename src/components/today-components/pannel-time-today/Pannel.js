@@ -8,7 +8,7 @@ export const Pannel = ({ today, searchField }) => {
       {today.map((obj, index) => (
         <div className="Pannel__div--container-times-today" key={index}>
           <h2>
-            {searchField}
+            {searchField.charAt(0).toUpperCase() + searchField.slice(1).toLowerCase()}
             <span style={{ fontSize: "10px" }}>
               Angle : {obj.data.meta.method.id == 2 ? "15°" : ""}
             </span>
