@@ -13,25 +13,36 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      inputCityValue: "Paris",
-      inputCountryValue: "France",
+      inputCityValue: "",
+      inputCountryValue: "",
+      city : "",
+      country : ""
     };
   }
 
   render() {
-    return (
+   return (
       <>
         <header>
           <NavBar />
+      
           <SearchBar
             handleChangeInputCityValue={(e) =>
-                this.setState({ inputCityValue: e.target.value })
-              
+              this.setState({ inputCityValue: e.target.value })
             }
             handleChangeInputCountryValue={(e) =>
               this.setState({ inputCountryValue: e.target.value })
+            }
+            handleSubmitValue={(event) => {
+              event.preventDefault();
 
-              
+              this.setState({city : this.state.inputCityValue})
+              this.setState({country : this.state.inputCountryValue})
+              console.log(this.state.country);
+              console.log(this.state.city);
+
+
+            }
             }
           />
         </header>
@@ -42,8 +53,8 @@ class App extends Component {
             path="/"
             element={
               <Today
-                city={this.state.inputCityValue}
-                country={this.state.inputCountryValue}
+                city={this.state.city}
+                country={this.state.country}
               />
             }
           />

@@ -9,6 +9,11 @@ export const Today = ({ city, country }) => {
   const [inputCity, setInputCity] = useState("");
   const [inputCountry, setInputCountry] = useState("");
 
+
+  setTimeout(() => {
+    setInputCity(city);
+
+  }, 1000)
   
 
   useEffect(() => {
@@ -38,7 +43,8 @@ export const Today = ({ city, country }) => {
   return (
     <div className="Today__div--container-list-pannel">
       {/*<TodayTimesList today={today} />*/}
-      <Pannel today={today} searchField={city} />
+      {console.log(today)}
+      <Pannel today={today} searchField={inputCity} />
       {/* <TodayTimesList today={this.state.today} />
       <Pannel today={this.state.today} searchField={this.props.city} />*/}
       {/*console.log(today)*/}
