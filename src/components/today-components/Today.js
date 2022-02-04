@@ -10,9 +10,7 @@ export const Today = ({ city, country }) => {
 
   setTimeout(() => {
     setInputCity(city);
-
-  }, 1000)
-  
+  }, 1000);
 
   useEffect(() => {
     let timer = null;
@@ -42,12 +40,6 @@ export const Today = ({ city, country }) => {
     <div className="Today__div--container-list-pannel">
       <TodayTimesList today={today} />
       <Pannel today={today} searchField={inputCity} />
-      {/* <TodayTimesList today={this.state.today} />
-      <Pannel today={this.state.today} searchField={this.props.city} />*/}
-      {/*console.log(today)*/}
-      {/*console.log('Today :' + city + ' ' + country)*/}
-      {/* <TodayTimesList today={today} />
-        <Pannel today={today} searchField={city} />*/}
     </div>
   );
 };

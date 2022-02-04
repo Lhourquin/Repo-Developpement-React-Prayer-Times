@@ -28,7 +28,7 @@ export const SearchBar = ({ handleChangeInputCityValue, handleChangeInputCountry
           className="SearchBar__form__div--find-city-container__input--city"
           type="text"
           name="city"
-          placeholder={toggleInput ? "Trouvez votre ville" : "Votre ville"}
+          placeholder={toggleInput ? "Ou êtes vous ?" : "Entrez votre ville"}
           onClick={handleToggle}
         //  value={inputCityValue}
           onChange={handleChangeInputCityValue}
@@ -41,7 +41,9 @@ export const SearchBar = ({ handleChangeInputCityValue, handleChangeInputCountry
         </button>
       </div>
 
-      <div className={"SearchBar__form__div--find-country-container " + (toggleInput ? "isClose" : " isOpen")}>
+      <div className={"SearchBar__form__div--find-country-container " + (toggleInput ? "isClose" : " isOpen")}
+           style={(toggleInput ? {transition: "width 0.2s, height 0.2s, transform 2s" }:{transition: "width 0.2s, height 0.2s, transform 2s" })}
+      >
         <span className="cross" onClick={closeSearch}>
           ✖
         </span>
@@ -49,7 +51,7 @@ export const SearchBar = ({ handleChangeInputCityValue, handleChangeInputCountry
           className="SearchBar__form__div--find-country-container__input-country"
           type="text"
           name="country"
-          placeholder="Votre pays"
+          placeholder="Entrez votre pays"
          // value={inputCountryValue}
           onChange={handleChangeInputCountryValue}
         />

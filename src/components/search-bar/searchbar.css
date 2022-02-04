@@ -12,20 +12,13 @@
     margin-left: auto;
     margin-right: auto;
   }
-  .SearchBar__form .SearchBar__form__div--find-city-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
   .SearchBar__form .SearchBar__form__div--find-city-container .SearchBar__form__div--find-city-container__input--city {
-    width: 100%;
-    border-radius: 3px;
+    width: 97%;
+    border-radius: 8px;
     border: 1.4px solid #605b56;
-    height: 25px;
     color: #605b56;
+    height: 30px;
+    font-size: 16px;
   }
   .SearchBar__form .SearchBar__form__div--find-city-container .SearchBar__form__div--container__button {
     background: none;
@@ -34,18 +27,22 @@
     font: inherit;
     cursor: pointer;
     outline: inherit;
+    margin-top: 3px;
+    margin-left: 1%;
+    position: absolute;
   }
   .SearchBar__form .SearchBar__form__div--find-city-container .SearchBar__form__div--container__button .localisation-marker {
     color: #605b56;
-    font-size: 17px;
+    font-size: 25px;
   }
   .SearchBar__form .SearchBar__form__div--find-country-container .SearchBar__form__div--find-country-container__input-country,
   .SearchBar__form .SearchBar__form__div--find-country-container .SearchBar__form__div--find-country-container__submit {
-    border-radius: 3px;
+    border-radius: 8px;
     border: 1.4px solid #605b56;
     margin-top: 7px;
-    height: 25px;
     color: #605b56;
+    height: 30px;
+    font-size: 16px;
   }
   .isClose {
     display: none;
@@ -66,10 +63,10 @@
   .cross {
     cursor: pointer;
     position: absolute;
-    margin-top: -96px;
-    margin-left: 62%;
+    margin-top: -109px;
+    margin-left: 61%;
     color: #605b56;
-    font-size: 22px;
+    font-size: 32px;
   }
 }
 
@@ -82,22 +79,14 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    width: 60%;
+    width: 47%;
     margin-top: 80px;
     margin-left: auto;
     margin-right: auto;
   }
-  .SearchBar__form .SearchBar__form__div--find-city-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
   .SearchBar__form .SearchBar__form__div--find-city-container .SearchBar__form__div--find-city-container__input--city {
-    width: 100%;
-    border-radius: 3px;
+    width: 98.5%;
+    border-radius: 8px;
     border: 1.4px solid #605b56;
     height: 36px;
     color: #605b56;
@@ -110,28 +99,29 @@
     font: inherit;
     cursor: pointer;
     outline: inherit;
+    position: absolute;
+    margin-left: 1%;
+    margin-top: 3px;
   }
   .SearchBar__form .SearchBar__form__div--find-city-container .SearchBar__form__div--container__button .localisation-marker {
     color: #605b56;
     font-size: 33px;
   }
   .SearchBar__form .SearchBar__form__div--find-country-container .SearchBar__form__div--find-country-container__input-country {
-    border-radius: 3px;
+    border-radius: 8px;
     border: 1.4px solid #605b56;
     margin-top: 7px;
     height: 36px;
     color: #605b56;
     font-size: 17px;
-    width: 98.5%;
   }
   .SearchBar__form .SearchBar__form__div--find-country-container .SearchBar__form__div--find-country-container__submit {
-    border-radius: 3px;
+    border-radius: 8px;
     border: 1.4px solid #605b56;
     margin-top: 7px;
     height: 36px;
     color: #605b56;
     font-size: 17px;
-    width: 100%;
   }
   .isClose {
     display: none;
@@ -148,18 +138,19 @@
         -ms-flex-pack: center;
             justify-content: center;
     margin-bottom: 10px;
+    width: 100%;
   }
   .cross {
     cursor: pointer;
     position: absolute;
-    margin-top: -126px;
-    margin-left: 62%;
+    margin-top: -127px;
+    margin-left: 48%;
     color: #605b56;
-    font-size: 34px;
+    font-size: 40px;
   }
 }
 
-@media (min-width: 850px) {
+@media (min-width: 830px) {
   .SearchBar__form {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -168,22 +159,13 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    width: 60%;
+    width: 41%;
     margin-top: 80px;
     margin-left: auto;
     margin-right: auto;
   }
-  .SearchBar__form .SearchBar__form__div--find-city-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
   .SearchBar__form .SearchBar__form__div--find-city-container .SearchBar__form__div--find-city-container__input--city {
-    width: 51%;
-    border-radius: 3px;
+    border-radius: 8px;
     border: 1.4px solid #605b56;
     height: 36px;
     color: #605b56;
@@ -202,24 +184,20 @@
     font-size: 33px;
   }
   .SearchBar__form .SearchBar__form__div--find-country-container .SearchBar__form__div--find-country-container__input-country {
-    border-radius: 3px;
+    border-radius: 8px;
     border: 1.4px solid #605b56;
     margin-top: 7px;
     height: 36px;
     color: #605b56;
     font-size: 17px;
-    width: 51%;
-    margin-left: 24%;
   }
   .SearchBar__form .SearchBar__form__div--find-country-container .SearchBar__form__div--find-country-container__submit {
-    border-radius: 3px;
+    border-radius: 8px;
     border: 1.4px solid #605b56;
     margin-top: 7px;
     height: 36px;
     color: #605b56;
     font-size: 17px;
-    width: 52%;
-    margin-left: 24%;
   }
   .isClose {
     display: none;
@@ -241,9 +219,9 @@
     cursor: pointer;
     position: absolute;
     margin-top: -126px;
-    margin-left: 47%;
+    margin-left: 42%;
     color: #605b56;
-    font-size: 34px;
+    font-size: 38px;
   }
 }
 /*# sourceMappingURL=searchbar.css.map */
