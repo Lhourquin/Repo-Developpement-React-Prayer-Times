@@ -5,14 +5,15 @@ import "./Pannel.css";
 export const Pannel = ({ today, searchField, country }) => {
 
   const [optionAngleValue, setOptionAngleValue] = useState("");
-  const [countryValue, setCountryValue] = useState(country);
+  const [countryValue, setCountryValue] = useState("");
   const [newTodayAngle, setNewTodayAngleValue] = useState([])
+
 
   const getAngleMethod = () => {
     let timer = null;
     if (searchField || country) {
       let params = new URLSearchParams();
-      params.append("country", countryValue);
+      params.append("country", country);
       params.append("city", searchField);
       params.append("method", optionAngleValue);
 
