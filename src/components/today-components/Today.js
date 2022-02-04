@@ -7,7 +7,6 @@ import { Pannel } from "./pannel-time-today/Pannel";
 export const Today = ({ city, country, getAngleOptionValue, method }) => {
   const [today, setToday] = useState([]);
   const [inputCity, setInputCity] = useState("");
- // const [methodDegree, setMethodDegree] = useState(method);
 
   setTimeout(() => {
     setInputCity(city);
@@ -15,7 +14,7 @@ export const Today = ({ city, country, getAngleOptionValue, method }) => {
 
   useEffect(() => {
     let timer = null;
-    if (city || country || method) {
+    if (city && country && method) {
       let params = new URLSearchParams();
 
       params.append("country", country);
@@ -47,7 +46,6 @@ export const Today = ({ city, country, getAngleOptionValue, method }) => {
         today={today}
         searchField={inputCity}
         country={country}
-       // methodDegree={methodDegree}
         getAngleOptionValue={getAngleOptionValue}
       />
     </div>

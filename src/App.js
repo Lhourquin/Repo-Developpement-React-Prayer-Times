@@ -69,6 +69,7 @@ class App extends Component {
                 city={this.state.city}
                 country={this.state.country}
                 method={this.state.method}
+                getAngleOptionValue={(event) =>this.setState({method : event.target.value})}
 
               />
             }
