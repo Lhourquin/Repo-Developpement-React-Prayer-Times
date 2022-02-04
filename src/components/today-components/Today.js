@@ -4,7 +4,7 @@ import "./Today.css";
 import { TodayTimesList } from "./today-time-list/TodayTimesList";
 import { Pannel } from "./pannel-time-today/Pannel";
 
-export const Today = ({ city, country }) => {
+export const Today = ({ city, country, getAngleOptionValue, method }) => {
   const [today, setToday] = useState([]);
   const [inputCity, setInputCity] = useState("");
 
@@ -14,11 +14,12 @@ export const Today = ({ city, country }) => {
 
   useEffect(() => {
     let timer = null;
-    if (city || country) {
+    if (city && country && method) {
       let params = new URLSearchParams();
+
       params.append("country", country);
       params.append("city", city);
-      params.append("method", 2);
+      params.append("method", method);
 
       let request = {
         params: params,
@@ -34,12 +35,19 @@ export const Today = ({ city, country }) => {
     return () => {
       clearTimeout(timer);
     };
-  }, [city, country]);
+  }, [city, country, method]);
 
   return (
     <div className="Today__div--container-list-pannel">
+      {console.log(method)}
+
       <TodayTimesList today={today} />
-      <Pannel today={today} searchField={inputCity} country={country} />
+      <Pannel
+        today={today}
+        searchField={inputCity}
+        country={country}
+        getAngleOptionValue={getAngleOptionValue}
+      />
     </div>
   );
 };
