@@ -2,9 +2,10 @@ import React, { Component } from "react";
 import { NavBar } from "./components/navbar/NavBar";
 import { SearchBar } from "./components/search-bar/SearchBar";
 import NavBarTodayAndMounth from "./components/navbar-today-mounth/NavBarTodayAndMounth";
-import {Calendar} from "./components/calendar-components/Calendar"
+import { Calendar } from "./components/calendar-components/Calendar";
 import { Today } from "./components/today-components/Today";
 import { Routes, Route } from "react-router-dom";
+import axios from "axios";
 
 //import { HorairesList } from "./components/day-list/horaires.list";
 import "./App.css";
@@ -15,21 +16,41 @@ class App extends Component {
     this.state = {
       inputCityValue: "",
       inputCountryValue: "",
-      city : "",
-      country : "",
-      method : 2
+      city: "",
+      country: "",
+      method: 2,
     };
   }
 
-  render() {
-    {console.log(this.state.method)}
+  getPosition(position) {
+    const lat = position.coords.latitude;
+    const long = position.coords.longitude;
+    fetch(
+      ` https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${long}&localityLanguage=fr`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState({ city: data.city });
+        this.setState({ country: data.countryName });
+        //   this.setState({country : data.countryName})
+      });
+  }
 
-   return (
+  notGetPosition() {
+    console.log("notGetPosition");
+  }
+
+  render() {
+    return (
       <>
         <header>
           <NavBar />
-      
+
           <SearchBar
+            getPosition={navigator.geolocation.getCurrentPosition(
+              this.getPosition.bind(this),
+              this.notGetPosition.bind(this)
+            )}
             handleChangeInputCityValue={(e) =>
               this.setState({ inputCityValue: e.target.value })
             }
@@ -39,13 +60,9 @@ class App extends Component {
             handleSubmitValue={(event) => {
               event.preventDefault();
 
-              this.setState({city : this.state.inputCityValue});
-              this.setState({country : this.state.inputCountryValue});
-      
-
-
-            }
-            }
+              this.setState({ city: this.state.inputCityValue });
+              this.setState({ country: this.state.inputCountryValue });
+            }}
           />
         </header>
         <NavBarTodayAndMounth />
@@ -58,7 +75,9 @@ class App extends Component {
                 city={this.state.city}
                 country={this.state.country}
                 method={this.state.method}
-                getAngleOptionValue={(event) =>this.setState({method : event.target.value})}
+                getAngleOptionValue={(event) =>
+                  this.setState({ method: event.target.value })
+                }
               />
             }
           />
@@ -69,8 +88,9 @@ class App extends Component {
                 city={this.state.city}
                 country={this.state.country}
                 method={this.state.method}
-                getAngleOptionValue={(event) =>this.setState({method : event.target.value})}
-
+                getAngleOptionValue={(event) =>
+                  this.setState({ method: event.target.value })
+                }
               />
             }
           />

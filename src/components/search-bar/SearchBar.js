@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import "./searchbar.css";
 
-export const SearchBar = ({ handleChangeInputCityValue, handleChangeInputCountryValue, handleSubmitValue }) => {
+export const SearchBar = ({
+  handleChangeInputCityValue,
+  handleChangeInputCountryValue,
+  handleSubmitValue,
+  getPosition
+}) => {
   const [toggleInput, setToggleInput] = useState(true);
- 
 
   const handleToggle = () => {
     setToggleInput(false);
@@ -13,16 +17,8 @@ export const SearchBar = ({ handleChangeInputCityValue, handleChangeInputCountry
     setToggleInput(true);
   };
 
-
   return (
     <form className="SearchBar__form" onSubmit={handleSubmitValue}>
-      {/*
-      <div className="SearchBar__form__div--container-parametter-degree">
-        <button className="SearchBar__form__div--container__button"><i className="fas fa-ruler-combined"></i></button>
-      </div>
-      */
-       // console.log(inputCountryValue + " " + inputCityValue)
-      }
       <div className="SearchBar__form__div--find-city-container">
         <input
           className="SearchBar__form__div--find-city-container__input--city"
@@ -30,19 +26,27 @@ export const SearchBar = ({ handleChangeInputCityValue, handleChangeInputCountry
           name="city"
           placeholder={toggleInput ? "Ou êtes vous ?" : "Entrez votre ville"}
           onClick={handleToggle}
-        //  value={inputCityValue}
           onChange={handleChangeInputCityValue}
         />
         <button
           className="SearchBar__form__div--container__button"
           style={toggleInput ? {} : { display: "none" }}
+          onClick={getPosition}
         >
           <i className="fas fa-map-marker-alt localisation-marker"></i>
         </button>
       </div>
 
-      <div className={"SearchBar__form__div--find-country-container " + (toggleInput ? "isClose" : " isOpen")}
-           style={(toggleInput ? {transition: "width 0.2s, height 0.2s, transform 2s" }:{transition: "width 0.2s, height 0.2s, transform 2s" })}
+      <div
+        className={
+          "SearchBar__form__div--find-country-container " +
+          (toggleInput ? "isClose" : " isOpen")
+        }
+        style={
+          toggleInput
+            ? { transition: "width 0.2s, height 0.2s, transform 2s" }
+            : { transition: "width 0.2s, height 0.2s, transform 2s" }
+        }
       >
         <span className="cross" onClick={closeSearch}>
           ✖
@@ -52,12 +56,15 @@ export const SearchBar = ({ handleChangeInputCityValue, handleChangeInputCountry
           type="text"
           name="country"
           placeholder="Entrez votre pays"
-         // value={inputCountryValue}
           onChange={handleChangeInputCountryValue}
         />
 
-        <button type="submit" className="SearchBar__form__div--find-country-container__submit"
-                >Submit</button>
+        <button
+          type="submit"
+          className="SearchBar__form__div--find-country-container__submit"
+        >
+          Submit
+        </button>
       </div>
     </form>
   );
