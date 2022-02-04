@@ -39,56 +39,7 @@ export const Today = ({ city, country }) => {
   return (
     <div className="Today__div--container-list-pannel">
       <TodayTimesList today={today} />
-      <Pannel today={today} searchField={inputCity} />
+      <Pannel today={today} searchField={inputCity} country={country} />
     </div>
   );
 };
-/*
-class Today extends Component {
-  constructor() {
-    super();
-    this.state = {
-      today: []
-    };
-  }
-
-  handleSubmit(event) {
-    event.preventDefault();
-
-    const searchInputValue = {
-      city : `country=${this.props.city}`,
-      country : `&method=2&city=${this.props.country}`
-    }
-
-    axios.post(`https://api.aladhan.com/v1/timingsByCity`, { searchInputValue })
-    .then(res => {
-      console.log(res);
-      console.log(res.data);
-    })
-  }
-*/
-/*
-  componentDidMount() {
-    fetch(
-      `https://api.aladhan.com/v1/timingsByCity?country=${this.props.country}&method=2&city=${this.props.city}`
-    )
-      .then((Response) => Response.json())
-      .then((result) => this.setState({ today: [result] }));
-  }
-
-  render() {
-    {console.log(this.props.city)} 
-    {console.log(this.props.country)} 
-    {console.log(this.state.today)}
-
-    return (
-      <div className="Today__div--container-list-pannel">
-        <TodayTimesList today={this.state.today} />
-        <Pannel today={this.state.today} searchField={this.props.city} />
-      
-      </div>
-    );
-  }
-}
-*/
-//export default Today;
