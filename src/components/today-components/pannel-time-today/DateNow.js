@@ -19,9 +19,9 @@ class DateNow extends Component {
 
     render() {
         return (
-            <span>
+            <li>
                 {this.state.time}
-                </span>
+                </li>
         )
     }
 }

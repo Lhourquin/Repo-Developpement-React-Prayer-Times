@@ -1,5 +1,23 @@
 .Pannel__div--container-times-today {
-    width : 25%;
-    color : white;
-    background-color : blue;
+  width: 85%;
+  color: white;
+  background-color: blue;
+  height: 282px;
+  margin: auto;
+  text-align: center;
+  border-radius: 25px;
+
+  .Pannel__div--container-times-today__div--container-angle-select {
+    position: absolute;
+    margin-top: -60px;
+    margin-left: 245px;
+
+    .select-degree {
+        width: 30px;
+    }
+  }
+
+  .DateNow {
+      font-size:40px;
+  }
 }
