@@ -16,11 +16,14 @@ class App extends Component {
       inputCityValue: "",
       inputCountryValue: "",
       city : "",
-      country : ""
+      country : "",
+      method : 2
     };
   }
 
   render() {
+    {console.log(this.state.method)}
+
    return (
       <>
         <header>
@@ -54,6 +57,8 @@ class App extends Component {
               <Today
                 city={this.state.city}
                 country={this.state.country}
+                method={this.state.method}
+                getAngleOptionValue={(event) =>this.setState({method : event.target.value})}
               />
             }
           />
@@ -63,6 +68,8 @@ class App extends Component {
               <Calendar
                 city={this.state.city}
                 country={this.state.country}
+                method={this.state.method}
+
               />
             }
           />
