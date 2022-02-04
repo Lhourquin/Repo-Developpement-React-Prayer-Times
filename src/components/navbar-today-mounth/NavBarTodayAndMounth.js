@@ -5,19 +5,22 @@ const NavBarTodayAndMounth = () => {
   return (
     <nav className="NavBarTodayAndMounth__nav">
       <ul className="NavBarTodayAndMounth__nav__ul">
-        <li className="NavBarTodayAndMounth__nav__ul__li--today raise">
-          <Link to="/" className="NavBarTodayAndMounth__nav__ul__li__Link-today">
-            HORAIRES DU JOUR                  <i className="fa-solid fa-clock"></i>{" "}
-
+        <li className="NavBarTodayAndMounth__nav__ul__li--today">
+          <Link
+            to="/"
+            className="NavBarTodayAndMounth__nav__ul__li__Link-today"
+          >
+            <span>AUJOURD'HUI</span>
+            <i className="fa-solid fa-clock"></i>{" "}
           </Link>
         </li>
-        <li className="NavBarTodayAndMounth__nav__ul__li--month raise">
+        <li className="NavBarTodayAndMounth__nav__ul__li--month">
           <Link
             to="/calendar"
             className="NavBarTodayAndMounth__nav__ul__li__Link-mounth"
           >
-            HORAIRES DU MOIS          <i className="fa-solid fa-calendar-days"></i>
-
+            <span>CALENDRIER</span>
+            <i className="fa-solid fa-calendar-days"></i>
           </Link>
         </li>
       </ul>

@@ -1,56 +1,60 @@
 // Small devices (portrait phones, less than 768px)
 
-  
-  //
-  .NavBarTodayAndMounth__nav {
+//
+.NavBarTodayAndMounth__nav {
+  display: flex;
+  justify-content: center;
+  // opacity: 0.9;
+
+  .NavBarTodayAndMounth__nav__ul {
+    list-style: none;
     display: flex;
     justify-content: center;
-   // opacity: 0.9;
+    padding: 0%;
+    font-size: 10px;
+    text-align: center;
+    //text-decoration: none;
 
-    .NavBarTodayAndMounth__nav__ul {
-      list-style: none;
+    .NavBarTodayAndMounth__nav__ul__li__Link-today {
       display: flex;
-      justify-content: center;
-      padding: 0%;
-      font-size: 10px;
-      width: 100%;
-      text-align: center;
-      //text-decoration: none;
+      flex-direction: column;
+      text-decoration-line: none;
+      color: #605b56;
+      font-weight: bold;
+    }
 
-      .NavBarTodayAndMounth__nav__ul__li__Link-today {
-        text-decoration-line: none;
-        color: #605b56;
+    .NavBarTodayAndMounth__nav__ul__li__Link-mounth {
+      display: flex;
+      flex-direction: column;
+      text-decoration-line: none;
+      color: #eaeaea;
+      font-weight: bold;
+    }
 
-      }
-
-      .NavBarTodayAndMounth__nav__ul__li__Link-mounth {
-        text-decoration-line: none;
-        color: #eaeaea;
-
-      }
-
-      .NavBarTodayAndMounth__nav__ul__li--today {
-        border-top: 0;
-        border-bottom: 0;
-        border-left: 0;
-        border-right: 0;
-        border-style: solid;
-        border-radius: 29px 0 0 29px;
-        padding: 3%;
-        background-color: #eaeaea;
-      }
-      .NavBarTodayAndMounth__nav__ul__li--month {
-        border-top: 0;
-        border-bottom: 0;
-        border-left: 0;
-        border-right: 0;
-        border-style: solid;
-        border-radius: 0 29px 29px 0;
-        padding: 3%;
-        background-color: #605b56;
-      }
+    .NavBarTodayAndMounth__nav__ul__li--today {
+      border-top: 0;
+      border-bottom: 0;
+      border-left: 0;
+      border-right: 0;
+      border-style: solid;
+      border-radius: 8px 0 0 8px;
+      padding: 3%;
+      background-color: #eaeaea;
+      border: 1px solid #605b56;
+    }
+    .NavBarTodayAndMounth__nav__ul__li--month {
+      border-top: 0;
+      border-bottom: 0;
+      border-left: 0;
+      border-right: 0;
+      border-style: solid;
+      border-radius: 0 8px 8px 0;
+      padding: 3%;
+      background-color: #605b56;
+      border: 1px solid #605b56;
     }
   }
+}
 
 //effect
-  // Size can also be negative; see how it's smaller than the element
+// Size can also be negative; see how it's smaller than the element
