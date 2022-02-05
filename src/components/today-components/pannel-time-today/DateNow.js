@@ -19,7 +19,7 @@ class DateNow extends Component {
 
     render() {
         return (
-            <li>
+            <li className="DateNow">
                 {this.state.time}
                 </li>
         )
