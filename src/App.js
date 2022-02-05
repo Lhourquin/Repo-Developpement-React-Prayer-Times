@@ -1,12 +1,10 @@
-import React, { Component, useEffect } from "react";
+import React, { Component } from "react";
 import { NavBar } from "./components/navbar/NavBar";
 import { SearchBar } from "./components/search-bar/SearchBar";
 import NavBarTodayAndMounth from "./components/navbar-today-mounth/NavBarTodayAndMounth";
 import { Calendar } from "./components/calendar-components/Calendar";
 import { Today } from "./components/today-components/Today";
 import { Routes, Route } from "react-router-dom";
-
-//import { HorairesList } from "./components/day-list/horaires.list";
 import "./App.css";
 
 class App extends Component {
@@ -44,7 +42,6 @@ class App extends Component {
       .then((data) => {
         this.setState({ city: data.city });
         this.setState({ country: data.countryName });
-        //   this.setState({country : data.countryName})
       });
   }
 
