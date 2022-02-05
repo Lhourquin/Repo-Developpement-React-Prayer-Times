@@ -16,20 +16,26 @@ class App extends Component {
       city: "",
       country: "",
       method: 2,
+      errorMessageLocation: "",
     };
   }
 
   componentDidMount() {
-    this.intervalApiCall = setInterval(()=> this.requestDataPosition.bind(this), 1000)
+    this.intervalApiCall = setInterval(
+      () => this.requestDataPosition.bind(this),
+      1000
+    );
   }
 
   componentWillUnmount() {
-    clearInterval(this.intervalApiCall)
-
+    clearInterval(this.intervalApiCall);
   }
 
-  requestDataPosition(){
-    navigator.geolocation.getCurrentPosition(this.getPosition.bind(this), this.notGetPosition.bind(this));
+  requestDataPosition() {
+    navigator.geolocation.getCurrentPosition(
+      this.getPosition.bind(this),
+      this.notGetPosition.bind(this)
+    );
   }
 
   getPosition(position) {
@@ -43,10 +49,18 @@ class App extends Component {
         this.setState({ city: data.city });
         this.setState({ country: data.countryName });
       });
+
+    this.setState({ errorMessageLocation: "" });
   }
 
   notGetPosition() {
-    console.log("notGetPosition");
+    this.setState({
+      errorMessageLocation:
+        "Nous n'avons pas pu avoir accées à votre localisation.",
+    });
+    setTimeout(() => {
+      this.setState({ errorMessageLocation: "" });
+    }, 5000);
   }
 
   render() {
@@ -71,6 +85,9 @@ class App extends Component {
             }}
           />
         </header>
+        <div style={{ textAlign: "center", color: "#bc4749"}}>
+          {this.state.errorMessageLocation}
+        </div>
         <NavBarTodayAndMounth />
 
         <Routes>
