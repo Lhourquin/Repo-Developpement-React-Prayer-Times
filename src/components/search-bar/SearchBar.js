@@ -63,7 +63,7 @@ export const SearchBar = ({
           type="submit"
           className="SearchBar__form__div--find-country-container__submit"
         >
-          Submit
+          Rechercher
         </button>
       </div>
     </form>
