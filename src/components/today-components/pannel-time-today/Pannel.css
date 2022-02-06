@@ -22,14 +22,10 @@
 .Pannel__div--container-times-today .Pannel__div--container-times-today__div--title-container-angle-select .Pannel__div--container-times-today__div__div--container-angle-select .Pannel__div--container-times-today__div__div--container-angle-select__div--span-select {
   position: relative;
   margin-top: -13%;
-  margin-right: 2%;
+  margin-left: 75%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
   margin-bottom: 2%;
 }
 

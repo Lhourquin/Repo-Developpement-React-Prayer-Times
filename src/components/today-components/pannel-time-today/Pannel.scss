@@ -20,9 +20,8 @@
       .Pannel__div--container-times-today__div__div--container-angle-select__div--span-select {
         position: relative;
         margin-top: -13%;
-        margin-right: 2%;
+        margin-left: 75%;
         display: flex;
-        flex-direction: row-reverse;
         margin-bottom: 2%;
 
         .select-degree {
@@ -50,8 +49,8 @@
       font-size: 15px;
     }
 
-    .Pannel__ul--hour-date-countdown__li--countdown-current-times{
-        font-size: 17px;
+    .Pannel__ul--hour-date-countdown__li--countdown-current-times {
+      font-size: 17px;
     }
     .Pannel__ul--hour-date-countdown__li--countdown-next-times {
       color: #bc4749;
