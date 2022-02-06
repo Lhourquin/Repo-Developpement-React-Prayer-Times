@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./TodayTimesList.css";
+import moment from "moment";
+import {CalculMidnight} from "./calcul-midnigh/CalculMidnight";
+
 export const TodayTimesList = ({ today }) => {
   //console.log(props.map(x=> x.data.data.timings.Fajr))
+  {
+    //console.log(moment());
+  }
+ // const [midnight, setMidnight] = useState("");
+
   return (
     <>
       {today.map((obj, index) => (
@@ -37,7 +45,9 @@ export const TodayTimesList = ({ today }) => {
             </span>{" "}
           </li>
           <li className="TodayTimesList__ul-times-list__li">
-            <span>ICHA {obj.data.timings.Isha} - MINUIT 00:45 </span>{" "}
+            <span>
+              ICHA {obj.data.timings.Isha} - MINUIT <CalculMidnight todayMidnight={today} />{" "}
+            </span>{" "}
             <span className="TodayTimesList__ul-times-list__li__span--information">
               {" "}
               i
@@ -52,6 +62,7 @@ export const TodayTimesList = ({ today }) => {
           </li>
         </ul>
       ))}
+      {}
     </>
   );
 };
