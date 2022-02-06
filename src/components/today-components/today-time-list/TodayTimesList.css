@@ -22,10 +22,11 @@
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  font-size: 13px;
 }
 
 .TodayTimesList__ul-times-list .TodayTimesList__ul-times-list__li .TodayTimesList__ul-times-list__li__span--information {
-  padding-left: 82%;
+  padding-left: 84%;
   position: absolute;
 }
 /*# sourceMappingURL=TodayTimesList.css.map */

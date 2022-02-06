@@ -15,7 +15,7 @@ export const TodayTimesList = ({ today }) => {
           </li>
           <li className="TodayTimesList__ul-times-list__li">
             <span>
-              {obj.data.timings.Fajr} - {obj.data.timings.Sunrise}{" "}
+             FAJR {obj.data.timings.Fajr} - SHOUROUQ {obj.data.timings.Sunrise}{" "}
             </span>
             <span className="TodayTimesList__ul-times-list__li__span--information">
               {" "}
@@ -23,28 +23,28 @@ export const TodayTimesList = ({ today }) => {
             </span>{" "}
           </li>
           <li className="TodayTimesList__ul-times-list__li">
-            <span>{obj.data.timings.Dhuhr} </span>{" "}
+            <span>DHOHR {obj.data.timings.Dhuhr} </span>{" "}
             <span className="TodayTimesList__ul-times-list__li__span--information">
               {" "}
               i
             </span>{" "}
           </li>
           <li className="TodayTimesList__ul-times-list__li">
-            <span>{obj.data.timings.Asr} </span>
+            <span>ASR {obj.data.timings.Asr} - PALEUR DU SOLEIL 16:45 </span>
             <span className="TodayTimesList__ul-times-list__li__span--information">
               {" "}
               i
             </span>{" "}
           </li>
           <li className="TodayTimesList__ul-times-list__li">
-            <span>{obj.data.timings.Maghrib} </span>{" "}
+            <span>MAGHREB {obj.data.timings.Maghrib} </span>{" "}
             <span className="TodayTimesList__ul-times-list__li__span--information">
               {" "}
               i
             </span>{" "}
           </li>
           <li className="TodayTimesList__ul-times-list__li">
-            <span>{obj.data.timings.Isha} </span>{" "}
+            <span>ICHA {obj.data.timings.Isha} - MINUIT 00:45 </span>{" "}
             <span className="TodayTimesList__ul-times-list__li__span--information">
               {" "}
               i
