@@ -1,7 +1,8 @@
 .TodayTimesList__ul-times-list {
-  width: 25%;
+  width: 90%;
   color: white;
-  background-color: blue;
+  margin: 5% auto auto auto;
+  padding: 0;
 }
 
 .TodayTimesList__ul-times-list .TodayTimesList__ul-times-list__li {
@@ -21,5 +22,10 @@
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+}
+
+.TodayTimesList__ul-times-list .TodayTimesList__ul-times-list__li .TodayTimesList__ul-times-list__li__span--information {
+  padding-left: 82%;
+  position: absolute;
 }
 /*# sourceMappingURL=TodayTimesList.css.map */
