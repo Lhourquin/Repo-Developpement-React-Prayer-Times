@@ -10,8 +10,7 @@ export const CalculMidnight = ({ todayMidnight }) => {
       setFajrTime(
         obj.data.timings.Fajr.split(":").map((x) => {
           let strToNumber = Number(x);
-          let fajrHour = moment(strToNumber, "HH:mm").add(1, "days");
-          return fajrHour;
+          return strToNumber;
         })
       );
       setMaghrebTime(
@@ -21,12 +20,38 @@ export const CalculMidnight = ({ todayMidnight }) => {
         })
       );
     });
-    setMidnightTime();
   }, todayMidnight);
-  console.log(maghrebTime);
-  console.log(fajrTime);
 
-  return <span>Component</span>;
+  useEffect(() => {
+    setMidnightTime(() => {
+      let fajr = moment(fajrTime, "HH:mm").add(1, "days");
+      let maghreb = moment(maghrebTime, "HH:mm");
+
+      let milliseconds = moment(fajr, "DD/MM/YYYY HH:mm:ss").diff(
+        moment(maghreb, "DD/MM/YYYY HH:mm:ss")
+      );
+      let duration = moment.duration(milliseconds / 2);
+
+      let durationInHours = Math.floor(duration.asHours());
+      let durationInMinutes = Math.floor(duration.minutes());
+      let midnight = moment(maghreb)
+        .add(durationInHours, "hours")
+        .add(durationInMinutes, "minutes");
+      let toStringMidnightMomentObj = moment(midnight).format();
+      let arrayOfString = toStringMidnightMomentObj.split("T");
+      arrayOfString.shift();
+      let newArrayOfString = arrayOfString.toString().split("+");
+      newArrayOfString.pop();
+      let result = newArrayOfString.toString().split(":").slice(0, 2);
+      return result.join(":").toString();
+    });
+  }, [fajrTime, maghrebTime]);
+
+  console.log(maghrebTime);
+  console.log(moment(fajrTime, "HH:mm").add(1, "days"));
+  console.log(midnightTime);
+
+  return <span>{midnightTime}</span>;
 };
 /**
  * let isha =
