@@ -1,14 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./TodayTimesList.css";
-import moment from "moment";
 import {CalculMidnight} from "./calcul-midnigh/CalculMidnight";
 
 export const TodayTimesList = ({ today }) => {
-  //console.log(props.map(x=> x.data.data.timings.Fajr))
-  {
-    //console.log(moment());
-  }
- // const [midnight, setMidnight] = useState("");
 
   return (
     <>
