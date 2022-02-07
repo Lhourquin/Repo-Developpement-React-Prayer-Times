@@ -53,9 +53,3 @@ export const CalculMidnight = ({ todayMidnight }) => {
 
   return <span>{midnightTime}</span>;
 };
-/**
- * let isha =
-                obj.data.timings.Isha.split(":").map((x) => {
-                  let strToNumber = Number(x);
-                  return strToNumber;
-                })*/
