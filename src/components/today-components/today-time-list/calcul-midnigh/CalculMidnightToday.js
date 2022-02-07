@@ -47,9 +47,8 @@ export const CalculMidnight = ({ todayMidnight }) => {
     });
   }, [fajrTime, maghrebTime]);
 
-  console.log(maghrebTime);
-  console.log(moment(fajrTime, "HH:mm").add(1, "days"));
-  console.log(midnightTime);
-
+  //console.log(maghrebTime);
+ // console.log(moment(fajrTime, "HH:mm").add(1, "days"));
+//  console.log(midnightTime);
   return <span>{midnightTime}</span>;
 };

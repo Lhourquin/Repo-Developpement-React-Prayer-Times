@@ -2,7 +2,7 @@ import React from "react";
 import "./row-list.css";
 
 export const RowList = ({calendar}) => {
-  console.log(calendar);
+ // console.log(calendar);
   return (
         <tbody className="salat-of-month ">
       {calendar.map((obj, index) => (
