@@ -54,6 +54,7 @@ export const Calendar = ({city, country, getAngleOptionValue, method}) => {
             <td>Asr</td>
             <td>Maghreb</td>
             <td>Icha</td>
+            <td>Milieu de la nuit</td>
           </tr>
         </thead>
         <RowList calendar={calendar} />

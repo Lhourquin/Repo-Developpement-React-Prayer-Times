@@ -30,7 +30,6 @@ export const Pannel = ({ today, searchField, getAngleOptionValue }) => {
               </div>
             </div>
           </div>
-          {console.log(today)}
           <ul className="Pannel__ul--hour-date-countdown">
             <li className="Pannel__ul--hour-date-countdown__li--countdown-current-times">
               FAJR {obj.data.timings.Fajr} + 01:00:03
@@ -58,12 +57,6 @@ export const Pannel = ({ today, searchField, getAngleOptionValue }) => {
                 obj.data.date.hijri.year}
             </li>
           </ul>
-          {/* <p></p>
-          <p>{obj.data.timings.Sunrise}</p>
-          <p>{obj.data.timings.Dhuhr}</p>
-          <p>{obj.data.timings.Asr}</p>
-          <p>{obj.data.timings.Maghrib}</p>
-          <p>{obj.data.timings.Isha}</p>*/}
         </div>
       ))}
     </>

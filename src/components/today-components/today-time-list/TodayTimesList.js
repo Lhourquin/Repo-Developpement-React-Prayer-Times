@@ -1,6 +1,6 @@
 import React from "react";
 import "./TodayTimesList.css";
-import {CalculMidnight} from "./calcul-midnigh/CalculMidnightToday";
+import {CalculMidnight} from "./calcul-midnigh-today/CalculMidnightToday";
 
 export const TodayTimesList = ({ today }) => {
 

@@ -1,5 +1,6 @@
 import React from "react";
 import "./row-list.css";
+import { CalculMidnightCalendar } from "../calcul-mignight-calendar/CalculMidnightCalandar";
 
 export const RowList = ({calendar}) => {
  // console.log(calendar);
@@ -14,6 +15,7 @@ export const RowList = ({calendar}) => {
           <td>{obj.timings.Asr.substr(0, 6)}</td>
           <td>{obj.timings.Maghrib.substr(0, 6)}</td>
           <td>{obj.timings.Isha.substr(0, 6)}</td>
+          <td><CalculMidnightCalendar fajrTimeCalendar={obj.timings.Fajr.substr(0, 6)} maghrebTimeCalendar={obj.timings.Maghrib.substr(0, 6)}/></td>
         </tr>
       ))}
     </tbody>
