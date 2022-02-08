@@ -85,7 +85,7 @@ class App extends Component {
             }}
           />
         </header>
-        <div style={{ textAlign: "center", color: "#bc4749"}}>
+        <div style={{ textAlign: "center", color: "#bc4749" }}>
           {this.state.errorMessageLocation}
         </div>
         <NavBarTodayAndMounth />

@@ -5,7 +5,7 @@ export const SearchBar = ({
   handleChangeInputCityValue,
   handleChangeInputCountryValue,
   handleSubmitValue,
-  getPosition
+  getPosition,
 }) => {
   const [toggleInput, setToggleInput] = useState(true);
 
@@ -21,6 +21,7 @@ export const SearchBar = ({
     <form className="SearchBar__form" onSubmit={handleSubmitValue}>
       <div className="SearchBar__form__div--find-city-container">
         <input
+          required
           className="SearchBar__form__div--find-city-container__input--city"
           type="text"
           name="city"
@@ -52,6 +53,7 @@ export const SearchBar = ({
           ✖
         </span>
         <input
+          required
           className="SearchBar__form__div--find-country-container__input-country"
           type="text"
           name="country"
