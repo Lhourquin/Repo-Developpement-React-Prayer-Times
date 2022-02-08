@@ -7,18 +7,27 @@ import { Pannel } from "./pannel-time-today/Pannel";
 export const Today = ({ city, country, getAngleOptionValue, method }) => {
   const [today, setToday] = useState([]);
   const [inputCity, setInputCity] = useState("");
+  const [lastCity, setLastCity] = useState("");
+  const [inputCountry, setInputCountry] = useState("");
+ // const [lastCountry, setLastCountry] = useState("");
 
-  setTimeout(() => {
-    setInputCity(city);
-  }, 1000);
+  useEffect(() => {
+      if(city !== "" && country !== ""){
+        setInputCity(city);
+        setInputCountry(country);
+      }else if(city == "" ){
+        setLastCity(inputCity);
+        //setLastCountry(inputCountry);
+      }
+  }, [city]);
 
   useEffect(() => {
     let timer = null;
-    if (city && country && method) {
+    if (inputCity && inputCountry && method) {
       let params = new URLSearchParams();
 
-      params.append("country", country);
-      params.append("city", city);
+      params.append("country", inputCountry);
+      params.append("city", inputCity);
       params.append("method", method);
 
       let request = {
@@ -35,16 +44,17 @@ export const Today = ({ city, country, getAngleOptionValue, method }) => {
     return () => {
       clearTimeout(timer);
     };
-  }, [city, country, method]);
+  }, [inputCity, inputCountry, method]);
 
   return (
     <div className="Today__div--container-list-pannel">
-      {console.log(method)}
-
+      {console.log("inputCity : " + inputCity)}
+      {console.log("inputCountry : " + inputCountry)}
+      {console.log("method : " + method)}
       <TodayTimesList today={today} />
       <Pannel
         today={today}
-        searchField={inputCity}
+        searchField={city !== "" ? inputCity : lastCity}
         country={country}
         getAngleOptionValue={getAngleOptionValue}
       />

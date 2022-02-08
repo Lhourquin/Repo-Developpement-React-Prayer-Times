@@ -64,12 +64,26 @@ class App extends Component {
   }
 
   render() {
+    {
+      console.log("inputCityValue : " + this.state.inputCityValue);
+    }
+    {
+      console.log("inputCountryValue : " + this.state.inputCountryValue);
+    }
+    {
+      console.log("city : " + this.state.city);
+    }
+    {
+      console.log("country : " + this.state.country);
+    }
     return (
       <>
         <header>
           <NavBar />
 
           <SearchBar
+            inputCity={this.state.inputCityValue}
+            inputCountry={this.state.inputCountryValue}
             getPosition={this.requestDataPosition.bind(this)}
             handleChangeInputCityValue={(e) =>
               this.setState({ inputCityValue: e.target.value })
@@ -80,14 +94,22 @@ class App extends Component {
             handleSubmitValue={(event) => {
               event.preventDefault();
 
-              this.setState({ city: this.state.inputCityValue });
-              this.setState({ country: this.state.inputCountryValue });
+              if (
+                this.state.inputCityValue == "" ||
+                this.state.inputCountryValue == ""
+              ) {
+                this.setState({ city: "" });
+                this.setState({ country: "" });
+              } else {
+                this.setState({ city: this.state.inputCityValue });
+                this.setState({ country: this.state.inputCountryValue });
+                this.setState({ inputCityValue: "" });
+                this.setState({ inputCountryValue: "" });
+              }
             }}
           />
-          {console.log(this.state.inputCityValue)}
-          {console.log(this.state.inputCountryValue)}
         </header>
-        <div style={{ textAlign: "center", color: "#bc4749"}}>
+        <div style={{ textAlign: "center", color: "#bc4749" }}>
           {this.state.errorMessageLocation}
         </div>
         <NavBarTodayAndMounth />

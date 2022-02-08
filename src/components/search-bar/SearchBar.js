@@ -5,7 +5,9 @@ export const SearchBar = ({
   handleChangeInputCityValue,
   handleChangeInputCountryValue,
   handleSubmitValue,
-  getPosition
+  getPosition,
+  inputCity,
+  inputCountry
 }) => {
   const [toggleInput, setToggleInput] = useState(true);
 
@@ -27,6 +29,7 @@ export const SearchBar = ({
           placeholder={toggleInput ? "Ou êtes vous ?" : "Entrez votre ville"}
           onClick={handleToggle}
           onChange={handleChangeInputCityValue}
+          value={inputCity}
         />
         <button
           className="SearchBar__form__div--container__button"
@@ -57,6 +60,7 @@ export const SearchBar = ({
           name="country"
           placeholder="Entrez votre pays"
           onChange={handleChangeInputCountryValue}
+          value={inputCountry}
         />
 
         <button
