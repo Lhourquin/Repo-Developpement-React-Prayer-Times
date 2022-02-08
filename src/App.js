@@ -84,6 +84,8 @@ class App extends Component {
               this.setState({ country: this.state.inputCountryValue });
             }}
           />
+          {console.log(this.state.inputCityValue)}
+          {console.log(this.state.inputCountryValue)}
         </header>
         <div style={{ textAlign: "center", color: "#bc4749"}}>
           {this.state.errorMessageLocation}
