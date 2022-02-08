@@ -65,16 +65,16 @@ class App extends Component {
 
   render() {
     {
-      console.log("inputCityValue : " + this.state.inputCityValue);
+      console.log("Component App.js line 68 => inputCityValue : " + this.state.inputCityValue);
     }
     {
-      console.log("inputCountryValue : " + this.state.inputCountryValue);
+      console.log("Component App.js line 71 => inputCountryValue : " + this.state.inputCountryValue);
     }
     {
-      console.log("city : " + this.state.city);
+      console.log("Component App.js line 74 => city : " + this.state.city);
     }
     {
-      console.log("country : " + this.state.country);
+      console.log("Component App.js line 77 => country : " + this.state.country);
     }
     return (
       <>

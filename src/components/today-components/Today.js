@@ -48,9 +48,9 @@ export const Today = ({ city, country, getAngleOptionValue, method }) => {
 
   return (
     <div className="Today__div--container-list-pannel">
-      {console.log("inputCity : " + inputCity)}
-      {console.log("inputCountry : " + inputCountry)}
-      {console.log("method : " + method)}
+      {console.log("Component Today.js line 51 => inputCity : " + inputCity)}
+      {console.log("Component Today.js line 52 => inputCountry : " + inputCountry)}
+      {console.log("Component Today.js line 53 => method : " + method)}
       <TodayTimesList today={today} />
       <Pannel
         today={today}
