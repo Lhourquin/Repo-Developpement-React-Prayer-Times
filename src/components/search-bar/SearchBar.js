@@ -6,6 +6,12 @@ export const SearchBar = ({
   handleChangeInputCountryValue,
   handleSubmitValue,
   getPosition,
+  errorMessageInputCity,
+  errorMessageInputCountry,
+  errorMessageInputEmpty,
+  inputCityValue,
+  inputCountryValue
+
 }) => {
   const [toggleInput, setToggleInput] = useState(true);
 
@@ -21,14 +27,19 @@ export const SearchBar = ({
     <form className="SearchBar__form" onSubmit={handleSubmitValue}>
       <div className="SearchBar__form__div--find-city-container">
         <input
-          required
           className="SearchBar__form__div--find-city-container__input--city"
           type="text"
           name="city"
           placeholder={toggleInput ? "Ou êtes vous ?" : "Entrez votre ville"}
           onClick={handleToggle}
           onChange={handleChangeInputCityValue}
+          value={inputCityValue}
         />
+        <div>
+          {
+            errorMessageInputCity
+          }
+        </div>
         <button
           className="SearchBar__form__div--container__button"
           style={toggleInput ? {} : { display: "none" }}
@@ -53,20 +64,25 @@ export const SearchBar = ({
           ✖
         </span>
         <input
-          required
           className="SearchBar__form__div--find-country-container__input-country"
           type="text"
           name="country"
           placeholder="Entrez votre pays"
           onChange={handleChangeInputCountryValue}
+          value={inputCountryValue}
         />
-
+ <div>
+          {
+            errorMessageInputCountry
+          }
+        </div>
         <button
           type="submit"
           className="SearchBar__form__div--find-country-container__submit"
         >
           Rechercher
         </button>
+        <div>{errorMessageInputEmpty}</div>
       </div>
     </form>
   );

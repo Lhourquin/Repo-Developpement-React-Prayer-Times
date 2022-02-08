@@ -13,6 +13,9 @@ class App extends Component {
     this.state = {
       inputCityValue: "",
       inputCountryValue: "",
+      errorMessageInputCitySearchBarEmpty: "",
+      errorMessageInputCountrySearchBarEmpty: "",
+      errorMessageInputEmpty: "",
       city: "",
       country: "",
       method: 2,
@@ -25,6 +28,7 @@ class App extends Component {
       () => this.requestDataPosition.bind(this),
       1000
     );
+    
   }
 
   componentWillUnmount() {
@@ -70,18 +74,97 @@ class App extends Component {
           <NavBar />
 
           <SearchBar
+          inputCityValue={this.state.inputCityValue}
+          inputCountryValue={this.state.inputCountryValue}
+          errorMessageInputEmpty={this.state.errorMessageInputEmpty}
+            errorMessageInputCity={
+              this.state.errorMessageInputCitySearchBarEmpty
+            }
+            errorMessageInputCountry={
+              this.state.errorMessageInputCountrySearchBarEmpty
+            }
             getPosition={this.requestDataPosition.bind(this)}
-            handleChangeInputCityValue={(e) =>
-              this.setState({ inputCityValue: e.target.value })
-            }
-            handleChangeInputCountryValue={(e) =>
-              this.setState({ inputCountryValue: e.target.value })
-            }
+            handleChangeInputCityValue={(event) => {
+              if (event.target.value === "") {
+                this.setState({
+                  errorMessageInputCitySearchBarEmpty:
+                    "Veuillez entrer votre ville.",
+                });
+                return;
+              }/* else if (
+                event.target.value.trim() === "" ||
+                this.state.inputCountryValue == ""
+              ) {
+                this.setState({
+                  errorMessageInputCitySearchBarEmpty:
+                    "Veuillez entrer votre ville.",
+                });
+                this.setState({
+                  errorMessageInputCountrySearchBarEmpty:
+                    "Veuillez entrer votre pays.",
+                });
+                return;
+              }*/ else {
+                this.setState({
+                  errorMessageInputCitySearchBarEmpty: "",
+                });
+                this.setState({ inputCityValue: event.target.value });
+              }
+            }}
+            handleChangeInputCountryValue={(event) => {
+              if (event.target.value === "") {
+                this.setState({
+                  errorMessageInputCountrySearchBarEmpty:
+                    "Veuillez entrer votre pays.",
+                });
+                return;
+              } /*else if (
+                event.target.value.trim() === "" ||
+                this.state.inputCityValue == ""
+              ) {
+                this.setState({
+                  errorMessageInputCitySearchBarEmpty:
+                    "Veuillez entrer votre ville.",
+                });
+                this.setState({
+                  errorMessageInputCountrySearchBarEmpty:
+                    "Veuillez entrer votre pays.",
+                });
+                return;
+              } */else {
+                this.setState({
+                  errorMessageInputCountrySearchBarEmpty: "",
+                });
+                this.setState({ inputCountryValue: event.target.value });
+              }
+            }}
             handleSubmitValue={(event) => {
               event.preventDefault();
 
-              this.setState({ city: this.state.inputCityValue });
-              this.setState({ country: this.state.inputCountryValue });
+              if (
+                this.state.inputCountryValue == "" ||
+                this.state.inputCountryValue == null ||
+                this.state.inputCityValue == "" ||
+                this.state.inputCityValue == null
+              ) {
+                this.setState({
+                  errorMessageInputEmpty:
+                    "Veuillez remplir les barres de recherche.",
+                });
+                return;
+              } else if (
+                this.state.inputCountryValue !== "" ||
+                this.state.inputCountryValue !== null ||
+                this.state.inputCityValue !== "" ||
+                this.state.inputCityValue !== null
+              ) {
+                this.setState({ city: this.state.inputCityValue });
+                this.setState({ country: this.state.inputCountryValue });
+                this.setState({
+                  errorMessageInputEmpty:
+                    "",
+                });
+              }
             }}
           />
         </header>
@@ -89,7 +172,6 @@ class App extends Component {
           {this.state.errorMessageLocation}
         </div>
         <NavBarTodayAndMounth />
-
         <Routes>
           <Route
             path="/"
