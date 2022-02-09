@@ -9,16 +9,14 @@ export const Today = ({ city, country, getAngleOptionValue, method }) => {
   const [inputCity, setInputCity] = useState("");
   const [lastCity, setLastCity] = useState("");
   const [inputCountry, setInputCountry] = useState("");
- // const [lastCountry, setLastCountry] = useState("");
 
   useEffect(() => {
-      if(city !== "" && country !== ""){
-        setInputCity(city);
-        setInputCountry(country);
-      }else if(city == "" ){
-        setLastCity(inputCity);
-        //setLastCountry(inputCountry);
-      }
+    if (city !== "" && country !== "") {
+      setInputCity(city);
+      setInputCountry(country);
+    } else if (city == "") {
+      setLastCity(inputCity);
+    }
   }, [city]);
 
   useEffect(() => {
@@ -48,9 +46,6 @@ export const Today = ({ city, country, getAngleOptionValue, method }) => {
 
   return (
     <div className="Today__div--container-list-pannel">
-      {console.log("Component Today.js line 51 => inputCity : " + inputCity)}
-      {console.log("Component Today.js line 52 => inputCountry : " + inputCountry)}
-      {console.log("Component Today.js line 53 => method : " + method)}
       <TodayTimesList today={today} />
       <Pannel
         today={today}

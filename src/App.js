@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { NavBar } from "./components/navbar/NavBar";
 import { SearchBar } from "./components/search-bar/SearchBar";
-import NavBarTodayAndMounth from "./components/navbar-today-mounth/NavBarTodayAndMounth";
-import { Calendar } from "./components/calendar-components/Calendar";
-import { Today } from "./components/today-components/Today";
+import NavBarTodayAndMounth from "./components/Homepage-components/navbar-today-mounth/NavBarTodayAndMounth";
+import { Calendar } from "./components/Homepage-components/calendar-components/Calendar";
+import { Today } from "./components/Homepage-components/today-components/Today";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 
@@ -64,18 +64,6 @@ class App extends Component {
   }
 
   render() {
-    {
-      console.log("Component App.js line 68 => inputCityValue : " + this.state.inputCityValue);
-    }
-    {
-      console.log("Component App.js line 71 => inputCountryValue : " + this.state.inputCountryValue);
-    }
-    {
-      console.log("Component App.js line 74 => city : " + this.state.city);
-    }
-    {
-      console.log("Component App.js line 77 => country : " + this.state.country);
-    }
     return (
       <>
         <header>

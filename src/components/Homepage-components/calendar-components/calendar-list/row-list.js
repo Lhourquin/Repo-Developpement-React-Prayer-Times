@@ -3,7 +3,6 @@ import "./row-list.css";
 import { CalculMidnightCalendar } from "../calcul-mignight-calendar/CalculMidnightCalandar";
 
 export const RowList = ({calendar}) => {
- // console.log(calendar);
   return (
         <tbody className="salat-of-month ">
       {calendar.map((obj, index) => (
