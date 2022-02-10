@@ -16,7 +16,7 @@ export const Pannel = ({ today, searchField, getAngleOptionValue }) => {
             <div className="Pannel__div--container-times-today__div__div--container-angle-select">
               <div className="Pannel__div--container-times-today__div__div--container-angle-select__div--span-select">
                 <span style={{ fontSize: "10px" }}>
-                  Angle : {obj.data.meta.method.id == 2 ? "15°" : ""}
+                  Angle : {obj.data.meta.method.id == 2 ? "15°" : ""} 
                 </span>
                 <select onChange={getAngleOptionValue} className="select-degree">
                   <option value="2">
