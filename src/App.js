@@ -64,7 +64,7 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.method)
+    console.log(this.state.method);
 
     return (
       <>

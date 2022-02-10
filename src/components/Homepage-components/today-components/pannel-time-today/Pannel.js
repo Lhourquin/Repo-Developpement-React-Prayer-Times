@@ -16,14 +16,14 @@ export const Pannel = ({ today, searchField, getAngleOptionValue }) => {
                 <span style={{ fontSize: "10px" }}>
                   Angle : {obj.data.meta.method.id == 2 ? "15°" : ""}
                 </span>
-                <select className="select-degree">
-                  <option onClick={getAngleOptionValue} value="2">
+                <select className="select-degree" onChange={getAngleOptionValue}>
+                  <option  value="2">
                     15°
                   </option>
-                  <option onClick={getAngleOptionValue} value="3">
+                  <option  value="3">
                     Muslim World League
                   </option>
-                  <option onClick={getAngleOptionValue} value="4">
+                  <option  value="4">
                     Umm Al-Qura University, Makkah
                   </option>
                 </select>
