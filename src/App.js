@@ -64,6 +64,8 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.method)
+
     return (
       <>
         <header>

@@ -29,7 +29,7 @@ export const Calendar = ({city, country, getAngleOptionValue, method}) => {
       clearTimeout(timer);
     };
   }, [city, country, method]);
-
+  console.log(calendar)
   return (
     <div>
       <h1>Calendrier du mois</h1>
