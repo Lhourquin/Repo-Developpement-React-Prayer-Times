@@ -83,8 +83,8 @@ class App extends Component {
               event.preventDefault();
 
               if (
-                this.state.inputCityValue == "" ||
-                this.state.inputCountryValue == ""
+                this.state.inputCityValue === "" ||
+                this.state.inputCountryValue === ""
               ) {
                 this.setState({ city: "" });
                 this.setState({ country: "" });

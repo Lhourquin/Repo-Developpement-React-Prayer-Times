@@ -5,6 +5,7 @@ export const CountDown = ({ nextTimes, day, month, year }) => {
   const [yearNumber, setYear] = useState("");
   const [monthString, setMonth] = useState("");
   const [midnightData, setMidnightData] = useState("");
+  const [isMounted, setIsMounted] = useState(false);
   //const currentDate = new Date(Date.now()).getTime();
 
   const getTextContent = () => {
@@ -26,7 +27,11 @@ export const CountDown = ({ nextTimes, day, month, year }) => {
   }, [nextTimes]);
 
   useEffect(() => {
-    if (midnightData) {
+    if (nextTimes) {
+
+      let timer = setTimeout(() => {
+        getTextContent();
+      });
       //assignation variable
       let fajr = new Date(
         `${month} ${Number(day)}, ${year} ${nextTimes[0].fajr}:00`
@@ -101,7 +106,7 @@ export const CountDown = ({ nextTimes, day, month, year }) => {
       console.log("icha : " + icha);
       console.log("midnight : " + midnight);
     }
-  }, [midnightData]);
+  }, [nextTimes]);
 
   /*let countDownNextTimes = new Date(
     `${month} ${day}, ${year} ${midnightData}:00`
