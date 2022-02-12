@@ -1,9 +1,11 @@
-import React from "react";
-import DateNow from "./DateNow";
+import React, { useState, useEffect } from "react";
+import { DateNow } from "./DateNow";
 import { CountDown } from "./countdown-component/CountDown";
 import "./Pannel.css";
 export const Pannel = ({ today, searchField, getAngleOptionValue }) => {
-  console.log(today);
+  // console.log(today);
+
+  // console.log(curentTime)
   return (
     <>
       {today.map((obj, index) => (
@@ -16,18 +18,15 @@ export const Pannel = ({ today, searchField, getAngleOptionValue }) => {
             <div className="Pannel__div--container-times-today__div__div--container-angle-select">
               <div className="Pannel__div--container-times-today__div__div--container-angle-select__div--span-select">
                 <span style={{ fontSize: "10px" }}>
-                  Angle : {obj.data.meta.method.id == 2 ? "15°" : ""} 
+                  Angle : {obj.data.meta.method.id == 2 ? "15°" : ""}
                 </span>
-                <select onChange={getAngleOptionValue} className="select-degree">
-                  <option value="2">
-                    15°
-                  </option>
-                  <option value="3">
-                    Muslim World League
-                  </option>
-                  <option value="4">
-                    Umm Al-Qura University, Makkah
-                  </option>
+                <select
+                  onChange={getAngleOptionValue}
+                  className="select-degree"
+                >
+                  <option value="2">15°</option>
+                  <option value="3">Muslim World League</option>
+                  <option value="4">Umm Al-Qura University, Makkah</option>
                 </select>
               </div>
             </div>
@@ -37,7 +36,6 @@ export const Pannel = ({ today, searchField, getAngleOptionValue }) => {
               FAJR {obj.data.timings.Fajr} + 01:00:03
             </li>
             <li className="Pannel__ul--hour-date-countdown__li--countdown-next-times">
-              SHOUROUQ -{" "}
               <CountDown
                 year={obj.data.date.gregorian.year}
                 day={obj.data.date.gregorian.day}
@@ -49,7 +47,6 @@ export const Pannel = ({ today, searchField, getAngleOptionValue }) => {
                   { asr: obj.data.timings.Asr },
                   { maghrebTime: obj.data.timings.Maghrib },
                   { icha: obj.data.timings.Isha },
-                  
                 ]}
               />
             </li>

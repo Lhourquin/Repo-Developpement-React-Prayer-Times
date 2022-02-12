@@ -23,7 +23,7 @@ class App extends Component {
   componentDidMount() {
     this.intervalApiCall = setInterval(
       () => this.requestDataPosition.bind(this),
-      1000
+      
     );
   }
 
@@ -42,12 +42,14 @@ class App extends Component {
     const lat = position.coords.latitude;
     const long = position.coords.longitude;
     fetch(
-      ` https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${long}&localityLanguage=fr`
+      `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${long}&localityLanguage=fr`
     )
       .then((response) => response.json())
       .then((data) => {
-        this.setState({ city: data.city });
-        this.setState({ country: data.countryName });
+        if (this.state.city === "" && this.state.country === "") {
+          this.setState({ city: data.city });
+          this.setState({ country: data.countryName });
+        }
       });
 
     this.setState({ errorMessageLocation: "" });
@@ -64,6 +66,9 @@ class App extends Component {
   }
 
   render() {
+    {
+      console.log(this.state.city);
+    }
     return (
       <>
         <header>

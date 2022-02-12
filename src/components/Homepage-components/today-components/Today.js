@@ -17,7 +17,7 @@ export const Today = ({ city, country, getAngleOptionValue, method }) => {
     } else if (city == "") {
       setLastCity(inputCity);
     }
-  }, [city]);
+  }, [city, country]);
 
   useEffect(() => {
     let timer = null;

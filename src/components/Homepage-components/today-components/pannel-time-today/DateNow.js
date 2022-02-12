@@ -1,29 +1,19 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
+export const DateNow = () => {
+  const [timeNow, setTimeNow] = useState(new Date().toLocaleTimeString());
 
-class DateNow extends Component {
+  useEffect(() => {
+    let interval = setInterval(() => {
+      setTimeNow(new Date().toLocaleTimeString());
+    }, 1000);
 
-    constructor(){
-        super();
-        this.state = {
-            time: new Date().toLocaleTimeString()
-        }
-    }
+    return () => clearInterval(interval);
+  });
+  //console.log(curentPrayerTimes);
 
-    componentDidMount(){
-        this.interval = setInterval(()=> this.setState({time :  new Date().toLocaleTimeString()}), 1000)
-    }
-
-    componentWillUnmount(){
-        clearInterval(this.interval);
-    }
-
-    render() {
-        return (
-            <li className="DateNow">
-                {this.state.time}
-                </li>
-        )
-    }
-}
-
-export default DateNow;
+  return (
+    <>
+      <li className="DateNow">{timeNow}</li>
+    </>
+  );
+};
