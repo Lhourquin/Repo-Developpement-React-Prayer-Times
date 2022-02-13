@@ -33,22 +33,7 @@ export const Pannel = ({ today, searchField, getAngleOptionValue }) => {
             </div>
           </div>
           <ul className="Pannel__ul--hour-date-countdown">
-            <li className="Pannel__ul--hour-date-countdown__li--countdown-current-times">
-             
-              <CurrentTimes
-              year={obj.data.date.gregorian.year}
-              day={obj.data.date.gregorian.day}
-              month={obj.data.date.gregorian.month.en}
-              nextTimes={[
-                { fajr: obj.data.timings.Fajr },
-                { shourouq: obj.data.timings.Sunrise },
-                { dhohr: obj.data.timings.Dhuhr },
-                { asr: obj.data.timings.Asr },
-                { maghrebTime: obj.data.timings.Maghrib },
-                { icha: obj.data.timings.Isha },
-              ]}/>
-            </li>
-            <li className="Pannel__ul--hour-date-countdown__li--countdown-next-times">
+          
               <CountDown
                 year={obj.data.date.gregorian.year}
                 day={obj.data.date.gregorian.day}
@@ -62,7 +47,6 @@ export const Pannel = ({ today, searchField, getAngleOptionValue }) => {
                   { icha: obj.data.timings.Isha },
                 ]}
               />
-            </li>
             <DateNow className="DateNow" />
 
             <li className="Pannel__ul--hour-date-countdown__li--date">
