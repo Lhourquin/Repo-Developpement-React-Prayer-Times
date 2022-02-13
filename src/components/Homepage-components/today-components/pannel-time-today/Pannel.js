@@ -34,7 +34,7 @@ export const Pannel = ({ today, searchField, getAngleOptionValue }) => {
           </div>
           <ul className="Pannel__ul--hour-date-countdown">
             <li className="Pannel__ul--hour-date-countdown__li--countdown-current-times">
-              FAJR {obj.data.timings.Fajr} + 01:00:03
+             
               <CurrentTimes
               year={obj.data.date.gregorian.year}
               day={obj.data.date.gregorian.day}
