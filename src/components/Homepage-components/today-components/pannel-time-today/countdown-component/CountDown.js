@@ -79,7 +79,7 @@ export const CountDown = ({ nextTimes, day, month, year }) => {
       let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
       if (distance < 0) {
-        clearInterval(interval.current);
+        clearInterval(intervalCountDown.current);
       } else {
         setTimerDays(days);
         setTimerHours(hours < 10 ? ("0" + hours).slice(-2) : hours);
@@ -143,57 +143,59 @@ export const CountDown = ({ nextTimes, day, month, year }) => {
       ichaTime &&
       startDayMidgnith
     ) {
-      setMidnightTime(
-        getTheCorrectDateMidnight(ichaTime, midnightData, month, day, year)
-      );
-      const now = new Date(Date.now()).getTime();
 
-      if (fajrTime > now && fajrTime > midnightTimeWithOldDate) {
-        
-        setCurentTime("MINUIT");
-       
-      } else if (fajrTime < now && fajrTime < shourouqTime) {
-        setCurentTime("FAJR");
-      } else if (shourouqTime > now && shourouqTime < dhohrTime) {
-        setCurentTime("SHOUROUQ");
-
-        setTimeout(() => {
+      let timer = setTimeout(()=> {
+        setMidnightTime(
+          getTheCorrectDateMidnight(ichaTime, midnightData, month, day, year)
+        );
+        const now = new Date(Date.now()).getTime();
+  
+        if (fajrTime > now && fajrTime > midnightTimeWithOldDate) {
+      
+          setCurentTime("FAJR");
+         
+        } else if (fajrTime < now && fajrTime < shourouqTime) {
+          setCurentTime("FAJR");
+        } else if (shourouqTime > now && shourouqTime < dhohrTime) {
+          setCurentTime("SHOUROUQ"); 
+  
+          
+        } else if (dhohrTime > now && dhohrTime < asrTime) {
           setCurentTime("DHOHR");
-        });
-      } else if (dhohrTime > now && dhohrTime < asrTime) {
-        setCurentTime("DHOHR");
-      } else if (asrTime > now && asrTime < maghrebTime) {
-        setCurentTime("ASR");
-      } else if (maghrebTime > now && maghrebTime < ichaTime) {
-        setCurentTime("MAGHREB");
-      } else if (ichaTime > now && ichaTime < midnightTime) {
-        setCurentTime("ICHA");
-      }
-
-      if (now < fajrTime) {
-        startTimerCountDown(fajrTime);
-        setCurentCountdownTimes("FAJR");
-      } else if (now >= fajrTime && now <= shourouqTime) {
-        startTimerCountDown(shourouqTime);
-        setCurentCountdownTimes("SHOUROUQ");
-      } else if (now >= shourouqTime && now <= dhohrTime) {
-        startTimerCountDown(dhohrTime);
-        setCurentCountdownTimes("DHOHR");
-      } else if (now >= dhohrTime && now <= asrTime) {
-        startTimerCountDown(asrTime);
-        setCurentCountdownTimes("ASR");
-      } else if (now >= asrTime && now <= maghrebTime) {
-        startTimerCountDown(maghrebTime);
-        setCurentCountdownTimes("MAGHREB");
-      } else if (now >= maghrebTime && now <= ichaTime) {
-        startTimerCountDown(ichaTime);
-        setCurentCountdownTimes("ICHA");
-      }
-      // getNextTimes(fajrTime, "FAJR" , nextTimes[0].fajr, shourouqTime )
-      // startTimerCountDown(fajrTime);
+        } else if (asrTime > now && asrTime < maghrebTime) {
+          setCurentTime("ASR");
+        } else if (maghrebTime > now && maghrebTime < ichaTime) {
+          setCurentTime("MAGHREB");
+        } else if (ichaTime > now && ichaTime < midnightTime) {
+          setCurentTime("ICHA");
+        }
+  
+        if (now < fajrTime) {
+          startTimerCountDown(fajrTime);
+          setCurentCountdownTimes("FAJR");
+        } else if (now > fajrTime && now < shourouqTime) {
+          startTimerCountDown(shourouqTime);
+          setCurentCountdownTimes("SHOUROUQ");
+        } else if (now > shourouqTime && now < dhohrTime) {
+          startTimerCountDown(dhohrTime);
+          setCurentCountdownTimes("DHOHR");
+        } else if (now > dhohrTime && now < asrTime) {
+          startTimerCountDown(asrTime);
+          setCurentCountdownTimes("ASR");
+        } else if (now > asrTime && now < maghrebTime) {
+          startTimerCountDown(maghrebTime);
+          setCurentCountdownTimes("MAGHREB");
+        } else if (now > maghrebTime && now < ichaTime) {
+          startTimerCountDown(ichaTime);
+          setCurentCountdownTimes("ICHA");
+        }
+        // getNextTimes(fajrTime, "FAJR" , nextTimes[0].fajr, shourouqTime )
+        // startTimerCountDown(fajrTime);
+      })
+    
 
       return () => {
-        clearTimeout(intervalCountDown);
+        clearTimeout(timer);
         clearInterval(intervalCountDown.current);
       };
     }
@@ -215,11 +217,11 @@ export const CountDown = ({ nextTimes, day, month, year }) => {
     <>
       <li className="Pannel__ul--hour-date-countdown__li--countdown-current-times">
         {" "}
-        {currentTime} {nextTimes[0].fajr} - {timerHours}:{timerMinutes}:
-        {timerSeconds}
+        {currentTime} {nextTimes[0].fajr} 
+       
       </li>
       <li className="Pannel__ul--hour-date-countdown__li--countdown-next-times">
-        {currentCountdownTimes} {nextTimes[0].fajr} - {timerHours}:
+        {currentCountdownTimes} {nextTimes[1].shourouq} - {timerHours}:
         {timerMinutes}:{timerSeconds}
       </li>
     </>
