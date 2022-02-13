@@ -43,7 +43,7 @@ export const Pannel = ({ today, searchField, getAngleOptionValue }) => {
                   { shourouq: obj.data.timings.Sunrise },
                   { dhohr: obj.data.timings.Dhuhr },
                   { asr: obj.data.timings.Asr },
-                  { maghrebTime: obj.data.timings.Maghrib },
+                  { maghreb: obj.data.timings.Maghrib },
                   { icha: obj.data.timings.Isha },
                 ]}
               />
