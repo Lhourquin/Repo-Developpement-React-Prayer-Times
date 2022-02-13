@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { DateNow } from "./DateNow";
+import { CurrentTimes } from "./current-times-components/CurrentTimes";
 import { CountDown } from "./countdown-component/CountDown";
 import "./Pannel.css";
 export const Pannel = ({ today, searchField, getAngleOptionValue }) => {
@@ -34,6 +35,18 @@ export const Pannel = ({ today, searchField, getAngleOptionValue }) => {
           <ul className="Pannel__ul--hour-date-countdown">
             <li className="Pannel__ul--hour-date-countdown__li--countdown-current-times">
               FAJR {obj.data.timings.Fajr} + 01:00:03
+              <CurrentTimes
+              year={obj.data.date.gregorian.year}
+              day={obj.data.date.gregorian.day}
+              month={obj.data.date.gregorian.month.en}
+              nextTimes={[
+                { fajr: obj.data.timings.Fajr },
+                { shourouq: obj.data.timings.Sunrise },
+                { dhohr: obj.data.timings.Dhuhr },
+                { asr: obj.data.timings.Asr },
+                { maghrebTime: obj.data.timings.Maghrib },
+                { icha: obj.data.timings.Isha },
+              ]}/>
             </li>
             <li className="Pannel__ul--hour-date-countdown__li--countdown-next-times">
               <CountDown
