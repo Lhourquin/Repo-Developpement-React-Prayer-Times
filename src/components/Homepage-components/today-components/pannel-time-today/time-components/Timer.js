@@ -217,28 +217,28 @@ export const Timer = ({ arrayOfTimesSalatOfTheDay, day, month, year }) => {
       return () => clearInterval(intervalCountDown.current);
     } else if (now > dateDhohr && now < dateAsr) {
       setCurrentTime("DHOHR " + dhohr);
-      startTimerCurrentCountDown(dateAsr);
+      startTimerNextTimeCountDown(dateAsr);
       setDisplayTimerCurrentTime(false);
       setDisplayTimerCurrentNextTime(true);
       setCurrentNextTime("ASR " + asr + " - ");
       return () => clearInterval(intervalCountDown.current);
     } else if (now > dateAsr && now < dateMaghreb) {
       setCurrentTime("ASR " + asr);
-      startTimerCurrentCountDown(dateMaghreb);
+      startTimerNextTimeCountDown(dateMaghreb);
       setDisplayTimerCurrentTime(false);
       setDisplayTimerCurrentNextTime(true);
       setCurrentNextTime("MAGHREB " + maghreb + " - ");
       return () => clearInterval(intervalCountDown.current);
     } else if (now > dateMaghreb && now < dateIcha) {
       setCurrentTime("MAGHREB " + maghreb);
-      startTimerCurrentCountDown(dateIcha);
+      startTimerNextTimeCountDown(dateIcha);
       setDisplayTimerCurrentTime(false);
       setDisplayTimerCurrentNextTime(true);
       setCurrentNextTime("ICHA " + icha + " - ");
       return () => clearInterval(intervalCountDown.current);
     } else if (now > dateIcha && now < dateMidnight) {
       setCurrentTime("ICHA " + icha);
-      startTimerCurrentCountDown(dateMidnight);
+      startTimerNextTimeCountDown(dateMidnight);
       setDisplayTimerCurrentTime(false);
       setDisplayTimerCurrentNextTime(true);
       setCurrentNextTime("MI-NUIT " + midnight + " - ");
