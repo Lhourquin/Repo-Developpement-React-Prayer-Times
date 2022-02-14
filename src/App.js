@@ -96,8 +96,11 @@ class App extends Component {
               } else {
                 this.setState({ city: this.state.inputCityValue });
                 this.setState({ country: this.state.inputCountryValue });
-                this.setState({ inputCityValue: "" });
+                setTimeout(() =>{
+                  this.setState({ inputCityValue: "" });
                 this.setState({ inputCountryValue: "" });
+                }, 1000)
+                
               }
             }}
           />
