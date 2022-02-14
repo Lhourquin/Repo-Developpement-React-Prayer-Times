@@ -63,14 +63,6 @@ export const CountDown = ({ nextTimes, day, month, year }) => {
     }
   };
 
-  /* const startCurrentTime = (salat, nextSalat) => {
-    let now = new Date(Date.now()).getTime();
-
-    if (salat < nextSalat) {
-      setCurentTime(salat);
-    }
-  };*/
-
   const startTimerCountDown = (salat) => {
     let countDownTimes = salat.getTime();
 
@@ -102,36 +94,45 @@ export const CountDown = ({ nextTimes, day, month, year }) => {
 
   useEffect(() => {
     if (nextTimes) {
-      let timer = setTimeout(() => {
-        getTextContent();
-        setFajrTime(
-          new Date(`${month} ${Number(day)}, ${year} ${nextTimes[0].fajr}:00`)
-        );
+      let setNextTimesData = setTimeout(() => {
         setFajr(nextTimes[0].fajr);
-        setShourouqTime(
-          new Date(
-            `${month} ${Number(day)}, ${year} ${nextTimes[1].shourouq}:00`
-          )
-        );
         setShourouq(nextTimes[1].shourouq);
-        setDhohrTime(
-          new Date(`${month} ${Number(day)}, ${year} ${nextTimes[2].dhohr}:00`)
-        );
         setDhohr(nextTimes[2].dhohr);
-        setAsrTime(
-          new Date(`${month} ${Number(day)}, ${year} ${nextTimes[3].asr}:00`)
-        );
         setAsr(nextTimes[3].asr);
-        setMaghrebTime(
-          new Date(
-            `${month} ${Number(day)}, ${year} ${nextTimes[4].maghreb}:00`
-          )
-        );
         setMaghreb(nextTimes[4].maghreb);
-        setIchaTime(
-          new Date(`${month} ${Number(day)}, ${year} ${nextTimes[5].icha}:00`)
-        );
         setIcha(nextTimes[5].icha);
+        // get the data of midnight in rowlist of today
+        getTextContent();
+      });
+
+      return () => clearTimeout(setNextTimesData);
+    }
+  }, nextTimes);
+
+  useEffect(() => {
+    if (
+      fajr &&
+      shourouq &&
+      dhohr &&
+      asr &&
+      maghreb &&
+      icha &&
+      midnightData &&
+      month &&
+      day &&
+      year
+    ) {
+      let nextTimesDataDateFormat = setTimeout(() => {
+        setFajrTime(new Date(`${month} ${Number(day)}, ${year} ${fajr}:00`));
+        setShourouqTime(
+          new Date(`${month} ${Number(day)}, ${year} ${shourouq}:00`)
+        );
+        setDhohrTime(new Date(`${month} ${Number(day)}, ${year} ${dhohr}:00`));
+        setAsrTime(new Date(`${month} ${Number(day)}, ${year} ${asr}:00`));
+        setMaghrebTime(
+          new Date(`${month} ${Number(day)}, ${year} ${maghreb}:00`)
+        );
+        setIchaTime(new Date(`${month} ${Number(day)}, ${year} ${icha}:00`));
         setStartDayMidgnith(
           new Date(`${month} ${Number(day) + 1}, ${year} 00:00:00`)
         );
@@ -140,46 +141,34 @@ export const CountDown = ({ nextTimes, day, month, year }) => {
         );
       });
       return () => {
-        clearTimeout(timer);
+        clearTimeout(nextTimesDataDateFormat);
       };
     }
-  }, [nextTimes]);
+  }, [
+    fajr,
+    shourouq,
+    dhohr,
+    asr,
+    maghreb,
+    icha,
+    midnightData,
+    month,
+    day,
+    year,
+  ]);
 
   useEffect(() => {
-    if (
-      midnightData &&
-      fajrTime &&
-      shourouqTime &&
-      dhohrTime &&
-      asrTime &&
-      maghrebTime &&
-      ichaTime &&
-      startDayMidgnith
-    ) {
+    if (midnightData && ichaTime && month && day && year) {
       let timer = setTimeout(() => {
         setMidnightTime(
           getTheCorrectDateMidnight(ichaTime, midnightData, month, day, year)
         );
-
-        // getNextTimes(fajrTime, "FAJR" , nextTimes[0].fajr, shourouqTime )
-        // startTimerCountDown(fajrTime);
       });
-
       return () => {
         clearTimeout(timer);
       };
     }
-  }, [
-    midnightData,
-    fajrTime,
-    shourouqTime,
-    dhohrTime,
-    asrTime,
-    maghrebTime,
-    ichaTime,
-    startDayMidgnith,
-    midnightTimeWithOldDate,
-  ]);
+  }, [midnightData, ichaTime, month, day, year]);
 
   useEffect(() => {
     if (
@@ -189,7 +178,8 @@ export const CountDown = ({ nextTimes, day, month, year }) => {
       asrTime &&
       maghrebTime &&
       ichaTime &&
-      midnightTimeWithOldDate
+      midnightTimeWithOldDate &&
+      midnightTime
     ) {
       let update = setTimeout(() => {
         const now = new Date(Date.now()).getTime();
@@ -216,24 +206,27 @@ export const CountDown = ({ nextTimes, day, month, year }) => {
         }
 
         //countdoqn next salat
-        if (now < fajrTime) {
+        if (now < midnightTimeWithOldDate && now < midnightTime) {
           startTimerCountDown(fajrTime);
-          setCurentCountdownTimes("FAJR " + nextTimes[0].fajr);
+          setCurentCountdownTimes("FAJR " + fajr);
         } else if (now > fajrTime && now < shourouqTime) {
           startTimerCountDown(shourouqTime);
-          setCurentCountdownTimes("SHOUROUQ " + nextTimes[1].shourouq);
+          setCurentCountdownTimes("SHOUROUQ " + shourouq);
         } else if (now > shourouqTime && now < dhohrTime) {
           startTimerCountDown(dhohrTime);
-          setCurentCountdownTimes("DHOHR " + nextTimes[2].dhohr);
+          setCurentCountdownTimes("DHOHR " + dhohr);
         } else if (now > dhohrTime && now < asrTime) {
           startTimerCountDown(asrTime);
-          setCurentCountdownTimes("ASR " + nextTimes[3].asr);
+          setCurentCountdownTimes("ASR " + asr);
         } else if (now > asrTime && now < maghrebTime) {
           startTimerCountDown(maghrebTime);
-          setCurentCountdownTimes("MAGHREB " + nextTimes[4].maghreb);
+          setCurentCountdownTimes("MAGHREB " + maghreb);
         } else if (now > maghrebTime && now < ichaTime) {
           startTimerCountDown(ichaTime);
-          setCurentCountdownTimes("ICHA " + nextTimes[5].icha);
+          setCurentCountdownTimes("ICHA " + icha);
+        } else if (now > ichaTime && now < midnightTime) {
+          startTimerCountDown(midnightTime);
+          setCurentCountdownTimes("MINUIT " + midnightData);
         }
       }, 1000);
 
@@ -249,17 +242,21 @@ export const CountDown = ({ nextTimes, day, month, year }) => {
     asrTime,
     maghrebTime,
     ichaTime,
+    midnightTime,
     midnightTimeWithOldDate,
-    fajr, 
+    fajr,
     shourouq,
     dhohr,
     asr,
     maghreb,
-    icha
+    icha,
+    midnightData,
   ]);
   // console.log(maghrebTime)
   //console.log(currentTime)
   //console.log(new Date(Date.now()).getTime() < fajrTime)
+  //console.log(midnightTimeWithOldDate)
+
   return (
     <>
       <li className="Pannel__ul--hour-date-countdown__li--countdown-current-times">

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { DateNow } from "./DateNow";
-import { CurrentTimes } from "./current-times-components/CurrentTimes";
-import { CountDown } from "./countdown-component/CountDown";
+import { Clock } from "./time-components/Clock";
+import { Timer } from "./time-components/Timer";
+//import { CurrentTimes } from "./current-times-components/CurrentTimes";
+//import { CountDown } from "./countdown-component/CountDown";
 import "./Pannel.css";
 export const Pannel = ({ today, searchField, getAngleOptionValue }) => {
   // console.log(today);
@@ -33,8 +34,7 @@ export const Pannel = ({ today, searchField, getAngleOptionValue }) => {
             </div>
           </div>
           <ul className="Pannel__ul--hour-date-countdown">
-          
-              <CountDown
+            {/*  <CountDown
                 year={obj.data.date.gregorian.year}
                 day={obj.data.date.gregorian.day}
                 month={obj.data.date.gregorian.month.en}
@@ -46,8 +46,22 @@ export const Pannel = ({ today, searchField, getAngleOptionValue }) => {
                   { maghreb: obj.data.timings.Maghrib },
                   { icha: obj.data.timings.Isha },
                 ]}
-              />
-            <DateNow className="DateNow" />
+              />*/}
+            <Timer
+              year={obj.data.date.gregorian.year}
+              day={obj.data.date.gregorian.day}
+              month={obj.data.date.gregorian.month.en}
+              arrayOfTimesSalatOfTheDay={[
+                { fajr: obj.data.timings.Fajr },
+                { shourouq: obj.data.timings.Sunrise },
+                { dhohr: obj.data.timings.Dhuhr },
+                { asr: obj.data.timings.Asr },
+                { maghreb: obj.data.timings.Maghrib },
+                { icha: obj.data.timings.Isha },
+                { midnight: "" },
+              ]}
+            />
+            <Clock className="DateNow" />
 
             <li className="Pannel__ul--hour-date-countdown__li--date">
               {new Date(Date.now()).toLocaleString(undefined, {

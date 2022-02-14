@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-export const DateNow = () => {
+export const Clock = () => {
   const [timeNow, setTimeNow] = useState(new Date().toLocaleTimeString());
 
   useEffect(() => {
