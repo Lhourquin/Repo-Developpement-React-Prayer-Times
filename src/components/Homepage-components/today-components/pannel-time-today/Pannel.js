@@ -1,7 +1,13 @@
-import React from "react";
-import DateNow from "./DateNow";
+import React, { useState, useEffect } from "react";
+import { Clock } from "./time-components/Clock";
+import { Timer } from "./time-components/Timer";
+//import { CurrentTimes } from "./current-times-components/CurrentTimes";
+//import { CountDown } from "./countdown-component/CountDown";
 import "./Pannel.css";
 export const Pannel = ({ today, searchField, getAngleOptionValue }) => {
+  // console.log(today);
+
+  // console.log(curentTime)
   return (
     <>
       {today.map((obj, index) => (
@@ -16,28 +22,46 @@ export const Pannel = ({ today, searchField, getAngleOptionValue }) => {
                 <span style={{ fontSize: "10px" }}>
                   Angle : {obj.data.meta.method.id == 2 ? "15°" : ""}
                 </span>
-                <select onChange={getAngleOptionValue} className="select-degree">
-                  <option value="2">
-                    15°
-                  </option>
-                  <option value="3">
-                    Muslim World League
-                  </option>
-                  <option value="4">
-                    Umm Al-Qura University, Makkah
-                  </option>
+                <select
+                  onChange={getAngleOptionValue}
+                  className="select-degree"
+                >
+                  <option value="2">15°</option>
+                  <option value="3">Muslim World League</option>
+                  <option value="4">Umm Al-Qura University, Makkah</option>
                 </select>
               </div>
             </div>
           </div>
           <ul className="Pannel__ul--hour-date-countdown">
-            <li className="Pannel__ul--hour-date-countdown__li--countdown-current-times">
-              FAJR {obj.data.timings.Fajr} + 01:00:03
-            </li>
-            <li className="Pannel__ul--hour-date-countdown__li--countdown-next-times">
-              SHOUROUQ - 00:14:57
-            </li>
-            <DateNow className="DateNow" />
+            {/*  <CountDown
+                year={obj.data.date.gregorian.year}
+                day={obj.data.date.gregorian.day}
+                month={obj.data.date.gregorian.month.en}
+                nextTimes={[
+                  { fajr: obj.data.timings.Fajr },
+                  { shourouq: obj.data.timings.Sunrise },
+                  { dhohr: obj.data.timings.Dhuhr },
+                  { asr: obj.data.timings.Asr },
+                  { maghreb: obj.data.timings.Maghrib },
+                  { icha: obj.data.timings.Isha },
+                ]}
+              />*/}
+            <Timer
+              year={obj.data.date.gregorian.year}
+              day={obj.data.date.gregorian.day}
+              month={obj.data.date.gregorian.month.en}
+              arrayOfTimesSalatOfTheDay={[
+                { fajr: obj.data.timings.Fajr },
+                { shourouq: obj.data.timings.Sunrise },
+                { dhohr: obj.data.timings.Dhuhr },
+                { asr: obj.data.timings.Asr },
+                { maghreb: obj.data.timings.Maghrib },
+                { icha: obj.data.timings.Isha },
+                { midnight: "" },
+              ]}
+            />
+            <Clock className="DateNow" />
 
             <li className="Pannel__ul--hour-date-countdown__li--date">
               {new Date(Date.now()).toLocaleString(undefined, {

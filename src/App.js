@@ -23,7 +23,7 @@ class App extends Component {
   componentDidMount() {
     this.intervalApiCall = setInterval(
       () => this.requestDataPosition.bind(this),
-      1000
+      
     );
   }
 
@@ -42,12 +42,14 @@ class App extends Component {
     const lat = position.coords.latitude;
     const long = position.coords.longitude;
     fetch(
-      ` https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${long}&localityLanguage=fr`
+      `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${long}&localityLanguage=fr`
     )
       .then((response) => response.json())
       .then((data) => {
-        this.setState({ city: data.city });
-        this.setState({ country: data.countryName });
+        if (this.state.city === "" && this.state.country === "") {
+          this.setState({ city: data.city });
+          this.setState({ country: data.countryName });
+        }
       });
 
     this.setState({ errorMessageLocation: "" });
@@ -64,8 +66,9 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.method)
-
+    {
+      console.log(this.state.city);
+    }
     return (
       <>
         <header>
@@ -85,16 +88,19 @@ class App extends Component {
               event.preventDefault();
 
               if (
-                this.state.inputCityValue == "" ||
-                this.state.inputCountryValue == ""
+                this.state.inputCityValue === "" ||
+                this.state.inputCountryValue === ""
               ) {
                 this.setState({ city: "" });
                 this.setState({ country: "" });
               } else {
                 this.setState({ city: this.state.inputCityValue });
                 this.setState({ country: this.state.inputCountryValue });
-                this.setState({ inputCityValue: "" });
+                setTimeout(() =>{
+                  this.setState({ inputCityValue: "" });
                 this.setState({ inputCountryValue: "" });
+                }, 1000)
+                
               }
             }}
           />

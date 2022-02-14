@@ -12,6 +12,15 @@
     margin-left: auto;
     margin-right: auto;
   }
+  .SearchBar__form .SearchBar__form__div--find-city-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
   .SearchBar__form .SearchBar__form__div--find-city-container .SearchBar__form__div--find-city-container__input--city {
     width: 97%;
     border-radius: 8px;
@@ -83,6 +92,15 @@
     margin-top: 80px;
     margin-left: auto;
     margin-right: auto;
+  }
+  .SearchBar__form .SearchBar__form__div--find-city-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
   }
   .SearchBar__form .SearchBar__form__div--find-city-container .SearchBar__form__div--find-city-container__input--city {
     width: 98.5%;
@@ -163,6 +181,15 @@
     margin-top: 80px;
     margin-left: auto;
     margin-right: auto;
+  }
+  .SearchBar__form .SearchBar__form__div--find-city-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
   }
   .SearchBar__form .SearchBar__form__div--find-city-container .SearchBar__form__div--find-city-container__input--city {
     border-radius: 8px;

@@ -8,6 +8,8 @@
     margin-right: auto;
 
     .SearchBar__form__div--find-city-container {
+      display: flex;
+      flex-direction: row-reverse;
       .SearchBar__form__div--find-city-container__input--city {
         width: 97%;
         border-radius: 8px;
@@ -78,6 +80,8 @@
     margin-right: auto;
 
     .SearchBar__form__div--find-city-container {
+      display: flex;
+      flex-direction: row-reverse;
       .SearchBar__form__div--find-city-container__input--city {
         width: 98.5%;
         border-radius: 8px;
@@ -156,6 +160,8 @@
     margin-right: auto;
 
     .SearchBar__form__div--find-city-container {
+      display: flex;
+      flex-direction: row-reverse;
       .SearchBar__form__div--find-city-container__input--city {
         border-radius: 8px;
         border: 1.4px solid #605b56;

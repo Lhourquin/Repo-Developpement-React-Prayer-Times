@@ -47,5 +47,5 @@ export const CalculMidnight = ({ todayMidnight }) => {
     });
   }, [fajrTime, maghrebTime]);
 
-  return <span>{midnightTime}</span>;
+  return <span className="test">{midnightTime}</span>;
 };
