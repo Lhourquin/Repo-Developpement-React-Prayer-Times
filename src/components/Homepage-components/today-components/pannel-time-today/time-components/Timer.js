@@ -183,22 +183,45 @@ export const Timer = ({ arrayOfTimesSalatOfTheDay, day, month, year }) => {
   const [displayTimerCurrentNextTime, setDisplayTimerCurrentNextTime] =
     useState(false);
   const [displayTimerCurrentTime, setDisplayTimerCurrentTime] = useState(false);
+  const [now, setNow] = useState(new Date(Date.now()).getTime());
 
   useEffect(() => {
-    const now = new Date(Date.now()).getTime();
+      let interval = setInterval(() => {
+          setNow(new Date(Date.now()).getTime());
+      });
+
+      return () => clearInterval(interval);
+  })
+
+  useEffect(() => {
 
     if (now < dateFajr) {
       setDisplayTimerCurrentNextTime(false);
       setDisplayTimerCurrentTime(true);
       startTimerCurrentCountDown(dateFajr);
       setCurrentTime("FAJR " + fajr + " - ");
+      setCurrentNextTime("");
       return () => clearInterval(intervalCountDown.current);
-    } else if (now > dateFajr && now < dateShourouq) {
-      setDisplayTimerCurrentNextTime(true);
+    } else if (now >= dateFajr && now < dateShourouq) {
+      setCurrentTime("FAJR " + fajr);
       setDisplayTimerCurrentTime(false);
       startTimerNextTimeCountDown(dateShourouq);
-      setCurrentTime("FAJR " + fajr);
       setCurrentNextTime("SHOUROUQ " + shourouq + " - ");
+      setDisplayTimerCurrentNextTime(true);
+      return () => clearInterval(intervalCountDown.current);
+    } else if (now > dateShourouq && now < dateDhohr) {
+      startTimerCurrentCountDown(dateDhohr);
+      setDisplayTimerCurrentTime(true);
+      setDisplayTimerCurrentNextTime(false);
+      setCurrentTime("DHOHR " + dhohr + " - ");
+      setCurrentNextTime("");
+      return () => clearInterval(intervalCountDown.current);
+    } else if (now > dateDhohr && now < dateAsr) {
+      setDisplayTimerCurrentNextTime(true);
+      setDisplayTimerCurrentTime(false);
+      startTimerCurrentCountDown(dateAsr);
+      setCurrentTime("DHOHR " + dhohr);
+      setCurrentNextTime("ASR " + asr + " - ");
       return () => clearInterval(intervalCountDown.current);
     }
 
@@ -210,7 +233,7 @@ export const Timer = ({ arrayOfTimesSalatOfTheDay, day, month, year }) => {
     console.log(" 6 : " + dateMaghreb);
     console.log(" 7 : " + dateIcha);
     console.log(" 8 : " + dateMidnight);*/
-  }, [dateMidnight]);
+  }, [now, midnight]);
 
   return (
     <>
