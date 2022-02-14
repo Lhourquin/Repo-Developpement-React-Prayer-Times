@@ -108,30 +108,24 @@ export const Timer = ({ arrayOfTimesSalatOfTheDay, day, month, year }) => {
     return () => clearTimeout(timer);
   }, [midnight]);
 
-  useEffect(() => {
-    console.log(" 1 : " + midnight);
-    console.log(" 2 : " + dateFajr);
-    console.log(" 3 : " + dateShourouq);
-    console.log(" 4 : " + dateDhohr);
-    console.log(" 5 : " + dateAsr);
-    console.log(" 6 : " + dateMaghreb);
-    console.log(" 7 : " + dateIcha);
-    console.log(" 8 : " + dateMidnight);
-  }, [dateMidnight]);
+  // const [timerDays, setTimerDays] = useState("");
+  const [timerHoursCurrentTime, setTimerHoursCurrentTime] = useState("");
+  const [timerMinutesCurrentTime, setTimerMinutesCurrentTime] = useState("");
+  const [timerSecondsCurrentTime, setTimerSecondsCurrentTime] = useState("");
+  const [timerHoursNextTime, setTimerHoursNextTime] = useState("");
+  const [timerMinutesNextTime, setTimerMinutesNextTime] = useState("");
+  const [timerSecondsNextTime, setTimerSecondsNextTime] = useState("");
 
-  const [timerDays, setTimerDays] = useState("");
-  const [timerHours, setTimerHours] = useState("");
-  const [timerMinutes, setTimerMinutes] = useState("");
-  const [timerSeconds, setTimerSeconds] = useState("");
+  let intervalCountDown = useRef();
 
-  const startTimerCountDown = (salat) => {
+  const startTimerNextTimeCountDown = (salat) => {
     let countDownTimes = salat.getTime();
 
     intervalCountDown.current = setInterval(() => {
       let now = new Date(Date.now()).getTime();
       let distance = countDownTimes - now;
 
-      let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      //  let days = Math.floor(distance / (1000 * 60 * 60 * 24));
       let hours = Math.floor(
         (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
       );
@@ -141,26 +135,104 @@ export const Timer = ({ arrayOfTimesSalatOfTheDay, day, month, year }) => {
       if (distance < 0) {
         clearInterval(intervalCountDown.current);
       } else {
-        setTimerDays(days);
-        setTimerHours(hours < 10 ? ("0" + hours).slice(-2) : hours);
-        setTimerMinutes(minutes < 10 ? ("0" + minutes).slice(-2) : minutes);
-        setTimerSeconds(seconds < 10 ? ("0" + seconds).slice(-2) : seconds);
+        // setTimerDays(days);
+
+        setTimerHoursNextTime(hours < 10 ? ("0" + hours).slice(-2) : hours);
+        setTimerMinutesNextTime(
+          minutes < 10 ? ("0" + minutes).slice(-2) : minutes
+        );
+        setTimerSecondsNextTime(
+          seconds < 10 ? ("0" + seconds).slice(-2) : seconds
+        );
       }
     });
   };
 
-  // console.log(timerDays)
-  // console.log(timerHours)
-  // console.log(timerMinutes)
-  //console.log(timerSeconds)
+  const startTimerCurrentCountDown = (salat) => {
+    let countDownTimes = salat.getTime();
+
+    intervalCountDown.current = setInterval(() => {
+      let now = new Date(Date.now()).getTime();
+      let distance = countDownTimes - now;
+
+      //  let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      let hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      if (distance < 0) {
+        clearInterval(intervalCountDown.current);
+      } else {
+        // setTimerDays(days);
+        setTimerHoursCurrentTime(hours < 10 ? ("0" + hours).slice(-2) : hours);
+        setTimerMinutesCurrentTime(
+          minutes < 10 ? ("0" + minutes).slice(-2) : minutes
+        );
+        setTimerSecondsCurrentTime(
+          seconds < 10 ? ("0" + seconds).slice(-2) : seconds
+        );
+      }
+    });
+  };
+
+  const [currentNextTime, setCurrentNextTime] = useState("");
+  const [currentTime, setCurrentTime] = useState("");
+
+  const [displayTimerCurrentNextTime, setDisplayTimerCurrentNextTime] =
+    useState(false);
+  const [displayTimerCurrentTime, setDisplayTimerCurrentTime] = useState(false);
+
+  useEffect(() => {
+    const now = new Date(Date.now()).getTime();
+
+    if (now < dateFajr) {
+      setDisplayTimerCurrentNextTime(false);
+      setDisplayTimerCurrentTime(true);
+      startTimerCurrentCountDown(dateFajr);
+      setCurrentTime("FAJR " + fajr + " - ");
+      return () => clearInterval(intervalCountDown.current);
+    } else if (now > dateFajr && now < dateShourouq) {
+      setDisplayTimerCurrentNextTime(true);
+      setDisplayTimerCurrentTime(false);
+      startTimerNextTimeCountDown(dateShourouq);
+      setCurrentTime("FAJR " + fajr);
+      setCurrentNextTime("SHOUROUQ " + shourouq + " - ");
+      return () => clearInterval(intervalCountDown.current);
+    }
+
+    /*  console.log(" 1 : " + midnight);
+    console.log(" 2 : " + dateFajr);
+    console.log(" 3 : " + dateShourouq);
+    console.log(" 4 : " + dateDhohr);
+    console.log(" 5 : " + dateAsr);
+    console.log(" 6 : " + dateMaghreb);
+    console.log(" 7 : " + dateIcha);
+    console.log(" 8 : " + dateMidnight);*/
+  }, [dateMidnight]);
 
   return (
     <>
       <li className="Pannel__ul--hour-date-countdown__li--countdown-current-times">
-        Current Times
+        {currentTime}{" "}
+        {displayTimerCurrentTime === true
+          ? timerHoursCurrentTime +
+            ":" +
+            timerMinutesCurrentTime +
+            ":" +
+            timerSecondsCurrentTime
+          : ""}
       </li>
       <li className="Pannel__ul--hour-date-countdown__li--countdown-next-times">
-        Next time
+        {currentNextTime}{" "}
+        {displayTimerCurrentNextTime === true
+          ? timerHoursNextTime +
+            ":" +
+            timerMinutesNextTime +
+            ":" +
+            timerSecondsNextTime
+          : ""}
       </li>
     </>
   );
