@@ -17,19 +17,52 @@ class App extends Component {
       country: "",
       method: [
         {
-          methodTwo: {
-            value: 2,
-            stringValue: "Amérique du Nord (15°)",
-          },
+          value: 2,
+          stringValue: "Amérique du Nord (15°)",
         },
         {
-          methodFifteen: {
-            value: 15,
-            stringValue: "Comité d'observation de la lune",
-          },
+          value: 15,
+          stringValue: "Comité d'observation de la lune",
+        },
+        {
+          value: 3,
+          stringValue: "Ligue Mondiale Musulmane",
+        },
+        {
+          value: 4,
+          stringValue: "Umm Al-Qura, Makkah",
+        },
+        {
+          value: 5,
+          stringValue: "Egypte",
+        },
+        {
+          value: 8,
+          stringValue: "Golf",
+        },
+        {
+          value: 9,
+          stringValue: "Koweit",
+        },
+        {
+          value: 10,
+          stringValue: "Qatar",
+        },
+        {
+          value: 11,
+          stringValue: "Singapour",
+        },
+        {
+          value: 12,
+          stringValue: "Union des Organisations islamiques de France ",
+        },
+        {
+          value: 13,
+          stringValue: "Turquie",
         },
       ],
-      selectedMethod :"",
+      selectedMethodValue: "",
+      selectedMethodStringValue: "",
       errorMessageLocation: "",
     };
   }
@@ -79,10 +112,6 @@ class App extends Component {
   }
 
   render() {
-    {
-      console.log(" selectedMethod : "  + this.state.selectedMethod);
-      console.log(this.state.method[0].methodTwo.stringValue);
-    }
     return (
       <>
         <header>
@@ -131,10 +160,15 @@ class App extends Component {
                 city={this.state.city}
                 country={this.state.country}
                 method={this.state.method}
-                getAngleOptionValue={(event) =>
-                  this.setState({ selectedMethod: event.target.value })
-                }
-                selectedMethod={this.state.selectedMethod}
+                getAngleOptionValue={(event) => {
+                  let index = event.nativeEvent.target.selectedIndex;
+                  this.setState({ selectedMethodValue: event.target.value });
+                  this.setState({
+                    selectedMethodStringValue: event.target[index].innerHTML,
+                  });
+                }}
+                selectedMethodValue={this.state.selectedMethodValue}
+                selectedMethodStringValue={this.state.selectedMethodStringValue}
               />
             }
           />

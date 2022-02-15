@@ -4,7 +4,14 @@ import "./Today.css";
 import { TodayTimesList } from "./today-time-list/TodayTimesList";
 import { Pannel } from "./pannel-time-today/Pannel";
 
-export const Today = ({ city, country, getAngleOptionValue, method }) => {
+export const Today = ({
+  city,
+  country,
+  getAngleOptionValue,
+  method,
+  selectedMethodValue,
+  selectedMethodStringValue,
+}) => {
   const [today, setToday] = useState([]);
   const [inputCity, setInputCity] = useState("");
   const [lastCity, setLastCity] = useState("");
@@ -21,8 +28,12 @@ export const Today = ({ city, country, getAngleOptionValue, method }) => {
   }, [city, country]);
 
   useEffect(() => {
-    setMethodValue(method[0].methodTwo.value);
-  }, [method])
+    if (selectedMethodValue === "") {
+      setMethodValue(method[0].value);
+    } else if (selectedMethodValue !== "") {
+      setMethodValue(selectedMethodValue);
+    }
+  }, [method, selectedMethodValue]);
 
   useEffect(() => {
     let timer = null;
@@ -48,8 +59,6 @@ export const Today = ({ city, country, getAngleOptionValue, method }) => {
       clearTimeout(timer);
     };
   }, [inputCity, inputCountry, methodValue]);
-
-  console.log(methodValue)
   return (
     <div className="Today__div--container-list-pannel">
       <TodayTimesList today={today} />
@@ -59,6 +68,7 @@ export const Today = ({ city, country, getAngleOptionValue, method }) => {
         country={country}
         getAngleOptionValue={getAngleOptionValue}
         method={method}
+        selectedMethodStringValue={selectedMethodStringValue}
       />
     </div>
   );
