@@ -2,16 +2,32 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { RowList } from "./calendar-list/row-list";
 
-export const Calendar = ({ city, country, getAngleOptionValue, method }) => {
+export const Calendar = ({
+  city,
+  country,
+  getAngleOptionValue,
+  method,
+  selectedMethodValue,
+  selectedMethodStringValue
+}) => {
   const [calendar, setCalendar] = useState([]);
+  const [methodValue, setMethodValue] = useState("");
+
+  useEffect(() => {
+    if (selectedMethodValue === "") {
+      setMethodValue(method[0].value);
+    } else if (selectedMethodValue !== "") {
+      setMethodValue(selectedMethodValue);
+    }
+  }, [method, selectedMethodValue]);
 
   useEffect(() => {
     let timer = null;
-    if (city && country && method) {
+    if (city && country && methodValue) {
       let params = new URLSearchParams();
       params.append("country", country);
       params.append("city", city);
-      params.append("method", method);
+      params.append("method", methodValue);
 
       let request = {
         params: params,
@@ -27,23 +43,23 @@ export const Calendar = ({ city, country, getAngleOptionValue, method }) => {
     return () => {
       clearTimeout(timer);
     };
-  }, [city, country, method]);
+  }, [city, country, methodValue]);
   console.log(calendar);
   return (
     <div>
       <h1>Calendrier du mois</h1>
+      <span style={{ fontSize: "10px" }}>
+        Angle :{" "}
+        {selectedMethodStringValue === ""
+          ? "Amérique du Nord (15°)"
+          : selectedMethodStringValue}
+      </span>
       <select onChange={getAngleOptionValue}>
-        <option value="2">Amérique du Nord (15°)</option>
-        <option value="15">Comité d'observation de la lune</option>
-        <option value="3">Ligue Mondiale Musulmane</option>
-        <option value="4">Umm Al-Qura, Makkah</option>
-        <option value="5">Egypte</option>
-        <option value="8">Golf</option>
-        <option value="9">Koweit</option>
-        <option value="10">Qatar</option>
-        <option value="11">Singapour</option>
-        <option value="12">Union des Organisations islamiques de France</option>
-        <option value="13">Turquie</option>
+        {method.map((obj, index) => (
+          <option key={index} value={obj.value}>
+            {obj.stringValue}
+          </option>
+        ))}
       </select>
       <table>
         <thead>

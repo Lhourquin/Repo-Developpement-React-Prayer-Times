@@ -37,7 +37,7 @@ export const Today = ({
 
   useEffect(() => {
     let timer = null;
-    if (inputCity && inputCountry && method) {
+    if (inputCity && inputCountry && methodValue) {
       let params = new URLSearchParams();
 
       params.append("country", inputCountry);
