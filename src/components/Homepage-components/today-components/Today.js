@@ -9,6 +9,7 @@ export const Today = ({ city, country, getAngleOptionValue, method }) => {
   const [inputCity, setInputCity] = useState("");
   const [lastCity, setLastCity] = useState("");
   const [inputCountry, setInputCountry] = useState("");
+  const [methodValue, setMethodValue] = useState("");
 
   useEffect(() => {
     if (city !== "" && country !== "") {
@@ -20,13 +21,17 @@ export const Today = ({ city, country, getAngleOptionValue, method }) => {
   }, [city, country]);
 
   useEffect(() => {
+    setMethodValue(method[0].methodTwo.value);
+  }, [method])
+
+  useEffect(() => {
     let timer = null;
     if (inputCity && inputCountry && method) {
       let params = new URLSearchParams();
 
       params.append("country", inputCountry);
       params.append("city", inputCity);
-      params.append("method", method);
+      params.append("method", methodValue);
 
       let request = {
         params: params,
@@ -42,8 +47,9 @@ export const Today = ({ city, country, getAngleOptionValue, method }) => {
     return () => {
       clearTimeout(timer);
     };
-  }, [inputCity, inputCountry, method]);
+  }, [inputCity, inputCountry, methodValue]);
 
+  console.log(methodValue)
   return (
     <div className="Today__div--container-list-pannel">
       <TodayTimesList today={today} />
@@ -52,6 +58,7 @@ export const Today = ({ city, country, getAngleOptionValue, method }) => {
         searchField={city !== "" ? inputCity : lastCity}
         country={country}
         getAngleOptionValue={getAngleOptionValue}
+        method={method}
       />
     </div>
   );

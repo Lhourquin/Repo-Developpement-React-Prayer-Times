@@ -15,15 +15,28 @@ class App extends Component {
       inputCountryValue: "",
       city: "",
       country: "",
-      method: 2,
+      method: [
+        {
+          methodTwo: {
+            value: 2,
+            stringValue: "Amérique du Nord (15°)",
+          },
+        },
+        {
+          methodFifteen: {
+            value: 15,
+            stringValue: "Comité d'observation de la lune",
+          },
+        },
+      ],
+      selectedMethod :"",
       errorMessageLocation: "",
     };
   }
 
   componentDidMount() {
-    this.intervalApiCall = setInterval(
-      () => this.requestDataPosition.bind(this),
-      
+    this.intervalApiCall = setInterval(() =>
+      this.requestDataPosition.bind(this)
     );
   }
 
@@ -67,7 +80,8 @@ class App extends Component {
 
   render() {
     {
-      console.log(this.state.city);
+      console.log(" selectedMethod : "  + this.state.selectedMethod);
+      console.log(this.state.method[0].methodTwo.stringValue);
     }
     return (
       <>
@@ -96,11 +110,10 @@ class App extends Component {
               } else {
                 this.setState({ city: this.state.inputCityValue });
                 this.setState({ country: this.state.inputCountryValue });
-                setTimeout(() =>{
+                setTimeout(() => {
                   this.setState({ inputCityValue: "" });
-                this.setState({ inputCountryValue: "" });
-                }, 1000)
-                
+                  this.setState({ inputCountryValue: "" });
+                }, 1000);
               }
             }}
           />
@@ -119,8 +132,9 @@ class App extends Component {
                 country={this.state.country}
                 method={this.state.method}
                 getAngleOptionValue={(event) =>
-                  this.setState({ method: event.target.value })
+                  this.setState({ selectedMethod: event.target.value })
                 }
+                selectedMethod={this.state.selectedMethod}
               />
             }
           />

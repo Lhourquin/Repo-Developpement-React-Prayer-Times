@@ -4,7 +4,7 @@ import { Timer } from "./time-components/Timer";
 //import { CurrentTimes } from "./current-times-components/CurrentTimes";
 //import { CountDown } from "./countdown-component/CountDown";
 import "./Pannel.css";
-export const Pannel = ({ today, searchField, getAngleOptionValue }) => {
+export const Pannel = ({ today, searchField, getAngleOptionValue, method }) => {
   // console.log(today);
 
   // console.log(curentTime)
@@ -26,9 +26,19 @@ export const Pannel = ({ today, searchField, getAngleOptionValue }) => {
                   onChange={getAngleOptionValue}
                   className="select-degree"
                 >
-                  <option value="2">15°</option>
-                  <option value="3">Muslim World League</option>
-                  <option value="4">Umm Al-Qura University, Makkah</option>
+                  <option value={method[0].methodTwo.value}>{method[0].methodTwo.stringValue}</option>
+                  <option value={method[1].methodFifteen.value}>{method[1].methodFifteen.stringValue}</option>
+                  <option value="3">Ligue Mondiale Musulmane</option>
+                  <option value="4">Umm Al-Qura, Makkah</option>
+                  <option value="5">Egypte</option>
+                  <option value="8">Golf</option>
+                  <option value="9">Koweit</option>
+                  <option value="10">Qatar</option>
+                  <option value="11">Singapour</option>
+                  <option value="12">
+                    Union des Organisations islamiques de France
+                  </option>
+                  <option value="13">Turquie</option>
                 </select>
               </div>
             </div>
