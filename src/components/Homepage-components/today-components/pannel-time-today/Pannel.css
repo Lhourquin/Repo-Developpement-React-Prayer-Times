@@ -14,25 +14,24 @@
   font-size: 14px;
 }
 
-.Pannel__div--container-times-today .Pannel__div--container-times-today__div--title-container-angle-select .Pannel__div--container-times-today__div__div--container-angle-select {
-  margin-top: 10%;
-  margin-bottom: -3%;
-}
-
-.Pannel__div--container-times-today .Pannel__div--container-times-today__div--title-container-angle-select .Pannel__div--container-times-today__div__div--container-angle-select .Pannel__div--container-times-today__div__div--container-angle-select__div--span-select {
-  position: relative;
-  margin-top: -13%;
-  margin-left: 75%;
+.Pannel__div--container-times-today .Pannel__div--container-times-today__div--title-container-angle-select .Pannel__div--container-times-today__div__div--container-angle-select__div--span-select {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 2%;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  margin-top: -6%;
+  margin-right: 2%;
 }
 
-.Pannel__div--container-times-today .Pannel__div--container-times-today__div--title-container-angle-select .Pannel__div--container-times-today__div__div--container-angle-select .Pannel__div--container-times-today__div__div--container-angle-select__div--span-select .select-degree {
-  width: 12px;
-  margin-bottom: 0;
-  height: 12px;
+.Pannel__div--container-times-today .Pannel__div--container-times-today__div--title-container-angle-select .Pannel__div--container-times-today__div__div--container-angle-select__div--span-select .select-degree {
+  width: 20px;
+  height: 20px;
 }
 
 .Pannel__div--container-times-today .Pannel__ul--hour-date-countdown {

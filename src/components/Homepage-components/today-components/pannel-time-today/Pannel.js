@@ -18,25 +18,20 @@ export const Pannel = ({
               {searchField.charAt(0).toUpperCase() +
                 searchField.slice(1).toLowerCase()}
             </h2>
-            <div className="Pannel__div--container-times-today__div__div--container-angle-select">
-              <div className="Pannel__div--container-times-today__div__div--container-angle-select__div--span-select">
-                <span style={{ fontSize: "10px" }}>
-                  Angle :{" "}
-                  {selectedMethodStringValue === ""
-                    ? "Amérique du Nord (15°)"
-                    : selectedMethodStringValue}
-                </span>
-                <select
-                  onChange={getAngleOptionValue}
-                  className="select-degree"
-                >
-                  {method.map((obj, index) => (
-                    <option key={index} value={obj.value}>
-                      {obj.stringValue}
-                    </option>
-                  ))}
-                </select>
-              </div>
+            <div className="Pannel__div--container-times-today__div__div--container-angle-select__div--span-select">
+              <span style={{ fontSize: "10px", padding: "1%" }}>
+                Angle :{" "}
+                {selectedMethodStringValue === ""
+                  ? "Amérique du Nord (15°)"
+                  : selectedMethodStringValue}
+              </span>
+              <select onChange={getAngleOptionValue} className="select-degree">
+                {method.map((obj, index) => (
+                  <option key={index} value={obj.value}>
+                    {obj.stringValue}
+                  </option>
+                ))}
+              </select>
             </div>
           </div>
           <ul className="Pannel__ul--hour-date-countdown">

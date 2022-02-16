@@ -13,22 +13,16 @@
       margin-top: 3px;
       font-size: 14px;
     }
-    .Pannel__div--container-times-today__div__div--container-angle-select {
-      margin-top: 10%;
-      margin-bottom: -3%;
 
-      .Pannel__div--container-times-today__div__div--container-angle-select__div--span-select {
-        position: relative;
-        margin-top: -13%;
-        margin-left: 75%;
-        display: flex;
-        margin-bottom: 2%;
-
-        .select-degree {
-          width: 12px;
-          margin-bottom: 0;
-          height: 12px;
-        }
+    .Pannel__div--container-times-today__div__div--container-angle-select__div--span-select {
+      display: flex;
+      flex-direction: row;
+      justify-content: end;
+      margin-top: -6%;
+      margin-right: 2%;
+      .select-degree {
+        width: 20px;
+        height: 20px;
       }
     }
   }

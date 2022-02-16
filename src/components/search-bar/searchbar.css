@@ -1,4 +1,19 @@
 @media (max-width: 470px) {
+  .button-location {
+    background: none;
+    color: inherit;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    margin-top: 1%;
+    margin-left: 81%;
+    position: absolute;
+  }
+  .button-location .localisation-marker {
+    color: #605b56;
+    font-size: 25px;
+  }
   .SearchBar__form {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -28,21 +43,6 @@
     color: #605b56;
     height: 30px;
     font-size: 16px;
-  }
-  .SearchBar__form .SearchBar__form__div--find-city-container .SearchBar__form__div--container__button {
-    background: none;
-    color: inherit;
-    border: none;
-    font: inherit;
-    cursor: pointer;
-    outline: inherit;
-    margin-top: 3px;
-    margin-left: 1%;
-    position: absolute;
-  }
-  .SearchBar__form .SearchBar__form__div--find-city-container .SearchBar__form__div--container__button .localisation-marker {
-    color: #605b56;
-    font-size: 25px;
   }
   .SearchBar__form .SearchBar__form__div--find-country-container .SearchBar__form__div--find-country-container__input-country,
   .SearchBar__form .SearchBar__form__div--find-country-container .SearchBar__form__div--find-country-container__submit {
@@ -80,6 +80,21 @@
 }
 
 @media (min-width: 471px) {
+  .button-location {
+    background: none;
+    color: inherit;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    margin-top: 1%;
+    margin-left: 81%;
+    position: absolute;
+  }
+  .button-location .localisation-marker {
+    color: #605b56;
+    font-size: 25px;
+  }
   .SearchBar__form {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -109,21 +124,6 @@
     height: 36px;
     color: #605b56;
     font-size: 17px;
-  }
-  .SearchBar__form .SearchBar__form__div--find-city-container .SearchBar__form__div--container__button {
-    background: none;
-    color: inherit;
-    border: none;
-    font: inherit;
-    cursor: pointer;
-    outline: inherit;
-    position: absolute;
-    margin-left: 1%;
-    margin-top: 3px;
-  }
-  .SearchBar__form .SearchBar__form__div--find-city-container .SearchBar__form__div--container__button .localisation-marker {
-    color: #605b56;
-    font-size: 33px;
   }
   .SearchBar__form .SearchBar__form__div--find-country-container .SearchBar__form__div--find-country-container__input-country {
     border-radius: 8px;
@@ -169,6 +169,21 @@
 }
 
 @media (min-width: 830px) {
+  .button-location {
+    background: none;
+    color: inherit;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    margin-top: 1%;
+    margin-left: 81%;
+    position: absolute;
+  }
+  .button-location .localisation-marker {
+    color: #605b56;
+    font-size: 25px;
+  }
   .SearchBar__form {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -197,18 +212,6 @@
     height: 36px;
     color: #605b56;
     font-size: 17px;
-  }
-  .SearchBar__form .SearchBar__form__div--find-city-container .SearchBar__form__div--container__button {
-    background: none;
-    color: inherit;
-    border: none;
-    font: inherit;
-    cursor: pointer;
-    outline: inherit;
-  }
-  .SearchBar__form .SearchBar__form__div--find-city-container .SearchBar__form__div--container__button .localisation-marker {
-    color: #605b56;
-    font-size: 33px;
   }
   .SearchBar__form .SearchBar__form__div--find-country-container .SearchBar__form__div--find-country-container__input-country {
     border-radius: 8px;
