@@ -29,4 +29,8 @@
   padding-left: 84%;
   position: absolute;
 }
+
+.TodayTimesList__ul-times-list .TodayTimesList__ul-times-list__li .TodayTimesList__ul-times-list__li__span--information .info-icons {
+  cursor: pointer;
+}
 /*# sourceMappingURL=TodayTimesList.css.map */

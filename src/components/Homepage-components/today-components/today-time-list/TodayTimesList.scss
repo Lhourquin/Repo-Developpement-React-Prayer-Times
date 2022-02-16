@@ -18,6 +18,9 @@
     .TodayTimesList__ul-times-list__li__span--information {
       padding-left: 84%;
       position: absolute;
+      .info-icons{
+        cursor: pointer;
+      }
     }
   }
 }
