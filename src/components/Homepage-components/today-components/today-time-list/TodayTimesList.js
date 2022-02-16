@@ -1,18 +1,157 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./TodayTimesList.css";
-import {CalculMidnight} from "./calcul-midnigh-today/CalculMidnightToday";
+import { CalculMidnight } from "./calcul-midnigh-today/CalculMidnightToday";
 
 export const TodayTimesList = ({ today }) => {
-
   const [displayHadith, setDisplayHadith] = useState(false);
+  const [listOfHadith, setListOfHadith] = useState([
+    {
+      fajrHadith: {
+        hadith: `
+          Prier le Fajr avant le lever complet du soleil (shourouq)
+ 
+      Au nom d'Allah, le Tout Miséricordieux, le Très Miséricordieux.
+      Le Prophète (que la prière d'Allah et Son salut soient sur lui) a dit:
+       « Le temps de la prière du matin (fajr) commence  dès la levée de l’aube et dure jusqu’au lever du soleil. 
+       Lorsque le soleil pointe (c'est à dire au moment du shourouq), abstiens-toi de prier, car l’astre se lève entre les deux cornes de Satan»  
+       (rapporté par Mouslim, 612).`,
+      },
+      dhohrHadith: {
+        hadith: `
+        Le temps de la prière du dhohr
+ 
+      Au nom d'Allah, le Tout Miséricordieux, le Très Miséricordieux.
+      Le Prophète (que la prière d'Allah et Son salut soient sur lui) a dit:
+        Le temps du dhohr arrive lorsque le soleil dépasse le zénith jusqu’au moment
+        où l’ombre de l’homme est égale à sa longueur jusqu’à la prière du ‘asr.`,
+      },
+      asrHadith: {
+        hadith: `
+        Prier le Asr avant la fin de son temps
+        Au nom d'Allah, le Tout Miséricordieux, le Très Miséricordieux.
 
-  const toggleDisplay = () => {
-    setDisplayHadith((boolean)=> !boolean);
-  }
-  console.log(displayHadith);
+        Abou El Malih a dit : 
+        « Par un jour nuageux, nous étions en expédition avec Boraïda. – Hâtez l’heure de la prière de l’après-midi (‘asr) nous fit-il remarquer, 
+        car le Prophète (que la prière d'Allah et Son salut soient sur lui)a dit : « Celui qui laisse passer le temps* de la prière de l’après-midi (le asr) verra ses actions annulées ». » 
+        [Sahih al-Bukhari 553]
+        
+        * Il se termine quand le soleil devient pâle (en général ≈ 15 minutes avant le maghrib) ; pourtant il est rapporté dans un hadith authentique que son temps se termine au moment du coucher du soleil : من أدرك ركعة من العصر قبل أن تغرب الشمس فقد أدرك العصر  → « Celui qui a atteint une rak’a de la prière du ‘asr avant que le soleil ne se couche a atteint le ‘asr » (Al Boukari).
+
+ 
+
+        → En fait, entre la pâleur du soleil et son coucher, il est interdit de reporter le temps de la prière sauf pour une « daroûra » (nécessité absolue).
+        
+        Et donc le ‘asr a 2 temps : un temps optionnel qui va jusqu’à la pâleur du soleil, et un temps de daroûrah (nécessité absolue) qui va jusqu’au coucher du soleil 
+        L'imam Nawawi (mort en 676) dans Charh Sahih Mouslim 1 p 450 : 
+        « Sache que le fait de retarder la prière jusqu'au moment de la fraicheur est légiféré pour la prière du dohr et n'est pas légiféré pour la prière du 'asr pour l'ensemble des savants sauf Ach'hath Al Maliki; et cela n'est pas légiféré pour la prière du vendredi pour la majorité des savants ».
+        
+        `,
+      },
+      maghrebHadith: {
+        hadith: `L'incitation à prier la prière du maghreb au début de son temps
+ 
+      Au nom d'Allah, le Tout Miséricordieux, le Très Miséricordieux.
+      
+      D'après Souweyd Ibn Ghafala, 'Omar Ibn Al Khattab (qu'Allah l'agrée) a dit : « Priez cette prière alors que les chemins sont lumineux » ; c'est à dire le maghreb. (*)
+      (Rapporté par Ibn Abi Chayba dans son Moussannaf n°3354 et authentifié par Cheikh Chathri dans sa correction du Moussannaf de Ibn Abi Chayba vol 3 p 220)
+      
+      (*) Ainsi, le sens de ce texte est qu'il est recommandé de prier le maghreb au début de son temps.
+      
+      L'imam Ibn Abi Chayba (mort en 235 du calendrier hégirien) a cité ce hadith dans son Moussannaf dans le chapitre intitulé : - Ceux qui étaient d'avis qu'il faut s'empresser de prier le maghreb -.
+      (Moussannaf de Ibn Abi Chayba vol 3 p 219)`,
+      },
+      ichaHadith: {
+        hadith: `
+        
+        Prier le Icha avant la fin de son temps
+        Au nom d'Allah, le Tout Miséricordieux, le Très Miséricordieux.
+        
+        D'après 'Abdallah Ibn 'Amr (qu'Allah les agrée), le Prophète (que la prière d'Allah et Son salut soient sur lui) a dit:
+         « Le temps de la prière du 'icha est jusqu'au milieu de la nuit ».
+        (Rapporté par Mouslim dans son Sahih n°612)
+        `,
+      },
+      qiyammHadith: {
+        hadith: `
+        Le mérite de la prière de nuit
+        Au nom d'Allah, le Tout Miséricordieux, le Très Miséricordieux.
+
+        le Prophète (que la prière d'Allah et Son salut soient sur lui) a dit:a dit : 
+        « Chaque nuit, quand parvient le dernier tiers de la nuit, notre Seigneur, 
+        béni et exalté, descend au ciel le plus proche et dit : « Y a t-il quelqu’un pour M’invoquer afin que je réponde à son invocation ?
+         Y a t-il quelqu’un pour Me demander afin que je lui accorde sa demande ? 
+         Y a t -il quelqu’un qui Me demande pardon pour que je lui pardonne ? » 
+         
+         Sahih al-Bukhari 7494
+   
+         D'après Abou Houreira (qu'Allah l'agrée), le Prophète (que la prière d'Allah et Son salut soient sur lui) a dit:
+          « Le meilleur jeûne après celui du ramadan est le mois d'Allah sacré (al mouharam),
+          et la meilleure prière après les prières obligatoires est la prière de nuit ».
+        (Rapporté par Mouslim dans son Sahih n°1162)
+
+        D'après Joundoub Ibn Sofiane (qu'Allah les agrée), le Prophète (que la prière d'Allah et Son salut soient sur lui) a dit: 
+        « Certes la meilleure prière après les prières obligatoires est la prière au coeur de la nuit et le meilleur jeûne après le ramadan est le mois d'Allah que vous appelez mouharam ».
+        (Rapporté par Nasai et authentifié par Cheikh Albani dans Sahih Targhib n°1016)
+
+        Remarque :
+
+        Pourquoi dans ces textes le Prophète (que la prière d'Allah et Son salut soient sur lui) a t-il dit « le mois d'Allah » en parlant du mois de Mouharam alors qu'il y a d'autres mois qui sont équivalent à Mouhram dans le mérite ou qui sont meilleurs comme Ramadan ?
+
+        L'imam Souyouti (mort en 911) a dit : « La réponse est que ceci est un mois islamique à la différence des autres mois de l'année, dont les noms n'ont pas changés depuis la période pré-islamique.
+        En effet, le nom de Mouharam durant la période pré-islamique était -Safar Al Awal- et celui qui le suivait -Safar Al Thani-. Puis lorsque l'Islam est venu ce mois a été appelé Mouharam et c'est pour cela qu'il a été attribué à Allah ».
+        (Al Dibaj Charh Sahih Mouslim Ibn Hajjaj vol 3 p 251)`,
+      },
+    },
+  ]);
+
+  const [currentHadith, setCurrentHadith] = useState("");
+
+  const toggleDisplay = (index) => {
+    if (index == 1) {
+      setDisplayHadith((boolean) => !boolean);
+      setCurrentHadith(listOfHadith[0].fajrHadith.hadith);
+    } else if (index === 2) {
+      setDisplayHadith((boolean) => !boolean);
+      setCurrentHadith(listOfHadith[0].dhohrHadith.hadith);
+    } else if (index === 3) {
+      setDisplayHadith((boolean) => !boolean);
+      setCurrentHadith(listOfHadith[0].asrHadith.hadith);
+    } else if (index === 4) {
+      setDisplayHadith((boolean) => !boolean);
+      setCurrentHadith(listOfHadith[0].maghrebHadith.hadith);
+    } else if (index === 5) {
+      setDisplayHadith((boolean) => !boolean);
+      setCurrentHadith(listOfHadith[0].ichaHadith.hadith);
+    } else if (index === 6) {
+      setDisplayHadith((boolean) => !boolean);
+      setCurrentHadith(listOfHadith[0].qiyammHadith.hadith);
+    }
+  };
+
+  const closeHadith = () => {
+    setDisplayHadith((boolean) => !boolean);
+  };
+  // console.log(listOfHadith[0].maghrebHadith.hadith);
   return (
     <>
-    {displayHadith === true ? <div style={{ background : "black", width : "100%", height : "139vh", opacity : "0.8", position : "absolute"}}>Test</div> : ""}
+      {displayHadith === true ? (
+        <div
+          style={{
+            background: "black",
+            width: "100%",
+            height: "110%",
+            opacity: "0.8",
+            position: "absolute",
+          }}
+        >
+          <div style={{ textAlign: "center" }}>
+            <button onClick={closeHadith}>Cross</button>
+            <div>{currentHadith}</div>
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
       {today.map((obj, index) => (
         <ul className="TodayTimesList__ul-times-list" key={index}>
           <li className="TodayTimesList__ul-times-list__li">
@@ -21,56 +160,69 @@ export const TodayTimesList = ({ today }) => {
             </span>
             <span className="TodayTimesList__ul-times-list__li__span--information">
               {" "}
-              <i 
-              className="fas fa-info-circle info-icons"
-              onClick={toggleDisplay}></i>
-               </span>
+              <i
+                style={displayHadith ? { opacity: "0.1" } : {}}
+                className="fas fa-info-circle info-icons"
+                onClick={() => toggleDisplay(1)}
+              ></i>
+            </span>
           </li>
           <li className="TodayTimesList__ul-times-list__li">
             <span>DHOHR {obj.data.timings.Dhuhr} </span>{" "}
             <span className="TodayTimesList__ul-times-list__li__span--information">
               {" "}
-              <i 
-              className="fas fa-info-circle info-icons"
-              onClick={toggleDisplay}></i>
+              <i
+                style={displayHadith ? { opacity: "0.1" } : {}}
+                className="fas fa-info-circle info-icons"
+                onClick={() => toggleDisplay(2)}
+              ></i>
             </span>{" "}
           </li>
           <li className="TodayTimesList__ul-times-list__li">
             <span>ASR {obj.data.timings.Asr} - PALEUR DU SOLEIL 16:45 </span>
             <span className="TodayTimesList__ul-times-list__li__span--information">
               {" "}
-              <i 
-              className="fas fa-info-circle info-icons"
-              onClick={toggleDisplay}></i>
+              <i
+                style={displayHadith ? { opacity: "0.1" } : {}}
+                className="fas fa-info-circle info-icons"
+                onClick={() => toggleDisplay(3)}
+              ></i>
             </span>{" "}
           </li>
           <li className="TodayTimesList__ul-times-list__li">
             <span>MAGHREB {obj.data.timings.Maghrib} </span>{" "}
             <span className="TodayTimesList__ul-times-list__li__span--information">
               {" "}
-              <i 
-              className="fas fa-info-circle info-icons"
-              onClick={toggleDisplay}></i>
+              <i
+                style={displayHadith ? { opacity: "0.1" } : {}}
+                className="fas fa-info-circle info-icons"
+                onClick={() => toggleDisplay(4)}
+              ></i>
             </span>{" "}
           </li>
           <li className="TodayTimesList__ul-times-list__li">
             <span>
-              ICHA {obj.data.timings.Isha} - MINUIT <CalculMidnight todayMidnight={today} />{" "}
+              ICHA {obj.data.timings.Isha} - MINUIT{" "}
+              <CalculMidnight todayMidnight={today} />{" "}
             </span>{" "}
             <span className="TodayTimesList__ul-times-list__li__span--information">
               {" "}
-              <i 
-              className="fas fa-info-circle info-icons"
-              onClick={toggleDisplay}></i>
+              <i
+                style={displayHadith ? { opacity: "0.1" } : {}}
+                className="fas fa-info-circle info-icons"
+                onClick={() => toggleDisplay(5)}
+              ></i>
             </span>{" "}
           </li>
           <li className="TodayTimesList__ul-times-list__li">
             <span>QIYAMM AL LAYL 03:45</span>
             <span className="TodayTimesList__ul-times-list__li__span--information">
               {" "}
-              <i 
-              className="fas fa-info-circle info-icons"
-              onClick={toggleDisplay}></i>
+              <i
+                style={displayHadith ? { opacity: "0.1" } : {}}
+                className="fas fa-info-circle info-icons"
+                onClick={() => toggleDisplay(6)}
+              ></i>
             </span>{" "}
           </li>
         </ul>

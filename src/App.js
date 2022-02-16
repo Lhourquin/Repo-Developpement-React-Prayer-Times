@@ -18,8 +18,7 @@ class App extends Component {
       method: [
         {
           value: 2,
-          stringValue: "Amérique du Nord (15°)",                             
-
+          stringValue: "Amérique du Nord (15°)",
         },
         {
           value: 15,
@@ -115,6 +114,7 @@ class App extends Component {
   render() {
     return (
       <>
+       
         <header>
           <NavBar />
 
@@ -170,6 +170,7 @@ class App extends Component {
                 }}
                 selectedMethodValue={this.state.selectedMethodValue}
                 selectedMethodStringValue={this.state.selectedMethodStringValue}
+               
               />
             }
           />

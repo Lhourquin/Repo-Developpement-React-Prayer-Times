@@ -59,17 +59,21 @@ export const Today = ({
       clearTimeout(timer);
     };
   }, [inputCity, inputCountry, methodValue]);
+
+
   return (
-    <div className="Today__div--container-list-pannel">
-      <TodayTimesList today={today} />
-      <Pannel
-        today={today}
-        searchField={city !== "" ? inputCity : lastCity}
-        country={country}
-        getAngleOptionValue={getAngleOptionValue}
-        method={method}
-        selectedMethodStringValue={selectedMethodStringValue}
-      />
-    </div>
+    <>
+      <div className="Today__div--container-list-pannel">
+        <TodayTimesList today={today} />
+        <Pannel
+          today={today}
+          searchField={city !== "" ? inputCity : lastCity}
+          country={country}
+          getAngleOptionValue={getAngleOptionValue}
+          method={method}
+          selectedMethodStringValue={selectedMethodStringValue}
+        />
+      </div>
+    </>
   );
 };
