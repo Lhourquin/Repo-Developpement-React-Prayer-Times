@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Clock } from "./time-components/Clock";
 import { Timer } from "./time-components/Timer";
 import "./Pannel.css";
@@ -7,9 +7,7 @@ export const Pannel = ({
   searchField,
   getAngleOptionValue,
   method,
-  selectedMethodStringValue,
 }) => {
-  console.log(today)
   return (
     <>
       {today.map((obj, index) => (
@@ -32,7 +30,6 @@ export const Pannel = ({
 
                   </>
                 ))}
-                <i class="fa fa-ruler-combined"></i>    
               </select>
             </div>
           </div>
