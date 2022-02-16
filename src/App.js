@@ -18,7 +18,8 @@ class App extends Component {
       method: [
         {
           value: 2,
-          stringValue: "Amérique du Nord (15°)",
+          stringValue: "Amérique du Nord (15°)",                             
+
         },
         {
           value: 15,
@@ -26,39 +27,39 @@ class App extends Component {
         },
         {
           value: 3,
-          stringValue: "Ligue Mondiale Musulmane",
+          stringValue: "Ligue Mondiale Musulmane ( fajr 18° - icha 17° )",
         },
         {
           value: 4,
-          stringValue: "Umm Al-Qura, Makkah",
+          stringValue: "Umm Al-Qura, Makkah ( fajr 18.5° - icha 90 min )",
         },
         {
           value: 5,
-          stringValue: "Egypte",
+          stringValue: "Egypte ( fajr 19.5° - icha 17.5° )",
         },
         {
           value: 8,
-          stringValue: "Golf",
+          stringValue: "Golf ( fajr 19.5° - icha 90 min )",
         },
         {
           value: 9,
-          stringValue: "Koweit",
+          stringValue: "Koweit ( fajr 18° - icha 17.5° )",
         },
         {
           value: 10,
-          stringValue: "Qatar",
+          stringValue: "Qatar ( fajr 18° - icha 90 min )",
         },
         {
           value: 11,
-          stringValue: "Singapour",
+          stringValue: "Singapour ( fajr 20) - icha 18° )",
         },
         {
           value: 12,
-          stringValue: "Union des Organisations islamiques de France ",
+          stringValue: "Union des Organisations islamiques de France (12°)",
         },
         {
           value: 13,
-          stringValue: "Turquie",
+          stringValue: "Turquie ( fajr 18° - icha 17° )",
         },
       ],
       selectedMethodValue: "",

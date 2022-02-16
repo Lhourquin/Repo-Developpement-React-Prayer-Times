@@ -9,28 +9,30 @@ export const Pannel = ({
   method,
   selectedMethodStringValue,
 }) => {
+  console.log(today)
   return (
     <>
       {today.map((obj, index) => (
         <div className="Pannel__div--container-times-today" key={index}>
           <div className="Pannel__div--container-times-today__div--title-container-angle-select">
             <h2 className="Pannel__div--container-times-today__div--title__h2">
+              <i className="fas fa-map-marker-alt localisation-marker-pannel"></i>{" "}
               {searchField.charAt(0).toUpperCase() +
                 searchField.slice(1).toLowerCase()}
             </h2>
-            <div className="Pannel__div--container-times-today__div__div--container-angle-select__div--span-select">
-              <span style={{ fontSize: "10px", padding: "1%" }}>
-                Angle :{" "}
-                {selectedMethodStringValue === ""
-                  ? "Amérique du Nord (15°)"
-                  : selectedMethodStringValue}
-              </span>
+            <div className="Pannel__container-select-degree">
               <select onChange={getAngleOptionValue} className="select-degree">
                 {method.map((obj, index) => (
-                  <option key={index} value={obj.value}>
-                    {obj.stringValue}
-                  </option>
+                  <>
+                    {" "}
+                    <option key={index} value={obj.value}>
+                      {obj.stringValue}{" "}
+
+                    </option>
+
+                  </>
                 ))}
+                <i class="fa fa-ruler-combined"></i>    
               </select>
             </div>
           </div>

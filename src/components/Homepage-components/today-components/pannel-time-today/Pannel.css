@@ -1,3 +1,65 @@
+.Pannel__container-select-degree {
+  text-align: end;
+  margin-top: -4%;
+  /* Remove IE arrow */
+  /* Custom Select wrapper */
+  /* Arrow */
+  /* Transition */
+}
+
+.Pannel__container-select-degree select {
+  /* Reset Select */
+  color: #ACC18A;
+  font-size: 10px;
+  text-align: end;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: 0;
+  border: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  /* Personalize */
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 0 1em;
+  background-color: var(--darkgray);
+  background-image: none;
+  cursor: pointer;
+}
+
+.Pannel__container-select-degree select::-ms-expand {
+  display: none;
+}
+
+.Pannel__container-select-degree .select {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 20em;
+  height: 3em;
+  border-radius: .25em;
+  overflow: hidden;
+}
+
+.Pannel__container-select-degree .select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1em;
+  background-color: #34495e;
+  -webkit-transition: .25s all ease;
+  transition: .25s all ease;
+  pointer-events: none;
+}
+
+.Pannel__container-select-degree .select:hover::after {
+  color: #f39c12;
+}
+
 .Pannel__div--container-times-today {
   width: 85%;
   color: white;
@@ -8,9 +70,11 @@
   font-size: 12px;
 }
 
+.Pannel__div--container-times-today .localisation-marker-pannel {
+  color: #ACC18A;
+}
+
 .Pannel__div--container-times-today .Pannel__div--container-times-today__div--title-container-angle-select .Pannel__div--container-times-today__div--title__h2 {
-  padding-bottom: 3%;
-  margin-top: 3px;
   font-size: 14px;
 }
 
