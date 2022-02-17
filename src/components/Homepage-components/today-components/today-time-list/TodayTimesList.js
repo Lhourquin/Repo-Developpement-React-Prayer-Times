@@ -7,7 +7,7 @@ export const TodayTimesList = ({ today }) => {
   const [listOfHadith, setListOfHadith] = useState([
     {
       fajrHadith: {
-        title: " Prier le Fajr avant le lever complet du soleil (shourouq)",
+        title: " Prier le Fajr avant le lever complet du soleil (shourouq) :",
         hadith: `
          
  
@@ -20,7 +20,7 @@ export const TodayTimesList = ({ today }) => {
       },
 
       dhohrHadith: {
-        title: "Le temps de la prière du dhohr",
+        title: "Le temps de la prière du dhohr :",
         hadith: `
  
       Le Prophète (que la prière d'Allah et Son salut soient sur lui) a dit:
@@ -30,7 +30,7 @@ export const TodayTimesList = ({ today }) => {
         postScriptum: "",
       },
       asrHadith: {
-        title: "Prier le Asr avant la fin de son temps",
+        title: "Prier le Asr avant la fin de son temps :",
         hadith: `
 
         Abou El Malih a dit : 
@@ -54,7 +54,7 @@ export const TodayTimesList = ({ today }) => {
       },
       maghrebHadith: {
         title:
-          "L'incitation à prier la prière du maghreb au début de son temps",
+          "L'incitation à prier la prière du maghreb au début de son temps :",
         hadith: `
  
       
@@ -69,7 +69,7 @@ export const TodayTimesList = ({ today }) => {
     (Moussannaf de Ibn Abi Chayba vol 3 p 219)`,
       },
       ichaHadith: {
-        title: "        Prier le Icha avant la fin de son temps        ",
+        title: "Prier le Icha avant la fin de son temps :",
         hadith: `
         
         
@@ -81,7 +81,7 @@ export const TodayTimesList = ({ today }) => {
         postScriptum: ``,
       },
       qiyammHadith: {
-        title: "La recommandation de la prière de nuit",
+        title: "La recommandation de la prière de nuit :",
         hadith1: `
 
         le Prophète (que la prière d'Allah et Son salut soient sur lui) a dit:
@@ -169,7 +169,6 @@ export const TodayTimesList = ({ today }) => {
   const closeHadith = () => {
     setDisplayHadith((boolean) => !boolean);
   };
-  console.log(currentHadith);
   return (
     <>
       {displayHadith === true ? (
@@ -183,10 +182,10 @@ export const TodayTimesList = ({ today }) => {
           }}
         >
           {" "}
-          <button className="closeHadith" onClick={closeHadith}>Cross</button>
+          <button className="closeHadith" onClick={closeHadith}>✖</button>
           <div className="hadith-container">
             <div className="hadith-container-current">
-              <h2>{currentHadith.title}</h2>
+              <h2 className="hadith-container-current-title">{currentHadith.title}</h2>
               <h3>
                 Au nom d'Allah, le Tout Miséricordieux, le Très Miséricordieux.
               </h3>
