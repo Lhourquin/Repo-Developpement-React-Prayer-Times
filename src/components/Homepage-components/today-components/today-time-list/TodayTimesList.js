@@ -47,7 +47,8 @@ export const TodayTimesList = ({ today }) => {
 
         → En fait, entre la pâleur du soleil et son coucher, il est interdit de reporter le temps de la prière sauf pour une « daroûra » (nécessité absolue).
         
-        Et donc le ‘asr a 2 temps : un temps optionnel qui va jusqu’à la pâleur du soleil, et un temps de daroûrah (nécessité absolue) qui va jusqu’au coucher du soleil 
+        Et donc le ‘asr a 2 temps : un temps optionnel qui va jusqu’à la pâleur du soleil, et un temps de daroûrah (nécessité absolue) qui va jusqu’au coucher du soleil.
+
         L'imam Nawawi (mort en 676) dans Charh Sahih Mouslim 1 p 450 : 
         « Sache que le fait de retarder la prière jusqu'au moment de la fraicheur est légiféré pour la prière du dohr et n'est pas légiféré pour la prière du 'asr pour l'ensemble des savants sauf Ach'hath Al Maliki; et cela n'est pas légiféré pour la prière du vendredi pour la majorité des savants ».`,
         source: " [Sahih al-Bukhari 553]",
@@ -169,6 +170,8 @@ export const TodayTimesList = ({ today }) => {
   const closeHadith = () => {
     setDisplayHadith((boolean) => !boolean);
   };
+
+
   return (
     <>
       {displayHadith === true ? (
@@ -182,10 +185,14 @@ export const TodayTimesList = ({ today }) => {
           }}
         >
           {" "}
-          <button className="closeHadith" onClick={closeHadith}>✖</button>
+          <button className="closeHadith" onClick={closeHadith}>
+            ✖
+          </button>
           <div className="hadith-container">
             <div className="hadith-container-current">
-              <h2 className="hadith-container-current-title">{currentHadith.title}</h2>
+              <h2 className="hadith-container-current-title">
+                {currentHadith.title}
+              </h2>
               <h3>
                 Au nom d'Allah, le Tout Miséricordieux, le Très Miséricordieux.
               </h3>
@@ -227,7 +234,7 @@ export const TodayTimesList = ({ today }) => {
             </span>{" "}
           </li>
           <li className="TodayTimesList__ul-times-list__li">
-            <span>ASR {obj.data.timings.Asr} - PALEUR DU SOLEIL 16:45 </span>
+            <span>ASR {obj.data.timings.Asr} {/*- PALEUR DU SOLEIL 16:45 */}</span>
             <span className="TodayTimesList__ul-times-list__li__span--information">
               {" "}
               <i
@@ -262,7 +269,7 @@ export const TodayTimesList = ({ today }) => {
               ></i>
             </span>{" "}
           </li>
-          <li className="TodayTimesList__ul-times-list__li">
+         {/* <li className="TodayTimesList__ul-times-list__li">
             <span>QIYAMM AL LAYL 03:45</span>
             <span className="TodayTimesList__ul-times-list__li__span--information">
               {" "}
@@ -272,7 +279,7 @@ export const TodayTimesList = ({ today }) => {
                 onClick={() => toggleDisplay(6)}
               ></i>
             </span>{" "}
-          </li>
+          </li>*/}
         </ul>
       ))}
       {}

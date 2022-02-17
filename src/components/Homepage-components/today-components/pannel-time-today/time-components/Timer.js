@@ -253,8 +253,9 @@ export const Timer = ({ arrayOfTimesSalatOfTheDay, day, month, year }) => {
     console.log(" 6 : " + dateMaghreb);
     console.log(" 7 : " + dateIcha);
     console.log(" 8 : " + dateMidnight);*/
-  }, [now, midnight]);
 
+  }, [now, midnight]);
+  //console.log(timerHoursNextTime > 1)
   return (
     <>
       <li className="Pannel__ul--hour-date-countdown__li--countdown-current-times">
@@ -267,7 +268,7 @@ export const Timer = ({ arrayOfTimesSalatOfTheDay, day, month, year }) => {
             timerSecondsCurrentTime
           : ""}
       </li>
-      <li className="Pannel__ul--hour-date-countdown__li--countdown-next-times">
+      <li className={(timerHoursNextTime == 0 && timerMinutesNextTime < 30 ? "countDowntThirtyMinutes"  : "Pannel__ul--hour-date-countdown__li--countdown-next-times ")}>
         {currentNextTime}{" "}
         {displayTimerCurrentNextTime === true
           ? timerHoursNextTime +

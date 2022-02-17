@@ -1,3 +1,7 @@
+.countDowntThirtyMinutes{
+  color :#EE9292;
+  font-size: 14px;
+}
 .Pannel__container-select-degree{
   text-align: end;
   margin-top: -4%;
@@ -49,7 +53,6 @@ select::-ms-expand {
 
 .Pannel__div--container-times-today {
   width: 85%;
-  color: white;
   background-color: #605b56;
   margin: auto;
   text-align: center;
@@ -95,9 +98,10 @@ select::-ms-expand {
 
     .Pannel__ul--hour-date-countdown__li--countdown-current-times {
       font-size: 17px;
+      color: #65D977;
     }
     .Pannel__ul--hour-date-countdown__li--countdown-next-times {
-      color: #bc4749;
+      color: #92BFEE;
       font-size: 14px;
     }
   }
