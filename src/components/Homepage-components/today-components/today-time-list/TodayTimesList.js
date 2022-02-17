@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./TodayTimesList.css";
 import { CalculMidnight } from "./calcul-midnigh-today/CalculMidnightToday";
 
@@ -171,7 +171,66 @@ export const TodayTimesList = ({ today }) => {
     setDisplayHadith((boolean) => !boolean);
   };
 
+  const [dateFajr, setDateFajr] = useState("");
+  const [dateShourouq, setDateShourouq] = useState("");
+  const [dateDhohr, setDateDhohr] = useState("");
+  const [dateAsr, setDateAsr] = useState("");
+  const [dateMaghreb, setDateMaghreb] = useState("");
+  const [dateIcha, setDateIcha] = useState("");
 
+  useEffect(() => {
+    /* let timer = setTimeout(() =>{*/
+    today.map((obj) => {
+      setDateFajr(
+        new Date(
+          `${obj.data.date.gregorian.month.en} ${obj.data.date.gregorian.day}, ${obj.data.date.gregorian.year} ${obj.data.timings.Fajr}:00`
+        )
+      );
+      setDateShourouq(
+        new Date(
+          `${obj.data.date.gregorian.month.en} ${obj.data.date.gregorian.day}, ${obj.data.date.gregorian.year} ${obj.data.timings.Sunrise}:00`
+        )
+      );
+      setDateDhohr(
+        new Date(
+          `${obj.data.date.gregorian.month.en} ${obj.data.date.gregorian.day}, ${obj.data.date.gregorian.year} ${obj.data.timings.Dhuhr}:00`
+        )
+      );
+      setDateAsr(
+        new Date(
+          `${obj.data.date.gregorian.month.en} ${obj.data.date.gregorian.day}, ${obj.data.date.gregorian.year} ${obj.data.timings.Asr}:00`
+        )
+      );
+      setDateMaghreb(
+        new Date(
+          `${obj.data.date.gregorian.month.en} ${obj.data.date.gregorian.day}, ${obj.data.date.gregorian.year} ${obj.data.timings.Maghrib}:00`
+        )
+      );
+      setDateIcha(
+        new Date(
+          `${obj.data.date.gregorian.month.en} ${obj.data.date.gregorian.day}, ${obj.data.date.gregorian.year} ${obj.data.timings.Isha}:00`
+        )
+      );
+    });
+
+    //  });
+
+    //      return () => clearTimeout(timer);
+    /* setDay(obj.data.date.gregorian.day);
+      setMonth(obj.data.date.gregorian.month.en);
+      setYear(obj.data.date.gregorian.year);*/
+  }, [today]);
+
+  const [now, setNow] = useState(new Date(Date.now()).getTime());
+
+  useEffect(() => {
+    let interval = setInterval(() => {
+      setNow(new Date(Date.now()).getTime());
+    });
+
+    return () => clearInterval(interval);
+  });
+  //  console.log(now);
   return (
     <>
       {displayHadith === true ? (
@@ -209,7 +268,16 @@ export const TodayTimesList = ({ today }) => {
       )}
       {today.map((obj, index) => (
         <ul className="TodayTimesList__ul-times-list" key={index}>
-          <li className="TodayTimesList__ul-times-list__li">
+          <li
+            className="TodayTimesList__ul-times-list__li"
+            style={
+              now > dateFajr && now > dateShourouq
+                ? { opacity: "0.5" }
+                : now > dateFajr && now < dateShourouq
+                ? { backgroundColor: "#605b56" }
+                : now < dateFajr ? { backgroundColor: "#92BFEE"} : {}
+            }
+          >
             <span>
               FAJR {obj.data.timings.Fajr} - SHOUROUQ {obj.data.timings.Sunrise}{" "}
             </span>
@@ -222,7 +290,15 @@ export const TodayTimesList = ({ today }) => {
               ></i>
             </span>
           </li>
-          <li className="TodayTimesList__ul-times-list__li">
+          <li 
+          style={
+            now > dateAsr
+              ? { opacity: "0.5" }
+              : now > dateDhohr && now < dateAsr
+              ? { backgroundColor: "#605b56" }
+              : now < dateDhohr && now > dateShourouq ? { backgroundColor: "#92BFEE"} : {}
+          }
+          className="TodayTimesList__ul-times-list__li">
             <span>DHOHR {obj.data.timings.Dhuhr} </span>{" "}
             <span className="TodayTimesList__ul-times-list__li__span--information">
               {" "}
@@ -233,8 +309,18 @@ export const TodayTimesList = ({ today }) => {
               ></i>
             </span>{" "}
           </li>
-          <li className="TodayTimesList__ul-times-list__li">
-            <span>ASR {obj.data.timings.Asr} {/*- PALEUR DU SOLEIL 16:45 */}</span>
+          <li 
+          style={
+            now > dateMaghreb
+              ? { opacity: "0.5" }
+              : now > dateAsr && now < dateMaghreb
+              ? { backgroundColor: "#605b56" }
+              : now < dateAsr && now > dateDhohr ? { backgroundColor: "#92BFEE"} : {}
+          }
+          className="TodayTimesList__ul-times-list__li">
+            <span>
+              ASR {obj.data.timings.Asr} {/*- PALEUR DU SOLEIL 16:45 */}
+            </span>
             <span className="TodayTimesList__ul-times-list__li__span--information">
               {" "}
               <i
@@ -244,7 +330,15 @@ export const TodayTimesList = ({ today }) => {
               ></i>
             </span>{" "}
           </li>
-          <li className="TodayTimesList__ul-times-list__li">
+          <li 
+          style={
+            now > dateIcha
+              ? { opacity: "0.5" }
+              : now > dateMaghreb && now < dateIcha
+              ? { backgroundColor: "#605b56", color : "#65D977" }
+              : now < dateMaghreb && now > dateAsr ? { backgroundColor: "#92BFEE"} : {}
+          }
+          className="TodayTimesList__ul-times-list__li">
             <span>MAGHREB {obj.data.timings.Maghrib} </span>{" "}
             <span className="TodayTimesList__ul-times-list__li__span--information">
               {" "}
@@ -255,7 +349,15 @@ export const TodayTimesList = ({ today }) => {
               ></i>
             </span>{" "}
           </li>
-          <li className="TodayTimesList__ul-times-list__li">
+          <li 
+          style={
+         /*   now > 
+              ? { opacity: "0.5" }
+              : now > dateMaghreb && now < dateIcha
+              ? { backgroundColor: "#605b56", color : "#65D977" }
+              :*/ now < dateIcha && now > dateMaghreb ? { backgroundColor: "#92BFEE"} : {}
+          }
+          className="TodayTimesList__ul-times-list__li">
             <span>
               ICHA {obj.data.timings.Isha} - MINUIT{" "}
               <CalculMidnight todayMidnight={today} />{" "}
@@ -269,7 +371,7 @@ export const TodayTimesList = ({ today }) => {
               ></i>
             </span>{" "}
           </li>
-         {/* <li className="TodayTimesList__ul-times-list__li">
+          {/* <li className="TodayTimesList__ul-times-list__li">
             <span>QIYAMM AL LAYL 03:45</span>
             <span className="TodayTimesList__ul-times-list__li__span--information">
               {" "}
