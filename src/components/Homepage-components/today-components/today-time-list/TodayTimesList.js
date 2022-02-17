@@ -351,11 +351,11 @@ export const TodayTimesList = ({ today }) => {
           </li>
           <li 
           style={
-         /*   now > 
+            now < dateFajr
               ? { opacity: "0.5" }
-              : now > dateMaghreb && now < dateIcha
+              : now > dateIcha && now < new Date( `${obj.data.date.gregorian.month.en} ${Number(obj.data.date.gregorian.day) + 1}, ${obj.data.date.gregorian.year} 00:00:00`)
               ? { backgroundColor: "#605b56", color : "#65D977" }
-              :*/ now < dateIcha && now > dateMaghreb ? { backgroundColor: "#92BFEE"} : {}
+              : now < dateIcha && now > dateMaghreb ? { backgroundColor: "#92BFEE"} : {}
           }
           className="TodayTimesList__ul-times-list__li">
             <span>
