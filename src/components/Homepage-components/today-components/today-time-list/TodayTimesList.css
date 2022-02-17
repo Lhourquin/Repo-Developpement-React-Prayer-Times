@@ -1,13 +1,28 @@
+.closeHadith {
+  top: 15%;
+  position: fixed;
+  right: 1%;
+}
+
 .hadith-container {
   position: fixed;
-  height: 75%;
-  width: 75%;
+  height: 70%;
+  width: 90%;
   text-align: center;
-  overflow: scroll;
   margin: auto;
   right: 0;
   left: 0;
-  top: 10%;
+  top: 20%;
+  border-radius: 11px;
+  padding: 6px 0px 0px 0px;
+}
+
+.hadith-container .hadith-container-current {
+  background-color: #605b56;
+  padding: 8.1px;
+  border-radius: 8px;
+  height: 85%;
+  overflow: auto;
 }
 
 .TodayTimesList__ul-times-list {

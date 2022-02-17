@@ -26,7 +26,7 @@ export const TodayTimesList = ({ today }) => {
       Le Prophète (que la prière d'Allah et Son salut soient sur lui) a dit:
         Le temps du dhohr arrive lorsque le soleil dépasse le zénith jusqu’au moment
         où l’ombre de l’homme est égale à sa longueur jusqu’à la prière du ‘asr.`,
-        source: "",
+        source: "(rapporté par Mouslim, 612).",
         postScriptum: "",
       },
       asrHadith: {
@@ -81,27 +81,23 @@ export const TodayTimesList = ({ today }) => {
         postScriptum: ``,
       },
       qiyammHadith: {
-        title: "        Le mérite de la prière de nuit        ",
-        hadith: `
+        title: "La recommandation de la prière de nuit",
+        hadith1: `
 
-        le Prophète (que la prière d'Allah et Son salut soient sur lui) a dit:a dit : 
+        le Prophète (que la prière d'Allah et Son salut soient sur lui) a dit:
         « Chaque nuit, quand parvient le dernier tiers de la nuit, notre Seigneur, 
         béni et exalté, descend au ciel le plus proche et dit : « Y a t-il quelqu’un pour M’invoquer afin que je réponde à son invocation ?
          Y a t-il quelqu’un pour Me demander afin que je lui accorde sa demande ? 
          Y a t -il quelqu’un qui Me demande pardon pour que je lui pardonne ? » 
          
-         Sahih al-Bukhari 7494
-   
-         D'après Abou Houreira (qu'Allah l'agrée), le Prophète (que la prière d'Allah et Son salut soient sur lui) a dit:
-          « Le meilleur jeûne après celui du ramadan est le mois d'Allah sacré (al mouharam),
-          et la meilleure prière après les prières obligatoires est la prière de nuit ».
-        (Rapporté par Mouslim dans son Sahih n°1162)
-
-        D'après Joundoub Ibn Sofiane (qu'Allah les agrée), le Prophète (que la prière d'Allah et Son salut soient sur lui) a dit: 
-        « Certes la meilleure prière après les prières obligatoires est la prière au coeur de la nuit et le meilleur jeûne après le ramadan est le mois d'Allah que vous appelez mouharam ».
-        (Rapporté par Nasai et authentifié par Cheikh Albani dans Sahih Targhib n°1016)
-
-       `,
+         Sahih al-Bukhari 7494 `,
+        hadith2: `D'après Abou Houreira (qu'Allah l'agrée), le Prophète (que la prière d'Allah et Son salut soient sur lui) a dit:
+        « Le meilleur jeûne après celui du ramadan est le mois d'Allah sacré (al mouharam),
+        et la meilleure prière après les prières obligatoires est la prière de nuit ».
+      (Rapporté par Mouslim dans son Sahih n°1162) `,
+        hadith3: `D'après Joundoub Ibn Sofiane (qu'Allah les agrée), le Prophète (que la prière d'Allah et Son salut soient sur lui) a dit: 
+      « Certes la meilleure prière après les prières obligatoires est la prière au coeur de la nuit et le meilleur jeûne après le ramadan est le mois d'Allah que vous appelez mouharam ».
+      (Rapporté par Nasai et authentifié par Cheikh Albani dans Sahih Targhib n°1016)`,
         source: "",
         postScriptum: ` Remarque :
  
@@ -161,7 +157,9 @@ export const TodayTimesList = ({ today }) => {
       setDisplayHadith((boolean) => !boolean);
       setCurrentHadith({
         title: listOfHadith[0].qiyammHadith.title,
-        hadith: listOfHadith[0].qiyammHadith.hadith,
+        hadith: listOfHadith[0].qiyammHadith.hadith1,
+        hadith2: listOfHadith[0].qiyammHadith.hadith2,
+        hadith3: listOfHadith[0].qiyammHadith.hadith3,
         source: listOfHadith[0].qiyammHadith.source,
         postScriptum: listOfHadith[0].qiyammHadith.postScriptum,
       });
@@ -177,25 +175,24 @@ export const TodayTimesList = ({ today }) => {
       {displayHadith === true ? (
         <div
           style={{
-            background: "black",
+            background: "rgba(255,255,255,0.8)",
             width: "100%",
             height: "100%",
             top: "0",
-            opacity: "0.8",
             position: "absolute",
           }}
         >
-          <button onClick={closeHadith}>Cross</button>
-
-          <div
-            className="hadith-container"
-          >
-            <div>
+          {" "}
+          <button className="closeHadith" onClick={closeHadith}>Cross</button>
+          <div className="hadith-container">
+            <div className="hadith-container-current">
               <h2>{currentHadith.title}</h2>
               <h3>
                 Au nom d'Allah, le Tout Miséricordieux, le Très Miséricordieux.
               </h3>
               <p>{currentHadith.hadith}</p>
+              <p>{currentHadith.hadith2}</p>
+              <p>{currentHadith.hadith3}</p>
               <p>{currentHadith.source}</p>
               <p>{currentHadith.postScriptum}</p>
             </div>
