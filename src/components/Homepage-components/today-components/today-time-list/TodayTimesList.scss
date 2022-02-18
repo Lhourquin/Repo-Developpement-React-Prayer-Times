@@ -1,3 +1,4 @@
+
 .closeHadith {
   top: 15%;
   position: fixed;
@@ -60,4 +61,14 @@
       }
     }
   }
+}
+.prayerTimePass{
+  opacity: 0.5;
+}
+.prayerTimeNow{
+  background-color: #605b56 !important;
+  color : #65D977 !important;
+}
+.nextPrayerTime{
+  background-color: #92BFEE;
 }
