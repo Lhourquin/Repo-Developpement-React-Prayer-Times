@@ -87,7 +87,7 @@
           flex-direction: row;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
-          justify-content: end;
+          justify-content: flex-end;
   margin-top: -6%;
   margin-right: 2%;
 }
@@ -214,7 +214,7 @@
             flex-direction: row;
     -webkit-box-pack: end;
         -ms-flex-pack: end;
-            justify-content: end;
+            justify-content: flex-end;
     margin-top: -6%;
     margin-right: 2%;
   }
