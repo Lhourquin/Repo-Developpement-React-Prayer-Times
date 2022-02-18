@@ -261,14 +261,14 @@ export const Timer = ({ arrayOfTimesSalatOfTheDay, day, month, year }) => {
       <li style={displayTimerCurrentTime === true ? {color : "#92BFEE"}: {}} className="Pannel__ul--hour-date-countdown__li--countdown-current-times">
         {currentTime}{" "}
         {displayTimerCurrentTime === true
-          ? <span>{timerHoursCurrentTime +
+          ? <span className={(timerHoursCurrentTime == 0 && timerMinutesCurrentTime < 30 ? "countDowntThirtyMinutesCurentTime" :  "")}>{timerHoursCurrentTime +
             ":" +
             timerMinutesCurrentTime +
             ":" +
             timerSecondsCurrentTime}</span> 
           : ""}
       </li>
-      <li className={(timerHoursNextTime == 0 && timerMinutesNextTime < 30 ? "countDowntThirtyMinutes"  : "Pannel__ul--hour-date-countdown__li--countdown-next-times ")}>
+      <li className={(timerHoursNextTime == 0 && timerMinutesNextTime < 30 ? "countDowntThirtyMinutesNextTime"  : "Pannel__ul--hour-date-countdown__li--countdown-next-times ")}>
         {currentNextTime}{" "}
         {displayTimerCurrentNextTime === true
           ? timerHoursNextTime +
