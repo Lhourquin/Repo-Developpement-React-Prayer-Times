@@ -4,7 +4,7 @@
   select {
     color: #acc18a;
     font-size: 10px;
-    text-align: flex-end;
+    text-align: end;
     appearance: none;
     outline: 0;
     border: 0;
@@ -25,98 +25,17 @@
     overflow: hidden;
   }
 }
-
-.Pannel__div--container-times-today {
-  width: 85%;
-  background-color: #605b56;
-  margin: auto;
-  text-align: center;
-  border-radius: 25px;
-  font-size: 12px;
-
-  .localisation-marker-pannel {
-    color: #acc18a;
-  }
-  .Pannel__div--container-times-today__div--title-container-angle-select {
-    .Pannel__div--container-times-today__div--title__h2 {
-      font-size: 14px;
-    }
-
-    .Pannel__div--container-times-today__div__div--container-angle-select__div--span-select {
-      display: flex;
-      flex-direction: row;
-      justify-content: end;
-      margin-top: -6%;
-      margin-right: 2%;
-      .select-degree {
-        width: 20px;
-        height: 20px;
-      }
-    }
-  }
-
-  .Pannel__ul--hour-date-countdown {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    margin: 0;
-    margin-bottom: 0px;
-    margin-bottom: 2%;
-    .Pannel__ul--hour-date-countdown__li--date {
-      font-size: 10px;
-    }
-    .DateNow {
-      font-size: 15px;
-    }
-
-    .Pannel__ul--hour-date-countdown__li--countdown-current-times {
-      font-size: 17px;
-      color: #65d977;
-    }
-    .Pannel__ul--hour-date-countdown__li--countdown-next-times {
-      color: #92bfee;
-      font-size: 14px;
-    }
-  }
-}
-@media (min-width: 471px) {
-  .Pannel__container-select-degree {
-    text-align: end;
-    margin-top: -4%;
-    select {
-      color: #acc18a;
-      font-size: 10px;
-      text-align: flex-end;
-      appearance: none;
-      outline: 0;
-      border: 0;
-      box-shadow: none;
-      flex: 1;
-      padding: 0 1em;
-      background-color: var(--darkgray);
-      background-image: none;
-      cursor: pointer;
-    }
-
-    .select {
-      position: relative;
-      display: flex;
-      width: 20em;
-      height: 3em;
-      border-radius: 0.25em;
-      overflow: hidden;
-    }
-  }
-
+@media (min-width: 0px) and (max-width:621px) {
+  
+  
   .Pannel__div--container-times-today {
     width: 85%;
     background-color: #605b56;
-    margin: 5% 5% 6% 5%;
+    margin: auto;
     text-align: center;
     border-radius: 25px;
     font-size: 12px;
+  
     .localisation-marker-pannel {
       color: #acc18a;
     }
@@ -124,11 +43,11 @@
       .Pannel__div--container-times-today__div--title__h2 {
         font-size: 14px;
       }
-
+  
       .Pannel__div--container-times-today__div__div--container-angle-select__div--span-select {
         display: flex;
         flex-direction: row;
-        justify-content: end;
+        text-align: end;
         margin-top: -6%;
         margin-right: 2%;
         .select-degree {
@@ -137,7 +56,7 @@
         }
       }
     }
-
+  
     .Pannel__ul--hour-date-countdown {
       list-style: none;
       padding: 0;
@@ -153,7 +72,7 @@
       .DateNow {
         font-size: 15px;
       }
-
+  
       .Pannel__ul--hour-date-countdown__li--countdown-current-times {
         font-size: 17px;
         color: #65d977;
@@ -163,13 +82,146 @@
         font-size: 14px;
       }
     }
+    .countDowntThirtyMinutesNextTime {
+      color: #ee9292;
+      font-size: 14px;
+    }
+    .countDowntThirtyMinutesCurentTime {
+      color: #ee9292;
+      font-size: 17px;
+    }
+    
   }
 }
-.countDowntThirtyMinutesNextTime {
-  color: #ee9292;
-  font-size: 14px;
+
+@media (min-width: 622px) {
+
+
+  .Pannel__div--container-times-today {
+    width: 90%;
+    background-color: #605b56;
+    margin: 5% 5% 6% 5%;
+    text-align: center;
+    border-radius: 25px;
+    font-size: 12px;
+    .localisation-marker-pannel {
+      color: #acc18a;
+    }
+    .Pannel__div--container-times-today__div--title-container-angle-select {
+      .Pannel__div--container-times-today__div--title__h2 {
+        font-size: 17px;
+      }
+
+      .Pannel__div--container-times-today__div__div--container-angle-select__div--span-select {
+        display: flex;
+        flex-direction: row;
+        text-align: end;
+        margin-top: -6%;
+        margin-right: 2%;
+        .select-degree {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+
+    .Pannel__ul--hour-date-countdown {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      list-style: none;
+      margin: 4px 0 6%;
+      padding: 41px;
+      .Pannel__ul--hour-date-countdown__li--date {
+        font-size: 10px;
+      }
+      .DateNow {
+        font-size: 15px;
+      }
+
+      .Pannel__ul--hour-date-countdown__li--countdown-current-times {
+        font-size: 17px;
+        color: #65d977;
+      }
+      .Pannel__ul--hour-date-countdown__li--countdown-next-times {
+        color: #92bfee;
+        font-size: 16px;
+      }
+    }
+  }
+  .countDowntThirtyMinutesNextTime {
+    color: #ee9292;
+    font-size: 14px;
+  }
+  .countDowntThirtyMinutesCurentTime {
+    color: #ee9292;
+    font-size: 17px;
+  }
+  
 }
-.countDowntThirtyMinutesCurentTime {
-  color: #ee9292;
-  font-size: 17px;
+@media (min-width: 830px) {
+
+
+  .Pannel__div--container-times-today {
+    width: 90%;
+    background-color: #605b56;
+    margin: 5% 5% 6% 5%;
+    text-align: center;
+    border-radius: 25px;
+    font-size: 12px;
+    .localisation-marker-pannel {
+      color: #acc18a;
+    }
+    .Pannel__div--container-times-today__div--title-container-angle-select {
+      .Pannel__div--container-times-today__div--title__h2 {
+        font-size: 17px;
+      }
+
+      .Pannel__div--container-times-today__div__div--container-angle-select__div--span-select {
+        display: flex;
+        flex-direction: row;
+        text-align: end;
+        margin-top: -6%;
+        margin-right: 2%;
+        .select-degree {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+
+    .Pannel__ul--hour-date-countdown {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      list-style: none;
+      margin: 4px 0 6%;
+      padding: 41px;
+      .Pannel__ul--hour-date-countdown__li--date {
+        font-size: 13px;
+      }
+      .DateNow {
+        font-size: 21px;
+      }
+
+      .Pannel__ul--hour-date-countdown__li--countdown-current-times {
+        font-size: 25px;
+        color: #65d977;
+      }
+      .Pannel__ul--hour-date-countdown__li--countdown-next-times {
+        color: #92bfee;
+        font-size: 16px;
+      }
+    }
+  }
+  .countDowntThirtyMinutesNextTime {
+    color: #ee9292;
+    font-size: 16px;
+  }
+  .countDowntThirtyMinutesCurentTime {
+    color: #ee9292;
+    font-size: 25px;
+  }
+  
 }
+

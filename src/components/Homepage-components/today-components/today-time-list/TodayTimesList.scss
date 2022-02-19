@@ -62,42 +62,8 @@
   }
 }
 
-@media (min-width: 471px) {
-  .closeHadith {
-    top: 18%;
-    position: fixed;
-    right: 8%;
-    border-radius: 80%;
-    border: none;
-    outline: inherit;
-    font: inherit;
-    height: 25px;
-    width: 25px;
-    cursor: pointer;
-  }
-  .hadith-container {
-    position: fixed;
-    height: 29%;
-    width: 75%;
-    text-align: center;
-    margin: auto;
-    right: 0;
-    left: 0;
-    top: 20%;
-    border-radius: 11px;
-    padding: 6px 0px 0px 0px;
-    .hadith-container-current {
-      background-color: #605b56;
-      padding: 8.1px;
-      border-radius: 8px;
-      height: 85%;
-      overflow: auto;
-      text-align: left;
-      .hadith-container-current-title {
-        color: #acc18a;
-      }
-    }
-  }
+@media (min-width: 622px) {
+  
 
   .TodayTimesList__ul-times-list {
     width: 90%;

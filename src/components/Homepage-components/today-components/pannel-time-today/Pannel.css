@@ -1,15 +1,10 @@
 .Pannel__container-select-degree {
   text-align: end;
   margin-top: -4%;
-  /* Remove IE arrow */
-  /* Custom Select wrapper */
-  /* Arrow */
-  /* Transition */
 }
 
 .Pannel__container-select-degree select {
-  /* Reset Select */
-  color: #ACC18A;
+  color: #acc18a;
   font-size: 10px;
   text-align: end;
   -webkit-appearance: none;
@@ -19,7 +14,6 @@
   border: 0;
   -webkit-box-shadow: none;
           box-shadow: none;
-  /* Personalize */
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -29,10 +23,6 @@
   cursor: pointer;
 }
 
-.Pannel__container-select-degree select::-ms-expand {
-  display: none;
-}
-
 .Pannel__container-select-degree .select {
   position: relative;
   display: -webkit-box;
@@ -40,166 +30,21 @@
   display: flex;
   width: 20em;
   height: 3em;
-  border-radius: .25em;
+  border-radius: 0.25em;
   overflow: hidden;
 }
 
-.Pannel__container-select-degree .select::after {
-  content: '\25BC';
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 1em;
-  background-color: #34495e;
-  -webkit-transition: .25s all ease;
-  transition: .25s all ease;
-  pointer-events: none;
-}
-
-.Pannel__container-select-degree .select:hover::after {
-  color: #f39c12;
-}
-
-.Pannel__div--container-times-today {
-  width: 85%;
-  background-color: #605b56;
-  margin: auto;
-  text-align: center;
-  border-radius: 25px;
-  font-size: 12px;
-}
-
-.Pannel__div--container-times-today .localisation-marker-pannel {
-  color: #ACC18A;
-}
-
-.Pannel__div--container-times-today .Pannel__div--container-times-today__div--title-container-angle-select .Pannel__div--container-times-today__div--title__h2 {
-  font-size: 14px;
-}
-
-.Pannel__div--container-times-today .Pannel__div--container-times-today__div--title-container-angle-select .Pannel__div--container-times-today__div__div--container-angle-select__div--span-select {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  margin-top: -6%;
-  margin-right: 2%;
-}
-
-.Pannel__div--container-times-today .Pannel__div--container-times-today__div--title-container-angle-select .Pannel__div--container-times-today__div__div--container-angle-select__div--span-select .select-degree {
-  width: 20px;
-  height: 20px;
-}
-
-.Pannel__div--container-times-today .Pannel__ul--hour-date-countdown {
-  list-style: none;
-  padding: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  margin: 0;
-  margin-bottom: 0px;
-  margin-bottom: 2%;
-}
-
-.Pannel__div--container-times-today .Pannel__ul--hour-date-countdown .Pannel__ul--hour-date-countdown__li--date {
-  font-size: 10px;
-}
-
-.Pannel__div--container-times-today .Pannel__ul--hour-date-countdown .DateNow {
-  font-size: 15px;
-}
-
-.Pannel__div--container-times-today .Pannel__ul--hour-date-countdown .Pannel__ul--hour-date-countdown__li--countdown-current-times {
-  font-size: 17px;
-  color: #65D977;
-}
-
-.Pannel__div--container-times-today .Pannel__ul--hour-date-countdown .Pannel__ul--hour-date-countdown__li--countdown-next-times {
-  color: #92BFEE;
-  font-size: 14px;
-}
-
-@media (min-width: 471px) {
-  .Pannel__container-select-degree {
-    text-align: end;
-    margin-top: -4%;
-    /* Remove IE arrow */
-    /* Custom Select wrapper */
-    /* Arrow */
-    /* Transition */
-  }
-  .Pannel__container-select-degree select {
-    /* Reset Select */
-    color: #ACC18A;
-    font-size: 10px;
-    text-align: end;
-    -webkit-appearance: none;
-       -moz-appearance: none;
-            appearance: none;
-    outline: 0;
-    border: 0;
-    -webkit-box-shadow: none;
-            box-shadow: none;
-    /* Personalize */
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
-    padding: 0 1em;
-    background-color: var(--darkgray);
-    background-image: none;
-    cursor: pointer;
-  }
-  .Pannel__container-select-degree select::-ms-expand {
-    display: none;
-  }
-  .Pannel__container-select-degree .select {
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    width: 20em;
-    height: 3em;
-    border-radius: .25em;
-    overflow: hidden;
-  }
-  .Pannel__container-select-degree .select::after {
-    content: '\25BC';
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 1em;
-    background-color: #34495e;
-    -webkit-transition: .25s all ease;
-    transition: .25s all ease;
-    pointer-events: none;
-  }
-  .Pannel__container-select-degree .select:hover::after {
-    color: #f39c12;
-  }
+@media (min-width: 0px) and (max-width: 621px) {
   .Pannel__div--container-times-today {
     width: 85%;
     background-color: #605b56;
-    margin: 5% 5% 6% 5%;
+    margin: auto;
     text-align: center;
     border-radius: 25px;
     font-size: 12px;
   }
   .Pannel__div--container-times-today .localisation-marker-pannel {
-    color: #ACC18A;
+    color: #acc18a;
   }
   .Pannel__div--container-times-today .Pannel__div--container-times-today__div--title-container-angle-select .Pannel__div--container-times-today__div--title__h2 {
     font-size: 14px;
@@ -212,9 +57,7 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
+    text-align: end;
     margin-top: -6%;
     margin-right: 2%;
   }
@@ -247,21 +90,157 @@
   }
   .Pannel__div--container-times-today .Pannel__ul--hour-date-countdown .Pannel__ul--hour-date-countdown__li--countdown-current-times {
     font-size: 17px;
-    color: #65D977;
+    color: #65d977;
   }
   .Pannel__div--container-times-today .Pannel__ul--hour-date-countdown .Pannel__ul--hour-date-countdown__li--countdown-next-times {
-    color: #92BFEE;
+    color: #92bfee;
     font-size: 14px;
+  }
+  .Pannel__div--container-times-today .countDowntThirtyMinutesNextTime {
+    color: #ee9292;
+    font-size: 14px;
+  }
+  .Pannel__div--container-times-today .countDowntThirtyMinutesCurentTime {
+    color: #ee9292;
+    font-size: 17px;
   }
 }
 
-.countDowntThirtyMinutesNextTime {
-  color: #EE9292;
-  font-size: 14px;
+@media (min-width: 622px) {
+  .Pannel__div--container-times-today {
+    width: 90%;
+    background-color: #605b56;
+    margin: 5% 5% 6% 5%;
+    text-align: center;
+    border-radius: 25px;
+    font-size: 12px;
+  }
+  .Pannel__div--container-times-today .localisation-marker-pannel {
+    color: #acc18a;
+  }
+  .Pannel__div--container-times-today .Pannel__div--container-times-today__div--title-container-angle-select .Pannel__div--container-times-today__div--title__h2 {
+    font-size: 17px;
+  }
+  .Pannel__div--container-times-today .Pannel__div--container-times-today__div--title-container-angle-select .Pannel__div--container-times-today__div__div--container-angle-select__div--span-select {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    text-align: end;
+    margin-top: -6%;
+    margin-right: 2%;
+  }
+  .Pannel__div--container-times-today .Pannel__div--container-times-today__div--title-container-angle-select .Pannel__div--container-times-today__div__div--container-angle-select__div--span-select .select-degree {
+    width: 20px;
+    height: 20px;
+  }
+  .Pannel__div--container-times-today .Pannel__ul--hour-date-countdown {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    list-style: none;
+    margin: 4px 0 6%;
+    padding: 41px;
+  }
+  .Pannel__div--container-times-today .Pannel__ul--hour-date-countdown .Pannel__ul--hour-date-countdown__li--date {
+    font-size: 10px;
+  }
+  .Pannel__div--container-times-today .Pannel__ul--hour-date-countdown .DateNow {
+    font-size: 15px;
+  }
+  .Pannel__div--container-times-today .Pannel__ul--hour-date-countdown .Pannel__ul--hour-date-countdown__li--countdown-current-times {
+    font-size: 17px;
+    color: #65d977;
+  }
+  .Pannel__div--container-times-today .Pannel__ul--hour-date-countdown .Pannel__ul--hour-date-countdown__li--countdown-next-times {
+    color: #92bfee;
+    font-size: 16px;
+  }
+  .countDowntThirtyMinutesNextTime {
+    color: #ee9292;
+    font-size: 14px;
+  }
+  .countDowntThirtyMinutesCurentTime {
+    color: #ee9292;
+    font-size: 17px;
+  }
 }
 
-.countDowntThirtyMinutesCurentTime {
-  color: #EE9292;
-  font-size: 17px;
+@media (min-width: 830px) {
+  .Pannel__div--container-times-today {
+    width: 90%;
+    background-color: #605b56;
+    margin: 5% 5% 6% 5%;
+    text-align: center;
+    border-radius: 25px;
+    font-size: 12px;
+  }
+  .Pannel__div--container-times-today .localisation-marker-pannel {
+    color: #acc18a;
+  }
+  .Pannel__div--container-times-today .Pannel__div--container-times-today__div--title-container-angle-select .Pannel__div--container-times-today__div--title__h2 {
+    font-size: 17px;
+  }
+  .Pannel__div--container-times-today .Pannel__div--container-times-today__div--title-container-angle-select .Pannel__div--container-times-today__div__div--container-angle-select__div--span-select {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    text-align: end;
+    margin-top: -6%;
+    margin-right: 2%;
+  }
+  .Pannel__div--container-times-today .Pannel__div--container-times-today__div--title-container-angle-select .Pannel__div--container-times-today__div__div--container-angle-select__div--span-select .select-degree {
+    width: 20px;
+    height: 20px;
+  }
+  .Pannel__div--container-times-today .Pannel__ul--hour-date-countdown {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    list-style: none;
+    margin: 4px 0 6%;
+    padding: 41px;
+  }
+  .Pannel__div--container-times-today .Pannel__ul--hour-date-countdown .Pannel__ul--hour-date-countdown__li--date {
+    font-size: 13px;
+  }
+  .Pannel__div--container-times-today .Pannel__ul--hour-date-countdown .DateNow {
+    font-size: 21px;
+  }
+  .Pannel__div--container-times-today .Pannel__ul--hour-date-countdown .Pannel__ul--hour-date-countdown__li--countdown-current-times {
+    font-size: 25px;
+    color: #65d977;
+  }
+  .Pannel__div--container-times-today .Pannel__ul--hour-date-countdown .Pannel__ul--hour-date-countdown__li--countdown-next-times {
+    color: #92bfee;
+    font-size: 16px;
+  }
+  .countDowntThirtyMinutesNextTime {
+    color: #ee9292;
+    font-size: 16px;
+  }
+  .countDowntThirtyMinutesCurentTime {
+    color: #ee9292;
+    font-size: 25px;
+  }
 }
 /*# sourceMappingURL=Pannel.css.map */
