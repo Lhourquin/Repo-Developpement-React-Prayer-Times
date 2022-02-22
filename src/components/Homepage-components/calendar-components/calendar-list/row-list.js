@@ -38,29 +38,22 @@ export const RowList = ({ calendar }) => {
     <tbody className="salat-of-month ">
       {calendar.map((obj, index) => (
         <tr
-
-        style={  new Date(
-          `${obj.date.gregorian.month.en} ${obj.date.gregorian.day}, ${obj.date.gregorian.year}`
-        ).setHours(0, 0, 0, 0) === new Date(now)
-          ? {backgroundColor : "black"}
-          : {}}
           className={
-             now >
+            now >
             new Date(
               `${obj.date.gregorian.month.en} ${obj.date.gregorian.day}, ${obj.date.gregorian.year} 00:00:00`
             )
               ? "container-horaires-list-passed"
-              : now === new Date(
-                `${obj.date.gregorian.month.en} ${obj.date.gregorian.day}, ${obj.date.gregorian.year} 00:00:00`
-              ).setHours(0,0,0,0)
-              ?  "container-horaires-list-today" : "container-horaires-list-normal"
-              
-             
-       
+              : now ===
+                new Date(
+                  `${obj.date.gregorian.month.en} ${obj.date.gregorian.day}, ${obj.date.gregorian.year} 00:00:00`
+                ).setHours(0, 0, 0, 0)
+              ? "container-horaires-list-today"
+              : "container-horaires-list-normal"
           }
           key={index}
         >
-          <td>{count++}</td>
+          <td className="count">{count++}</td>
           {/*console.log(obj.date.gregorian.month.en  + " " + obj.date.gregorian.day + " " + obj.date.gregorian.year)*/}
           <td className="">{obj.date.gregorian.date}</td>
           <td className="">{obj.date.hijri.date}</td>

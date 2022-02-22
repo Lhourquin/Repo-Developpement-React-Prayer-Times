@@ -1,87 +1,218 @@
-.salat-of-month {
-  font-weight: bold;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+@media (min-width: 0px) and (max-width: 544px) {
+  .salat-of-month {
+    font-weight: bold;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .salat-of-month .container-horaires-list-normal {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 5px;
+    background-color: #92bfee;
+    color: #eaeaea;
+    height: 100px;
+    opacity: 1;
+    width: 100px;
+    border-radius: 15px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+  }
+  .salat-of-month .container-horaires-list-normal .td-list-times {
+    display: none;
+  }
+  .salat-of-month .container-horaires-list-passed {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 5px;
+    background-color: #eaeaea;
+    color: #605b56;
+    opacity: 0.4;
+    height: 100px;
+    width: 100px;
+    border-radius: 15px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+  }
+  .salat-of-month .container-horaires-list-passed .td-list-times {
+    display: none;
+  }
+  .salat-of-month .container-horaires-list-today {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 5px;
+    background-color: #605b56;
+    color: #eaeaea;
+    opacity: 1;
+    height: 100px;
+    width: 100px;
+    border-radius: 15px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+  }
+  .salat-of-month .container-horaires-list-today .td-list-times {
+    display: none;
+  }
 }
 
-.salat-of-month .container-horaires-list-normal {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 5px;
-  background-color: #92bfee;
-  color: #605b56;
-  height: 100px;
-  opacity: 1;
-  width: 100px;
-  border-radius: 15px;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  text-align: center;
+@media (min-width: 545px) and (max-width: 620px) {
+  .salat-of-month {
+    font-weight: bold;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .salat-of-month .container-horaires-list-normal {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 5px;
+    background-color: #92bfee;
+    color: #eaeaea;
+    opacity: 1;
+    height: 125px;
+    width: 125px;
+    border-radius: 15px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+  }
+  .salat-of-month .container-horaires-list-normal .td-list-times {
+    display: none;
+  }
+  .salat-of-month .container-horaires-list-passed {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 5px;
+    background-color: #eaeaea;
+    color: #605b56;
+    opacity: 0.4;
+    height: 125px;
+    width: 125px;
+    border-radius: 15px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+  }
+  .salat-of-month .container-horaires-list-passed .td-list-times {
+    display: none;
+  }
+  .salat-of-month .container-horaires-list-today {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 5px;
+    background-color: #605b56;
+    color: #eaeaea;
+    opacity: 1;
+    height: 125px;
+    width: 125px;
+    border-radius: 15px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+  }
+  .salat-of-month .container-horaires-list-today .td-list-times {
+    display: none;
+  }
 }
 
-.salat-of-month .container-horaires-list-normal .td-list-times {
-  display: none;
-}
-
-.salat-of-month .container-horaires-list-passed {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 5px;
-  background-color: #eaeaea;
-  color: #605b56;
-  opacity: 0.4;
-  height: 100px;
-  width: 100px;
-  border-radius: 15px;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  text-align: center;
-}
-
-.salat-of-month .container-horaires-list-passed .td-list-times {
-  display: none;
-}
-
-.salat-of-month .container-horaires-list-today {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 5px;
-  background-color: #605b56;
-  color: #eaeaea;
-  opacity: 1;
-  height: 100px;
-  width: 100px;
-  border-radius: 15px;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  text-align: center;
-}
-
-.salat-of-month .container-horaires-list-today .td-list-times {
-  display: none;
+@media (min-width: 621px) {
+  table {
+    width: 100%;
+  }
+  table .thead-name-of-times {
+    display: block;
+    margin-left: 3%;
+  }
+  table .count {
+    display: none;
+  }
+  table .name-of-times-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    width: 100%;
+    color: black;
+  }
+  table .salat-of-month {
+    color: black;
+    margin-right: 1%;
+    display: block;
+  }
+  table .salat-of-month .container-horaires-list-passed {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  table .salat-of-month .container-horaires-list-normal {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  table .salat-of-month .container-horaires-list-today {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
 }
 /*# sourceMappingURL=row-list.css.map */

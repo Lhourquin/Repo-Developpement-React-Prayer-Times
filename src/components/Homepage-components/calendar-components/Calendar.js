@@ -47,19 +47,21 @@ export const Calendar = ({
   }, [city, country, methodValue]);
   console.log(calendar);
 
-  const [acutalMonth , setActualMonth] = useState(new Date(Date.now()).toLocaleString(undefined, {
-    month: "long",
-  }))
+  const [acutalMonth, setActualMonth] = useState(
+    new Date(Date.now()).toLocaleString(undefined, {
+      month: "long",
+    })
+  );
   return (
     <div className="calendar">
       <div className="calendar-container-month-degreeSeclect">
         <div>
-               <h2 className="calendar-title-month">
-          
-          {acutalMonth.charAt(0).toUpperCase() + acutalMonth.slice(1)}
-       {" "} <span>i</span></h2>
+          <h2 className="calendar-title-month">
+            {acutalMonth.charAt(0).toUpperCase() + acutalMonth.slice(1)}{" "}
+            <span>i</span>
+          </h2>
         </div>
-   
+
         {/* <span style={{ fontSize: "10px" }}>
         Angle :{" "}
         {selectedMethodStringValue === ""
@@ -76,9 +78,10 @@ export const Calendar = ({
       </div>
 
       <table>
-        <thead>
+        <thead className="thead-name-of-times">
           <tr className="name-of-times-list">
             <td>Date</td>
+            <td>Date hégirienne</td>
             <td>Fajr</td>
             <td>Shourouk</td>
             <td>Dhor</td>
