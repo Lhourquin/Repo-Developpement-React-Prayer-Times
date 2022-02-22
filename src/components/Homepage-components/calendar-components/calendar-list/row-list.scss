@@ -115,9 +115,11 @@
 @media (min-width: 621px) {
   table {
     width: 100%;
+    margin-top: 5%;
     .thead-name-of-times {
       display: block;
-      margin-left: 3%;
+      margin-left: 6.5%;
+      width: 88%;
     }
     .count {
       display: none;
@@ -130,20 +132,40 @@
     }
     .salat-of-month {
       color: black;
-      margin-right: 1%;
+      margin-left: 5%;
       display: block;
+      width: 89%;
 
       .container-horaires-list-passed {
+        background-color: #eaeaea;
+        color: #605b56;
         display: flex;
         justify-content: space-evenly;
+        margin-top: 10px;
+        height: 40px;
+        border-radius: 11px;
+        padding-top: 1.5%;
+        opacity: 0.5;
       }
       .container-horaires-list-normal {
         display: flex;
         justify-content: space-evenly;
+        background-color: rgb(146, 191, 238);
+        color: #eaeaea;
+        margin-top: 10px;
+        height: 40px;
+        border-radius: 11px;
+        padding-top: 1.5%;
       }
       .container-horaires-list-today {
         display: flex;
         justify-content: space-evenly;
+        background-color: #605b56;
+        color: #eaeaea;
+        margin-top: 10px;
+        height: 40px;
+        border-radius: 11px;
+        padding-top: 1.5%;
       }
     }
   }

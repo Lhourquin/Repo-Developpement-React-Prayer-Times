@@ -167,10 +167,12 @@
 @media (min-width: 621px) {
   table {
     width: 100%;
+    margin-top: 5%;
   }
   table .thead-name-of-times {
     display: block;
-    margin-left: 3%;
+    margin-left: 6.5%;
+    width: 88%;
   }
   table .count {
     display: none;
@@ -187,16 +189,24 @@
   }
   table .salat-of-month {
     color: black;
-    margin-right: 1%;
+    margin-left: 5%;
     display: block;
+    width: 89%;
   }
   table .salat-of-month .container-horaires-list-passed {
+    background-color: #eaeaea;
+    color: #605b56;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
+    margin-top: 10px;
+    height: 40px;
+    border-radius: 11px;
+    padding-top: 1.5%;
+    opacity: 0.5;
   }
   table .salat-of-month .container-horaires-list-normal {
     display: -webkit-box;
@@ -205,6 +215,12 @@
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
+    background-color: #92bfee;
+    color: #eaeaea;
+    margin-top: 10px;
+    height: 40px;
+    border-radius: 11px;
+    padding-top: 1.5%;
   }
   table .salat-of-month .container-horaires-list-today {
     display: -webkit-box;
@@ -213,6 +229,12 @@
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
+    background-color: #605b56;
+    color: #eaeaea;
+    margin-top: 10px;
+    height: 40px;
+    border-radius: 11px;
+    padding-top: 1.5%;
   }
 }
 /*# sourceMappingURL=row-list.css.map */

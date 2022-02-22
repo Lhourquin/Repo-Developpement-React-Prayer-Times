@@ -52,13 +52,25 @@ export const Calendar = ({
       month: "long",
     })
   );
+ 
+  useEffect(() => {
+    if(window.matchMedia("(max-width : 620px)").matches) {
+      console.log("mobile and tablet size")
+
+    }else{
+      console.log("desktop size")
+    } 
+  })  
   return (
     <div className="calendar">
       <div className="calendar-container-month-degreeSeclect">
         <div>
           <h2 className="calendar-title-month">
             {acutalMonth.charAt(0).toUpperCase() + acutalMonth.slice(1)}{" "}
-            <span>i</span>
+            <span>
+              {" "}
+              <i className="fas fa-info-circle info-icons"></i>
+            </span>
           </h2>
         </div>
 
