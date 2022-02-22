@@ -10,7 +10,7 @@ export const NavBar = () => {
 
   return (
     <nav className="NavBar__nav" style={(buttonBurgerIsClicked ? {transition: "width 0.2s, height 0.2s, transform 2s" }: {height : 128, transition: "width 0.1s, height 0.2s, transform 2s" })}>
-        <span className="NavBar__nav__span--site-name">Waqt Al Falah</span>
+        <span className="NavBar__nav__span--site-name">Waqt Al Falaah</span>
         <button
           className="NavBar__nav__button--button-burger"
           onClick={handleNavButtonBurgerClick}
