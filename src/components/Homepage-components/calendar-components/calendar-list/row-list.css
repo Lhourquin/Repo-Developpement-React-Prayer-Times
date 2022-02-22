@@ -1,7 +1,87 @@
-tbody > tr > td {
+.salat-of-month {
+  font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.salat-of-month .container-horaires-list-normal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 5px;
+  background-color: #92bfee;
+  color: #605b56;
+  height: 100px;
+  opacity: 1;
+  width: 100px;
+  border-radius: 15px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   text-align: center;
-  padding: 2px;
 }
-thead > tr > td {
-  padding: 25px 25px 3px 25px;
+
+.salat-of-month .container-horaires-list-normal .td-list-times {
+  display: none;
 }
+
+.salat-of-month .container-horaires-list-passed {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 5px;
+  background-color: #eaeaea;
+  color: #605b56;
+  opacity: 0.4;
+  height: 100px;
+  width: 100px;
+  border-radius: 15px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.salat-of-month .container-horaires-list-passed .td-list-times {
+  display: none;
+}
+
+.salat-of-month .container-horaires-list-today {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 5px;
+  background-color: #605b56;
+  color: #eaeaea;
+  opacity: 1;
+  height: 100px;
+  width: 100px;
+  border-radius: 15px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.salat-of-month .container-horaires-list-today .td-list-times {
+  display: none;
+}
+/*# sourceMappingURL=row-list.css.map */

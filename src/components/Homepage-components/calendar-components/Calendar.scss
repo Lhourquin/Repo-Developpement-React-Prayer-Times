@@ -1,0 +1,40 @@
+.calendar {
+  .calendar-container-month-degreeSeclect {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    .calendar-title-month {
+      text-align: center;
+      color: #605b56;
+    }
+    select {
+      color: #acc18a;
+      font-size: 10px;
+      -webkit-appearance: none;
+      appearance: none;
+      outline: 0;
+      border: 0;
+      box-shadow: none;
+      padding: 0 1em;
+      background-color: var(--darkgray);
+      background-image: none;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .select {
+      position: relative;
+      display: flex;
+      width: 20em;
+      height: 3em;
+      border-radius: 0.25em;
+      overflow: hidden;
+    }
+  }
+}
+@media (min-width: 0px) and (max-width: 621px) {
+  .name-of-times-list {
+    display: none;
+  }
+}

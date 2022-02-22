@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { RowList } from "./calendar-list/row-list";
+import "./Calendar.css";
 
 export const Calendar = ({
   city,
@@ -8,7 +9,7 @@ export const Calendar = ({
   getAngleOptionValue,
   method,
   selectedMethodValue,
-  selectedMethodStringValue
+  selectedMethodStringValue,
 }) => {
   const [calendar, setCalendar] = useState([]);
   const [methodValue, setMethodValue] = useState("");
@@ -45,25 +46,38 @@ export const Calendar = ({
     };
   }, [city, country, methodValue]);
   console.log(calendar);
+
+  const [acutalMonth , setActualMonth] = useState(new Date(Date.now()).toLocaleString(undefined, {
+    month: "long",
+  }))
   return (
-    <div>
-      <h1>Calendrier du mois</h1>
-      <span style={{ fontSize: "10px" }}>
+    <div className="calendar">
+      <div className="calendar-container-month-degreeSeclect">
+        <div>
+               <h2 className="calendar-title-month">
+          
+          {acutalMonth.charAt(0).toUpperCase() + acutalMonth.slice(1)}
+       {" "} <span>i</span></h2>
+        </div>
+   
+        {/* <span style={{ fontSize: "10px" }}>
         Angle :{" "}
         {selectedMethodStringValue === ""
           ? "Amérique du Nord (15°)"
           : selectedMethodStringValue}
-      </span>
-      <select onChange={getAngleOptionValue}>
-        {method.map((obj, index) => (
-          <option key={index} value={obj.value}>
-            {obj.stringValue}
-          </option>
-        ))}
-      </select>
+      </span>*/}
+        <select onChange={getAngleOptionValue}>
+          {method.map((obj, index) => (
+            <option key={index} value={obj.value}>
+              {obj.stringValue}
+            </option>
+          ))}
+        </select>
+      </div>
+
       <table>
         <thead>
-          <tr>
+          <tr className="name-of-times-list">
             <td>Date</td>
             <td>Fajr</td>
             <td>Shourouk</td>
@@ -71,7 +85,7 @@ export const Calendar = ({
             <td>Asr</td>
             <td>Maghreb</td>
             <td>Icha</td>
-            <td>Milieu de la nuit</td>
+            <td>Mi-nuit</td>
           </tr>
         </thead>
         <RowList calendar={calendar} />
