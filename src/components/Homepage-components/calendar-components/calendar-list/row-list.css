@@ -38,9 +38,8 @@
     display: -ms-flexbox;
     display: flex;
     margin: 5px;
-    background-color: #eaeaea;
-    color: #605b56;
-    opacity: 0.4;
+    background: rgba(255, 255, 255, 0.5) none repeat scroll 0% 0%;
+    color: rgba(96, 91, 86, 0.5);
     height: 100px;
     width: 100px;
     border-radius: 15px;
@@ -121,9 +120,8 @@
     display: -ms-flexbox;
     display: flex;
     margin: 5px;
-    background-color: #eaeaea;
-    color: #605b56;
-    opacity: 0.4;
+    background: rgba(255, 255, 255, 0.5) none repeat scroll 0% 0%;
+    color: rgba(96, 91, 86, 0.5);
     height: 125px;
     width: 125px;
     border-radius: 15px;
@@ -194,8 +192,8 @@
     width: 89%;
   }
   table .salat-of-month .container-horaires-list-passed {
-    background-color: #eaeaea;
-    color: #605b56;
+    background: rgba(255, 255, 255, 0.5) none repeat scroll 0% 0%;
+    color: rgba(96, 91, 86, 0.5);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -206,7 +204,6 @@
     height: 40px;
     border-radius: 11px;
     padding-top: 1.5%;
-    opacity: 0.5;
   }
   table .salat-of-month .container-horaires-list-normal {
     display: -webkit-box;
