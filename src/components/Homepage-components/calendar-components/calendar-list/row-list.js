@@ -5,8 +5,6 @@ import "./row-list.css";
 
 export const RowList = ({ calendar, displayTimesOfTheDate }) => {
   let count = 1;
-  let date = new Date(Date.now());
-  const dayDate = date.getDay();
   const [now, setNow] = useState(new Date().setHours(0, 0, 0, 0));
 
   return (
@@ -33,8 +31,8 @@ export const RowList = ({ calendar, displayTimesOfTheDate }) => {
             <td className="count">{count++}</td>
             {/*console.log(obj.date.gregorian.month.en  + " " + obj.date.gregorian.day + " " + obj.date.gregorian.year)*/}
 
-            <td className="">{obj.date.gregorian.date}</td>
-            <td className="">{obj.date.hijri.date}</td>
+            <td className="td-list-times-date">{obj.date.gregorian.date}</td>
+            <td className="td-list-times-date">{obj.date.hijri.date}</td>
             <td className="td-list-times">{obj.timings.Fajr.substr(0, 6)}</td>
             <td className="td-list-times">
               {obj.timings.Sunrise.substr(0, 6)}

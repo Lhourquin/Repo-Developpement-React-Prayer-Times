@@ -48,5 +48,5 @@ export const CalculMidnightCalendar = ({
       return result.join(":").toString();
     });
   }, [fajrTime, maghrebTime]);
-  return <span>{midnightTime}</span>;
+  return <>{midnightTime}</>;
 };

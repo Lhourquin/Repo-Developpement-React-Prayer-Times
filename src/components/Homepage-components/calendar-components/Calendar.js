@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { RowList } from "./calendar-list/row-list";
+import { CalculMidnightCalendar } from "./calcul-mignight-calendar/CalculMidnightCalandar";
 import "./Calendar.css";
 
 export const Calendar = ({
@@ -36,7 +37,9 @@ export const Calendar = ({
       timer = setTimeout(async () => {
         const { data } = await axios
           .get(`https://api.aladhan.com/v1/calendarByCity`, request)
-          .then((obj) => obj.data);
+          .then(
+            (currentTimesOfTheDateClicked) => currentTimesOfTheDateClicked.data
+          );
         setCalendar(data);
       }, 1000);
     }
@@ -96,6 +99,7 @@ export const Calendar = ({
   };
   // console.log("displayTimesOfTheDateClicked " + displayTimesOfTheDateClicked);
   console.log(currentTimesOfTheDateClicked);
+  const [now, setNow] = useState(new Date().setHours(0, 0, 0, 0));
 
   return (
     <>
@@ -110,7 +114,9 @@ export const Calendar = ({
           }}
         >
           <div style={{ color: "black" }}>
-            <button onClick={closeTimesOfTheDate}>✖</button>
+            <button className="closeTimesOfDates" onClick={closeTimesOfTheDate}>
+              ✖
+            </button>
             <div className="containerCurrentTimesClicked">
               <ul className="ClickedTimesList__ul-times-list">
                 <li className="ClickedTimesList__ul-times-list__li-date">
@@ -119,21 +125,105 @@ export const Calendar = ({
                 <li className="ClickedTimesList__ul-times-list__li-date">
                   {currentTimesOfTheDateClicked.date.hijri.date}
                 </li>
-                <li className="ClickedTimesList__ul-times-list__li">
-                  {currentTimesOfTheDateClicked.timings.Fajr.substr(0, 6)} -{" "}
+                <li
+                  className={
+                    now >
+                    new Date(
+                      `${currentTimesOfTheDateClicked.date.gregorian.month.en} ${currentTimesOfTheDateClicked.date.gregorian.day}, ${currentTimesOfTheDateClicked.date.gregorian.year} 00:00:00`
+                    )
+                      ? "ClickedTimesList__ul-times-list__li-passed"
+                      : now ===
+                        new Date(
+                          `${currentTimesOfTheDateClicked.date.gregorian.month.en} ${currentTimesOfTheDateClicked.date.gregorian.day}, ${currentTimesOfTheDateClicked.date.gregorian.year} 00:00:00`
+                        ).setHours(0, 0, 0, 0)
+                      ? "ClickedTimesList__ul-times-list__li-today"
+                      : "ClickedTimesList__ul-times-list__li-normal"
+                  }
+                >
+                  FAJR {currentTimesOfTheDateClicked.timings.Fajr.substr(0, 6)}{" "}
+                  - SHOUROUQ{" "}
                   {currentTimesOfTheDateClicked.timings.Sunrise.substr(0, 6)}
                 </li>
-                <li className="ClickedTimesList__ul-times-list__li">
+                <li
+                  className={
+                    now >
+                    new Date(
+                      `${currentTimesOfTheDateClicked.date.gregorian.month.en} ${currentTimesOfTheDateClicked.date.gregorian.day}, ${currentTimesOfTheDateClicked.date.gregorian.year} 00:00:00`
+                    )
+                      ? "ClickedTimesList__ul-times-list__li-passed"
+                      : now ===
+                        new Date(
+                          `${currentTimesOfTheDateClicked.date.gregorian.month.en} ${currentTimesOfTheDateClicked.date.gregorian.day}, ${currentTimesOfTheDateClicked.date.gregorian.year} 00:00:00`
+                        ).setHours(0, 0, 0, 0)
+                      ? "ClickedTimesList__ul-times-list__li-today"
+                      : "ClickedTimesList__ul-times-list__li-normal"
+                  }
+                >
+                  DHOHR{" "}
                   {currentTimesOfTheDateClicked.timings.Dhuhr.substr(0, 6)}
                 </li>
-                <li className="ClickedTimesList__ul-times-list__li">
-                  {currentTimesOfTheDateClicked.timings.Asr.substr(0, 6)}
+                <li
+                  className={
+                    now >
+                    new Date(
+                      `${currentTimesOfTheDateClicked.date.gregorian.month.en} ${currentTimesOfTheDateClicked.date.gregorian.day}, ${currentTimesOfTheDateClicked.date.gregorian.year} 00:00:00`
+                    )
+                      ? "ClickedTimesList__ul-times-list__li-passed"
+                      : now ===
+                        new Date(
+                          `${currentTimesOfTheDateClicked.date.gregorian.month.en} ${currentTimesOfTheDateClicked.date.gregorian.day}, ${currentTimesOfTheDateClicked.date.gregorian.year} 00:00:00`
+                        ).setHours(0, 0, 0, 0)
+                      ? "ClickedTimesList__ul-times-list__li-today"
+                      : "ClickedTimesList__ul-times-list__li-normal"
+                  }
+                >
+                  ASR {currentTimesOfTheDateClicked.timings.Asr.substr(0, 6)}
                 </li>
-                <li className="ClickedTimesList__ul-times-list__li">
+                <li
+                  className={
+                    now >
+                    new Date(
+                      `${currentTimesOfTheDateClicked.date.gregorian.month.en} ${currentTimesOfTheDateClicked.date.gregorian.day}, ${currentTimesOfTheDateClicked.date.gregorian.year} 00:00:00`
+                    )
+                      ? "ClickedTimesList__ul-times-list__li-passed"
+                      : now ===
+                        new Date(
+                          `${currentTimesOfTheDateClicked.date.gregorian.month.en} ${currentTimesOfTheDateClicked.date.gregorian.day}, ${currentTimesOfTheDateClicked.date.gregorian.year} 00:00:00`
+                        ).setHours(0, 0, 0, 0)
+                      ? "ClickedTimesList__ul-times-list__li-today"
+                      : "ClickedTimesList__ul-times-list__li-normal"
+                  }
+                >
+                  MAGHREB{" "}
                   {currentTimesOfTheDateClicked.timings.Maghrib.substr(0, 6)}
                 </li>
-                <li className="ClickedTimesList__ul-times-list__li">
-                  {currentTimesOfTheDateClicked.timings.Isha.substr(0, 6)}
+                <li
+                  className={
+                    now >
+                    new Date(
+                      `${currentTimesOfTheDateClicked.date.gregorian.month.en} ${currentTimesOfTheDateClicked.date.gregorian.day}, ${currentTimesOfTheDateClicked.date.gregorian.year} 00:00:00`
+                    )
+                      ? "ClickedTimesList__ul-times-list__li-passed"
+                      : now ===
+                        new Date(
+                          `${currentTimesOfTheDateClicked.date.gregorian.month.en} ${currentTimesOfTheDateClicked.date.gregorian.day}, ${currentTimesOfTheDateClicked.date.gregorian.year} 00:00:00`
+                        ).setHours(0, 0, 0, 0)
+                      ? "ClickedTimesList__ul-times-list__li-today"
+                      : "ClickedTimesList__ul-times-list__li-normal"
+                  }
+                >
+                  ICHA {currentTimesOfTheDateClicked.timings.Isha.substr(0, 6)}{" "}
+                  - MI-NUIT{" "}
+                  <CalculMidnightCalendar
+                    fajrTimeCalendar={currentTimesOfTheDateClicked.timings.Fajr.substr(
+                      0,
+                      6
+                    )}
+                    maghrebTimeCalendar={currentTimesOfTheDateClicked.timings.Maghrib.substr(
+                      0,
+                      6
+                    )}
+                  />
                 </li>
               </ul>
             </div>
@@ -155,9 +245,9 @@ export const Calendar = ({
           </div>
 
           <select onChange={getAngleOptionValue}>
-            {method.map((obj, index) => (
-              <option key={index} value={obj.value}>
-                {obj.stringValue}
+            {method.map((currentTimesOfTheDateClicked, index) => (
+              <option key={index} value={currentTimesOfTheDateClicked.value}>
+                {currentTimesOfTheDateClicked.stringValue}
               </option>
             ))}
           </select>

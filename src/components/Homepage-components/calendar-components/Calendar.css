@@ -46,6 +46,18 @@
   .name-of-times-list {
     display: none;
   }
+  .closeTimesOfDates {
+    top: 6%;
+    position: fixed;
+    right: 1%;
+    border-radius: 80%;
+    border: none;
+    outline: inherit;
+    font: inherit;
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+  }
   .containerCurrentTimesClicked {
     background: #605b56;
     padding: 35px;
@@ -55,13 +67,13 @@
   }
   .containerCurrentTimesClicked .ClickedTimesList__ul-times-list {
     width: 90%;
-    color: #EAEAEA;
+    color: #eaeaea;
     margin: 5% auto auto auto;
     padding: 0;
   }
   .containerCurrentTimesClicked .ClickedTimesList__ul-times-list .ClickedTimesList__ul-times-list__li-date {
     font-weight: bold;
-    color: #EAEAEA;
+    color: #eaeaea;
     width: 100%;
     list-style: none;
     border-radius: 13px;
@@ -78,9 +90,53 @@
         justify-content: space-around;
     font-size: 13px;
   }
-  .containerCurrentTimesClicked .ClickedTimesList__ul-times-list .ClickedTimesList__ul-times-list__li {
+  .containerCurrentTimesClicked .ClickedTimesList__ul-times-list .ClickedTimesList__ul-times-list__li-normal {
     font-weight: bold;
     color: #605b56;
+    width: 100%;
+    background-color: #92bfee;
+    list-style: none;
+    height: 50px;
+    border-radius: 13px;
+    text-align: center;
+    margin-bottom: 8px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    font-size: 13px;
+    opacity: 0.5;
+  }
+  .containerCurrentTimesClicked .ClickedTimesList__ul-times-list .ClickedTimesList__ul-times-list__li-passed {
+    font-weight: bold;
+    color: #605b56;
+    width: 100%;
+    background-color: #eaeaea;
+    list-style: none;
+    height: 50px;
+    border-radius: 13px;
+    text-align: center;
+    margin-bottom: 8px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    font-size: 13px;
+    opacity: 0.5;
+  }
+  .containerCurrentTimesClicked .ClickedTimesList__ul-times-list .ClickedTimesList__ul-times-list__li-today {
+    font-weight: bold;
+    color: #eaeaea;
     width: 100%;
     background-color: #acc18a;
     list-style: none;
