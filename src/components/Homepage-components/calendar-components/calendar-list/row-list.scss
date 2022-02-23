@@ -5,6 +5,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     .container-horaires-list-normal {
+      cursor: pointer;
       display: flex;
       margin: 5px;
       background-color: rgb(146, 191, 238);
@@ -21,10 +22,12 @@
       }
     }
     .container-horaires-list-passed {
+      cursor: pointer;
+
       display: flex;
       margin: 5px;
       background: rgba(255, 255, 255, 0.5) none repeat scroll 0% 0%;
-        color: rgba(96, 91, 86, 0.5);
+      color: rgba(96, 91, 86, 0.5);
       height: 100px;
 
       width: 100px;
@@ -37,6 +40,8 @@
       }
     }
     .container-horaires-list-today {
+      cursor: pointer;
+
       display: flex;
       margin: 5px;
       background-color: #605b56;

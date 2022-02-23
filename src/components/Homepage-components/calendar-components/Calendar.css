@@ -47,7 +47,7 @@
     display: none;
   }
   .containerCurrentTimesClicked {
-    background: brown;
+    background: #605b56;
     padding: 35px;
     width: 70%;
     margin: 20% auto;
@@ -55,13 +55,13 @@
   }
   .containerCurrentTimesClicked .ClickedTimesList__ul-times-list {
     width: 90%;
-    color: white;
+    color: #EAEAEA;
     margin: 5% auto auto auto;
     padding: 0;
   }
   .containerCurrentTimesClicked .ClickedTimesList__ul-times-list .ClickedTimesList__ul-times-list__li-date {
     font-weight: bold;
-    color: #605b56;
+    color: #EAEAEA;
     width: 100%;
     list-style: none;
     border-radius: 13px;
