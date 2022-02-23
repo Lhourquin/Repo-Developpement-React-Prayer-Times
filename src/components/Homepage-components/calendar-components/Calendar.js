@@ -45,52 +45,147 @@ export const Calendar = ({
       clearTimeout(timer);
     };
   }, [city, country, methodValue]);
-  console.log(calendar);
+  // console.log(calendar);
 
   const [acutalMonth, setActualMonth] = useState(
     new Date(Date.now()).toLocaleString(undefined, {
       month: "long",
     })
   );
+  const [mediaSize, setMediaSize] = useState("");
+  const [mediaChangeInMobileOrTablet, setMediaChangeInMobileOrTablet] =
+    useState(false);
+
+  useEffect(() => {
+    let timer = setInterval(() => {
+      setMediaSize(window.innerWidth <= 620 ? true : false);
+    }, 500);
+
+    return () => clearInterval(timer);
+  });
+
+  useEffect(() => {
+    if (mediaSize) {
+      //console.log("mobile and tablet size");
+
+      setMediaChangeInMobileOrTablet(true);
+    } else {
+      // console.log("desktop size");
+      setMediaChangeInMobileOrTablet(false);
+      setDisplayTimesOfTheDateClicked(false);
+    }
+  }, [mediaSize]);
+  // console.log("mediaChangeInMobileOrTablet " + mediaChangeInMobileOrTablet);
+
+  const [displayTimesOfTheDateClicked, setDisplayTimesOfTheDateClicked] =
+    useState(false);
+
+  const [currentTimesOfTheDateClicked, setCurrentTimesOfTheDateClicked] =
+    useState("");
+
+  const displayTimesOfTheDate = (id) => {
+    if (mediaChangeInMobileOrTablet === true) {
+      setDisplayTimesOfTheDateClicked(true);
+      setCurrentTimesOfTheDateClicked(id);
+    }
+  };
+
+  const closeTimesOfTheDate = () => {
+    setDisplayTimesOfTheDateClicked(false);
+    setCurrentTimesOfTheDateClicked("");
+  };
+  // console.log("displayTimesOfTheDateClicked " + displayTimesOfTheDateClicked);
+  console.log(currentTimesOfTheDateClicked);
 
   return (
-    <div className="calendar">
-      <div className="calendar-container-month-degreeSeclect">
-        <div>
-          <h2 className="calendar-title-month">
-            {acutalMonth.charAt(0).toUpperCase() + acutalMonth.slice(1)}{" "}
-            <span>
-              {" "}
-              <i className="fas fa-info-circle info-icons"></i>
-            </span>
-          </h2>
+    <>
+      {displayTimesOfTheDateClicked ? (
+        <div
+          style={{
+            background: "rgba(255,255,255,0.8)",
+            width: "100%",
+            height: "100%",
+            top: "0",
+            position: "fixed",
+          }}
+        >
+          <div style={{ color: "black" }}>
+            <button onClick={closeTimesOfTheDate}>✖</button>
+            <div className="containerCurrentTimesClicked">
+              <ul className="ClickedTimesList__ul-times-list">
+                <li className="ClickedTimesList__ul-times-list__li-date">
+                  {currentTimesOfTheDateClicked.date.gregorian.date}
+                </li>
+                <li className="ClickedTimesList__ul-times-list__li-date">
+                  {currentTimesOfTheDateClicked.date.hijri.date}
+                </li>
+                <li className="ClickedTimesList__ul-times-list__li">
+                  {currentTimesOfTheDateClicked.timings.Fajr.substr(0, 6)} -{" "}
+                  {currentTimesOfTheDateClicked.timings.Sunrise.substr(0, 6)}
+                </li>
+                <li className="ClickedTimesList__ul-times-list__li">
+                  {currentTimesOfTheDateClicked.timings.Dhuhr.substr(0, 6)}
+                </li>
+                <li className="ClickedTimesList__ul-times-list__li">
+                  {currentTimesOfTheDateClicked.timings.Asr.substr(0, 6)}
+                </li>
+                <li className="ClickedTimesList__ul-times-list__li">
+                  {currentTimesOfTheDateClicked.timings.Maghrib.substr(0, 6)}
+                </li>
+                <li className="ClickedTimesList__ul-times-list__li">
+                  {currentTimesOfTheDateClicked.timings.Isha.substr(0, 6)}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
+      <div className="calendar">
+        <div className="calendar-container-month-degreeSeclect">
+          <div>
+            <h2 className="calendar-title-month">
+              {acutalMonth.charAt(0).toUpperCase() + acutalMonth.slice(1)}{" "}
+              <span>
+                {" "}
+                <i className="fas fa-info-circle info-icons"></i>
+              </span>
+            </h2>
+          </div>
+
+          <select onChange={getAngleOptionValue}>
+            {method.map((obj, index) => (
+              <option key={index} value={obj.value}>
+                {obj.stringValue}
+              </option>
+            ))}
+          </select>
         </div>
 
-        <select onChange={getAngleOptionValue}>
-          {method.map((obj, index) => (
-            <option key={index} value={obj.value}>
-              {obj.stringValue}
-            </option>
-          ))}
-        </select>
+        <table>
+          <thead className="thead-name-of-times">
+            <tr className="name-of-times-list">
+              <td>Date</td>
+              <td>Date hégirienne</td>
+              <td>Fajr</td>
+              <td>Shourouq</td>
+              <td>Dhor</td>
+              <td>Asr</td>
+              <td>Maghreb</td>
+              <td>Icha</td>
+              <td>Mi-nuit</td>
+            </tr>
+          </thead>
+          <RowList
+            calendar={calendar}
+            displayTimesOfTheDateClicked={displayTimesOfTheDateClicked}
+            displayTimesOfTheDate={displayTimesOfTheDate}
+            mediaChangeInMobileOrTablet={mediaChangeInMobileOrTablet}
+            mediaSize={mediaSize}
+          />
+        </table>
       </div>
-
-      <table>
-        <thead className="thead-name-of-times">
-          <tr className="name-of-times-list">
-            <td>Date</td>
-            <td>Date hégirienne</td>
-            <td>Fajr</td>
-            <td>Shourouk</td>
-            <td>Dhor</td>
-            <td>Asr</td>
-            <td>Maghreb</td>
-            <td>Icha</td>
-            <td>Mi-nuit</td>
-          </tr>
-        </thead>
-        <RowList calendar={calendar} />
-      </table>
-    </div>
+    </>
   );
 };

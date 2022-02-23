@@ -3,53 +3,14 @@ import "./row-list.css";
 import { CalculMidnightCalendar } from "../calcul-mignight-calendar/CalculMidnightCalandar";
 import "./row-list.css";
 
-export const RowList = ({ calendar }) => {
+export const RowList = ({ calendar, displayTimesOfTheDate }) => {
   let count = 1;
   let date = new Date(Date.now());
   const dayDate = date.getDay();
   const [now, setNow] = useState(new Date().setHours(0, 0, 0, 0));
-  const [mediaSize, setMediaSize] = useState("");
-  const [mediaChangeInMobileOrTablet, setMediaChangeInMobileOrTablet] =
-    useState(false);
 
-  useEffect(() => {
-    let timer = setInterval(() => {
-      setMediaSize(window.innerWidth <= 620 ? true : false);
-    }, 500);
-
-    return () => clearInterval(timer);
-  });
-
-  useEffect(() => {
-    if (mediaSize) {
-      //console.log("mobile and tablet size");
-
-      setMediaChangeInMobileOrTablet(true);
-    } else {
-      // console.log("desktop size");
-      setMediaChangeInMobileOrTablet(false);
-      setDisplayTimesOfTheDateClicked(false);
-    }
-  }, [mediaSize]);
-  // console.log("mediaChangeInMobileOrTablet " + mediaChangeInMobileOrTablet);
-
-  const [displayTimesOfTheDateClicked, setDisplayTimesOfTheDateClicked] =
-    useState(false);
-
-  const displayTimesOfTheDate = () => {
-    if (mediaChangeInMobileOrTablet === true) {
-      setDisplayTimesOfTheDateClicked(true);
-    }
-  };
-  console.log("displayTimesOfTheDateClicked " + displayTimesOfTheDateClicked);
   return (
     <>
-      {
-        displayTimesOfTheDateClicked ? (
-          <div></div>
-
-        ) : ""
-      }
       <tbody className="salat-of-month ">
         {calendar.map((obj, index) => (
           <tr
@@ -67,7 +28,7 @@ export const RowList = ({ calendar }) => {
                 : "container-horaires-list-normal"
             }
             key={index}
-            onClick={displayTimesOfTheDate}
+            onClick={()=>displayTimesOfTheDate(obj)}
           >
             <td className="count">{count++}</td>
             {/*console.log(obj.date.gregorian.month.en  + " " + obj.date.gregorian.day + " " + obj.date.gregorian.year)*/}
