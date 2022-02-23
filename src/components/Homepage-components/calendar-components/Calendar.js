@@ -52,15 +52,7 @@ export const Calendar = ({
       month: "long",
     })
   );
- 
-  useEffect(() => {
-    if(window.matchMedia("(max-width : 620px)").matches) {
-      console.log("mobile and tablet size")
 
-    }else{
-      console.log("desktop size")
-    } 
-  })  
   return (
     <div className="calendar">
       <div className="calendar-container-month-degreeSeclect">
@@ -74,12 +66,6 @@ export const Calendar = ({
           </h2>
         </div>
 
-        {/* <span style={{ fontSize: "10px" }}>
-        Angle :{" "}
-        {selectedMethodStringValue === ""
-          ? "Amérique du Nord (15°)"
-          : selectedMethodStringValue}
-      </span>*/}
         <select onChange={getAngleOptionValue}>
           {method.map((obj, index) => (
             <option key={index} value={obj.value}>
