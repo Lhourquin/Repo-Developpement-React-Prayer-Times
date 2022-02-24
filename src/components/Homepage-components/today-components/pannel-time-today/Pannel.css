@@ -1,5 +1,4 @@
 .Pannel__container-select-degree {
-  text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -7,12 +6,21 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  font-size: 10px;
+  text-align: left;
+  padding: 0 1em;
+  padding-bottom: 1em;
+}
+
+.Pannel__container-select-degree span {
+  font-size: 10px;
+  text-align: left;
 }
 
 .Pannel__container-select-degree select {
   color: #acc18a;
   font-size: 10px;
-  text-align: center;
+  text-align: left;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -23,7 +31,6 @@
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  padding: 0 1em;
   background-color: var(--darkgray);
   background-image: none;
   cursor: pointer;
@@ -223,7 +230,7 @@
     -ms-flex-pack: distribute;
         justify-content: space-around;
     list-style: none;
-    margin: 4px 0 6%;
+    margin: 0;
     padding: 41px;
   }
   .Pannel__div--container-times-today .Pannel__ul--hour-date-countdown .Pannel__ul--hour-date-countdown__li--date {
@@ -233,7 +240,7 @@
     font-size: 21px;
   }
   .Pannel__div--container-times-today .Pannel__ul--hour-date-countdown .Pannel__ul--hour-date-countdown__li--countdown-current-times {
-    font-size: 25px;
+    font-size: 22px;
     color: #65d977;
   }
   .Pannel__div--container-times-today .Pannel__ul--hour-date-countdown .Pannel__ul--hour-date-countdown__li--countdown-next-times {

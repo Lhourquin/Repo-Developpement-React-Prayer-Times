@@ -1,5 +1,5 @@
 .calendar .Calendar__div-container-span-select {
-  text-align: center;
+  text-align: left;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -7,6 +7,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding: 0 1em;
 }
 
 .calendar .calendar-container-month-degreeSeclect {
@@ -35,12 +36,10 @@
   border: 0;
   -webkit-box-shadow: none;
           box-shadow: none;
-  padding: 0 1em;
   background-color: var(--darkgray);
   background-image: none;
   cursor: pointer;
-  text-align: center;
-  text-align: -webkit-center;
+  text-align: left;
 }
 
 .calendar .calendar-container-month-degreeSeclect .select {

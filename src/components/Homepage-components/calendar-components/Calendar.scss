@@ -1,8 +1,9 @@
 .calendar {
   .Calendar__div-container-span-select{
-    text-align:center;
+    text-align: left;
     display: flex;
     flex-direction: column;
+    padding: 0 1em;
   }
   .calendar-container-month-degreeSeclect {
     display: flex;
@@ -21,12 +22,10 @@
       outline: 0;
       border: 0;
       box-shadow: none;
-      padding: 0 1em;
       background-color: var(--darkgray);
       background-image: none;
       cursor: pointer;
-      text-align: center;
-      text-align: -webkit-center;
+      text-align: left;
     }
 
     .select {
