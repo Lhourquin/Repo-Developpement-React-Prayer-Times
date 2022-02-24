@@ -53,7 +53,7 @@ export const SearchBar = ({
           }
         >
           <span className="cross" onClick={closeSearch}>
-            ✖
+            <i class="fas fa-times-circle"></i>
           </span>
           <input
             className="SearchBar__form__div--find-country-container__input-country"

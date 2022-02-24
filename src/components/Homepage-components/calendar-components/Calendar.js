@@ -127,7 +127,7 @@ export const Calendar = ({
         >
           <div style={{ color: "black" }}>
             <button className="closeTimesOfDates" onClick={closeTimesOfTheDate}>
-              ✖
+            <i class="fas fa-times-circle"></i>
             </button>
             <div className="containerCurrentTimesClicked">
               <ul className="ClickedTimesList__ul-times-list">
@@ -253,7 +253,8 @@ export const Calendar = ({
         >
           {" "}
           <button className="closeInfosMonth" onClick={closeDisplayInfosMonth}>
-            ✖
+          <i class="fas fa-times-circle"></i>
+
           </button>
           <div className="infos-hijri-month-container">
             <p>

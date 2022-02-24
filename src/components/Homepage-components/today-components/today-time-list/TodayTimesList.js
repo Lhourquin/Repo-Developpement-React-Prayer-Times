@@ -275,7 +275,8 @@ export const TodayTimesList = ({ today }) => {
         >
           {" "}
           <button className="closeHadith" onClick={closeHadith}>
-            ✖
+          <i class="fas fa-times-circle"></i>
+
           </button>
           <div className="hadith-container">
             <div className="hadith-container-current">
