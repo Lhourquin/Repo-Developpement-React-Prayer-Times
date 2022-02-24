@@ -28,6 +28,11 @@ export const SearchBar = ({
       >
         <i className="fas fa-map-marker-alt localisation-marker"></i>
       </button>
+      <span
+      style={toggleInput ? {display: 'none'} : {}}
+       className="cross" onClick={closeSearch}>
+            <i class="fas fa-times-circle"></i>
+          </span>
       <form className="SearchBar__form" onSubmit={handleSubmitValue}>
         <div className="SearchBar__form__div--find-city-container">
           <input
@@ -52,9 +57,7 @@ export const SearchBar = ({
               : { transition: "width 0.2s, height 0.2s, transform 2s" }
           }
         >
-          <span className="cross" onClick={closeSearch}>
-            <i class="fas fa-times-circle"></i>
-          </span>
+         
           <input
             className="SearchBar__form__div--find-country-container__input-country"
             type="text"
