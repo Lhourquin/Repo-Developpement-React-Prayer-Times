@@ -1,5 +1,27 @@
+.closeInfosMonth {
+  top: 90px;
+  position: fixed;
+  right: 12%;
+  border-radius: 80%;
+  border: none;
+  outline: inherit;
+  font: inherit;
+  height: 25px;
+  width: 25px;
+  cursor: pointer;
+}
+.infos-hijri-month-container {
+  background-color: #605b56;
+  padding: 8.1px;
+  border-radius: 8px;
+  height: 26%;
+  overflow: auto;
+  text-align: left;
+  width: 60%;
+  margin: 125px auto;
+}
 .calendar {
-  .Calendar__div-container-span-select{
+  .Calendar__div-container-span-select {
     text-align: left;
     display: flex;
     flex-direction: column;
@@ -38,34 +60,13 @@
     }
   }
 
-.calendar-span-infos-month {
-  cursor: pointer;
-  .info-icons-calendar {
-    font-size: 20px;
+  .calendar-span-infos-month {
+    cursor: pointer;
+    .info-icons-calendar {
+      font-size: 20px;
+    }
   }
-}
-.closeInfosMonth {
-  top: 90px;
-  position: fixed;
-  right: 12%;
-  border-radius: 80%;
-  border: none;
-  outline: inherit;
-  font: inherit;
-  height: 25px;
-  width: 25px;
-  cursor: pointer;
-}
-.infos-hijri-month-container {
-  background-color: #605b56;
-  padding: 8.1px;
-  border-radius: 8px;
-  height: 26%;
-  overflow: auto;
-  text-align: left;
-  width: 60%;
-  margin: 125px auto;
-}
+  
 }
 @media (min-width: 0px) and (max-width: 621px) {
   .name-of-times-list {
