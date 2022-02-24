@@ -1,14 +1,15 @@
 .closeInfosMonth {
-  top: 90px;
+  border: none;
+  border-radius: 100%;
+  cursor: pointer;
+  height: 25px;
+  outline: inherit;
   position: fixed;
   right: 12%;
-  border-radius: 80%;
-  border: none;
-  outline: inherit;
-  font: inherit;
-  height: 25px;
+  top: 90px;
   width: 25px;
-  cursor: pointer;
+  font-size: 12px;
+  text-align: center;
 }
 .infos-hijri-month-container {
   background-color: #605b56;
@@ -66,7 +67,6 @@
       font-size: 20px;
     }
   }
-  
 }
 @media (min-width: 0px) and (max-width: 621px) {
   .name-of-times-list {
