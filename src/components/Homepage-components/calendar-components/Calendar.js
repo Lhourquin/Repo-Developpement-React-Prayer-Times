@@ -99,7 +99,7 @@ export const Calendar = ({
     setCurrentTimesOfTheDateClicked("");
   };
   // console.log("displayTimesOfTheDateClicked " + displayTimesOfTheDateClicked);
-  console.log(currentTimesOfTheDateClicked);
+  // console.log(currentTimesOfTheDateClicked);
   const [now, setNow] = useState(new Date().setHours(0, 0, 0, 0));
 
   const [clickedDisplayInfosMonth, setClickedDisplayInfosMonth] =
@@ -271,22 +271,36 @@ export const Calendar = ({
           <div>
             <h2 className="calendar-title-month">
               {acutalMonth.charAt(0).toUpperCase() + acutalMonth.slice(1)}{" "}
-              <span 
-              onClick={displayInfosMonth}
-              className="calendar-span-infos-month">
+              <span
+                onClick={displayInfosMonth}
+                className="calendar-span-infos-month"
+              >
                 {" "}
                 <i className="fas fa-info-circle info-icons-calendar"></i>
               </span>
             </h2>
           </div>
-
-          <select onChange={getAngleOptionValue}>
-            {method.map((currentTimesOfTheDateClicked, index) => (
-              <option key={index} value={currentTimesOfTheDateClicked.value}>
-                {currentTimesOfTheDateClicked.stringValue}
-              </option>
-            ))}
-          </select>
+          <div className="Calendar__div-container-span-select">
+            <span style={{ fontSize: "10px", color: "#605b56" }}>
+              Angle :{" "}
+              {selectedMethodStringValue === "" ||
+              selectedMethodStringValue === "Sélectionner un angle"
+                ? "Amérique du Nord (15°)"
+                : selectedMethodStringValue}
+            </span>
+          
+              <select onChange={getAngleOptionValue}>
+                {method.map((currentTimesOfTheDateClicked, index) => (
+                  <option
+                    key={index}
+                    value={currentTimesOfTheDateClicked.value}
+                  >
+                    {currentTimesOfTheDateClicked.stringValue}
+                  </option>
+                ))}
+              </select>
+          
+          </div>
         </div>
 
         <table>

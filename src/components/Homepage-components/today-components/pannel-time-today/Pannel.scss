@@ -1,10 +1,11 @@
 .Pannel__container-select-degree {
-  text-align: end;
-  margin-top: -4%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
   select {
     color: #acc18a;
     font-size: 10px;
-    text-align: end;
+    text-align: center;
     appearance: none;
     outline: 0;
     border: 0;
@@ -25,9 +26,7 @@
     overflow: hidden;
   }
 }
-@media (min-width: 0px) and (max-width:621px) {
-  
-  
+@media (min-width: 0px) and (max-width: 621px) {
   .Pannel__div--container-times-today {
     width: 85%;
     background-color: #605b56;
@@ -35,7 +34,7 @@
     text-align: center;
     border-radius: 25px;
     font-size: 12px;
-  
+
     .localisation-marker-pannel {
       color: #acc18a;
     }
@@ -43,7 +42,7 @@
       .Pannel__div--container-times-today__div--title__h2 {
         font-size: 14px;
       }
-  
+
       .Pannel__div--container-times-today__div__div--container-angle-select__div--span-select {
         display: flex;
         flex-direction: row;
@@ -56,7 +55,7 @@
         }
       }
     }
-  
+
     .Pannel__ul--hour-date-countdown {
       list-style: none;
       padding: 0;
@@ -72,7 +71,7 @@
       .DateNow {
         font-size: 15px;
       }
-  
+
       .Pannel__ul--hour-date-countdown__li--countdown-current-times {
         font-size: 17px;
         color: #65d977;
@@ -90,13 +89,10 @@
       color: #ee9292;
       font-size: 17px;
     }
-    
   }
 }
 
 @media (min-width: 622px) {
-
-
   .Pannel__div--container-times-today {
     width: 90%;
     background-color: #605b56;
@@ -157,11 +153,8 @@
     color: #ee9292;
     font-size: 17px;
   }
-  
 }
 @media (min-width: 830px) {
-
-
   .Pannel__div--container-times-today {
     width: 90%;
     background-color: #605b56;
@@ -222,6 +215,4 @@
     color: #ee9292;
     font-size: 25px;
   }
-  
 }
-

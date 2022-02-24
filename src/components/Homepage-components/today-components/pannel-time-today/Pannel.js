@@ -2,7 +2,13 @@ import React from "react";
 import { Clock } from "./time-components/Clock";
 import { Timer } from "./time-components/Timer";
 import "./Pannel.css";
-export const Pannel = ({ today, searchField, getAngleOptionValue, method }) => {
+export const Pannel = ({
+  today,
+  searchField,
+  getAngleOptionValue,
+  method,
+  selectedMethodStringValue,
+}) => {
   return (
     <>
       {today.map((obj, index) => (
@@ -14,10 +20,17 @@ export const Pannel = ({ today, searchField, getAngleOptionValue, method }) => {
                 searchField.slice(1).toLowerCase()}
             </h2>
             <div className="Pannel__container-select-degree">
+              <span style={{ fontSize: "10px" }}>
+                Angle :{" "}
+                {selectedMethodStringValue === "Sélectionner un angle" ||
+                selectedMethodStringValue === ""
+                  ? "Amérique du Nord (15°)"
+                  : selectedMethodStringValue}
+              </span>
               <select onChange={getAngleOptionValue} className="select-degree">
                 {method.map((obj, index) => (
                   <option key={index} value={obj.value}>
-                    {obj.stringValue}{" "}
+                    {obj.stringValue}
                   </option>
                 ))}
               </select>

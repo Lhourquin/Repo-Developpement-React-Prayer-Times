@@ -1,12 +1,18 @@
 .Pannel__container-select-degree {
-  text-align: end;
-  margin-top: -4%;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .Pannel__container-select-degree select {
   color: #acc18a;
   font-size: 10px;
-  text-align: end;
+  text-align: center;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;

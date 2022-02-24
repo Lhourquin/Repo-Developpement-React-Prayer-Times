@@ -1,4 +1,9 @@
 .calendar {
+  .Calendar__div-container-span-select{
+    text-align:center;
+    display: flex;
+    flex-direction: column;
+  }
   .calendar-container-month-degreeSeclect {
     display: flex;
     flex-direction: column;
@@ -21,6 +26,7 @@
       background-image: none;
       cursor: pointer;
       text-align: center;
+      text-align: -webkit-center;
     }
 
     .select {
@@ -32,7 +38,7 @@
       overflow: hidden;
     }
   }
-}
+
 .calendar-span-infos-month {
   cursor: pointer;
   .info-icons-calendar {
@@ -60,6 +66,7 @@
   text-align: left;
   width: 60%;
   margin: 125px auto;
+}
 }
 @media (min-width: 0px) and (max-width: 621px) {
   .name-of-times-list {

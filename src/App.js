@@ -16,6 +16,10 @@ class App extends Component {
       city: "",
       country: "",
       method: [
+        { 
+          value : "2",
+          stringValue : "Sélectionner un angle"
+        },
         {
           value: 2,
           stringValue: "Amérique du Nord (15°)",
@@ -54,7 +58,7 @@ class App extends Component {
         },
         {
           value: 12,
-          stringValue: "Union des Organisations islamiques de France (12°)",
+          stringValue: "UOIF (12°)",
         },
         {
           value: 13,
@@ -110,11 +114,10 @@ class App extends Component {
       this.setState({ errorMessageLocation: "" });
     }, 5000);
   }
-
   render() {
+    console.log(this.state.selectedMethodStringValue)
     return (
       <>
-       
         <header>
           <NavBar />
 
@@ -130,6 +133,24 @@ class App extends Component {
             }
             handleSubmitValue={(event) => {
               event.preventDefault();
+              const key = event.keyCode;
+
+              if (key === 13) {
+                if (
+                  this.state.inputCityValue === "" ||
+                  this.state.inputCountryValue === ""
+                ) {
+                  this.setState({ city: "" });
+                  this.setState({ country: "" });
+                } else {
+                  this.setState({ city: this.state.inputCityValue });
+                  this.setState({ country: this.state.inputCountryValue });
+                  setTimeout(() => {
+                    this.setState({ inputCityValue: "" });
+                    this.setState({ inputCountryValue: "" });
+                  }, 1000);
+                }
+              }
 
               if (
                 this.state.inputCityValue === "" ||
@@ -170,7 +191,6 @@ class App extends Component {
                 }}
                 selectedMethodValue={this.state.selectedMethodValue}
                 selectedMethodStringValue={this.state.selectedMethodStringValue}
-               
               />
             }
           />

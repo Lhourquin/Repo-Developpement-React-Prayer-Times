@@ -1,3 +1,14 @@
+.calendar .Calendar__div-container-span-select {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 .calendar .calendar-container-month-degreeSeclect {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -29,6 +40,7 @@
   background-image: none;
   cursor: pointer;
   text-align: center;
+  text-align: -webkit-center;
 }
 
 .calendar .calendar-container-month-degreeSeclect .select {
@@ -42,15 +54,15 @@
   overflow: hidden;
 }
 
-.calendar-span-infos-month {
+.calendar .calendar-span-infos-month {
   cursor: pointer;
 }
 
-.calendar-span-infos-month .info-icons-calendar {
+.calendar .calendar-span-infos-month .info-icons-calendar {
   font-size: 20px;
 }
 
-.closeInfosMonth {
+.calendar .closeInfosMonth {
   top: 90px;
   position: fixed;
   right: 12%;
@@ -63,7 +75,7 @@
   cursor: pointer;
 }
 
-.infos-hijri-month-container {
+.calendar .infos-hijri-month-container {
   background-color: #605b56;
   padding: 8.1px;
   border-radius: 8px;
