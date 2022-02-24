@@ -76,6 +76,7 @@ export const Calendar = ({
       // console.log("desktop size");
       setMediaChangeInMobileOrTablet(false);
       setDisplayTimesOfTheDateClicked(false);
+      setClickedDisplayInfosMonth(false);
     }
   }, [mediaSize]);
   // console.log("mediaChangeInMobileOrTablet " + mediaChangeInMobileOrTablet);
@@ -100,6 +101,17 @@ export const Calendar = ({
   // console.log("displayTimesOfTheDateClicked " + displayTimesOfTheDateClicked);
   console.log(currentTimesOfTheDateClicked);
   const [now, setNow] = useState(new Date().setHours(0, 0, 0, 0));
+
+  const [clickedDisplayInfosMonth, setClickedDisplayInfosMonth] =
+    useState(false);
+
+  const displayInfosMonth = () => {
+    setClickedDisplayInfosMonth(true);
+  };
+
+  const closeDisplayInfosMonth = () => {
+    setClickedDisplayInfosMonth(false);
+  };
 
   return (
     <>
@@ -229,6 +241,28 @@ export const Calendar = ({
             </div>
           </div>
         </div>
+      ) : clickedDisplayInfosMonth ? (
+        <div
+          style={{
+            background: "rgba(255,255,255,0.8)",
+            width: "100%",
+            height: "100%",
+            top: "0",
+            position: "absolute",
+          }}
+        >
+          {" "}
+          <button className="closeInfosMonth" onClick={closeDisplayInfosMonth}>
+            ✖
+          </button>
+          <div className="infos-hijri-month-container">
+            <p>
+              La date hégirienne n’est qu’à titre informative. Il faut s’en
+              tenir aux annonces des organismes officiels et compétents pour
+              avoir la date exacte à chaque entrée de mois.
+            </p>
+          </div>
+        </div>
       ) : (
         ""
       )}
@@ -237,9 +271,11 @@ export const Calendar = ({
           <div>
             <h2 className="calendar-title-month">
               {acutalMonth.charAt(0).toUpperCase() + acutalMonth.slice(1)}{" "}
-              <span>
+              <span 
+              onClick={displayInfosMonth}
+              className="calendar-span-infos-month">
                 {" "}
-                <i className="fas fa-info-circle info-icons"></i>
+                <i className="fas fa-info-circle info-icons-calendar"></i>
               </span>
             </h2>
           </div>
