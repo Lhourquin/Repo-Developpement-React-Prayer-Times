@@ -1,9 +1,8 @@
 .closeInfosMonth {
   color: #605b56;
   background: none;
-  border: none;
-  border-radius: 100%;
   cursor: pointer;
+  border: none;
   height: 25px;
   outline: inherit;
   position: fixed;
