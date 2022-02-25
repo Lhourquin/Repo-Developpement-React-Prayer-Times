@@ -5,7 +5,7 @@ export const Clock = () => {
   useEffect(() => {
     let interval = setInterval(() => {
       setTimeNow(new Date().toLocaleTimeString());
-    }, 1000);
+    });
 
     return () => clearInterval(interval);
   });

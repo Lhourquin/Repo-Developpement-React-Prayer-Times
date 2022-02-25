@@ -2,7 +2,16 @@ import React, { useState, useEffect } from "react";
 import "./TodayTimesList.css";
 import { CalculMidnight } from "./calcul-midnigh-today/CalculMidnightToday";
 
-export const TodayTimesList = ({ today }) => {
+export const TodayTimesList = ({
+  today,
+  now,
+  dateFajr,
+  dateShourouq,
+  dateDhohr,
+  dateAsr,
+  dateMaghreb,
+  dateIcha,
+}) => {
   const [displayHadith, setDisplayHadith] = useState(false);
   const [listOfHadith, setListOfHadith] = useState([
     {
@@ -171,96 +180,6 @@ export const TodayTimesList = ({ today }) => {
     setDisplayHadith((boolean) => !boolean);
   };
 
-  const [dateFajr, setDateFajr] = useState("");
-  const [dateShourouq, setDateShourouq] = useState("");
-  const [dateDhohr, setDateDhohr] = useState("");
-  const [dateAsr, setDateAsr] = useState("");
-  const [dateMaghreb, setDateMaghreb] = useState("");
-  const [dateIcha, setDateIcha] = useState("");
-
-  useEffect(() => {
-    /* let timer = setTimeout(() =>{*/
-    today.map((obj) => {
-      setDateFajr(
-        new Date(
-          `${obj.data.date.gregorian.month.en} ${obj.data.date.gregorian.day}, ${obj.data.date.gregorian.year} ${obj.data.timings.Fajr}:00`
-        )
-      );
-      setDateShourouq(
-        new Date(
-          `${obj.data.date.gregorian.month.en} ${obj.data.date.gregorian.day}, ${obj.data.date.gregorian.year} ${obj.data.timings.Sunrise}:00`
-        )
-      );
-      setDateDhohr(
-        new Date(
-          `${obj.data.date.gregorian.month.en} ${obj.data.date.gregorian.day}, ${obj.data.date.gregorian.year} ${obj.data.timings.Dhuhr}:00`
-        )
-      );
-      setDateAsr(
-        new Date(
-          `${obj.data.date.gregorian.month.en} ${obj.data.date.gregorian.day}, ${obj.data.date.gregorian.year} ${obj.data.timings.Asr}:00`
-        )
-      );
-      setDateMaghreb(
-        new Date(
-          `${obj.data.date.gregorian.month.en} ${obj.data.date.gregorian.day}, ${obj.data.date.gregorian.year} ${obj.data.timings.Maghrib}:00`
-        )
-      );
-      setDateIcha(
-        new Date(
-          `${obj.data.date.gregorian.month.en} ${obj.data.date.gregorian.day}, ${obj.data.date.gregorian.year} ${obj.data.timings.Isha}:00`
-        )
-      );
-    });
-
-    //  });
-
-    //      return () => clearTimeout(timer);
-    /* setDay(obj.data.date.gregorian.day);
-      setMonth(obj.data.date.gregorian.month.en);
-      setYear(obj.data.date.gregorian.year);*/
-  }, [today]);
-
-  const [now, setNow] = useState(new Date(Date.now()).getTime());
-
-  useEffect(() => {
-    let interval = setInterval(() => {
-      setNow(new Date(Date.now()).getTime());
-    });
-
-    return () => clearInterval(interval);
-  });
-
-  const [timeExceed, setTimeExceed] = useState([
-    {
-      timeExceedFajr: false,
-      timeExceedDhohr: false,
-      timeExceedDhohr: false,
-      timeExceedAsr: false,
-      timeExceedMaghreb: false,
-      timeExceedIcha: false,
-      timeExceedMidnight: false,
-    },
-  ]);
-
-  //setTimeExceed(() => !timeExceed.timeExceedFajr)
-
-  /*  useEffect(() => {
-
-    if(now <  new Date(
-      `${obj.data.date.gregorian.month.en} ${
-        Number(obj.data.date.gregorian.day) + 1
-      }, ${obj.data.date.gregorian.year} 00:00:00`
-    ) ){
-      const newTimeExceed = [...timeExceed];
-    newTimeExceed.map((obj) => (obj.timeExceedAsr = true));
-    setTimeExceed(newTimeExceed);
-    console.log(timeExceed);
-    }
-    
-  }, []);*/
-  //
-  // console.log(today);
   return (
     <>
       {displayHadith === true ? (
@@ -275,8 +194,7 @@ export const TodayTimesList = ({ today }) => {
         >
           {" "}
           <button className="closeHadith" onClick={closeHadith}>
-          <i class="fas fa-times-circle"></i>
-
+            <i class="fas fa-times-circle"></i>
           </button>
           <div className="hadith-container">
             <div className="hadith-container-current">

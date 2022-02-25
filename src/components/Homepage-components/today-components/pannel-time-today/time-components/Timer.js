@@ -1,6 +1,18 @@
 import React, { useState, useEffect, useRef } from "react";
 
-export const Timer = ({ arrayOfTimesSalatOfTheDay, day, month, year }) => {
+export const Timer = ({
+  arrayOfTimesSalatOfTheDay,
+  day,
+  month,
+  year,
+  now,
+  dateFajr,
+  dateShourouq,
+  dateDhohr,
+  dateAsr,
+  dateMaghreb,
+  dateIcha,
+}) => {
   const [fajr, setFajr] = useState(arrayOfTimesSalatOfTheDay[0].fajr);
   const [shourouq, setShourouq] = useState(
     arrayOfTimesSalatOfTheDay[1].shourouq
@@ -32,24 +44,6 @@ export const Timer = ({ arrayOfTimesSalatOfTheDay, day, month, year }) => {
     return () => clearTimeout(timer);
   }, arrayOfTimesSalatOfTheDay);
 
-  const [dateFajr, setDateFajr] = useState(
-    new Date(`${month} ${Number(day)}, ${year} ${fajr}:00`)
-  );
-  const [dateShourouq, setDateShourouq] = useState(
-    new Date(`${month} ${Number(day)}, ${year} ${shourouq}:00`)
-  );
-  const [dateDhohr, setDateDhohr] = useState(
-    new Date(`${month} ${Number(day)}, ${year} ${dhohr}:00`)
-  );
-  const [dateAsr, setDateAsr] = useState(
-    new Date(`${month} ${Number(day)}, ${year} ${asr}:00`)
-  );
-  const [dateMaghreb, setDateMaghreb] = useState(
-    new Date(`${month} ${Number(day)}, ${year} ${maghreb}:00`)
-  );
-  const [dateIcha, setDateIcha] = useState(
-    new Date(`${month} ${Number(day)}, ${year} ${icha}:00`)
-  );
   const [dateStartOfTheNextDay, setdateStartOfTheNextDay] = useState(
     new Date(`${month} ${Number(day) + 1}, ${year} 00:00:00`)
   );
@@ -73,16 +67,6 @@ export const Timer = ({ arrayOfTimesSalatOfTheDay, day, month, year }) => {
 
   useEffect(() => {
     let timer = setTimeout(() => {
-      setDateFajr(new Date(`${month} ${Number(day)}, ${year} ${fajr}:00`));
-      setDateShourouq(
-        new Date(`${month} ${Number(day)}, ${year} ${shourouq}:00`)
-      );
-      setDateDhohr(new Date(`${month} ${Number(day)}, ${year} ${dhohr}:00`));
-      setDateAsr(new Date(`${month} ${Number(day)}, ${year} ${asr}:00`));
-      setDateMaghreb(
-        new Date(`${month} ${Number(day)}, ${year} ${maghreb}:00`)
-      );
-      setDateIcha(new Date(`${month} ${Number(day)}, ${year} ${icha}:00`));
       setDateMidnight(() => {
         if (
           dateIcha > dateStartOfTheNextDay ||
@@ -108,7 +92,6 @@ export const Timer = ({ arrayOfTimesSalatOfTheDay, day, month, year }) => {
     return () => clearTimeout(timer);
   }, [midnight]);
 
-  // const [timerDays, setTimerDays] = useState("");
   const [timerHoursCurrentTime, setTimerHoursCurrentTime] = useState("");
   const [timerMinutesCurrentTime, setTimerMinutesCurrentTime] = useState("");
   const [timerSecondsCurrentTime, setTimerSecondsCurrentTime] = useState("");
@@ -125,7 +108,6 @@ export const Timer = ({ arrayOfTimesSalatOfTheDay, day, month, year }) => {
       let now = new Date(Date.now()).getTime();
       let distance = countDownTimes - now;
 
-      //  let days = Math.floor(distance / (1000 * 60 * 60 * 24));
       let hours = Math.floor(
         (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
       );
@@ -135,8 +117,6 @@ export const Timer = ({ arrayOfTimesSalatOfTheDay, day, month, year }) => {
       if (distance < 0) {
         clearInterval(intervalCountDown.current);
       } else {
-        // setTimerDays(days);
-
         setTimerHoursNextTime(hours < 10 ? ("0" + hours).slice(-2) : hours);
         setTimerMinutesNextTime(
           minutes < 10 ? ("0" + minutes).slice(-2) : minutes
@@ -155,7 +135,6 @@ export const Timer = ({ arrayOfTimesSalatOfTheDay, day, month, year }) => {
       let now = new Date(Date.now()).getTime();
       let distance = countDownTimes - now;
 
-      //  let days = Math.floor(distance / (1000 * 60 * 60 * 24));
       let hours = Math.floor(
         (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
       );
@@ -183,15 +162,6 @@ export const Timer = ({ arrayOfTimesSalatOfTheDay, day, month, year }) => {
   const [displayTimerCurrentNextTime, setDisplayTimerCurrentNextTime] =
     useState(false);
   const [displayTimerCurrentTime, setDisplayTimerCurrentTime] = useState(false);
-  const [now, setNow] = useState(new Date(Date.now()).getTime());
-
-  useEffect(() => {
-    let interval = setInterval(() => {
-      setNow(new Date(Date.now()).getTime());
-    });
-
-    return () => clearInterval(interval);
-  });
 
   useEffect(() => {
     if (now < dateFajr) {
@@ -244,31 +214,40 @@ export const Timer = ({ arrayOfTimesSalatOfTheDay, day, month, year }) => {
       setCurrentNextTime("MI-NUIT " + midnight + " - ");
       return () => clearInterval(intervalCountDown.current);
     }
-
-    /*  console.log(" 1 : " + midnight);
-    console.log(" 2 : " + dateFajr);
-    console.log(" 3 : " + dateShourouq);
-    console.log(" 4 : " + dateDhohr);
-    console.log(" 5 : " + dateAsr);
-    console.log(" 6 : " + dateMaghreb);
-    console.log(" 7 : " + dateIcha);
-    console.log(" 8 : " + dateMidnight);*/
-
   }, [now, midnight]);
-  //console.log(timerHoursNextTime > 1)
+
   return (
     <>
-      <li style={displayTimerCurrentTime === true ? {color : "#92BFEE"}: {}} className="Pannel__ul--hour-date-countdown__li--countdown-current-times">
+      <li
+        style={displayTimerCurrentTime === true ? { color: "#92BFEE" } : {}}
+        className="Pannel__ul--hour-date-countdown__li--countdown-current-times"
+      >
         {currentTime}{" "}
-        {displayTimerCurrentTime === true
-          ? <span className={(timerHoursCurrentTime == 0 && timerMinutesCurrentTime < 30 ? "countDowntThirtyMinutesCurentTime" :  "")}>{timerHoursCurrentTime +
-            ":" +
-            timerMinutesCurrentTime +
-            ":" +
-            timerSecondsCurrentTime}</span> 
-          : ""}
+        {displayTimerCurrentTime === true ? (
+          <span
+            className={
+              timerHoursCurrentTime == 0 && timerMinutesCurrentTime < 30
+                ? "countDowntThirtyMinutesCurentTime"
+                : ""
+            }
+          >
+            {timerHoursCurrentTime +
+              ":" +
+              timerMinutesCurrentTime +
+              ":" +
+              timerSecondsCurrentTime}
+          </span>
+        ) : (
+          ""
+        )}
       </li>
-      <li className={(timerHoursNextTime == 0 && timerMinutesNextTime < 30 ? "countDowntThirtyMinutesNextTime"  : "Pannel__ul--hour-date-countdown__li--countdown-next-times ")}>
+      <li
+        className={
+          timerHoursNextTime == 0 && timerMinutesNextTime < 30
+            ? "countDowntThirtyMinutesNextTime"
+            : "Pannel__ul--hour-date-countdown__li--countdown-next-times "
+        }
+      >
         {currentNextTime}{" "}
         {displayTimerCurrentNextTime === true
           ? timerHoursNextTime +

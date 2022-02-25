@@ -31,7 +31,7 @@ export const SearchBar = ({
       <span
       style={toggleInput ? {display: 'none'} : {}}
        className="cross" onClick={closeSearch}>
-            <i class="fas fa-times-circle"></i>
+            <i className="fas fa-times-circle"></i>
           </span>
       <form className="SearchBar__form" onSubmit={handleSubmitValue}>
         <div className="SearchBar__form__div--find-city-container">

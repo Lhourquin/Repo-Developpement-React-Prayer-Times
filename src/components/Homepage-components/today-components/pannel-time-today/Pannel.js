@@ -8,6 +8,13 @@ export const Pannel = ({
   getAngleOptionValue,
   method,
   selectedMethodStringValue,
+  now,
+  dateFajr,
+  dateShourouq,
+  dateDhohr,
+  dateAsr,
+  dateMaghreb,
+  dateIcha
 }) => {
   return (
     <>
@@ -50,6 +57,13 @@ export const Pannel = ({
                 { icha: obj.data.timings.Isha },
                 { midnight: "" },
               ]}
+              now={now}
+              dateFajr={dateFajr}
+              dateShourouq={dateShourouq}
+              dateDhohr={dateDhohr}
+              dateAsr={dateAsr}
+              dateMaghreb={dateMaghreb}
+              dateIcha={dateIcha}
             />
             <Clock className="DateNow" />
 

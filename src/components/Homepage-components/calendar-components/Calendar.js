@@ -48,7 +48,6 @@ export const Calendar = ({
       clearTimeout(timer);
     };
   }, [city, country, methodValue]);
-  // console.log(calendar);
 
   const [acutalMonth, setActualMonth] = useState(
     new Date(Date.now()).toLocaleString(undefined, {
@@ -69,17 +68,13 @@ export const Calendar = ({
 
   useEffect(() => {
     if (mediaSize) {
-      //console.log("mobile and tablet size");
-
       setMediaChangeInMobileOrTablet(true);
     } else {
-      // console.log("desktop size");
       setMediaChangeInMobileOrTablet(false);
       setDisplayTimesOfTheDateClicked(false);
       setClickedDisplayInfosMonth(false);
     }
   }, [mediaSize]);
-  // console.log("mediaChangeInMobileOrTablet " + mediaChangeInMobileOrTablet);
 
   const [displayTimesOfTheDateClicked, setDisplayTimesOfTheDateClicked] =
     useState(false);
@@ -98,9 +93,10 @@ export const Calendar = ({
     setDisplayTimesOfTheDateClicked(false);
     setCurrentTimesOfTheDateClicked("");
   };
-  // console.log("displayTimesOfTheDateClicked " + displayTimesOfTheDateClicked);
-  // console.log(currentTimesOfTheDateClicked);
+
   const [now, setNow] = useState(new Date().setHours(0, 0, 0, 0));
+
+  
 
   const [clickedDisplayInfosMonth, setClickedDisplayInfosMonth] =
     useState(false);
@@ -112,7 +108,6 @@ export const Calendar = ({
   const closeDisplayInfosMonth = () => {
     setClickedDisplayInfosMonth(false);
   };
-
   return (
     <>
       {displayTimesOfTheDateClicked ? (
@@ -127,7 +122,7 @@ export const Calendar = ({
         >
           <div style={{ color: "black" }}>
             <button className="closeTimesOfDates" onClick={closeTimesOfTheDate}>
-            <i class="fas fa-times-circle"></i>
+              <i className="fas fa-times-circle"></i>
             </button>
             <div className="containerCurrentTimesClicked">
               <ul className="ClickedTimesList__ul-times-list">
@@ -253,8 +248,7 @@ export const Calendar = ({
         >
           {" "}
           <button className="closeInfosMonth" onClick={closeDisplayInfosMonth}>
-          <i class="fas fa-times-circle"></i>
-
+            <i className="fas fa-times-circle"></i>
           </button>
           <div className="infos-hijri-month-container">
             <p>
@@ -289,18 +283,14 @@ export const Calendar = ({
                 ? "Amérique du Nord (15°)"
                 : selectedMethodStringValue}
             </span>
-          
-              <select onChange={getAngleOptionValue}>
-                {method.map((currentTimesOfTheDateClicked, index) => (
-                  <option
-                    key={index}
-                    value={currentTimesOfTheDateClicked.value}
-                  >
-                    {currentTimesOfTheDateClicked.stringValue}
-                  </option>
-                ))}
-              </select>
-          
+
+            <select onChange={getAngleOptionValue}>
+              {method.map((currentTimesOfTheDateClicked, index) => (
+                <option key={index} value={currentTimesOfTheDateClicked.value}>
+                  {currentTimesOfTheDateClicked.stringValue}
+                </option>
+              ))}
+            </select>
           </div>
         </div>
 
