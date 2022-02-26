@@ -295,7 +295,6 @@ const App = () => {
     },
   ]);
 
-  
   const [selectedMethodValue, setSelectedMethodValue] = useState("");
   const [selectedMethodStringValue, setSelectedMethodStringValue] =
     useState("");
@@ -313,7 +312,6 @@ const App = () => {
     )
       .then((response) => response.json())
       .then((data) => {
-        
         localStorage.setItem("City", data.city);
         localStorage.setItem("Country", data.countryName);
         setCity(localStorage.getItem("City"));
@@ -344,11 +342,11 @@ const App = () => {
     }
   }, [city, country]);*/
   useEffect(() => {
-    if(localStorage.getItem("City") && localStorage.getItem("Country")){
+    if (localStorage.getItem("City") && localStorage.getItem("Country")) {
       setCity(localStorage.getItem("City"));
       setCountry(localStorage.getItem("Country"));
     }
-  })
+  });
 
   const [todayListTimes, setTodayTest] = useState("");
   // regler le changement de methode de calcul
@@ -357,7 +355,17 @@ const App = () => {
 
   useEffect(() => {
     if (selectedMethodValue === "") {
-      setMethodValue(method[0].value);
+      if (
+        localStorage.getItem("SelectedMethodValue") &&
+        localStorage.getItem("SelectedMethodStringValue")
+      ) {
+        setMethodValue(localStorage.getItem("SelectedMethodValue"));
+        setSelectedMethodStringValue(
+          localStorage.getItem("SelectedMethodStringValue")
+        );
+      } else {
+        setMethodValue(method[0].value);
+      }
     } else if (selectedMethodValue !== "") {
       setMethodValue(selectedMethodValue);
     }
@@ -408,9 +416,7 @@ const App = () => {
       <header>
         <NavBar />
         {console.log(todayListTimes)}
-        {console.log("city : " + city)}
-        {console.log("country : " + country)}
-        {console.log("")}
+        {console.log(selectedMethodValue)}
         <SearchBar
           inputCity={inputCityValue}
           inputCountry={inputCountryValue}
@@ -475,8 +481,18 @@ const App = () => {
               method={method}
               getAngleOptionValue={(event) => {
                 let index = event.nativeEvent.target.selectedIndex;
-                setSelectedMethodValue(event.target.value);
-                setSelectedMethodStringValue(event.target[index].innerHTML);
+                localStorage.setItem("SelectedMethodValue", event.target.value);
+                localStorage.setItem(
+                  "SelectedMethodStringValue",
+                  event.target[index].innerHTML
+                );
+
+                setSelectedMethodValue(
+                  localStorage.getItem("SelectedMethodValue")
+                );
+                setSelectedMethodStringValue(
+                  localStorage.getItem("SelectedMethodStringValue")
+                );
               }}
               selectedMethodValue={selectedMethodValue}
               selectedMethodStringValue={selectedMethodStringValue}
