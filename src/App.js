@@ -107,7 +107,6 @@ const App = () => {
     }
   });
 
-
   const [methodValue, setMethodValue] = useState("");
 
   useEffect(() => {
@@ -146,6 +145,32 @@ const App = () => {
           request
         );
         localStorage.setItem("TodayTimes", JSON.stringify([data]));
+      }, 1000);
+    }
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [city, country, methodValue]);
+
+  useEffect(() => {
+    let timer = null;
+    if (city && country && methodValue) {
+      let params = new URLSearchParams();
+      params.append("country", country);
+      params.append("city", city);
+      params.append("method", methodValue);
+
+      let request = {
+        params: params,
+      };
+      timer = setTimeout(async () => {
+        const { data } = await axios
+          .get(`https://api.aladhan.com/v1/calendarByCity`, request)
+          .then(
+            (currentTimesOfTheDateClicked) => currentTimesOfTheDateClicked.data
+          );
+        localStorage.setItem("Calendar", JSON.stringify(data));
       }, 1000);
     }
 
@@ -261,8 +286,17 @@ const App = () => {
               method={method}
               getAngleOptionValue={(event) => {
                 let index = event.nativeEvent.target.selectedIndex;
-                setSelectedMethodValue(event.target.value);
-                setSelectedMethodStringValue(event.target[index].innerHTML);
+                localStorage.setItem("SelectedMethodValue", event.target.value);
+                localStorage.setItem(
+                  "SelectedMethodStringValue",
+                  event.target[index].innerHTML
+                );
+                setSelectedMethodValue(
+                  localStorage.getItem("SelectedMethodValue")
+                );
+                setSelectedMethodStringValue(
+                  localStorage.getItem("SelectedMethodStringValue")
+                );
               }}
               selectedMethodValue={selectedMethodValue}
               selectedMethodStringValue={selectedMethodStringValue}

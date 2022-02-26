@@ -9,11 +9,18 @@ export const Calendar = ({
   country,
   getAngleOptionValue,
   method,
-  selectedMethodValue,
+  // selectedMethodValue,
   selectedMethodStringValue,
 }) => {
   const [calendar, setCalendar] = useState([]);
-  const [methodValue, setMethodValue] = useState("");
+
+  useEffect(() => {
+    let timer = setTimeout(() => {
+      setCalendar(JSON.parse(localStorage.getItem("Calendar") || "[]"));
+    });
+    return () => clearTimeout(timer);
+  });
+  /*  const [methodValue, setMethodValue] = useState("");
 
  useEffect(() => {
     if (selectedMethodValue === "") {
@@ -47,7 +54,7 @@ export const Calendar = ({
     return () => {
       clearTimeout(timer);
     };
-  }, [city, country, methodValue]);
+  }, [city, country, methodValue]);*/
 
   const [acutalMonth, setActualMonth] = useState(
     new Date(Date.now()).toLocaleString(undefined, {
@@ -61,7 +68,7 @@ export const Calendar = ({
   useEffect(() => {
     let timer = setInterval(() => {
       setMediaSize(window.innerWidth <= 620 ? true : false);
-    }, 500);
+    });
 
     return () => clearInterval(timer);
   });
@@ -95,8 +102,6 @@ export const Calendar = ({
   };
 
   const [now, setNow] = useState(new Date().setHours(0, 0, 0, 0));
-
-  
 
   const [clickedDisplayInfosMonth, setClickedDisplayInfosMonth] =
     useState(false);
