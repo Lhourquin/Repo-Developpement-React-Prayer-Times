@@ -11,6 +11,7 @@ export const TodayTimesList = ({
   dateAsr,
   dateMaghreb,
   dateIcha,
+  
 }) => {
   const [displayHadith, setDisplayHadith] = useState(false);
   const [listOfHadith, setListOfHadith] = useState([
@@ -179,7 +180,7 @@ export const TodayTimesList = ({
   const closeHadith = () => {
     setDisplayHadith((boolean) => !boolean);
   };
-
+//console.log(todayTest)
   return (
     <>
       {displayHadith === true ? (
@@ -194,7 +195,7 @@ export const TodayTimesList = ({
         >
           {" "}
           <button className="closeHadith" onClick={closeHadith}>
-            <i class="fas fa-times-circle"></i>
+            <i className="fas fa-times-circle"></i>
           </button>
           <div className="hadith-container">
             <div className="hadith-container-current">

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Clock } from "./time-components/Clock";
 import { Timer } from "./time-components/Timer";
 import "./Pannel.css";
@@ -14,11 +14,32 @@ export const Pannel = ({
   dateDhohr,
   dateAsr,
   dateMaghreb,
-  dateIcha
+  dateIcha,
+  
 }) => {
+ // const [JSONTodayTimesSalat, setJSONTodayTimesSalat] = useState("");
+ // const [todayTimesSalat, setTodayTimesSalat] = useState("");
+
+ /* useEffect(() => {
+    setJSONTodayTimesSalat(localStorage.setItem("TodayTimes", JSON.stringify(today)));
+  });*/
+
+ /* useEffect(() => {
+    setTodayTimesSalat(JSON.parse(localStorage.getItem("TodayTimes") || "[]"))
+  }, [JSONTodayTimesSalat])*/
+
+  useEffect(() => {
+    localStorage.setItem(
+      "SearchField",
+      searchField.charAt(0).toUpperCase() + searchField.slice(1).toLowerCase()
+    );
+  }, [searchField]);
+ //console.log(todayTimesSalat.map((obj)=> obj.data));
+ //console.log(todayTest.map((obj)=> obj.data));
   return (
     <>
       {today.map((obj, index) => (
+        
         <div className="Pannel__div--container-times-today" key={index}>
           <div className="Pannel__div--container-times-today__div--title-container-angle-select">
             <h2 className="Pannel__div--container-times-today__div--title__h2">
