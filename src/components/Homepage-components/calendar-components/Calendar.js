@@ -15,7 +15,7 @@ export const Calendar = ({
   const [calendar, setCalendar] = useState([]);
   const [methodValue, setMethodValue] = useState("");
 
-  useEffect(() => {
+ useEffect(() => {
     if (selectedMethodValue === "") {
       setMethodValue(method[0].value);
     } else if (selectedMethodValue !== "") {

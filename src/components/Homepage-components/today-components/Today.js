@@ -9,15 +9,11 @@ export const Today = ({
   country,
   getAngleOptionValue,
   method,
-  // selectedMethodValue,
   selectedMethodStringValue,
-  todayListTimes,
 }) => {
   const [today, setToday] = useState([]);
   const [inputCity, setInputCity] = useState("");
   const [lastCity, setLastCity] = useState("");
-  //const [inputCountry, setInputCountry] = useState("");
-  // const [methodValue, setMethodValue] = useState("");
 
   useEffect(() => {
     let timer = setTimeout(() => {
@@ -25,8 +21,6 @@ export const Today = ({
 
       if (city !== "" && country !== "") {
         setInputCity(city);
-        //  setInputCountry(country);
-        // setToday(todayListTimes);
       } else if (city == "") {
         if (localStorage.getItem("City")) {
           setLastCity(localStorage.getItem("City"));
@@ -36,53 +30,6 @@ export const Today = ({
 
     return () => clearTimeout(timer);
   });
-
-  /*  useEffect(() => {
-    if (selectedMethodValue === "") {
-      setMethodValue(method[0].value);
-    } else if (selectedMethodValue !== "") {
-      setMethodValue(selectedMethodValue);
-    }
-  }, [method, selectedMethodValue]);*/
-
-  /*  useEffect(() => {
-    let timer = null;
-    if (inputCity && inputCountry && methodValue) {
-      let params = new URLSearchParams();
-
-      params.append("country", inputCountry);
-      params.append("city", inputCity);
-      params.append("method", methodValue);
-
-      let request = {
-        params: params,
-      };
-      timer = setTimeout(async () => {
-        const { data } = await axios.get(
-          `https://api.aladhan.com/v1/timingsByCity`,
-          request
-        );
-        setToday([data]);
-      }, 1000);
-    }
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [inputCity, inputCountry, methodValue]);*/
-
-  /* const [JSONTodayTimesSalat, setJSONTodayTimesSalat] = useState("");
-
-  useEffect(() => {
-    setJSONTodayTimesSalat(
-      localStorage.setItem("TodayTimes", JSON.stringify(today))
-    );
-  },[today]);
-
-  const [todayTimesSalat, setTodayTimesSalat] = useState("");
-
-  useEffect(() => {
-    setTodayTimesSalat(JSON.parse(localStorage.getItem("TodayTimes") || "[]"));
-  }, [JSONTodayTimesSalat]);*/
 
   const [dateFajr, setDateFajr] = useState("");
   const [dateShourouq, setDateShourouq] = useState("");
@@ -136,7 +83,6 @@ export const Today = ({
     return () => clearInterval(interval);
   });
 
-  //console.log(todayTest)
   return (
     <>
       <div className="Today__div--container-list-pannel">
