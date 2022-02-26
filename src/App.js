@@ -294,7 +294,7 @@ const App = () => {
       stringValue: "Turquie ( fajr 18° - icha 17° )",
     },
   ]);
-
+ 
   const [selectedMethodValue, setSelectedMethodValue] = useState("");
   const [selectedMethodStringValue, setSelectedMethodStringValue] =
     useState("");
