@@ -28,7 +28,7 @@ export const Today = ({
         //  setInputCountry(country);
         // setToday(todayListTimes);
       } else if (city == "") {
-        if(localStorage.getItem("City")){
+        if (localStorage.getItem("City")) {
           setLastCity(localStorage.getItem("City"));
         }
       }

@@ -294,6 +294,8 @@ const App = () => {
       stringValue: "Turquie ( fajr 18° - icha 17° )",
     },
   ]);
+
+  
   const [selectedMethodValue, setSelectedMethodValue] = useState("");
   const [selectedMethodStringValue, setSelectedMethodStringValue] =
     useState("");
@@ -311,10 +313,11 @@ const App = () => {
     )
       .then((response) => response.json())
       .then((data) => {
-        setCity(data.city);
-        setCountry(data.countryName);
+        
         localStorage.setItem("City", data.city);
         localStorage.setItem("Country", data.countryName);
+        setCity(localStorage.getItem("City"));
+        setCountry(localStorage.getItem("Country"));
       });
 
     setErrorMessageLocation("");
@@ -329,9 +332,8 @@ const App = () => {
     }, 5000);
   };
 
-
   // Gérer la ville dans le pannel
- /* const [inputCity, setInputCity] = useState("");
+  /* const [inputCity, setInputCity] = useState("");
   const [lastCity, setLastCity] = useState("");
   useEffect(() => {
     if (city !== "" && country !== "") {
@@ -341,11 +343,15 @@ const App = () => {
       setLastCity(inputCity);
     }
   }, [city, country]);*/
-
-  
+  useEffect(() => {
+    if(localStorage.getItem("City") && localStorage.getItem("Country")){
+      setCity(localStorage.getItem("City"));
+      setCountry(localStorage.getItem("Country"));
+    }
+  })
 
   const [todayListTimes, setTodayTest] = useState("");
-   // regler le changement de methode de calcul
+  // regler le changement de methode de calcul
 
   const [methodValue, setMethodValue] = useState("");
 
@@ -375,19 +381,15 @@ const App = () => {
           request
         );
         localStorage.setItem("TodayTimes", JSON.stringify([data]));
-
       }, 1000);
     }
 
     return () => {
       clearTimeout(timer);
     };
-
   }, [city, country, methodValue]);
 
-
-  
- /* const [JSONTodayTimesSalat, setJSONTodayTimesSalat] = useState("");
+  /* const [JSONTodayTimesSalat, setJSONTodayTimesSalat] = useState("");
 
   useEffect(() => {
     setJSONTodayTimesSalat(
@@ -400,16 +402,15 @@ const App = () => {
   useEffect(() => {
     setTodayTimesSalat(JSON.parse(localStorage.getItem("TodayTimes") || "[]"));
   }, [JSONTodayTimesSalat]);*/
-  
-  
+
   return (
-    <> 
+    <>
       <header>
-        <NavBar /> 
-{console.log(todayListTimes)}
-{console.log("city : " + city)}
-{console.log("country : " + country)}
-{console.log("")}
+        <NavBar />
+        {console.log(todayListTimes)}
+        {console.log("city : " + city)}
+        {console.log("country : " + country)}
+        {console.log("")}
         <SearchBar
           inputCity={inputCityValue}
           inputCountry={inputCountryValue}
@@ -429,10 +430,10 @@ const App = () => {
                 setCity("");
                 setCountry("");
               } else {
-                setCity(inputCityValue);
-                setCountry(inputCountryValue);
-                localStorage.setItem("city", inputCityValue);
-
+                localStorage.setItem("City", inputCityValue);
+                localStorage.setItem("Country", inputCountryValue);
+                setCity(localStorage.getItem("City"));
+                setCountry(localStorage.getItem("Country"));
                 setTimeout(() => {
                   setInputCityValue("");
                   setInputCountryValue("");
@@ -444,10 +445,10 @@ const App = () => {
               setCity("");
               setCountry("");
             } else {
-              setCity(inputCityValue);
-              setCountry(inputCountryValue);
-              localStorage.setItem("city", inputCityValue);
-
+              localStorage.setItem("City", inputCityValue);
+              localStorage.setItem("Country", inputCountryValue);
+              setCity(localStorage.getItem("City"));
+              setCountry(localStorage.getItem("Country"));
               setTimeout(() => {
                 setInputCityValue("");
                 setInputCountryValue("");
@@ -466,15 +467,15 @@ const App = () => {
           path="/"
           element={
             <Today
-         //   inputCity={inputCity}
-           // lastCity={lastCity}
-           todayListTimes={todayListTimes}
+              //   inputCity={inputCity}
+              // lastCity={lastCity}
+              todayListTimes={todayListTimes}
               city={city}
               country={country}
               method={method}
               getAngleOptionValue={(event) => {
                 let index = event.nativeEvent.target.selectedIndex;
-                setSelectedMethodValue( event.target.value);
+                setSelectedMethodValue(event.target.value);
                 setSelectedMethodStringValue(event.target[index].innerHTML);
               }}
               selectedMethodValue={selectedMethodValue}
@@ -491,7 +492,7 @@ const App = () => {
               method={method}
               getAngleOptionValue={(event) => {
                 let index = event.nativeEvent.target.selectedIndex;
-                setSelectedMethodValue( event.target.value);
+                setSelectedMethodValue(event.target.value);
                 setSelectedMethodStringValue(event.target[index].innerHTML);
               }}
               selectedMethodValue={selectedMethodValue}
