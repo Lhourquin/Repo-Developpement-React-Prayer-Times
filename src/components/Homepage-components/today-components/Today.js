@@ -14,6 +14,15 @@ export const Today = ({
   const [today, setToday] = useState([]);
   const [inputCity, setInputCity] = useState("");
   const [lastCity, setLastCity] = useState("");
+  const [now, setNow] = useState(new Date(Date.now()).getTime());
+  //console.log(dateIcha)
+  useEffect(() => {
+    let interval = setInterval(() => {
+      setNow(new Date(Date.now()).getTime());
+    }, );
+
+    return () => clearInterval(interval);
+  });
 
   useEffect(() => {
     let timer = setTimeout(() => {
@@ -29,7 +38,7 @@ export const Today = ({
     });
 
     return () => clearTimeout(timer);
-  });
+  }, [now]);
 
   const [dateFajr, setDateFajr] = useState("");
   const [dateShourouq, setDateShourouq] = useState("");
@@ -72,16 +81,6 @@ export const Today = ({
       );
     });
   }, [today]);
-
-  const [now, setNow] = useState(new Date(Date.now()).getTime());
-//console.log(dateIcha)
-  useEffect(() => {
-    let interval = setInterval(() => {
-      setNow(new Date(Date.now()).getTime());
-    });
-
-    return () => clearInterval(interval);
-  });
 
   return (
     <>

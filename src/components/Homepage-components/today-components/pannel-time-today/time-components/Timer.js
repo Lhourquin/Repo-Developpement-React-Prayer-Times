@@ -71,14 +71,14 @@ export const Timer = ({
           dateIcha > dateStartOfTheNextDay ||
           dateIcha == dateStartOfTheNextDay
         ) {
-          localStorage.setItem("DateMidnight", JSON.stringify(new Date(`${month} ${Number(day)}, ${year} ${midnight}:00`)))
+          localStorage.setItem("DateMidnight", JSON.stringify(new Date(`${month} ${Number(day)}, ${year} ${midnight}:00`) + ""))
 
           return new Date(`${month} ${Number(day)}, ${year} ${midnight}:00`);
         } else if (
           dateIcha < dateStartOfTheNextDay &&
           midnight.substring(0, 1) == "0"
         ) {
-          localStorage.setItem("DateMidnight", JSON.stringify(new Date(`${month} ${Number(day)}, ${year} ${midnight}:00`)))
+          localStorage.setItem("DateMidnight", JSON.stringify(new Date(`${month} ${Number(day)}, ${year} ${midnight}:00`) + ""))
 
           return new Date(
             `${month} ${(Number(day)).toString()}, ${year} ${midnight}:00`
@@ -87,7 +87,7 @@ export const Timer = ({
           dateIcha < dateStartOfTheNextDay &&
           midnight.substring(0, 1) !== "0"
         ) {
-          localStorage.setItem("DateMidnight", JSON.stringify(new Date(`${month} ${Number(day)}, ${year} ${midnight}:00`)))
+          localStorage.setItem("DateMidnight", JSON.stringify(new Date(`${month} ${Number(day)}, ${year} ${midnight}:00`) + ""))
 
           return new Date(`${month} ${Number(day)}, ${year} ${midnight}:00`);
         }
@@ -221,6 +221,8 @@ export const Timer = ({
     }
   }, [now, midnight]);
 //console.log(currentNextTime)
+//console.log(midnight)
+
   return (
     <>
       <li

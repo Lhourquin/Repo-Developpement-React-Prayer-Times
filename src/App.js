@@ -53,7 +53,7 @@ const App = () => {
     },
     {
       value: 11,
-      stringValue: "Singapour ( fajr 20) - icha 18° )",
+      stringValue: "Singapour ( fajr 20°) - icha 18° )",
     },
     {
       value: 12,
@@ -129,7 +129,7 @@ const App = () => {
 
   useEffect(() => {
     let timer = null;
-    if (city && country && methodValue || localStorage.getItem("DateMidnight")) {
+    if (city && country && methodValue) {
       let params = new URLSearchParams();
 
       params.append("country", country);
@@ -155,8 +155,7 @@ const App = () => {
 
   useEffect(() => {
     let timer = null;
-    if (city && country && methodValue || localStorage.getItem("DateMidnight")
-    ) {
+    if (city && country && methodValue) {
       let params = new URLSearchParams();
       params.append("country", country);
       params.append("city", city);
