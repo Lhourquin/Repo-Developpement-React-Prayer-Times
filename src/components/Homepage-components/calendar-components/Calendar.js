@@ -282,6 +282,11 @@ export const Calendar = ({
           </div>
           <div className="Calendar__div-container-span-select">
             <span style={{ fontSize: "10px", color: "#605b56" }}>
+            <i className="fas fa-map-marker-alt localisation-marker-pannel"></i>{" "}
+
+              {city.charAt(0).toUpperCase() + city.slice(1).toLowerCase()},{" "}
+              {country.charAt(0).toUpperCase() + country.slice(1).toLowerCase()}
+              <br></br>
               Angle :{" "}
               {selectedMethodStringValue === "" ||
               selectedMethodStringValue === "Sélectionner un angle"
