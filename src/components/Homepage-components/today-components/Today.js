@@ -74,7 +74,7 @@ export const Today = ({
   }, [today]);
 
   const [now, setNow] = useState(new Date(Date.now()).getTime());
-
+//console.log(dateIcha)
   useEffect(() => {
     let interval = setInterval(() => {
       setNow(new Date(Date.now()).getTime());

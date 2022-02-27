@@ -64,7 +64,6 @@ export const Timer = ({
       return new Date(`${month} ${Number(day)}, ${year} ${midnight}:00`);
     }
   });
-
   useEffect(() => {
     let timer = setTimeout(() => {
       setDateMidnight(() => {
@@ -72,18 +71,24 @@ export const Timer = ({
           dateIcha > dateStartOfTheNextDay ||
           dateIcha == dateStartOfTheNextDay
         ) {
+          localStorage.setItem("DateMidnight", JSON.stringify(new Date(`${month} ${Number(day)}, ${year} ${midnight}:00`)))
+
           return new Date(`${month} ${Number(day)}, ${year} ${midnight}:00`);
         } else if (
           dateIcha < dateStartOfTheNextDay &&
           midnight.substring(0, 1) == "0"
         ) {
+          localStorage.setItem("DateMidnight", JSON.stringify(new Date(`${month} ${Number(day)}, ${year} ${midnight}:00`)))
+
           return new Date(
-            `${month} ${(Number(day) + 1).toString()}, ${year} ${midnight}:00`
+            `${month} ${(Number(day)).toString()}, ${year} ${midnight}:00`
           );
         } else if (
           dateIcha < dateStartOfTheNextDay &&
           midnight.substring(0, 1) !== "0"
         ) {
+          localStorage.setItem("DateMidnight", JSON.stringify(new Date(`${month} ${Number(day)}, ${year} ${midnight}:00`)))
+
           return new Date(`${month} ${Number(day)}, ${year} ${midnight}:00`);
         }
       });
@@ -215,7 +220,7 @@ export const Timer = ({
       return () => clearInterval(intervalCountDown.current);
     }
   }, [now, midnight]);
-
+//console.log(currentNextTime)
   return (
     <>
       <li

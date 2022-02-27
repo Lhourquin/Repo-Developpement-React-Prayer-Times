@@ -129,7 +129,7 @@ const App = () => {
 
   useEffect(() => {
     let timer = null;
-    if (city && country && methodValue) {
+    if (city && country && methodValue || localStorage.getItem("DateMidnight")) {
       let params = new URLSearchParams();
 
       params.append("country", country);
@@ -155,7 +155,8 @@ const App = () => {
 
   useEffect(() => {
     let timer = null;
-    if (city && country && methodValue) {
+    if (city && country && methodValue || localStorage.getItem("DateMidnight")
+    ) {
       let params = new URLSearchParams();
       params.append("country", country);
       params.append("city", city);
