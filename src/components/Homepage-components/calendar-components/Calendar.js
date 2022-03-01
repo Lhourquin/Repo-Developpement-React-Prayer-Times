@@ -67,7 +67,7 @@ export const Calendar = ({
 
   useEffect(() => {
     let timer = setInterval(() => {
-      setMediaSize(window.innerWidth <= 620 ? true : false);
+      setMediaSize(window.innerWidth <= 800 ? true : false);
     });
 
     return () => clearInterval(timer);

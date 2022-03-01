@@ -18,10 +18,10 @@
     margin: 5px;
     background-color: #92bfee;
     color: #eaeaea;
-    height: 100px;
+    height: 8vh;
     opacity: 1;
-    width: 100px;
-    border-radius: 15px;
+    width: 17vw;
+    border-radius: 3px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -35,10 +35,10 @@
     display: none;
   }
   .salat-of-month .container-horaires-list-normal .count {
-    font-size: 31px;
+    font-size: 15px;
   }
   .salat-of-month .container-horaires-list-normal .td-list-times-date {
-    font-size: 13px;
+    font-size: 6px;
   }
   .salat-of-month .container-horaires-list-passed {
     cursor: pointer;
@@ -48,9 +48,9 @@
     margin: 5px;
     background: rgba(255, 255, 255, 0.5) none repeat scroll 0% 0%;
     color: rgba(96, 91, 86, 0.5);
-    height: 100px;
-    width: 100px;
-    border-radius: 15px;
+    height: 8vh;
+    width: 17vw;
+    border-radius: 3px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -64,10 +64,10 @@
     display: none;
   }
   .salat-of-month .container-horaires-list-passed .count {
-    font-size: 31px;
+    font-size: 15px;
   }
   .salat-of-month .container-horaires-list-passed .td-list-times-date {
-    font-size: 13px;
+    font-size: 6px;
   }
   .salat-of-month .container-horaires-list-today {
     cursor: pointer;
@@ -78,9 +78,9 @@
     background-color: #605b56;
     color: #eaeaea;
     opacity: 1;
-    height: 100px;
-    width: 100px;
-    border-radius: 15px;
+    height: 8vh;
+    width: 17vw;
+    border-radius: 3px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -94,14 +94,14 @@
     display: none;
   }
   .salat-of-month .container-horaires-list-today .count {
-    font-size: 31px;
+    font-size: 15px;
   }
   .salat-of-month .container-horaires-list-today .td-list-times-date {
-    font-size: 13px;
+    font-size: 6px;
   }
 }
 
-@media (min-width: 545px) and (max-width: 620px) {
+@media (min-width: 545px) and (max-width: 799px) {
   .salat-of-month {
     font-weight: bold;
     display: -webkit-box;
@@ -114,17 +114,17 @@
             justify-content: space-between;
   }
   .salat-of-month .container-horaires-list-normal {
+    cursor: pointer;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     margin: 5px;
     background-color: #92bfee;
     color: #eaeaea;
-    cursor: pointer;
+    height: 15vh;
     opacity: 1;
-    height: 125px;
-    width: 125px;
-    border-radius: 15px;
+    width: 17vw;
+    border-radius: 3px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -138,22 +138,23 @@
     display: none;
   }
   .salat-of-month .container-horaires-list-normal .count {
-    font-size: 31px;
+    font-size: 20px;
   }
   .salat-of-month .container-horaires-list-normal .td-list-times-date {
-    font-size: 13px;
+    font-size: 10px;
   }
   .salat-of-month .container-horaires-list-passed {
+    background: rgba(255, 255, 255, 0.5) none repeat scroll 0% 0%;
     cursor: pointer;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     margin: 5px;
-    background: rgba(255, 255, 255, 0.5) none repeat scroll 0% 0%;
-    color: rgba(96, 91, 86, 0.5);
-    height: 125px;
-    width: 125px;
-    border-radius: 15px;
+    color: #eaeaea;
+    height: 15vh;
+    opacity: 1;
+    width: 17vw;
+    border-radius: 3px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -167,23 +168,23 @@
     display: none;
   }
   .salat-of-month .container-horaires-list-passed .count {
-    font-size: 31px;
+    font-size: 20px;
   }
   .salat-of-month .container-horaires-list-passed .td-list-times-date {
-    font-size: 13px;
+    font-size: 10px;
   }
   .salat-of-month .container-horaires-list-today {
+    background-color: #605b56;
     cursor: pointer;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     margin: 5px;
-    background-color: #605b56;
     color: #eaeaea;
+    height: 15vh;
     opacity: 1;
-    height: 125px;
-    width: 125px;
-    border-radius: 15px;
+    width: 17vw;
+    border-radius: 3px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -197,14 +198,14 @@
     display: none;
   }
   .salat-of-month .container-horaires-list-today .count {
-    font-size: 31px;
+    font-size: 20px;
   }
   .salat-of-month .container-horaires-list-today .td-list-times-date {
-    font-size: 13px;
+    font-size: 10px;
   }
 }
 
-@media (min-width: 621px) {
+@media (min-width: 800px) {
   table {
     width: 100%;
     margin-top: 5%;

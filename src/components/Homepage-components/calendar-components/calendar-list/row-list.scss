@@ -10,21 +10,21 @@
       margin: 5px;
       background-color: rgb(146, 191, 238);
       color: #eaeaea;
-      height: 100px;
+      height: 8vh;
       opacity: 1;
-      width: 100px;
-      border-radius: 15px;
+      width: 17vw;
+      border-radius: 3px;
       flex-direction: column;
       justify-content: center;
       text-align: center;
       .td-list-times {
         display: none;
       }
-      .count{
-        font-size: 31px;
+      .count {
+        font-size: 15px;
       }
-      .td-list-times-date{
-        font-size: 13px;
+      .td-list-times-date {
+        font-size: 6px;
       }
     }
     .container-horaires-list-passed {
@@ -34,21 +34,21 @@
       margin: 5px;
       background: rgba(255, 255, 255, 0.5) none repeat scroll 0% 0%;
       color: rgba(96, 91, 86, 0.5);
-      height: 100px;
+      height: 8vh;
 
-      width: 100px;
-      border-radius: 15px;
+      width: 17vw;
+      border-radius: 3px;
       flex-direction: column;
       justify-content: center;
       text-align: center;
       .td-list-times {
         display: none;
       }
-      .count{
-        font-size: 31px;
+      .count {
+        font-size: 15px;
       }
-      .td-list-times-date{
-        font-size: 13px;
+      .td-list-times-date {
+        font-size: 6px;
       }
     }
     .container-horaires-list-today {
@@ -59,104 +59,105 @@
       background-color: #605b56;
       color: #eaeaea;
       opacity: 1;
-      height: 100px;
-      width: 100px;
-      border-radius: 15px;
+      height: 8vh;
+
+      width: 17vw;
+      border-radius: 3px;
       flex-direction: column;
       justify-content: center;
       text-align: center;
       .td-list-times {
         display: none;
       }
-      .count{
-        font-size: 31px;
+      .count {
+        font-size: 15px;
       }
-      .td-list-times-date{
-        font-size: 13px;
+      .td-list-times-date {
+        font-size: 6px;
       }
     }
   }
 }
-@media (min-width: 545px) and (max-width: 620px) {
+@media (min-width: 545px) and (max-width: 799px) {
   .salat-of-month {
     font-weight: bold;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     .container-horaires-list-normal {
+      cursor: pointer;
       display: flex;
       margin: 5px;
       background-color: rgb(146, 191, 238);
       color: #eaeaea;
-      cursor: pointer;
-
+      height: 15vh;
       opacity: 1;
-      height: 125px;
-      width: 125px;
-      border-radius: 15px;
+      width: 17vw;
+      border-radius: 3px;
       flex-direction: column;
       justify-content: center;
       text-align: center;
       .td-list-times {
         display: none;
       }
-      .count{
-        font-size: 31px;
+      .count {
+        font-size: 20px;
       }
-      .td-list-times-date{
-        font-size: 13px;
+      .td-list-times-date {
+        font-size: 10px;
       }
     }
     .container-horaires-list-passed {
-      cursor: pointer;
+      background: rgba(255, 255, 255, 0.5) none repeat scroll 0% 0%;
 
+      cursor: pointer;
       display: flex;
       margin: 5px;
-      background: rgba(255, 255, 255, 0.5) none repeat scroll 0% 0%;
-      color: rgba(96, 91, 86, 0.5);
-      height: 125px;
-      width: 125px;
-      border-radius: 15px;
+      color: #eaeaea;
+      height: 15vh;
+      opacity: 1;
+      width: 17vw;
+      border-radius: 3px;
       flex-direction: column;
       justify-content: center;
       text-align: center;
       .td-list-times {
         display: none;
       }
-      .count{
-        font-size: 31px;
+      .count {
+        font-size: 20px;
       }
-      .td-list-times-date{
-        font-size: 13px;
+      .td-list-times-date {
+        font-size: 10px;
       }
     }
     .container-horaires-list-today {
-      cursor: pointer;
+      background-color: #605b56;
 
+      cursor: pointer;
       display: flex;
       margin: 5px;
-      background-color: #605b56;
       color: #eaeaea;
+      height: 15vh;
       opacity: 1;
-      height: 125px;
-      width: 125px;
-      border-radius: 15px;
+      width: 17vw;
+      border-radius: 3px;
       flex-direction: column;
       justify-content: center;
       text-align: center;
       .td-list-times {
         display: none;
       }
-      .count{
-        font-size: 31px;
+      .count {
+        font-size: 20px;
       }
-      .td-list-times-date{
-        font-size: 13px;
+      .td-list-times-date {
+        font-size: 10px;
       }
     }
   }
 }
-@media (min-width: 621px) {
+@media (min-width: 800px) {
   table {
     width: 100%;
     margin-top: 5%;
