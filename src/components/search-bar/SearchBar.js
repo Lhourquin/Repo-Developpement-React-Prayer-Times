@@ -33,7 +33,7 @@ export const SearchBar = ({
        className="cross" onClick={closeSearch}>
             <i className="fas fa-times-circle"></i>
           </span>
-      <form className="SearchBar__form" onSubmit={handleSubmitValue}>
+      <form className={"SearchBar__form " + (toggleInput ? " " : "transition-input") }onSubmit={handleSubmitValue}>
         <div className="SearchBar__form__div--find-city-container">
           <input
             className="SearchBar__form__div--find-city-container__input--city"
@@ -49,13 +49,9 @@ export const SearchBar = ({
         <div
           className={
             "SearchBar__form__div--find-country-container " +
-            (toggleInput ? "isClose" : " isOpen")
+            (toggleInput ? "isClose" : " isOpen ")
           }
-          style={
-            toggleInput
-              ? { transition: "width 0.2s, height 0.2s, transform 2s" }
-              : { transition: "width 0.2s, height 0.2s, transform 2s" }
-          }
+          
         >
          
           <input
@@ -70,6 +66,7 @@ export const SearchBar = ({
           <button
             type="submit"
             className="SearchBar__form__div--find-country-container__submit"
+            onClick={inputCountry != "" && inputCity != "" ? closeSearch : ()=> {return}}
           >
             Rechercher
           </button>

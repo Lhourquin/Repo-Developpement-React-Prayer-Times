@@ -40,7 +40,7 @@ export const Today = ({
     return () => clearTimeout(timer);
   }, [now]);
 
-  const [dateFajr, setDateFajr] = useState("");
+  const [dateFajr, setDateFajr] = useState();
   const [dateShourouq, setDateShourouq] = useState("");
   const [dateDhohr, setDateDhohr] = useState("");
   const [dateAsr, setDateAsr] = useState("");

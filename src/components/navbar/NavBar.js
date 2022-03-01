@@ -2,14 +2,15 @@ import React, { useState } from "react";
 import "./NavBar.css";
 
 export const NavBar = () => {
-  const [buttonBurgerIsClicked, setButtonBurgerIsClicked] = useState(true);
+  const [buttonBurgerIsClicked, setButtonBurgerIsClicked] = useState(false);
 
   const handleNavButtonBurgerClick = () => {
     setButtonBurgerIsClicked((isFalse) => !isFalse);
   };
+  
 
   return (
-    <nav className="NavBar__nav" style={(buttonBurgerIsClicked ? {transition: "width 0.2s, height 0.2s, transform 2s" }: {height : 128, transition: "width 0.1s, height 0.2s, transform 2s" })}>
+    <nav className={buttonBurgerIsClicked ? "NavBar__nav openEffect" : "NavBar__nav closeEffect"}>
         <span className="NavBar__nav__span--site-name">Waqt Al Falaah</span>
         <button
           className="NavBar__nav__button--button-burger"
@@ -20,8 +21,8 @@ export const NavBar = () => {
 
       <ul
         className={
-          "NavBar__nav__ul " +
-          (buttonBurgerIsClicked ? "closeNavigation" : "openNavigation ")
+          
+          (buttonBurgerIsClicked ?  "NavBar__nav__ul NavBar__nav__ulDesktop openNavigation " : "NavBar__nav__ul  closeNavigation")
         }
       >
         <li className="NavBar__nav__ul__li--home">Acceuil</li>

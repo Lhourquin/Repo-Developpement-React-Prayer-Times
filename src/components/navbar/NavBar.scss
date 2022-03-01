@@ -1,17 +1,29 @@
-@media (max-width: 470px) {
+@media (max-width: 469px) {
   .NavBar__nav {
     display: flex;
     justify-content: space-between;
     background-color: #605b56;
     width: 100%;
     height: 40px;
-    top : 0;
+    top: 0;
     position: fixed;
     .NavBar__nav__span--site-name {
       margin: 7px;
       font-size: 19px;
       font-weight: bold;
     }
+
+  .openNavigation {
+    display: flex;
+    color: #eaeaea;
+    position: fixed;
+    margin-top: 55px;
+    padding-left: 40%;
+    list-style: none;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+  }
   }
 
   .NavBar__nav__button--button-burger {
@@ -26,16 +38,15 @@
     font-size: 21px;
   }
 
-  .openNavigation {
-    display: flex;
-    color: #eaeaea;
-    position: fixed;
-    margin-top: 55px;
-    padding-left: 40%;
-    list-style: none;
-    text-align: center;
-    flex-direction: column;
-    justify-content: center;
+
+  .openEffect {
+    height: 130px;
+    transition: 0.2s;
+  }
+
+  .closeEffect {
+    height: 40px;
+    transition: 0.2s;
   }
 
   .closeNavigation {
@@ -58,14 +69,14 @@
 }
 
 //tablet//
-@media (min-width: 471px) {
+@media (min-width: 471px){
   .NavBar__nav {
     display: flex;
     justify-content: space-between;
     background-color: #605b56;
     width: 100%;
     height: 54px;
-    top : 0;
+    top: 0;
     position: fixed;
     .NavBar__nav__span--site-name {
       margin: 15px;
@@ -104,6 +115,15 @@
     display: none;
     transition: "width 1s, height 1s, transform 2s";
   }
+  .openEffect {
+    height: 130px;
+    transition: 0.2s;
+  }
+
+  .closeEffect {
+    height: 55px;
+    transition: 0.2s;
+  }
 
   //effect //@at-root
   .navbar-collapse {
@@ -121,6 +141,7 @@
 }
 // pc //
 @media (min-width: 850px) {
+  
   .NavBar__nav {
     background: #605b56;
     display: flex;
@@ -142,5 +163,14 @@
     .NavBar__nav__button--button-burger {
       display: none;
     }
+  }
+  .openEffect {
+    height: 55px;
+    transition: 0;
+  }
+
+  .closeEffect {
+    height: 55px;
+    transition: 0;
   }
 }

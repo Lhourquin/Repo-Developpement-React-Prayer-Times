@@ -266,4 +266,10 @@
     position: absolute;
   }
 }
+
+.transition-input {
+  height: 124px;
+  -webkit-transition: 2s;
+  transition: 2s;
+}
 /*# sourceMappingURL=searchbar.css.map */

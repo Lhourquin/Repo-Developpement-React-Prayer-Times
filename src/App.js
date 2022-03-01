@@ -224,7 +224,7 @@ const App = () => {
                 setTimeout(() => {
                   setInputCityValue("");
                   setInputCountryValue("");
-                }, 1000);
+                });
               }
             }
 
@@ -239,7 +239,7 @@ const App = () => {
               setTimeout(() => {
                 setInputCityValue("");
                 setInputCountryValue("");
-              }, 1000);
+              });
             }
           }}
         />

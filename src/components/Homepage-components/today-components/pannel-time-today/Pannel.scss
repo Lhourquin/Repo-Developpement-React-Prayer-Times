@@ -195,7 +195,7 @@
       justify-content: space-around;
       list-style: none;
       margin:0;
-      padding: 41px;
+      padding: 12px;
       .Pannel__ul--hour-date-countdown__li--date {
         font-size: 13px;
       }
@@ -204,21 +204,22 @@
       }
 
       .Pannel__ul--hour-date-countdown__li--countdown-current-times {
-        font-size: 22px;
+        font-size: 26px;
         color: #65d977;
       }
       .Pannel__ul--hour-date-countdown__li--countdown-next-times {
         color: #92bfee;
-        font-size: 16px;
+        font-size: 20px;
       }
     }
   }
   .countDowntThirtyMinutesNextTime {
     color: #ee9292;
-    font-size: 16px;
+    font-size: 20px;
   }
   .countDowntThirtyMinutesCurentTime {
     color: #ee9292;
-    font-size: 25px;
+    font-size: 26px;
   }
 }
+
