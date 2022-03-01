@@ -29,14 +29,22 @@ export const SearchBar = ({
         <i className="fas fa-map-marker-alt localisation-marker"></i>
       </button>
       <span
-      style={toggleInput ? {display: 'none'} : {}}
-       className="cross" onClick={closeSearch}>
-            <i className="fas fa-times-circle"></i>
-          </span>
-      <form className={"SearchBar__form " + (toggleInput ? " " : "transition-input") }onSubmit={handleSubmitValue}>
+        style={toggleInput ? { display: "none" } : {}}
+        className="cross"
+        onClick={closeSearch}
+      >
+        <i className="fas fa-times-circle"></i>
+      </span>
+      <form
+        className={(toggleInput ? "SearchBar__form" :  "transition-input ")}
+        onSubmit={handleSubmitValue}
+    
+      >
         <div className="SearchBar__form__div--find-city-container">
           <input
-            className="SearchBar__form__div--find-city-container__input--city"
+            className={
+              "SearchBar__form__div--find-city-container__input--city "
+            }
             type="text"
             name="city"
             placeholder={toggleInput ? "Ou êtes vous ?" : "Entrez votre ville"}
@@ -51,9 +59,7 @@ export const SearchBar = ({
             "SearchBar__form__div--find-country-container " +
             (toggleInput ? "isClose" : " isOpen ")
           }
-          
         >
-         
           <input
             className="SearchBar__form__div--find-country-container__input-country"
             type="text"
@@ -66,7 +72,13 @@ export const SearchBar = ({
           <button
             type="submit"
             className="SearchBar__form__div--find-country-container__submit"
-            onClick={inputCountry != "" && inputCity != "" ? closeSearch : ()=> {return}}
+            onClick={
+              inputCountry != "" && inputCity != ""
+                ? closeSearch
+                : () => {
+                    return;
+                  }
+            }
           >
             Rechercher
           </button>

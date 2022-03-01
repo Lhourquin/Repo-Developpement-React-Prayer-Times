@@ -22,7 +22,7 @@ export const NavBar = () => {
       <ul
         className={
           
-          (buttonBurgerIsClicked ?  "NavBar__nav__ul NavBar__nav__ulDesktop openNavigation " : "NavBar__nav__ul  closeNavigation")
+          (buttonBurgerIsClicked ?  "NavBar__nav__ul openNavigation " : "NavBar__nav__ul  closeNavigation")
         }
       >
         <li className="NavBar__nav__ul__li--home">Acceuil</li>
