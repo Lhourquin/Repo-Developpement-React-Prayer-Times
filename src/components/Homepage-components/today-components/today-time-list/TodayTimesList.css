@@ -66,6 +66,8 @@
   -ms-flex-pack: distribute;
       justify-content: space-around;
   font-size: 13px;
+  -webkit-transition: 2s;
+  transition: 2s;
 }
 
 .TodayTimesList__ul-times-list .TodayTimesList__ul-times-list__li .TodayTimesList__ul-times-list__li__span--information {

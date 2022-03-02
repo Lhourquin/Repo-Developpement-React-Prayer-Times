@@ -132,8 +132,8 @@
       flex-direction: column;
       justify-content: space-around;
       list-style: none;
-      margin: 4px 0 6%;
-      padding: 41px;
+      margin: 0;
+      padding: 12px;
       .Pannel__ul--hour-date-countdown__li--date {
         font-size: 10px;
       }
@@ -142,7 +142,7 @@
       }
 
       .Pannel__ul--hour-date-countdown__li--countdown-current-times {
-        font-size: 17px;
+        font-size: 22px;
         color: #65d977;
       }
       .Pannel__ul--hour-date-countdown__li--countdown-next-times {
@@ -157,7 +157,7 @@
   }
   .countDowntThirtyMinutesCurentTime {
     color: #ee9292;
-    font-size: 17px;
+    font-size: 22px;
   }
 }
 @media (min-width: 830px) {
@@ -194,7 +194,7 @@
       flex-direction: column;
       justify-content: space-around;
       list-style: none;
-      margin:0;
+      margin: 0;
       padding: 12px;
       .Pannel__ul--hour-date-countdown__li--date {
         font-size: 13px;
@@ -222,4 +222,3 @@
     font-size: 26px;
   }
 }
-

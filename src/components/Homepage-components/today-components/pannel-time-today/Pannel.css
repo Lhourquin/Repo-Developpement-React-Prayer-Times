@@ -161,8 +161,8 @@
     -ms-flex-pack: distribute;
         justify-content: space-around;
     list-style: none;
-    margin: 4px 0 6%;
-    padding: 41px;
+    margin: 0;
+    padding: 12px;
   }
   .Pannel__div--container-times-today .Pannel__ul--hour-date-countdown .Pannel__ul--hour-date-countdown__li--date {
     font-size: 10px;
@@ -171,7 +171,7 @@
     font-size: 15px;
   }
   .Pannel__div--container-times-today .Pannel__ul--hour-date-countdown .Pannel__ul--hour-date-countdown__li--countdown-current-times {
-    font-size: 17px;
+    font-size: 22px;
     color: #65d977;
   }
   .Pannel__div--container-times-today .Pannel__ul--hour-date-countdown .Pannel__ul--hour-date-countdown__li--countdown-next-times {
@@ -184,7 +184,7 @@
   }
   .countDowntThirtyMinutesCurentTime {
     color: #ee9292;
-    font-size: 17px;
+    font-size: 22px;
   }
 }
 

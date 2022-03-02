@@ -191,6 +191,7 @@ export const TodayTimesList = ({
             height: "100%",
             top: "0",
             position: "absolute",
+            transition: "2s ease-in 3s"
           }}
         >
           {" "}
@@ -222,20 +223,20 @@ export const TodayTimesList = ({
             className="TodayTimesList__ul-times-list__li"
             style={
               displayHadith === false && now > dateFajr && now > dateShourouq
-                ? { opacity: "0.5" }
+                ? { opacity: "0.5", transition: 0 }
                 : displayHadith === true && now > dateFajr && now > dateShourouq
-                ? { opacity: "0" }
+                ? { opacity: "0", transition: 0 }
                 : now > dateFajr && now < dateShourouq
-                ? { backgroundColor: "#605b56", color: "#65D977" }
+                ? { backgroundColor: "#605b56", color: "#65D977", transition: 0 }
                 : displayHadith === false && now < dateFajr
-                ? { backgroundColor: "#92BFEE", opacity: "0.8" }
+                ? { backgroundColor: "#92BFEE", opacity: "0.8", transition: 0 }
                 : displayHadith === true && now < dateFajr
-                ? { opacity: "0.0" }
+                ? { opacity: "0.0" , transition: 0}
                 : {}
             }
           >
             <span>
-              FAJR {obj.data.timings.Fajr} -
+              FAJR {obj.data.timings.Fajr} - {" "}
               <span>SHOUROUQ {obj.data.timings.Sunrise}</span>{" "}
             </span>
             <span className="TodayTimesList__ul-times-list__li__span--information">
