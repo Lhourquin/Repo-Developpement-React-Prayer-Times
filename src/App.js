@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
 import { NavBar } from "./components/navbar/NavBar";
 import { SearchBar } from "./components/search-bar/SearchBar";
 import NavBarTodayAndMounth from "./components/Homepage-components/navbar-today-mounth/NavBarTodayAndMounth";

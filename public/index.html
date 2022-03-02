@@ -13,7 +13,35 @@
       Learn how to configure a non-root public URL by running `npm run build`.
       
     -->
+    <meta name="theme-color" content="#000000">
+    <!-- Add to home screen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="React App">
+    <link rel="apple-touch-icon" href="clock-icon192.png">
+    <!-- Windows Tile Icon -->
+    <meta name="msapplication-TileImage" content="clock-icon192.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="shortcut icon" href="clock-icon128.png">
+
+    <!--
+    …
+    -->
     <script src="https://kit.fontawesome.com/565d41f5d4.js" crossorigin="anonymous"></script>
+    <script>
+      window.addEventListener("load", () => {
+
+          if ("serviceWorker" in navigator) {
+              navigator.serviceWorker.register('/serviceWorker.js');
+          }
+
+      })
+  </script>
     <title>Waqt Al Falaah</title>
   </head>
   <body>
