@@ -71,14 +71,14 @@ export const Timer = ({
           dateIcha > dateStartOfTheNextDay ||
           dateIcha == dateStartOfTheNextDay
         ) {
-          localStorage.setItem("DateMidnight", JSON.stringify(new Date(`${month} ${Number(day)}, ${year} ${midnight}:00`) + ""))
+         // localStorage.setItem("DateMidnight", JSON.stringify(new Date(`${month} ${Number(day)}, ${year} ${midnight}:00`) + ""))
 
           return new Date(`${month} ${Number(day)}, ${year} ${midnight}:00`);
         } else if (
           dateIcha < dateStartOfTheNextDay &&
           midnight.substring(0, 1) == "0"
         ) {
-          localStorage.setItem("DateMidnight", JSON.stringify(new Date(`${month} ${Number(day)}, ${year} ${midnight}:00`) + ""))
+         // localStorage.setItem("DateMidnight", JSON.stringify(new Date(`${month} ${Number(day)}, ${year} ${midnight}:00`) + ""))
 
           return new Date(
             `${month} ${(Number(day)).toString()}, ${year} ${midnight}:00`
@@ -87,7 +87,7 @@ export const Timer = ({
           dateIcha < dateStartOfTheNextDay &&
           midnight.substring(0, 1) !== "0"
         ) {
-          localStorage.setItem("DateMidnight", JSON.stringify(new Date(`${month} ${Number(day)}, ${year} ${midnight}:00`) + ""))
+         // localStorage.setItem("DateMidnight", JSON.stringify(new Date(`${month} ${Number(day)}, ${year} ${midnight}:00`) + ""))
 
           return new Date(`${month} ${Number(day)}, ${year} ${midnight}:00`);
         }
@@ -176,14 +176,14 @@ export const Timer = ({
       setDisplayTimerCurrentNextTime(false);
       setCurrentNextTime("");
       return () => clearInterval(intervalCountDown.current);
-    } else if (now >= dateFajr && now < dateShourouq) {
+    } else if (now > dateFajr && now < dateShourouq) {
       setCurrentTime("FAJR " + fajr);
       setDisplayTimerCurrentTime(false);
       startTimerNextTimeCountDown(dateShourouq);
       setCurrentNextTime("SHOUROUQ " + shourouq + " - ");
       setDisplayTimerCurrentNextTime(true);
       return () => clearInterval(intervalCountDown.current);
-    } else if (now > dateShourouq && now < dateDhohr) {
+    } else if ( now > dateShourouq && now  < dateDhohr) {
       startTimerCurrentCountDown(dateDhohr);
       setDisplayTimerCurrentTime(true);
       setDisplayTimerCurrentNextTime(false);
@@ -211,7 +211,7 @@ export const Timer = ({
       setDisplayTimerCurrentNextTime(true);
       setCurrentNextTime("ICHA " + icha + " - ");
       return () => clearInterval(intervalCountDown.current);
-    } else if (now > dateIcha && now < dateMidnight) {
+    } else if (dateMaghreb < dateIcha && dateIcha < dateMidnight) {
       setCurrentTime("ICHA " + icha);
       startTimerNextTimeCountDown(dateMidnight);
       setDisplayTimerCurrentTime(false);

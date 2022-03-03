@@ -52,16 +52,16 @@ export const Today = ({
       setDateFajr(
         new Date(
           `${obj.data.date.gregorian.month.en} ${obj.data.date.gregorian.day}, ${obj.data.date.gregorian.year} ${obj.data.timings.Fajr}:00`
-        )
-      );
+        )/* { ${obj.data.timings.Fajr} }
+*/      );
       setDateShourouq(
         new Date(
-          `${obj.data.date.gregorian.month.en} ${obj.data.date.gregorian.day}, ${obj.data.date.gregorian.year} ${obj.data.timings.Sunrise}:00`
+          `${obj.data.date.gregorian.month.en} ${obj.data.date.gregorian.day}, ${obj.data.date.gregorian.year} ${obj.data.timings.Sunrise}:00` /**${obj.data.timings.Sunrise} */
         )
       );
       setDateDhohr(
         new Date(
-          `${obj.data.date.gregorian.month.en} ${obj.data.date.gregorian.day}, ${obj.data.date.gregorian.year} ${obj.data.timings.Dhuhr}:00`
+          `${obj.data.date.gregorian.month.en} ${obj.data.date.gregorian.day}, ${obj.data.date.gregorian.year} ${obj.data.timings.Dhuhr}:00` /**${obj.data.timings.Dhuhr} */
         )
       );
       setDateAsr(
