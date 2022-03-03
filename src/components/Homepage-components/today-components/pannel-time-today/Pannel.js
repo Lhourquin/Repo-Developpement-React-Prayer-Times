@@ -46,8 +46,7 @@ export const Pannel = ({
             <h2 className="Pannel__div--container-times-today__div--title__h2">
               <i className="fas fa-map-marker-alt localisation-marker-pannel"></i>{" "}
               {searchField.charAt(0).toUpperCase() +
-                searchField.slice(1).toLowerCase()}
-              ,{" "}
+                searchField.slice(1).toLowerCase() +","}{" "}
               {country.charAt(0).toUpperCase() + country.slice(1).toLowerCase()}
             </h2>
             <div className="Pannel__container-select-degree">

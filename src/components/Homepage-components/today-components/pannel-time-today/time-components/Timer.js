@@ -175,7 +175,7 @@ export const Timer = ({
       setCurrentTime("FAJR " + fajr);
       setDisplayTimerCurrentTime(false);
       startTimerNextTimeCountDown(dateShourouq);
-      setCurrentNextTime("SHOUROUQ " + shourouq + " - ");
+      setCurrentNextTime("SHOUROUQ " + shourouq);
       setDisplayTimerCurrentNextTime(true);
       return () => clearInterval(intervalCountDown.current);
     } else if ( now > dateShourouq && now  < dateDhohr) {
@@ -190,28 +190,28 @@ export const Timer = ({
       startTimerNextTimeCountDown(dateAsr);
       setDisplayTimerCurrentTime(false);
       setDisplayTimerCurrentNextTime(true);
-      setCurrentNextTime("ASR " + asr + " - ");
+      setCurrentNextTime("ASR " + asr);
       return () => clearInterval(intervalCountDown.current);
     } else if (now > dateAsr && now < dateMaghreb) {
       setCurrentTime("ASR " + asr);
       startTimerNextTimeCountDown(dateMaghreb);
       setDisplayTimerCurrentTime(false);
       setDisplayTimerCurrentNextTime(true);
-      setCurrentNextTime("MAGHREB " + maghreb + " - ");
+      setCurrentNextTime("MAGHREB " + maghreb);
       return () => clearInterval(intervalCountDown.current);
     } else if (now > dateMaghreb && now < dateIcha) {
       setCurrentTime("MAGHREB " + maghreb);
       startTimerNextTimeCountDown(dateIcha);
       setDisplayTimerCurrentTime(false);
       setDisplayTimerCurrentNextTime(true);
-      setCurrentNextTime("ICHA " + icha + " - ");
+      setCurrentNextTime("ICHA " + icha );
       return () => clearInterval(intervalCountDown.current);
     } else if (dateMaghreb < dateIcha && dateIcha < dateMidnight) {
       setCurrentTime("ICHA " + icha);
       startTimerNextTimeCountDown(dateMidnight);
       setDisplayTimerCurrentTime(false);
       setDisplayTimerCurrentNextTime(true);
-      setCurrentNextTime("MI-NUIT " + midnight + " - ");
+      setCurrentNextTime("MI-NUIT " + midnight );
       return () => clearInterval(intervalCountDown.current);
     }
   }, [now]);
@@ -250,7 +250,7 @@ export const Timer = ({
             : "Pannel__ul--hour-date-countdown__li--countdown-next-times "
         }
       >
-        {currentNextTime}{" "}
+        {currentNextTime}{"  "}-
         {displayTimerCurrentNextTime === true
           ? timerHoursNextTime +
             ":" +

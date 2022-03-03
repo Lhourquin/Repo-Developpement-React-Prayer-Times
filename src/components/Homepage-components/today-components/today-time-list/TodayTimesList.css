@@ -79,6 +79,77 @@
   cursor: pointer;
 }
 
+.TodayTimesList__ul-times-list .TodayTimesList__ul-times-list__li-current {
+  font-weight: bold;
+  color: #65d977;
+  width: 100%;
+  background-color: #605b56;
+  list-style: none;
+  height: 50px;
+  border-radius: 13px;
+  text-align: center;
+  margin-bottom: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  font-size: 13px;
+  -webkit-transition: 2s;
+  transition: 2s;
+}
+
+.TodayTimesList__ul-times-list .TodayTimesList__ul-times-list__li-current .TodayTimesList__ul-times-list__li__span--information {
+  padding-left: 84%;
+  position: absolute;
+}
+
+.TodayTimesList__ul-times-list .TodayTimesList__ul-times-list__li-current .TodayTimesList__ul-times-list__li__span--information .info-icons {
+  cursor: pointer;
+}
+
+.TodayTimesList__ul-times-list .TodayTimesList__ul-times-list__li-next {
+  font-weight: bold;
+  color: #605b56;
+  width: 100%;
+  background-color: #92bfee;
+  list-style: none;
+  height: 50px;
+  border-radius: 13px;
+  text-align: center;
+  margin-bottom: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  font-size: 13px;
+  -webkit-transition: 2s;
+  transition: 2s;
+}
+
+.TodayTimesList__ul-times-list .TodayTimesList__ul-times-list__li-next .TodayTimesList__ul-times-list__li__span--information {
+  padding-left: 84%;
+  position: absolute;
+}
+
+.TodayTimesList__ul-times-list .TodayTimesList__ul-times-list__li-next .TodayTimesList__ul-times-list__li__span--information .info-icons {
+  cursor: pointer;
+}
+
+.TodayTimesList__ul-times-list .passed {
+  background-color: #a9c18a8a;
+  color: #605b568f;
+}
+
 @media (min-width: 622px) {
   .TodayTimesList__ul-times-list {
     width: 90%;
@@ -114,18 +185,65 @@
   .TodayTimesList__ul-times-list .TodayTimesList__ul-times-list__li .TodayTimesList__ul-times-list__li__span--information .info-icons {
     cursor: pointer;
   }
-}
-
-.prayerTimePass {
-  opacity: 0.5;
-}
-
-.prayerTimeNow {
-  background-color: #605b56 !important;
-  color: #65d977 !important;
-}
-
-.nextPrayerTime {
-  background-color: #92bfee;
+  .TodayTimesList__ul-times-list .TodayTimesList__ul-times-list__li-current {
+    font-weight: bold;
+    color: #65d977;
+    width: 100%;
+    background-color: #605b56;
+    list-style: none;
+    height: 50px;
+    border-radius: 13px;
+    text-align: center;
+    margin-bottom: 8px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    font-size: 13px;
+  }
+  .TodayTimesList__ul-times-list .TodayTimesList__ul-times-list__li-current .TodayTimesList__ul-times-list__li__span--information {
+    margin-left: -48%;
+    position: absolute;
+  }
+  .TodayTimesList__ul-times-list .TodayTimesList__ul-times-list__li-current .TodayTimesList__ul-times-list__li__span--information .info-icons {
+    cursor: pointer;
+  }
+  .TodayTimesList__ul-times-list .TodayTimesList__ul-times-list__li-next {
+    font-weight: bold;
+    color: #605b56;
+    width: 100%;
+    background-color: #92bfee;
+    list-style: none;
+    height: 50px;
+    border-radius: 13px;
+    text-align: center;
+    margin-bottom: 8px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    font-size: 13px;
+  }
+  .TodayTimesList__ul-times-list .TodayTimesList__ul-times-list__li-next .TodayTimesList__ul-times-list__li__span--information {
+    margin-left: -48%;
+    position: absolute;
+  }
+  .TodayTimesList__ul-times-list .TodayTimesList__ul-times-list__li-next .TodayTimesList__ul-times-list__li__span--information .info-icons {
+    cursor: pointer;
+  }
+  .TodayTimesList__ul-times-list .passed {
+    background-color: #a9c18a8a;
+    color: #605b568f;
+  }
 }
 /*# sourceMappingURL=TodayTimesList.css.map */

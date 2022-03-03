@@ -216,8 +216,8 @@ const App = () => {
                 setCity("");
                 setCountry("");
               } else {
-                localStorage.setItem("City", inputCityValue);
-                localStorage.setItem("Country", inputCountryValue);
+                localStorage.setItem("City", inputCityValue.trim());
+                localStorage.setItem("Country", inputCountryValue.trim());
                 setCity(localStorage.getItem("City"));
                 setCountry(localStorage.getItem("Country"));
                 setTimeout(() => {
@@ -231,8 +231,8 @@ const App = () => {
               setCity("");
               setCountry("");
             } else {
-              localStorage.setItem("City", inputCityValue);
-              localStorage.setItem("Country", inputCountryValue);
+              localStorage.setItem("City", inputCityValue.trim());
+              localStorage.setItem("Country", inputCountryValue.trim());
               setCity(localStorage.getItem("City"));
               setCountry(localStorage.getItem("Country"));
               setTimeout(() => {

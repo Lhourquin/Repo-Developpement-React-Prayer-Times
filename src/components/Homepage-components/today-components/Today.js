@@ -57,7 +57,7 @@ export const Today = ({
     today.map((obj) => {
       setDateFajr(
         new Date(
-          `${obj.data.date.gregorian.month.en} ${obj.data.date.gregorian.day}, ${obj.data.date.gregorian.year} ${obj.data.timings.Fajr}:00`
+          `${obj.data.date.gregorian.month.en} ${obj.data.date.gregorian.day}, ${obj.data.date.gregorian.year} ${obj.data.timings.Fajr} :00`
         )
         /* { ${obj.data.timings.Fajr} }
          */
@@ -74,17 +74,17 @@ export const Today = ({
       );
       setDateAsr(
         new Date(
-          `${obj.data.date.gregorian.month.en} ${obj.data.date.gregorian.day}, ${obj.data.date.gregorian.year} :00` /**${obj.data.timings.Asr} */
+          `${obj.data.date.gregorian.month.en} ${obj.data.date.gregorian.day}, ${obj.data.date.gregorian.year} ${obj.data.timings.Asr} :00` /**${obj.data.timings.Asr} */
         )
       );
       setDateMaghreb(
         new Date(
-          `${obj.data.date.gregorian.month.en} ${obj.data.date.gregorian.day}, ${obj.data.date.gregorian.year} :00` /**${obj.data.timings.Maghrib} */
+          `${obj.data.date.gregorian.month.en} ${obj.data.date.gregorian.day}, ${obj.data.date.gregorian.year} ${obj.data.timings.Maghrib}:00` /**${obj.data.timings.Maghrib} */
         )
       );
       setDateIcha(
         new Date(
-          `${obj.data.date.gregorian.month.en} ${obj.data.date.gregorian.day}, ${obj.data.date.gregorian.year} :00` /** ${obj.data.date.gregorian.year */
+          `${obj.data.date.gregorian.month.en} ${obj.data.date.gregorian.day}, ${obj.data.date.gregorian.year} ${obj.data.timings.Isha}:00` /** ${obj.data.timings.Isha}  */
         )
       );
       setdateStartOfTheNextDay(
