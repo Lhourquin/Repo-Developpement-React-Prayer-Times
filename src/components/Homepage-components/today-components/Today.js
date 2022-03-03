@@ -66,17 +66,17 @@ export const Today = ({
       );
       setDateAsr(
         new Date(
-          `${obj.data.date.gregorian.month.en} ${obj.data.date.gregorian.day}, ${obj.data.date.gregorian.year} ${obj.data.timings.Asr}:00`
+          `${obj.data.date.gregorian.month.en} ${obj.data.date.gregorian.day}, ${obj.data.date.gregorian.year} :00`  /**${obj.data.timings.Asr} */
         )
       );
       setDateMaghreb(
         new Date(
-          `${obj.data.date.gregorian.month.en} ${obj.data.date.gregorian.day}, ${obj.data.date.gregorian.year} ${obj.data.timings.Maghrib}:00`
+          `${obj.data.date.gregorian.month.en} ${obj.data.date.gregorian.day}, ${obj.data.date.gregorian.year} :00` /**${obj.data.timings.Maghrib} */
         )
       );
       setDateIcha(
         new Date(
-          `${obj.data.date.gregorian.month.en} ${obj.data.date.gregorian.day}, ${obj.data.date.gregorian.year} ${obj.data.timings.Isha}:00`
+          `${obj.data.date.gregorian.month.en} ${obj.data.date.gregorian.day}, ${obj.data.date.gregorian.year} :00` /** ${obj.data.date.gregorian.year */
         )
       );
     });

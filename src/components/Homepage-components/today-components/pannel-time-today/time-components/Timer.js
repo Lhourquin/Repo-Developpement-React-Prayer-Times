@@ -81,7 +81,7 @@ export const Timer = ({
          // localStorage.setItem("DateMidnight", JSON.stringify(new Date(`${month} ${Number(day)}, ${year} ${midnight}:00`) + ""))
 
           return new Date(
-            `${month} ${(Number(day)).toString()}, ${year} ${midnight}:00`
+            `${month} ${(Number(day) + 1)}, ${year} ${midnight}:00`
           );
         } else if (
           dateIcha < dateStartOfTheNextDay &&
