@@ -175,7 +175,7 @@ export const Today = ({
         ) {
          // localStorage.setItem("DateMidnight", JSON.stringify(new Date(`${month} ${Number(day)}, ${year} ${midnight}:00`) + ""))
 
-          return new Date(`${obj.data.date.gregorian.month.en} ${obj.data.date.gregorian.day}, ${obj.data.date.gregorian.year}${midnightTime}:00`);
+          return new Date(`${obj.data.date.gregorian.month.en} ${Number(obj.data.date.gregorian.day)}, ${obj.data.date.gregorian.year} ${midnightTime}:00`);
         }
       });
       })
@@ -184,7 +184,6 @@ export const Today = ({
 
     return () => clearTimeout(timer);
   }, [midnightTime, dateStartOfTheNextDay]);
-//console.log(dateMidnight)
   return (
     <>
       <div className="Today__div--container-list-pannel">

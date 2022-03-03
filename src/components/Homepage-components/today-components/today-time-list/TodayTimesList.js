@@ -181,7 +181,7 @@ export const TodayTimesList = ({
   const closeHadith = () => {
     setDisplayHadith((boolean) => !boolean);
   };
-  //console.log(todayTest)
+  //console.log(dateMidnight)
   return (
     <>
       {displayHadith === true ? (
