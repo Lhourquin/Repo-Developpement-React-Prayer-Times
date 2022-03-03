@@ -165,7 +165,7 @@ export const Timer = ({
 
   useEffect(() => {
     if (now < dateFajr) {
-      setCurrentTime("FAJR " + fajr + " - ");
+      setCurrentTime("FAJR " + fajr);
       startTimerCurrentCountDown(dateFajr);
       setDisplayTimerCurrentTime(true);
       setDisplayTimerCurrentNextTime(false);
@@ -232,7 +232,7 @@ export const Timer = ({
                 ? "countDowntThirtyMinutesCurentTime"
                 : ""
             }
-          >
+          >-
             {timerHoursCurrentTime +
               ":" +
               timerMinutesCurrentTime +
