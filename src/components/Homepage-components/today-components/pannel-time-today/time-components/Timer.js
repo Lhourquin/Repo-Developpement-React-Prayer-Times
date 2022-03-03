@@ -2,9 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 
 export const Timer = ({
   arrayOfTimesSalatOfTheDay,
-  day,
-  month,
-  year,
   now,
   dateFajr,
   dateShourouq,
@@ -12,6 +9,7 @@ export const Timer = ({
   dateAsr,
   dateMaghreb,
   dateIcha,
+  dateMidnight
 }) => {
   const [fajr, setFajr] = useState(arrayOfTimesSalatOfTheDay[0].fajr);
   const [shourouq, setShourouq] = useState(
@@ -23,12 +21,9 @@ export const Timer = ({
   const [icha, setIcha] = useState(arrayOfTimesSalatOfTheDay[5].icha);
   const [midnight, setMidnight] = useState(
     arrayOfTimesSalatOfTheDay[6].midnight
-  );
+    );
 
-  const getTextContent = () => {
-    return (arrayOfTimesSalatOfTheDay[6].midnight =
-      document.getElementsByClassName("test")[0].innerHTML);
-  };
+  
 
   useEffect(() => {
     let timer = setTimeout(() => {
@@ -38,13 +33,13 @@ export const Timer = ({
       setAsr(arrayOfTimesSalatOfTheDay[3].asr);
       setMaghreb(arrayOfTimesSalatOfTheDay[4].maghreb);
       setIcha(arrayOfTimesSalatOfTheDay[5].icha);
-      setMidnight(getTextContent());
+      setMidnight(arrayOfTimesSalatOfTheDay[6].midnight);
     });
 
     return () => clearTimeout(timer);
   }, arrayOfTimesSalatOfTheDay);
 
-  const [dateStartOfTheNextDay, setdateStartOfTheNextDay] = useState(
+/*  const [dateStartOfTheNextDay, setdateStartOfTheNextDay] = useState(
     new Date(`${month} ${Number(day) + 1}, ${year} 00:00:00`)
   );
   const [dateMidnight, setDateMidnight] = useState(() => {
@@ -95,7 +90,7 @@ export const Timer = ({
     });
 
     return () => clearTimeout(timer);
-  }, [midnight]);
+  }, [midnight]);*/
 
   const [timerHoursCurrentTime, setTimerHoursCurrentTime] = useState("");
   const [timerMinutesCurrentTime, setTimerMinutesCurrentTime] = useState("");
@@ -219,7 +214,7 @@ export const Timer = ({
       setCurrentNextTime("MI-NUIT " + midnight + " - ");
       return () => clearInterval(intervalCountDown.current);
     }
-  }, [now, midnight]);
+  }, [now]);
 //console.log(currentNextTime)
 //console.log(midnight)
 

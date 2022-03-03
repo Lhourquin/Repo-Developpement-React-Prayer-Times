@@ -11,7 +11,8 @@ export const TodayTimesList = ({
   dateAsr,
   dateMaghreb,
   dateIcha,
-  
+  dateMidnight,
+  midnightTime
 }) => {
   const [displayHadith, setDisplayHadith] = useState(false);
   const [listOfHadith, setListOfHadith] = useState([
@@ -335,17 +336,16 @@ export const TodayTimesList = ({
           <li
             style={
               now > dateIcha &&
-              now <
-                new Date(
-                  `${obj.data.date.gregorian.month.en} ${
-                    Number(obj.data.date.gregorian.day) + 1
-                  }, ${obj.data.date.gregorian.year} 00:00:00`
-                )
+              now < dateMidnight
                 ? { backgroundColor: "#605b56", color: "#65D977" }
                 : displayHadith === false && now < dateIcha && now > dateMaghreb
                 ? { backgroundColor: "#92BFEE", opacity: "0.8" }
                 : displayHadith === true && now < dateIcha && now > dateMaghreb
                 ? { opacity: "0" }
+                : displayHadith === true && now > dateMidnight 
+                ? {opacity: "0"}
+                : displayHadith === false && now > dateMidnight 
+                ? {opacity: "0.5"}
                 : {}
             }
             className={
@@ -362,7 +362,7 @@ export const TodayTimesList = ({
           >
             <span>
               ICHA {obj.data.timings.Isha} - MINUIT{" "}
-              <CalculMidnight todayMidnight={today} />{" "}
+              {midnightTime}
             </span>{" "}
             <span className="TodayTimesList__ul-times-list__li__span--information">
               {" "}
@@ -386,7 +386,6 @@ export const TodayTimesList = ({
           </li>*/}
         </ul>
       ))}
-      {}
     </>
   );
 };

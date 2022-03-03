@@ -15,16 +15,18 @@ export const Pannel = ({
   dateAsr,
   dateMaghreb,
   dateIcha,
-  country
+  dateMidnight,
+  country,
+  midnightTime,
 }) => {
- // const [JSONTodayTimesSalat, setJSONTodayTimesSalat] = useState("");
- // const [todayTimesSalat, setTodayTimesSalat] = useState("");
+  // const [JSONTodayTimesSalat, setJSONTodayTimesSalat] = useState("");
+  // const [todayTimesSalat, setTodayTimesSalat] = useState("");
 
- /* useEffect(() => {
+  /* useEffect(() => {
     setJSONTodayTimesSalat(localStorage.setItem("TodayTimes", JSON.stringify(today)));
   });*/
 
- /* useEffect(() => {
+  /* useEffect(() => {
     setTodayTimesSalat(JSON.parse(localStorage.getItem("TodayTimes") || "[]"))
   }, [JSONTodayTimesSalat])*/
 
@@ -34,19 +36,19 @@ export const Pannel = ({
       searchField.charAt(0).toUpperCase() + searchField.slice(1).toLowerCase()
     );
   }, [searchField]);
- //console.log(todayTimesSalat.map((obj)=> obj.data));
- //console.log(todayTest.map((obj)=> obj.data));
+  //console.log(todayTimesSalat.map((obj)=> obj.data));
+  //console.log(todayTest.map((obj)=> obj.data));
   return (
     <>
       {today.map((obj, index) => (
-        
         <div className="Pannel__div--container-times-today" key={index}>
           <div className="Pannel__div--container-times-today__div--title-container-angle-select">
             <h2 className="Pannel__div--container-times-today__div--title__h2">
               <i className="fas fa-map-marker-alt localisation-marker-pannel"></i>{" "}
               {searchField.charAt(0).toUpperCase() +
-                searchField.slice(1).toLowerCase()}, {country.charAt(0).toUpperCase() +
-                  country.slice(1).toLowerCase()}
+                searchField.slice(1).toLowerCase()}
+              ,{" "}
+              {country.charAt(0).toUpperCase() + country.slice(1).toLowerCase()}
             </h2>
             <div className="Pannel__container-select-degree">
               <span style={{ fontSize: "10px" }}>
@@ -67,9 +69,6 @@ export const Pannel = ({
           </div>
           <ul className="Pannel__ul--hour-date-countdown">
             <Timer
-              year={obj.data.date.gregorian.year}
-              day={obj.data.date.gregorian.day}
-              month={obj.data.date.gregorian.month.en}
               arrayOfTimesSalatOfTheDay={[
                 { fajr: obj.data.timings.Fajr },
                 { shourouq: obj.data.timings.Sunrise },
@@ -77,7 +76,7 @@ export const Pannel = ({
                 { asr: obj.data.timings.Asr },
                 { maghreb: obj.data.timings.Maghrib },
                 { icha: obj.data.timings.Isha },
-                { midnight: "" },
+                { midnight: midnightTime },
               ]}
               now={now}
               dateFajr={dateFajr}
@@ -86,6 +85,7 @@ export const Pannel = ({
               dateAsr={dateAsr}
               dateMaghreb={dateMaghreb}
               dateIcha={dateIcha}
+              dateMidnight={dateMidnight}
             />
             <Clock className="DateNow" />
 
