@@ -206,7 +206,7 @@ export const Timer = ({
       setDisplayTimerCurrentNextTime(true);
       setCurrentNextTime("ICHA " + icha );
       return () => clearInterval(intervalCountDown.current);
-    } else if (now > dateIcha && now < dateMidnight) {
+    } else if ( dateIcha < dateMidnight) {
       setCurrentTime("ICHA " + icha);
       startTimerNextTimeCountDown(dateMidnight);
       setDisplayTimerCurrentTime(false);
