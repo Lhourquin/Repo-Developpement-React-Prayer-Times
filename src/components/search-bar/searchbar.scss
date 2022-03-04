@@ -57,7 +57,7 @@
       .SearchBar__form__div--find-city-container__input--city {
         width: 97%;
         border-radius: 8px;
-        border: 1.4px solid #605b56;
+        border: none;
         color: #605b56;
         height: 30px;
         font-size: 16px;
@@ -70,7 +70,7 @@
       .SearchBar__form__div--find-country-container__input-country,
       .SearchBar__form__div--find-country-container__submit {
         border-radius: 8px;
-        border: 1.4px solid #605b56;
+        border: none;
         margin-top: 7px;
         color: #605b56;
         height: 30px;
@@ -101,7 +101,7 @@
       .SearchBar__form__div--find-city-container__input--city {
         width: 97%;
         border-radius: 8px;
-        border: 1.4px solid #605b56;
+        border: none;
         color: #605b56;
         height: 30px;
         font-size: 16px;
@@ -113,7 +113,7 @@
       .SearchBar__form__div--find-country-container__input-country,
       .SearchBar__form__div--find-country-container__submit {
         border-radius: 8px;
-        border: 1.4px solid #605b56;
+        border: none;
         margin-top: 7px;
         color: #605b56;
         height: 30px;
@@ -164,7 +164,7 @@
       .SearchBar__form__div--find-city-container__input--city {
         width: 98.5%;
         border-radius: 8px;
-        border: 1.4px solid #605b56;
+        border: none;
         height: 36px;
         color: #605b56;
         font-size: 17px;
@@ -176,7 +176,7 @@
     .SearchBar__form__div--find-country-container {
       .SearchBar__form__div--find-country-container__input-country {
         border-radius: 8px;
-        border: 1.4px solid #605b56;
+        border: none;
         margin-top: 7px;
         height: 36px;
         color: #605b56;
@@ -186,7 +186,7 @@
       }
       .SearchBar__form__div--find-country-container__submit {
         border-radius: 8px;
-        border: 1.4px solid #605b56;
+        border: none;
         margin-top: 7px;
         height: 36px;
         color: #eaeaea;
@@ -215,7 +215,7 @@
         box-shadow: inset -1px 1px 5px -2px #000000ab;
 
         border-radius: 8px;
-        border: 1.4px solid #605b56;
+        border: none;
         height: 36px;
         color: #605b56;
         font-size: 17px;
@@ -267,7 +267,7 @@
       .SearchBar__form__div--find-city-container__input--city {
         width: 98.5%;
         border-radius: 8px;
-        border: 1.4px solid #605b56;
+        border: none;
         height: 36px;
         color: #605b56;
         font-size: 17px;
@@ -279,7 +279,7 @@
     .SearchBar__form__div--find-country-container {
       .SearchBar__form__div--find-country-container__input-country {
         border-radius: 8px;
-        border: 1.4px solid #605b56;
+        border:none;
         margin-top: 7px;
         height: 36px;
         color: #605b56;
@@ -360,7 +360,7 @@
         box-shadow: inset -1px 1px 5px -2px #000000ab;
 
         border-radius: 8px;
-        border: 1.4px solid #605b56;
+        border: none;
         height: 36px;
         color: #605b56;
         font-size: 17px;
@@ -371,7 +371,7 @@
       
       .SearchBar__form__div--find-country-container__input-country {
         border-radius: 8px;
-        border: 1.4px solid #605b56;
+        border: none;
         margin-top: 7px;
         height: 36px;
         color: #605b56;
@@ -383,7 +383,7 @@
       }
       .SearchBar__form__div--find-country-container__submit {
         border-radius: 8px;
-        border: 1.4px solid #605b56;
+        border: none;
         margin-top: 7px;
         height: 36px;
         color: #eaeaea;
@@ -411,7 +411,7 @@
       flex-direction: row-reverse;
       .SearchBar__form__div--find-city-container__input--city {
         border-radius: 8px;
-        border: 1.4px solid #605b56;
+        border:none;
         height: 36px;
         color: #605b56;
         font-size: 17px;
@@ -423,7 +423,7 @@
     .SearchBar__form__div--find-country-container {
       .SearchBar__form__div--find-country-container__input-country {
         border-radius: 8px;
-        border: 1.4px solid #605b56;
+        border: none;
         margin-top: 7px;
         height: 36px;
         color: #605b56;
@@ -433,7 +433,7 @@
       }
       .SearchBar__form__div--find-country-container__submit {
         border-radius: 8px;
-        border: 1.4px solid #605b56;
+        border:none;
         margin-top: 7px;
         height: 36px;
         color: #eaeaea;
@@ -448,7 +448,7 @@
   .isClose {
     display: none;
   }
-  .isOpen {
+  .isOpen { 
     display: flex;
     flex-direction: column;
     justify-content: center;
