@@ -47,6 +47,7 @@ export const Today = ({
   const [dateAsr, setDateAsr] = useState("");
   const [dateMaghreb, setDateMaghreb] = useState("");
   const [dateIcha, setDateIcha] = useState("");
+  const [dateIchaLastDay, setDateIchaLastDay] = useState("");
   const [dateMidnight, setDateMidnight] = useState("");
   const [dateStartOfTheNextDay, setdateStartOfTheNextDay] = useState("");
   const [day, setDay] = useState("");
@@ -55,8 +56,8 @@ export const Today = ({
 
   useEffect(() => {
     today.map((obj) => {
-     // console.log(Number(obj.data.date.gregorian.day))
-     setDay(Number(obj.data.date.gregorian.day));
+      // console.log(Number(obj.data.date.gregorian.day))
+      setDay(Number(obj.data.date.gregorian.day));
       setDateFajr(
         new Date(
           `${obj.data.date.gregorian.month.en} ${obj.data.date.gregorian.day}, ${obj.data.date.gregorian.year} ${obj.data.timings.Fajr} :00`
@@ -89,7 +90,17 @@ export const Today = ({
           `${obj.data.date.gregorian.month.en} ${obj.data.date.gregorian.day}, ${obj.data.date.gregorian.year} ${obj.data.timings.Isha}:00` /** ${obj.data.timings.Isha}  */
         )
       );
-      
+
+      setDateIchaLastDay(
+        new Date(
+          `${obj.data.date.gregorian.month.en} ${
+            Number(obj.data.date.gregorian.day) - 1
+          }, ${obj.data.date.gregorian.year} ${
+            obj.data.timings.Isha
+          }:00` /** ${obj.data.timings.Isha}  */
+        )
+      );
+
       setFajrTime(
         obj.data.timings.Fajr.split(":").map((x) => {
           let strToNumber = Number(x);
@@ -105,14 +116,17 @@ export const Today = ({
     });
   }, [today]);
 
-  useEffect(()=> {
-    today.map((obj)=> {
-        setdateStartOfTheNextDay(
-      new Date(`${obj.data.date.gregorian.month.en} ${Number(day) + 1}, ${obj.data.date.gregorian.year} 00:00:00`)
-    );
-    })
-  
-  }, [day])
+  useEffect(() => {
+    today.map((obj) => {
+      setdateStartOfTheNextDay(
+        new Date(
+          `${obj.data.date.gregorian.month.en} ${Number(day) + 1}, ${
+            obj.data.date.gregorian.year
+          } 00:00:00`
+        )
+      );
+    });
+  }, [day]);
 
   /* useEffect(() => {
     today.map((obj) => {
@@ -122,7 +136,6 @@ export const Today = ({
   const [midnightTime, setMidnightTime] = useState("");
 
   useEffect(() => {
-    
     setMidnightTime(() => {
       let fajr = moment(fajrTime, "HH:mm").add(1, "days");
       let maghreb = moment(maghrebTime, "HH:mm");
@@ -147,43 +160,58 @@ export const Today = ({
     });
   }, [fajrTime, maghrebTime]);
 
-
-
   useEffect(() => {
     let timer = setTimeout(() => {
-      today.map((obj)=> {
+      today.map((obj) => {
         setDateMidnight(() => {
-        if (
-          dateIcha > dateStartOfTheNextDay ||
-          dateIcha == dateStartOfTheNextDay
-        ) {
-         // localStorage.setItem("DateMidnight", JSON.stringify(new Date(`${month} ${Number(day)}, ${year} ${midnight}:00`) + ""))
+          if (
+            dateIcha > dateStartOfTheNextDay ||
+            dateIcha == dateStartOfTheNextDay
+          ) {
+            // localStorage.setItem("DateMidnight", JSON.stringify(new Date(`${month} ${Number(day)}, ${year} ${midnight}:00`) + ""))
 
-          return new Date(`${obj.data.date.gregorian.month.en} ${obj.data.date.gregorian.day}, ${obj.data.date.gregorian.year} ${midnightTime}:00`);
-        } else if (
-          dateIcha < dateStartOfTheNextDay &&
-          midnightTime.substring(0, 1) == "0"
-        ) {
-         // localStorage.setItem("DateMidnight", JSON.stringify(new Date(`${month} ${Number(day)}, ${year} ${midnight}:00`) + ""))
+            return new Date(
+              `${obj.data.date.gregorian.month.en} ${obj.data.date.gregorian.day}, ${obj.data.date.gregorian.year} ${midnightTime}:00`
+            );
+          } else if (
+            dateIcha < dateStartOfTheNextDay &&
+            midnightTime.substring(0, 1) == "0"
+          ) {
+            // localStorage.setItem("DateMidnight", JSON.stringify(new Date(`${month} ${Number(day)}, ${year} ${midnight}:00`) + ""))
+            if (now > dateIchaLastDay && now < dateFajr) {
+              return new Date(
+                `${obj.data.date.gregorian.month.en} ${
+                  Number(obj.data.date.gregorian.day)
+                }, ${obj.data.date.gregorian.year} ${midnightTime}:00`
+              );
+            } else {
+              return new Date(
+                `${obj.data.date.gregorian.month.en} ${
+                  Number(obj.data.date.gregorian.day) + 1
+                }  , ${obj.data.date.gregorian.year} ${midnightTime}:00`
+              );
+            }
+          } else if (
+            dateIcha < dateStartOfTheNextDay &&
+            midnightTime.substring(0, 1) !== "0"
+          ) {
+            // localStorage.setItem("DateMidnight", JSON.stringify(new Date(`${month} ${Number(day)}, ${year} ${midnight}:00`) + ""))
 
-          return new Date(
-            `${obj.data.date.gregorian.month.en} ${Number(obj.data.date.gregorian.day) + 1}  , ${obj.data.date.gregorian.year} ${midnightTime}:00`
-          );
-        } else if (
-          dateIcha < dateStartOfTheNextDay &&
-          midnightTime.substring(0, 1) !== "0"
-        ) {
-         // localStorage.setItem("DateMidnight", JSON.stringify(new Date(`${month} ${Number(day)}, ${year} ${midnight}:00`) + ""))
-
-          return new Date(`${obj.data.date.gregorian.month.en} ${Number(obj.data.date.gregorian.day)}, ${obj.data.date.gregorian.year} ${midnightTime}:00`);
-        }
+            return new Date(
+              `${obj.data.date.gregorian.month.en} ${Number(
+                obj.data.date.gregorian.day
+              )}, ${obj.data.date.gregorian.year} ${midnightTime}:00`
+            );
+          }
+        });
       });
-      })
-      
     });
 
     return () => clearTimeout(timer);
   }, [midnightTime, dateStartOfTheNextDay]);
+
+  // console.log(dateIchaLastDay);
+  // console.log(dateMidnight);
   return (
     <>
       <div className="Today__div--container-list-pannel">
@@ -196,6 +224,7 @@ export const Today = ({
           dateAsr={dateAsr}
           dateMaghreb={dateMaghreb}
           dateIcha={dateIcha}
+          dateIchaLastDay={dateIchaLastDay}
           dateMidnight={dateMidnight}
           midnightTime={midnightTime}
         />
@@ -212,6 +241,7 @@ export const Today = ({
           dateDhohr={dateDhohr}
           dateAsr={dateAsr}
           dateIcha={dateIcha}
+          dateIchaLastDay={dateIchaLastDay}
           dateMaghreb={dateMaghreb}
           dateMidnight={dateMidnight}
           midnightTime={midnightTime}

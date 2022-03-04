@@ -15,6 +15,7 @@ export const Pannel = ({
   dateAsr,
   dateMaghreb,
   dateIcha,
+  dateIchaLastDay,
   dateMidnight,
   country,
   midnightTime,
@@ -84,6 +85,7 @@ export const Pannel = ({
               dateAsr={dateAsr}
               dateMaghreb={dateMaghreb}
               dateIcha={dateIcha}
+              dateIchaLastDay={dateIchaLastDay}
               dateMidnight={dateMidnight}
             />
             <Clock className="DateNow" />
