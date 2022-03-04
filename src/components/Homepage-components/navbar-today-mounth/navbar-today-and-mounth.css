@@ -60,8 +60,8 @@
   border: none;
   box-shadow: 0px 3px 6px 1px #00000042;
   -webkit-box-shadow: 0px 3px 6px 1px #00000042;
-  -webkit-transition: 1s;
-  transition: 1s;
+  -webkit-transition: 2s;
+  transition: 2s;
 }
 
 .NavBarTodayAndMounth__nav .NavBarTodayAndMounth__nav__ul .NavBarTodayAndMounth__nav__ul__li--month {
@@ -76,13 +76,13 @@
   border: none;
   -webkit-box-shadow: 0px 3px 6px 1px #00000042;
   box-shadow: 0px 3px 6px 1px #00000042;
-  -webkit-transition: 1s;
-  transition: 1s;
+  -webkit-transition: 2s;
+  transition: 2s;
 }
 
 .NavBarTodayAndMounth__nav .NavBarTodayAndMounth__nav__ul .currentComponent {
-  -webkit-transition: 1s;
-  transition: 1s;
+  -webkit-transition: 2s;
+  transition: 2s;
   background-color: #605b56;
 }
 
