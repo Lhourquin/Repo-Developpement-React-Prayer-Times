@@ -34,11 +34,13 @@
 }
 @media (min-width: 0px) and (max-width: 621px) {
   .Pannel__div--container-times-today {
-    width: 85%;
-    background-color: #605b56;
+    -webkit-box-shadow: -2px 5px 6px 1px rgba(0,0,0,0.26); 
+    box-shadow: -2px 5px 6px 1px rgba(0,0,0,0.26);
+    width: 90%;
+    background-color: #605b56f0;
     margin: auto;
     text-align: center;
-    border-radius: 25px;
+    border-radius: 8px;
     font-size: 12px;
 
     .localisation-marker-pannel {
@@ -100,11 +102,13 @@
 
 @media (min-width: 622px) {
   .Pannel__div--container-times-today {
+    -webkit-box-shadow: -2px 5px 6px 1px rgba(0,0,0,0.26); 
+    box-shadow: -2px 5px 6px 1px rgba(0,0,0,0.26);
     width: 90%;
-    background-color: #605b56;
+    background-color: #605b56f0;
     margin: 5% 5% 6% 5%;
     text-align: center;
-    border-radius: 25px;
+    border-radius: 8px;
     font-size: 12px;
     .localisation-marker-pannel {
       color: #acc18a;
@@ -162,11 +166,13 @@
 }
 @media (min-width: 830px) {
   .Pannel__div--container-times-today {
+    -webkit-box-shadow: -2px 5px 6px 1px rgba(0,0,0,0.26); 
+    box-shadow: -2px 5px 6px 1px rgba(0,0,0,0.26);
     width: 90%;
-    background-color: #605b56;
+    background-color: #605b56f0;
     margin: 5% 5% 6% 5%;
     text-align: center;
-    border-radius: 25px;
+    border-radius: 8px;
     font-size: 12px;
     .localisation-marker-pannel {
       color: #acc18a;

@@ -9,7 +9,7 @@
   right: 5%;
   top: 15%;
   width: 25px;
-  font-size:20px;
+  font-size: 20px;
   color: #605b56;
 }
 .hadith-container {
@@ -41,13 +41,15 @@
   margin: 5% auto auto auto;
   padding: 0;
   .TodayTimesList__ul-times-list__li {
+    -webkit-box-shadow: -2px 5px 6px 1px rgba(0,0,0,0.26); 
+    box-shadow: -2px 5px 6px 1px rgba(0,0,0,0.26);
     font-weight: bold;
     color: #605b56;
     width: 100%;
     background-color: #acc18a;
     list-style: none;
     height: 50px;
-    border-radius: 13px;
+    border-radius: 8px;
     text-align: center;
     margin-bottom: 8px;
     display: flex;
@@ -63,56 +65,6 @@
       }
     }
   }
-  .TodayTimesList__ul-times-list__li-current {
-    font-weight: bold;
-    color: #65d977;
-    width: 100%;
-    background-color: #605b56;
-    list-style: none;
-    height: 50px;
-    border-radius: 13px;
-    text-align: center;
-    margin-bottom: 8px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    font-size: 13px;
-    transition: 2s;
-    .TodayTimesList__ul-times-list__li__span--information {
-      padding-left: 84%;
-      position: absolute;
-      .info-icons {
-        cursor: pointer;
-      }
-    }
-  }
-  .TodayTimesList__ul-times-list__li-next {
-    font-weight: bold;
-    color: #605b56;
-    width: 100%;
-    background-color: rgb(146, 191, 238);
-    list-style: none;
-    height: 50px;
-    border-radius: 13px;
-    text-align: center;
-    margin-bottom: 8px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    font-size: 13px;
-    transition: 2s;
-    .TodayTimesList__ul-times-list__li__span--information {
-      padding-left: 84%;
-      position: absolute;
-      .info-icons {
-        cursor: pointer;
-      }
-    }
-  }
-  .passed {
-    background-color:#a9c18a8a;
-    color: #605b568f;
-   }
 }
 
 @media (min-width: 622px) {
@@ -128,7 +80,7 @@
       background-color: #acc18a;
       list-style: none;
       height: 50px;
-      border-radius: 13px;
+      border-radius: 8px;
       text-align: center;
       margin-bottom: 8px;
       display: flex;
@@ -143,55 +95,5 @@
         }
       }
     }
-    .TodayTimesList__ul-times-list__li-current {
-      font-weight: bold;
-      color: #65d977;
-      width: 100%;
-      background-color: #605b56;
-      list-style: none;
-      height: 50px;
-      border-radius: 13px;
-      text-align: center;
-      margin-bottom: 8px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      font-size: 13px;
-      .TodayTimesList__ul-times-list__li__span--information {
-        margin-left: -48%;
-        position: absolute;
-        .info-icons {
-          cursor: pointer;
-        }
-      }
-    }
-    .TodayTimesList__ul-times-list__li-next {
-      font-weight: bold;
-      color: #605b56;
-      width: 100%;
-      background-color: #92bfee;
-      list-style: none;
-      height: 50px;
-      border-radius: 13px;
-      text-align: center;
-      margin-bottom: 8px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      font-size: 13px;
-      .TodayTimesList__ul-times-list__li__span--information {
-        margin-left: -48%;
-        position: absolute;
-        .info-icons {
-          cursor: pointer;
-        }
-      }
-    }
-
-    .passed {
-      background-color:#a9c18a8a;
-      color: #605b568f;
-     }
-    
   }
 }

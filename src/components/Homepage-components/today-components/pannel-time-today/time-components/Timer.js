@@ -191,7 +191,7 @@ export const Timer = ({
       startTimerCurrentCountDown(dateDhohr);
       setDisplayTimerCurrentTime(true);
       setDisplayTimerCurrentNextTime(false);
-      setCurrentTime("DHOHR " + dhohr + " - ");
+      setCurrentTime("DHOHR " + dhohr);
       setCurrentNextTime("");
       return () => clearInterval(intervalCountDown.current);
     } else if (now > dateDhohr && now < dateAsr) {
