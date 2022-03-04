@@ -10,7 +10,31 @@ export const NavBar = () => {
   
 
   return (
-    <nav className={buttonBurgerIsClicked ? "NavBar__nav openEffect" : "NavBar__nav closeEffect"}>
+ 
+
+    <nav>
+    <div className="navbar">
+      <div className="container nav-container">
+          <input className="checkbox" type="checkbox" name="" id="" />
+          <div className="hamburger-lines">
+            <span className="line line1"></span>
+            <span className="line line2"></span>
+            <span className="line line3"></span>
+          </div>  
+        <div className="logo">
+          <span>Waqt Al Falaah</span>
+        </div>
+        <div className="menu-items">
+          <li><a href="#"><strong>Acceuil</strong></a></li>
+          <li><a href="#"><strong>Mosquées</strong></a></li>
+     
+        </div>
+      </div>
+    </div>
+  </nav>
+  );
+};
+ {/*  <nav className={buttonBurgerIsClicked ? "NavBar__nav openEffect" : "NavBar__nav closeEffect"}>
         <span className="NavBar__nav__span--site-name">Waqt Al Falaah</span>
         <button
           className="NavBar__nav__button--button-burger"
@@ -28,6 +52,4 @@ export const NavBar = () => {
         <li className="NavBar__nav__ul__li--home">Acceuil</li>
         <li className="NavBar__nav__ul__li--masjid">Mosquées</li>
       </ul>
-    </nav>
-  );
-};
+    </nav>*/}

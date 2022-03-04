@@ -6,9 +6,11 @@
     font: inherit;
     cursor: pointer;
     outline: inherit;
-    margin-top: 1%;
+    margin-top: 6%;
     margin-left: 81%;
     position: absolute;
+    -webkit-transition: 1s;
+    transition: 1s;
   }
   .button-location .localisation-marker {
     color: #605b56;
@@ -36,9 +38,11 @@
     background: none;
     cursor: pointer;
     outline: inherit;
-    margin-top: 0%;
+    margin-top: 5%;
     margin-left: 82%;
     position: absolute;
+    -webkit-transition: 1s;
+    transition: 1s;
   }
   .transition-input {
     display: -webkit-box;
@@ -49,7 +53,7 @@
         -ms-flex-direction: column;
             flex-direction: column;
     width: 60%;
-    margin-top: 60px;
+    margin-top: 5%;
     margin-left: auto;
     margin-right: auto;
     height: 113px;
@@ -97,7 +101,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   width: 60%;
-  margin-top: 60px;
+  margin-top: 5%;
   margin-left: auto;
   margin-right: auto;
   -webkit-transition: 0.1s ease-in;
@@ -147,7 +151,7 @@
     font: inherit;
     cursor: pointer;
     outline: inherit;
-    margin-top: 1%;
+    margin-top: 6%;
     margin-left: 74%;
     position: absolute;
   }
@@ -164,7 +168,7 @@
         -ms-flex-direction: column;
             flex-direction: column;
     width: 47%;
-    margin-top: 80px;
+    margin-top: 5%;
     margin-left: auto;
     margin-right: auto;
   }
@@ -211,7 +215,7 @@
         -ms-flex-direction: column;
             flex-direction: column;
     width: 47%;
-    margin-top: 80px;
+    margin-top: 5%;
     margin-left: auto;
     margin-right: auto;
     height: 150px;
@@ -265,7 +269,7 @@
         -ms-flex-direction: column;
             flex-direction: column;
     width: 47%;
-    margin-top: 80px;
+    margin-top: 5%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 2px;
@@ -329,7 +333,7 @@
     background: none;
     cursor: pointer;
     outline: inherit;
-    margin-top: 0.5%;
+    margin-top: 5.5%;
     margin-left: 75%;
     position: absolute;
   }
@@ -343,7 +347,7 @@
     font: inherit;
     cursor: pointer;
     outline: inherit;
-    margin-top: 0.5%;
+    margin-top: 5.5%;
     margin-left: 71%;
     position: absolute;
   }
@@ -360,7 +364,7 @@
         -ms-flex-direction: column;
             flex-direction: column;
     width: 41%;
-    margin-top: 80px;
+    margin-top: 5%;
     margin-left: auto;
     margin-right: auto;
     height: 145px;
@@ -414,7 +418,7 @@
         -ms-flex-direction: column;
             flex-direction: column;
     width: 41%;
-    margin-top: 80px;
+    margin-top: 5%;
     margin-left: auto;
     margin-right: auto;
     height: 45px;
@@ -476,7 +480,7 @@
     background: none;
     cursor: pointer;
     outline: inherit;
-    margin-top: 0.3%;
+    margin-top: 5%;
     margin-left: 71.3%;
     position: absolute;
   }

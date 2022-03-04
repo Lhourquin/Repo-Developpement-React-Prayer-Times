@@ -1,4 +1,6 @@
 .Today__div--container-list-pannel {
+  -webkit-transition: 3s;
+  transition: 3s;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

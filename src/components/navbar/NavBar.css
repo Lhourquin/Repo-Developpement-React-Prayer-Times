@@ -1,25 +1,20 @@
+/*
 @media (max-width: 469px) {
   .NavBar__nav {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    justify-content: space-between;
     background-color: #605b56;
     width: 100%;
     height: 40px;
     top: 0;
     position: fixed;
-  }
-  .NavBar__nav .NavBar__nav__span--site-name {
-    margin: 7px;
-    font-size: 19px;
-    font-weight: bold;
-  }
-  .NavBar__nav .openNavigation {
-    display: -webkit-box;
-    display: -ms-flexbox;
+    .NavBar__nav__span--site-name {
+      margin: 7px;
+      font-size: 19px;
+      font-weight: bold;
+    }
+
+  .openNavigation {
     display: flex;
     color: #eaeaea;
     position: fixed;
@@ -27,40 +22,41 @@
     padding-left: 40%;
     list-style: none;
     text-align: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    flex-direction: column;
+    justify-content: center;
   }
+  }
+
   .NavBar__nav__button--button-burger {
     cursor: pointer;
     display: block;
     margin: 6px 0px 0px 90%;
     position: absolute;
   }
+
   .NavBar__nav__button__i--button-burger {
     color: #605b56;
     font-size: 21px;
   }
+
+
   .openEffect {
     height: 130px;
-    -webkit-transition: 0.2s;
     transition: 0.2s;
   }
+
   .closeEffect {
     height: 40px;
-    -webkit-transition: 0.2s;
     transition: 0.2s;
   }
+
   .closeNavigation {
     display: none;
   }
+
+  //effect //@at-root
   .navbar-collapse {
     max-height: 0px;
-    -webkit-transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
     transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
     background: #d5d5d5;
     overflow: hidden;
@@ -69,30 +65,27 @@
   }
   .navbar-collapse.in {
     max-height: 65em;
-    -webkit-transition: max-height 1s ease-in-out;
     transition: max-height 1s ease-in-out;
   }
 }
 
-@media (min-width: 471px) {
+//tablet//
+@media (min-width: 471px){
   .NavBar__nav {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    justify-content: space-between;
     background-color: #605b56;
     width: 100%;
     height: 54px;
     top: 0;
     position: fixed;
+    .NavBar__nav__span--site-name {
+      margin: 15px;
+      font-size: 19px;
+      font-weight: bold;
+    }
   }
-  .NavBar__nav .NavBar__nav__span--site-name {
-    margin: 15px;
-    font-size: 19px;
-    font-weight: bold;
-  }
+
   .NavBar__nav__button--button-burger {
     cursor: pointer;
     display: block;
@@ -101,13 +94,13 @@
     height: 35px;
     width: 35px;
   }
+
   .NavBar__nav__button__i--button-burger {
     color: #605b56;
     font-size: 21px;
   }
+
   .openNavigation {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     color: #eaeaea;
     position: fixed;
@@ -115,32 +108,27 @@
     padding-left: 45%;
     list-style: none;
     text-align: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    flex-direction: column;
+    justify-content: center;
   }
+
   .closeNavigation {
     display: none;
-    -webkit-transition: "width 1s, height 1s, transform 2s";
     transition: "width 1s, height 1s, transform 2s";
   }
   .openEffect {
     height: 130px;
-    -webkit-transition: 0.2s;
     transition: 0.2s;
   }
+
   .closeEffect {
     height: 55px;
-    -webkit-transition: 0.2s;
     transition: 0.2s;
   }
+
+  //effect //@at-root
   .navbar-collapse {
     max-height: 0px;
-    -webkit-transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
     transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
     background: #d5d5d5;
     overflow: hidden;
@@ -149,50 +137,203 @@
   }
   .navbar-collapse.in {
     max-height: 65em;
-    -webkit-transition: max-height 1s ease-in-out;
     transition: max-height 1s ease-in-out;
   }
 }
-
+// pc //
 @media (min-width: 850px) {
+  
   .NavBar__nav {
     background: #605b56;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     width: 100%;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  .NavBar__nav .NavBar__nav__span--site-name {
-    padding-left: 12px;
-  }
-  .NavBar__nav .NavBar__nav__ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    width: 34%;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: row-reverse;
-            flex-direction: row-reverse;
-    list-style: none;
-  }
-  .NavBar__nav .NavBar__nav__button--button-burger {
-    display: none;
+    justify-content: space-between;
+
+    .NavBar__nav__span--site-name {
+      padding-left: 12px;
+    }
+
+    .NavBar__nav__ul {
+      display: flex;
+      justify-content: space-around;
+      width: 34%;
+      flex-direction: row-reverse;
+      list-style: none;
+    }
+
+    .NavBar__nav__button--button-burger {
+      display: none;
+    }
   }
   .openEffect {
     height: 55px;
-    -webkit-transition: 0;
     transition: 0;
   }
+
   .closeEffect {
     height: 55px;
-    -webkit-transition: 0;
     transition: 0;
   }
 }
+
+*/
+
+
+.container {
+  max-width: 1050px;
+  width: 90%;
+  margin: auto;
+}
+
+.navbar {
+  width: 100%;
+  box-shadow: -2px 5px 6px 1px rgb(0 0 0 / 26%);
+  background-color: rgba(96, 91, 86, 95%);
+  color : #eaeaea;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 62px;
+}
+
+.navbar .menu-items {
+  display: flex;
+}
+
+.navbar .nav-container li {
+  list-style: none;
+}
+
+.navbar .nav-container a {
+  color : #eaeaea;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 0.7rem;
+}
+
+.navbar .nav-container a:hover{
+    font-weight: bolder;
+}
+
+.nav-container {
+  display: block;
+  position: relative;
+  height: 60px;
+}
+
+.nav-container .checkbox {
+  position: absolute;
+  display: block;
+  height: 32px;
+  width: 32px;
+  top: 20px;
+  left: 20px;
+  z-index: 5;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.nav-container .hamburger-lines {
+  color : #eaeaea;
+
+  display: block;
+  height: 26px;
+  width: 32px;
+  position: absolute;
+  top: 17px;
+  left: 20px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nav-container .hamburger-lines .line {
+
+  display: block;
+  height: 4px;
+  width: 100%;
+  border-radius: 10px;
+  background: #eaeaea;
+}
+
+.nav-container .hamburger-lines .line1 {
+
+  transform-origin: 0% 0%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.nav-container .hamburger-lines .line2 {
+
+  transition: transform 0.2s ease-in-out;
+}
+
+.nav-container .hamburger-lines .line3 {
+
+  transform-origin: 0% 100%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.navbar .menu-items {
+  padding-top: 120px;
+  box-shadow:inset 0 0 2000px rgb(61 58 55);
+
+  height: 100vh;
+  width: 100%;
+  transform: translate(-150%);
+  display: flex;
+  flex-direction: column;
+  margin-left: -40px;
+  padding-left: 50px;
+  transition: transform 0.5s ease-in-out;
+  text-align: center;
+  background-color: rgba(96, 91, 86, 95%);
+}
+
+.navbar .menu-items li {
+  
+  margin-bottom: 1.2rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.logo {
+  font-weight: bolder;
+  position: absolute;
+  top: 16px;
+  right: 15px;
+  font-size: 1.2rem;
+}
+
+.nav-container input[type="checkbox"]:checked ~ .menu-items {
+
+  transform: translateX(0);
+}
+
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+
+  transform: rotate(45deg);
+}
+
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+  transform: scaleY(0);
+
+}
+
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+  transform: rotate(-45deg);
+
+}
+
+.nav-container input[type="checkbox"]:checked ~ .logo{
+
+  transition: 1s;
+  color :rgba(96, 91, 86, 95%);
+}
+
 /*# sourceMappingURL=NavBar.css.map */
