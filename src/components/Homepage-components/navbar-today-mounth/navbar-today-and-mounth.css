@@ -44,7 +44,7 @@
           flex-direction: column;
   -webkit-text-decoration-line: none;
           text-decoration-line: none;
-  color: #eaeaea;
+  color: #605b56;
   font-weight: bold;
 }
 
@@ -60,9 +60,12 @@
   border: none;
   box-shadow: 0px 3px 6px 1px #00000042;
   -webkit-box-shadow: 0px 3px 6px 1px #00000042;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 .NavBarTodayAndMounth__nav .NavBarTodayAndMounth__nav__ul .NavBarTodayAndMounth__nav__ul__li--month {
+  background-color: #eaeaea;
   border-top: 0;
   border-bottom: 0;
   border-left: 0;
@@ -70,9 +73,20 @@
   border-style: solid;
   border-radius: 0 8px 8px 0;
   padding: 3%;
-  background-color: #605b56;
   border: none;
   -webkit-box-shadow: 0px 3px 6px 1px #00000042;
   box-shadow: 0px 3px 6px 1px #00000042;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.NavBarTodayAndMounth__nav .NavBarTodayAndMounth__nav__ul .currentComponent {
+  -webkit-transition: 1s;
+  transition: 1s;
+  background-color: #605b56;
+}
+
+.NavBarTodayAndMounth__nav .NavBarTodayAndMounth__nav__ul .currentComponent a {
+  color: #eaeaea;
 }
 /*# sourceMappingURL=navbar-today-and-mounth.css.map */
