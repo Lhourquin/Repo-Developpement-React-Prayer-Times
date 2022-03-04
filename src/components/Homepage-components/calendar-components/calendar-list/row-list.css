@@ -18,7 +18,7 @@
     margin: 5px;
     background-color: #92bfee;
     color: #eaeaea;
-    height: 8vh;
+    height: 60px;
     opacity: 1;
     width: 17vw;
     border-radius: 3px;
@@ -30,6 +30,8 @@
         -ms-flex-pack: center;
             justify-content: center;
     text-align: center;
+    -webkit-box-shadow: -3px 5px 6px 1px #00000042;
+            box-shadow: -3px 5px 6px 1px #00000042;
   }
   .salat-of-month .container-horaires-list-normal .td-list-times {
     display: none;
@@ -48,7 +50,7 @@
     margin: 5px;
     background: rgba(255, 255, 255, 0.5) none repeat scroll 0% 0%;
     color: rgba(96, 91, 86, 0.5);
-    height: 8vh;
+    height: 60px;
     width: 17vw;
     border-radius: 3px;
     -webkit-box-orient: vertical;
@@ -59,6 +61,8 @@
         -ms-flex-pack: center;
             justify-content: center;
     text-align: center;
+    -webkit-box-shadow: 0px 2px 5px 0px #00000042;
+            box-shadow: 0px 2px 5px 0px #00000042;
   }
   .salat-of-month .container-horaires-list-passed .td-list-times {
     display: none;
@@ -78,7 +82,7 @@
     background-color: #605b56;
     color: #eaeaea;
     opacity: 1;
-    height: 8vh;
+    height: 65px;
     width: 17vw;
     border-radius: 3px;
     -webkit-box-orient: vertical;
@@ -89,6 +93,9 @@
         -ms-flex-pack: center;
             justify-content: center;
     text-align: center;
+    -webkit-box-shadow: -7px 6px 6px 2px #00000042;
+            box-shadow: -7px 6px 6px 2px #00000042;
+    margin-top: 0em;
   }
   .salat-of-month .container-horaires-list-today .td-list-times {
     display: none;
@@ -121,7 +128,7 @@
     margin: 5px;
     background-color: #92bfee;
     color: #eaeaea;
-    height: 15vh;
+    height: 100px;
     opacity: 1;
     width: 17vw;
     border-radius: 3px;
@@ -133,6 +140,8 @@
         -ms-flex-pack: center;
             justify-content: center;
     text-align: center;
+    -webkit-box-shadow: -3px 5px 6px 1px #00000042;
+            box-shadow: -3px 5px 6px 1px #00000042;
   }
   .salat-of-month .container-horaires-list-normal .td-list-times {
     display: none;
@@ -151,7 +160,7 @@
     display: flex;
     margin: 5px;
     color: #eaeaea;
-    height: 15vh;
+    height: 100px;
     opacity: 1;
     width: 17vw;
     border-radius: 3px;
@@ -163,6 +172,8 @@
         -ms-flex-pack: center;
             justify-content: center;
     text-align: center;
+    -webkit-box-shadow: 0px 2px 5px 0px #00000042;
+            box-shadow: 0px 2px 5px 0px #00000042;
   }
   .salat-of-month .container-horaires-list-passed .td-list-times {
     display: none;
@@ -181,9 +192,9 @@
     display: flex;
     margin: 5px;
     color: #eaeaea;
-    height: 15vh;
+    height: 105px;
     opacity: 1;
-    width: 17vw;
+    width: 18vw;
     border-radius: 3px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -193,6 +204,9 @@
         -ms-flex-pack: center;
             justify-content: center;
     text-align: center;
+    -webkit-box-shadow: -7px 6px 6px 2px #00000042;
+            box-shadow: -7px 6px 6px 2px #00000042;
+    margin-top: 0em;
   }
   .salat-of-month .container-horaires-list-today .td-list-times {
     display: none;
@@ -226,10 +240,10 @@
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
     width: 100%;
-    color: black;
+    color: #605b56;
   }
   table .salat-of-month {
-    color: black;
+    color: #605b56;
     margin-left: 5%;
     display: block;
     width: 89%;
@@ -247,6 +261,8 @@
     height: 40px;
     border-radius: 11px;
     padding-top: 1.5%;
+    -webkit-box-shadow: 0px 2px 5px 0px #00000042;
+            box-shadow: 0px 2px 5px 0px #00000042;
   }
   table .salat-of-month .container-horaires-list-normal {
     display: -webkit-box;
@@ -261,6 +277,8 @@
     height: 40px;
     border-radius: 11px;
     padding-top: 1.5%;
+    -webkit-box-shadow: -3px 5px 6px 1px #00000042;
+            box-shadow: -3px 5px 6px 1px #00000042;
   }
   table .salat-of-month .container-horaires-list-today {
     display: -webkit-box;
@@ -275,6 +293,8 @@
     height: 40px;
     border-radius: 11px;
     padding-top: 1.5%;
+    -webkit-box-shadow: -7px 6px 6px 2px #00000042;
+            box-shadow: -7px 6px 6px 2px #00000042;
   }
 }
 /*# sourceMappingURL=row-list.css.map */

@@ -7,10 +7,7 @@ const NavBarTodayAndMounth = () => {
   const clickedComponent = (number) => {
     if (number === 0) {
       setCurrentComponent(0);
-      console.log(number);
     } else if (number === 1) {
-      console.log(number);
-
       setCurrentComponent(1);
     }
   };
@@ -18,7 +15,13 @@ const NavBarTodayAndMounth = () => {
   return (
     <nav className="NavBarTodayAndMounth__nav">
       <ul className="NavBarTodayAndMounth__nav__ul">
-        <li className={currentComponent === 0 ? "NavBarTodayAndMounth__nav__ul__li--today currentComponent" : "NavBarTodayAndMounth__nav__ul__li--today"}>
+        <li
+          className={
+            currentComponent === 0
+              ? "NavBarTodayAndMounth__nav__ul__li--today currentComponent"
+              : "NavBarTodayAndMounth__nav__ul__li--today"
+          }
+        >
           <Link
             to="/"
             className="NavBarTodayAndMounth__nav__ul__li__Link-today"
@@ -28,7 +31,13 @@ const NavBarTodayAndMounth = () => {
             <i className="fa-solid fa-clock"></i>{" "}
           </Link>
         </li>
-        <li  className={currentComponent === 1 ? "NavBarTodayAndMounth__nav__ul__li--month currentComponent" : "NavBarTodayAndMounth__nav__ul__li--month"}>
+        <li
+          className={
+            currentComponent === 1
+              ? "NavBarTodayAndMounth__nav__ul__li--month currentComponent"
+              : "NavBarTodayAndMounth__nav__ul__li--month"
+          }
+        >
           <Link
             to="/calendar"
             className="NavBarTodayAndMounth__nav__ul__li__Link-mounth"
