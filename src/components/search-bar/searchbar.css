@@ -15,6 +15,7 @@
   .button-location .localisation-marker {
     color: #605b56;
     font-size: 25px;
+    text-shadow: -2px 2px 3px #00000042;
   }
   .isClose {
     display: none;
@@ -43,6 +44,7 @@
     position: absolute;
     -webkit-transition: 1s;
     transition: 1s;
+    text-shadow: -2px 2px 3px #00000042;
   }
   .transition-input {
     display: -webkit-box;
@@ -76,6 +78,8 @@
     color: #605b56;
     height: 30px;
     font-size: 16px;
+    -webkit-box-shadow: inset -1px 1px 5px -2px #000000ab;
+            box-shadow: inset -1px 1px 5px -2px #000000ab;
   }
   .transition-input .SearchBar__form__div--find-country-container .SearchBar__form__div--find-country-container__input-country,
   .transition-input .SearchBar__form__div--find-country-container .SearchBar__form__div--find-country-container__submit {
@@ -85,10 +89,14 @@
     color: #605b56;
     height: 30px;
     font-size: 16px;
+    -webkit-box-shadow: inset -1px 1px 5px -2px #000000ab;
+            box-shadow: inset -1px 1px 5px -2px #000000ab;
   }
   .transition-input .SearchBar__form__div--find-country-container .SearchBar__form__div--find-country-container__submit {
     background-color: #acc18a;
     color: #eaeaea;
+    -webkit-box-shadow: -1px 2px 6px 1px #00000042;
+            box-shadow: -1px 2px 6px 1px #00000042;
   }
 }
 
@@ -126,6 +134,8 @@
   color: #605b56;
   height: 30px;
   font-size: 16px;
+  -webkit-box-shadow: inset -1px 1px 5px -2px #000000ab;
+          box-shadow: inset -1px 1px 5px -2px #000000ab;
 }
 
 .SearchBar__form .SearchBar__form__div--find-country-container .SearchBar__form__div--find-country-container__input-country,
@@ -136,11 +146,15 @@
   color: #605b56;
   height: 30px;
   font-size: 16px;
+  -webkit-box-shadow: inset -1px 1px 5px -2px #000000ab;
+          box-shadow: inset -1px 1px 5px -2px #000000ab;
 }
 
 .SearchBar__form .SearchBar__form__div--find-country-container .SearchBar__form__div--find-country-container__submit {
   background-color: #acc18a;
   color: #eaeaea;
+  -webkit-box-shadow: -1px 2px 6px 1px #00000042;
+          box-shadow: -1px 2px 6px 1px #00000042;
 }
 
 @media (min-width: 471px) {
@@ -158,6 +172,7 @@
   .button-location .localisation-marker {
     color: #605b56;
     font-size: 26px;
+    text-shadow: -2px 2px 3px #00000042;
   }
   .SearchBar__form {
     display: -webkit-box;
@@ -188,6 +203,8 @@
     height: 36px;
     color: #605b56;
     font-size: 17px;
+    -webkit-box-shadow: inset -1px 1px 5px -2px #000000ab;
+            box-shadow: inset -1px 1px 5px -2px #000000ab;
   }
   .SearchBar__form .SearchBar__form__div--find-country-container .SearchBar__form__div--find-country-container__input-country {
     border-radius: 8px;
@@ -196,6 +213,8 @@
     height: 36px;
     color: #605b56;
     font-size: 17px;
+    -webkit-box-shadow: inset -1px 1px 5px -2px #000000ab;
+            box-shadow: inset -1px 1px 5px -2px #000000ab;
   }
   .SearchBar__form .SearchBar__form__div--find-country-container .SearchBar__form__div--find-country-container__submit {
     border-radius: 8px;
@@ -205,6 +224,8 @@
     color: #eaeaea;
     background-color: #acc18a;
     font-size: 17px;
+    -webkit-box-shadow: -1px 2px 6px 1px #00000042;
+            box-shadow: -1px 2px 6px 1px #00000042;
   }
   .transition-input {
     display: -webkit-box;
@@ -233,6 +254,8 @@
   }
   .transition-input .SearchBar__form__div--find-city-container .SearchBar__form__div--find-city-container__input--city {
     width: 98.5%;
+    -webkit-box-shadow: inset -1px 1px 5px -2px #000000ab;
+            box-shadow: inset -1px 1px 5px -2px #000000ab;
     border-radius: 8px;
     border: 1.4px solid #605b56;
     height: 36px;
@@ -248,6 +271,8 @@
     font-size: 17px;
     -webkit-transition: opacity 2s;
     transition: opacity 2s;
+    -webkit-box-shadow: inset -1px 1px 5px -2px #000000ab;
+            box-shadow: inset -1px 1px 5px -2px #000000ab;
   }
   .transition-input .SearchBar__form__div--find-country-container .SearchBar__form__div--find-country-container__submit {
     border-radius: 8px;
@@ -259,6 +284,8 @@
     background-color: #acc18a;
     -webkit-transition: opacity 0.9 2s;
     transition: opacity 0.9 2s;
+    -webkit-box-shadow: -1px 2px 6px 1px #00000042;
+            box-shadow: -1px 2px 6px 1px #00000042;
   }
   .SearchBar__form {
     display: -webkit-box;
@@ -292,6 +319,8 @@
     height: 36px;
     color: #605b56;
     font-size: 17px;
+    -webkit-box-shadow: inset -1px 1px 5px -2px #000000ab;
+            box-shadow: inset -1px 1px 5px -2px #000000ab;
   }
   .SearchBar__form .SearchBar__form__div--find-country-container .SearchBar__form__div--find-country-container__input-country {
     border-radius: 8px;
@@ -300,6 +329,8 @@
     height: 36px;
     color: #605b56;
     font-size: 17px;
+    -webkit-box-shadow: inset -1px 1px 5px -2px #000000ab;
+            box-shadow: inset -1px 1px 5px -2px #000000ab;
   }
   .SearchBar__form .SearchBar__form__div--find-country-container .SearchBar__form__div--find-country-container__submit {
     border-radius: 8px;
@@ -336,6 +367,7 @@
     margin-top: 5.5%;
     margin-left: 75%;
     position: absolute;
+    text-shadow: -2px 2px 3px #00000042;
   }
 }
 
@@ -354,6 +386,7 @@
   .button-location .localisation-marker {
     color: #605b56;
     font-size: 28px;
+    text-shadow: -2px 2px 3px #00000042;
   }
   .transition-input {
     display: -webkit-box;
@@ -382,6 +415,8 @@
   }
   .transition-input .SearchBar__form__div--find-city-container .SearchBar__form__div--find-city-container__input--city {
     width: 98.5%;
+    -webkit-box-shadow: inset -1px 1px 5px -2px #000000ab;
+            box-shadow: inset -1px 1px 5px -2px #000000ab;
     border-radius: 8px;
     border: 1.4px solid #605b56;
     height: 36px;
@@ -397,6 +432,8 @@
     font-size: 17px;
     -webkit-transition: opacity 2s;
     transition: opacity 2s;
+    -webkit-box-shadow: inset -1px 1px 5px -2px #000000ab;
+            box-shadow: inset -1px 1px 5px -2px #000000ab;
   }
   .transition-input .SearchBar__form__div--find-country-container .SearchBar__form__div--find-country-container__submit {
     border-radius: 8px;
@@ -408,6 +445,8 @@
     background-color: #acc18a;
     -webkit-transition: opacity 0.9 2s;
     transition: opacity 0.9 2s;
+    -webkit-box-shadow: -1px 2px 6px 1px #00000042;
+            box-shadow: -1px 2px 6px 1px #00000042;
   }
   .SearchBar__form {
     display: -webkit-box;
@@ -440,6 +479,8 @@
     height: 36px;
     color: #605b56;
     font-size: 17px;
+    -webkit-box-shadow: inset -1px 1px 5px -2px #000000ab;
+            box-shadow: inset -1px 1px 5px -2px #000000ab;
   }
   .SearchBar__form .SearchBar__form__div--find-country-container .SearchBar__form__div--find-country-container__input-country {
     border-radius: 8px;
@@ -448,6 +489,8 @@
     height: 36px;
     color: #605b56;
     font-size: 17px;
+    -webkit-box-shadow: inset -1px 1px 5px -2px #000000ab;
+            box-shadow: inset -1px 1px 5px -2px #000000ab;
   }
   .SearchBar__form .SearchBar__form__div--find-country-container .SearchBar__form__div--find-country-container__submit {
     border-radius: 8px;
@@ -457,6 +500,8 @@
     color: #eaeaea;
     font-size: 17px;
     background-color: #acc18a;
+    -webkit-box-shadow: -1px 2px 6px 1px #00000042;
+            box-shadow: -1px 2px 6px 1px #00000042;
   }
   .isClose {
     display: none;
@@ -483,6 +528,7 @@
     margin-top: 5%;
     margin-left: 71.3%;
     position: absolute;
+    text-shadow: -2px 2px 3px #00000042;
   }
 }
 /*# sourceMappingURL=searchbar.css.map */
