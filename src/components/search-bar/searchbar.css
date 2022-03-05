@@ -264,7 +264,7 @@
   }
   .transition-input .SearchBar__form__div--find-country-container .SearchBar__form__div--find-country-container__input-country {
     border-radius: 8px;
-    border: 1.4px solid #605b56;
+    border: none;
     margin-top: 7px;
     height: 36px;
     color: #605b56;
@@ -276,7 +276,7 @@
   }
   .transition-input .SearchBar__form__div--find-country-container .SearchBar__form__div--find-country-container__submit {
     border-radius: 8px;
-    border: 1.4px solid #605b56;
+    border: none;
     margin-top: 7px;
     height: 36px;
     color: #eaeaea;

@@ -22,7 +22,7 @@ export const SearchBar = ({
   return (
     <>
       <button
-        className="button-location"
+        className="button-location noSelect"
         style={toggleInput ? {} : { display: "none" }}
         onClick={getPosition}
       >
@@ -30,7 +30,7 @@ export const SearchBar = ({
       </button>
       <span
         style={toggleInput ? { display: "none" } : {}}
-        className="cross"
+        className="cross noSelect"
         onClick={closeSearch}
       >
         <i className="fas fa-times-circle"></i>
@@ -71,7 +71,7 @@ export const SearchBar = ({
 
           <button
             type="submit"
-            className="SearchBar__form__div--find-country-container__submit"
+            className="SearchBar__form__div--find-country-container__submit noSelect"
             onClick={
               inputCountry != "" && inputCity != ""
                 ? closeSearch

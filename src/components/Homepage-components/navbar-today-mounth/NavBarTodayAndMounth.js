@@ -4,11 +4,14 @@ import "./navbar-today-and-mounth.css";
 const NavBarTodayAndMounth = () => {
   const [currentComponent, setCurrentComponent] = useState(0);
 
+
   const clickedComponent = (number) => {
     if (number === 0) {
-      setCurrentComponent(0);
+      localStorage.setItem("NavBarTodayAndMounth", 0);
+      setCurrentComponent(localStorage.getItem("NavBarTodayAndMounth"));
     } else if (number === 1) {
-      setCurrentComponent(1);
+      localStorage.setItem("NavBarTodayAndMounth", 1);
+      setCurrentComponent(localStorage.getItem("NavBarTodayAndMounth"));
     }
   };
 
@@ -17,7 +20,7 @@ const NavBarTodayAndMounth = () => {
       <ul className="NavBarTodayAndMounth__nav__ul">
         <li
           className={
-            currentComponent === 0
+          localStorage.getItem("NavBarTodayAndMounth") == 0 || !localStorage.getItem("NavBarTodayAndMounth")
               ? "NavBarTodayAndMounth__nav__ul__li--today currentComponent"
               : "NavBarTodayAndMounth__nav__ul__li--today"
           }
@@ -33,7 +36,7 @@ const NavBarTodayAndMounth = () => {
         </li>
         <li
           className={
-            currentComponent === 1
+            localStorage.getItem("NavBarTodayAndMounth") == 1
               ? "NavBarTodayAndMounth__nav__ul__li--month currentComponent"
               : "NavBarTodayAndMounth__nav__ul__li--month"
           }

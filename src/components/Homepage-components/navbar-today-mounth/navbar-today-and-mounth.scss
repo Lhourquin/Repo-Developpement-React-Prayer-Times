@@ -48,7 +48,13 @@
       box-shadow: 0px 3px 6px 1px #00000042;
       -webkit-box-shadow: 0px 3px 6px 1px #00000042;
       transition: 2s;
-
+      -webkit-tap-highlight-color: transparent;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
 
     }
     .NavBarTodayAndMounth__nav__ul__li--month {
@@ -64,6 +70,13 @@
       -webkit-box-shadow: 0px 3px 6px 1px #00000042;
       box-shadow: 0px 3px 6px 1px #00000042;
       transition: 2s;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
     }
 
     .currentComponent{
