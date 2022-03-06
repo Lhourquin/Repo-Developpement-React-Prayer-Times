@@ -41,7 +41,7 @@ export const Today = ({
     return () => clearTimeout(timer);
   }, [now]);
 
-  const [dateFajr, setDateFajr] = useState();
+  const [dateFajr, setDateFajr] = useState("");
   const [dateShourouq, setDateShourouq] = useState("");
   const [dateDhohr, setDateDhohr] = useState("");
   const [dateAsr, setDateAsr] = useState("");
@@ -60,7 +60,7 @@ export const Today = ({
       setDay(Number(obj.data.date.gregorian.day));
       setDateFajr(
         new Date(
-          `${obj.data.date.gregorian.month.en} ${obj.data.date.gregorian.day}, ${obj.data.date.gregorian.year} ${obj.data.timings.Fajr} :00`
+          `${obj.data.date.gregorian.month.en} ${obj.data.date.gregorian.day}, ${obj.data.date.gregorian.year} ${obj.data.timings.Fajr}:00`
         )
         /* { ${obj.data.timings.Fajr} }
          */
@@ -77,7 +77,7 @@ export const Today = ({
       );
       setDateAsr(
         new Date(
-          `${obj.data.date.gregorian.month.en} ${obj.data.date.gregorian.day}, ${obj.data.date.gregorian.year} ${obj.data.timings.Asr} :00` /**${obj.data.timings.Asr} */
+          `${obj.data.date.gregorian.month.en} ${obj.data.date.gregorian.day}, ${obj.data.date.gregorian.year} ${obj.data.timings.Asr}:00` /**${obj.data.timings.Asr} */
         )
       );
       setDateMaghreb(
@@ -210,7 +210,7 @@ export const Today = ({
     return () => clearTimeout(timer);
   }, [midnightTime, dateStartOfTheNextDay]);
 
-  // console.log(dateIchaLastDay);
+   //console.log(dateFajr);
   // console.log(dateMidnight);
   return (
     <>

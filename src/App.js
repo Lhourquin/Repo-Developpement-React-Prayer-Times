@@ -76,8 +76,11 @@ const App = () => {
   const getPosition = (position) => {
     const lat = position.coords.latitude;
     const long = position.coords.longitude;
+    //const API_KEY = `8be0f83c6058dc08796bea8b8309a808`;
     fetch(
-      `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${long}&localityLanguage=fr`
+            `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${long}&localityLanguage=fr`
+ 
+      /** `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${API_KEY}`*/
     )
       .then((response) => response.json())
       .then((data) => {
@@ -85,9 +88,15 @@ const App = () => {
         localStorage.setItem("Country", data.countryName);
         setCity(localStorage.getItem("City"));
         setCountry(localStorage.getItem("Country"));
+      //  console.log(data)
       });
+      //setErrorMessageLocation("Le service de localisation est momentanément indisponible.");
 
-    setErrorMessageLocation("");
+      setTimeout(() => {
+        setErrorMessageLocation("");
+
+  }, 5000);
+
   };
 
   const notGetPosition = () => {
