@@ -31,12 +31,12 @@ export const Pannel = ({
     setTodayTimesSalat(JSON.parse(localStorage.getItem("TodayTimes") || "[]"))
   }, [JSONTodayTimesSalat])*/
 
-  useEffect(() => {
+  /*useEffect(() => {
     localStorage.setItem(
       "SearchField",
       searchField.charAt(0).toUpperCase() + searchField.slice(1).toLowerCase()
     );
-  }, [searchField]);
+  }, [searchField]);*/
   //console.log(todayTimesSalat.map((obj)=> obj.data));
   //console.log(todayTest.map((obj)=> obj.data));
   return (

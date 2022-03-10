@@ -226,7 +226,6 @@ const App = () => {
     <>
       <header>
         <NavBar />
-        {console.log(selectedMethodValue)}
         <SearchBar
           inputCity={inputCityValue}
           inputCountry={inputCountryValue}

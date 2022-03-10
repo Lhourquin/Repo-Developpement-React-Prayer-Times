@@ -3,32 +3,32 @@
     "name": "Waqt Al Falaah",
     "icons": [
       {
-        "src": "clock-icon64.png",
+        "src": "img/clock-icon64.png",
         "sizes": "64x64",
         "type": "image/png"
       },
       {
-        "src": "clock-icon512.png",
+        "src": "img/clock-icon512.png",
         "sizes": "512x512",
         "type": "image/png"
       },
       {
-        "src": "clock-icon24.png",
+        "src": "img/clock-icon24.png",
         "sizes": "24x24",
         "type": "image/png"
       },
       {
-        "src": "clock-icon32.png",
+        "src": "img/clock-icon32.png",
         "sizes": "32X32",
         "type": "image/png"
       },
       {
-        "src": "clock-icon16.png",
+        "src": "img/clock-icon16.png",
         "sizes": "16X16",
         "type": "image/png"
       },
       {
-        "src": "clock-icon192.png",
+        "src": "img/clock-icon192.png",
         "sizes": "192x192",
         "type": "image/png"
       }

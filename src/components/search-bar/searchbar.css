@@ -78,8 +78,8 @@
     color: #605b56;
     height: 30px;
     font-size: 16px;
-    box-shadow: inset -1px 2px 5px 0.1px #00000047;
-    -webkit-box-shadow: inset -1px 2px 5px 0.1px #00000047;
+    box-shadow: #ccdbe8 3px 3px 6px 1px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    -webkit-box-shadow: #ccdbe8 3px 3px 6px 1px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
   }
   .transition-input .SearchBar__form__div--find-country-container .SearchBar__form__div--find-country-container__input-country,
   .transition-input .SearchBar__form__div--find-country-container .SearchBar__form__div--find-country-container__submit {
@@ -89,8 +89,8 @@
     color: #605b56;
     height: 30px;
     font-size: 16px;
-    box-shadow: inset -1px 2px 5px 0.1px #00000047;
-    -webkit-box-shadow: inset -1px 2px 5px 0.1px #00000047;
+    box-shadow: #ccdbe8 3px 3px 6px 1px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    -webkit-box-shadow: #ccdbe8 3px 3px 6px 1px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
   }
   .transition-input .SearchBar__form__div--find-country-container .SearchBar__form__div--find-country-container__submit {
     background-color: #acc18a;
@@ -134,8 +134,8 @@
   color: #605b56;
   height: 30px;
   font-size: 16px;
-  box-shadow: inset -1px 2px 5px 0.1px #00000047;
-  -webkit-box-shadow: inset -1px 2px 5px 0.1px #00000047;
+  box-shadow: #ccdbe8 3px 3px 6px 1px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  -webkit-box-shadow: #ccdbe8 3px 3px 6px 1px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 
 .SearchBar__form .SearchBar__form__div--find-country-container .SearchBar__form__div--find-country-container__input-country,
@@ -146,8 +146,8 @@
   color: #605b56;
   height: 30px;
   font-size: 16px;
-  box-shadow: inset -1px 2px 5px 0.1px #00000047;
-  -webkit-box-shadow: inset -1px 2px 5px 0.1px #00000047;
+  box-shadow: #ccdbe8 3px 3px 6px 1px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  -webkit-box-shadow: #ccdbe8 3px 3px 6px 1px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 
 .SearchBar__form .SearchBar__form__div--find-country-container .SearchBar__form__div--find-country-container__submit {
@@ -203,8 +203,8 @@
     height: 36px;
     color: #605b56;
     font-size: 17px;
-    box-shadow: inset -1px 2px 5px 0.1px #00000047;
-    -webkit-box-shadow: inset -1px 2px 5px 0.1px #00000047;
+    box-shadow: #ccdbe8 3px 3px 6px 1px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    -webkit-box-shadow: #ccdbe8 3px 3px 6px 1px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
   }
   .SearchBar__form .SearchBar__form__div--find-country-container .SearchBar__form__div--find-country-container__input-country {
     border-radius: 8px;
@@ -213,8 +213,8 @@
     height: 36px;
     color: #605b56;
     font-size: 17px;
-    box-shadow: inset -1px 2px 5px 0.1px #00000047;
-    -webkit-box-shadow: inset -1px 2px 5px 0.1px #00000047;
+    box-shadow: #ccdbe8 3px 3px 6px 1px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    -webkit-box-shadow: #ccdbe8 3px 3px 6px 1px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
   }
   .SearchBar__form .SearchBar__form__div--find-country-container .SearchBar__form__div--find-country-container__submit {
     border-radius: 8px;
@@ -254,8 +254,8 @@
   }
   .transition-input .SearchBar__form__div--find-city-container .SearchBar__form__div--find-city-container__input--city {
     width: 98.5%;
-    box-shadow: inset -1px 2px 5px 0.1px #00000047;
-    -webkit-box-shadow: inset -1px 2px 5px 0.1px #00000047;
+    box-shadow: #ccdbe8 3px 3px 6px 1px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    -webkit-box-shadow: #ccdbe8 3px 3px 6px 1px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
     border-radius: 8px;
     border: none;
     height: 36px;
@@ -271,8 +271,8 @@
     font-size: 17px;
     -webkit-transition: opacity 2s;
     transition: opacity 2s;
-    -webkit-box-shadow: inset -1px 2px 5px 0.1px #00000047;
-    box-shadow: inset -1px 2px 5px 0.1px #00000047;
+    box-shadow: #ccdbe8 3px 3px 6px 1px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    -webkit-box-shadow: #ccdbe8 3px 3px 6px 1px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
   }
   .transition-input .SearchBar__form__div--find-country-container .SearchBar__form__div--find-country-container__submit {
     border-radius: 8px;
@@ -319,8 +319,8 @@
     height: 36px;
     color: #605b56;
     font-size: 17px;
-    box-shadow: inset -1px 2px 5px 0.1px #00000047;
-    -webkit-box-shadow: inset -1px 2px 5px 0.1px #00000047;
+    box-shadow: #ccdbe8 3px 3px 6px 1px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    -webkit-box-shadow: #ccdbe8 3px 3px 6px 1px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
   }
   .SearchBar__form .SearchBar__form__div--find-country-container .SearchBar__form__div--find-country-container__input-country {
     border-radius: 8px;
@@ -329,8 +329,8 @@
     height: 36px;
     color: #605b56;
     font-size: 17px;
-    box-shadow: inset -1px 2px 5px 0.1px #00000047;
-    -webkit-box-shadow: inset -1px 2px 5px 0.1px #00000047;
+    box-shadow: #ccdbe8 3px 3px 6px 1px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    -webkit-box-shadow: #ccdbe8 3px 3px 6px 1px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
   }
   .SearchBar__form .SearchBar__form__div--find-country-container .SearchBar__form__div--find-country-container__submit {
     border-radius: 8px;
@@ -415,8 +415,8 @@
   }
   .transition-input .SearchBar__form__div--find-city-container .SearchBar__form__div--find-city-container__input--city {
     width: 98.5%;
-    box-shadow: inset -1px 2px 5px 0.1px #00000047;
-    -webkit-box-shadow: inset -1px 2px 5px 0.1px #00000047;
+    box-shadow: #ccdbe8 3px 3px 6px 1px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    -webkit-box-shadow: #ccdbe8 3px 3px 6px 1px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
     border-radius: 8px;
     border: none;
     height: 36px;
@@ -432,8 +432,8 @@
     font-size: 17px;
     -webkit-transition: opacity 2s;
     transition: opacity 2s;
-    box-shadow: inset -1px 2px 5px 0.1px #00000047;
-    -webkit-box-shadow: inset -1px 2px 5px 0.1px #00000047;
+    box-shadow: #ccdbe8 3px 3px 6px 1px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    -webkit-box-shadow: #ccdbe8 3px 3px 6px 1px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
   }
   .transition-input .SearchBar__form__div--find-country-container .SearchBar__form__div--find-country-container__submit {
     border-radius: 8px;
@@ -479,8 +479,8 @@
     height: 36px;
     color: #605b56;
     font-size: 17px;
-    box-shadow: inset -1px 2px 5px 0.1px #00000047;
-    -webkit-box-shadow: inset -1px 2px 5px 0.1px #00000047;
+    box-shadow: #ccdbe8 3px 3px 6px 1px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    -webkit-box-shadow: #ccdbe8 3px 3px 6px 1px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
   }
   .SearchBar__form .SearchBar__form__div--find-country-container .SearchBar__form__div--find-country-container__input-country {
     border-radius: 8px;
@@ -489,8 +489,8 @@
     height: 36px;
     color: #605b56;
     font-size: 17px;
-    box-shadow: inset -1px 2px 5px 0.1px #00000047;
-    -webkit-box-shadow: inset -1px 2px 5px 0.1px #00000047;
+    box-shadow: #ccdbe8 3px 3px 6px 1px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    -webkit-box-shadow: #ccdbe8 3px 3px 6px 1px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
   }
   .SearchBar__form .SearchBar__form__div--find-country-container .SearchBar__form__div--find-country-container__submit {
     border-radius: 8px;
