@@ -154,6 +154,8 @@ const Cached_Files = [
   "/static/js/bundle.js",
   "index.html",
   "/",
+  "ws",
+  "/calendar",
   "/static/js/0.chunk.js",
   "/static/js/main.chunk.js",
   "manifest.json",
@@ -198,12 +200,8 @@ self.addEventListener("activate", () => {
 
 self.addEventListener('fetch', function(event) {
   event.respondWith(
-    caches.open(CACHE_NAME).then(async (cache)=> {
-      const response = await cache.match(event.request);
-      return response || fetch(event.request).then(function (response_1) {
-        cache.put(event.request, response_1.clone());
-        return response_1;
-      });
+    caches.match(event.request).then(function(response) {
+      return response || fetch(event.request);
     })
   );
 });
