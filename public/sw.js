@@ -156,8 +156,8 @@ const Cached_Files = [
   "/",
   "ws",
   "/calendar",
-  "/static/js/0.chunk.js",
-  "/static/js/main.chunk.js",
+  "/static/js/main.88a22a2f.js.map",
+  "/static/js/main.88a22a2f.js",
   "manifest.json",
   "img/clock-icon64.png",
   "img/clock-icon512.png",
@@ -200,6 +200,7 @@ self.addEventListener("activate", () => {
 
 self.addEventListener('fetch', function(event) {
   event.respondWith(
+    
     caches.match(event.request).then(function(response) {
       return response || fetch(event.request);
     })

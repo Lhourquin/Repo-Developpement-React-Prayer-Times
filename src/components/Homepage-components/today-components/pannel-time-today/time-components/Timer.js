@@ -215,7 +215,7 @@ export const Timer = ({
       setDisplayTimerCurrentNextTime(true);
       setCurrentNextTime("ICHA " + icha + " - ");
       return () => clearInterval(intervalCountDown.current);
-    } else if ( now > dateIcha && now < dateMidnight) {
+    } else if (now > dateIcha && now < dateMidnight) {
       setCurrentTime("ICHA " + icha);
       startTimerNextTimeCountDown(dateMidnight);
       setDisplayTimerCurrentTime(false);
@@ -233,26 +233,28 @@ export const Timer = ({
         style={displayTimerCurrentTime === true ? { color: "#92BFEE" } : {}}
         className="Pannel__ul--hour-date-countdown__li--countdown-current-times"
       >
-        {currentTime}{" "}
-        {displayTimerCurrentTime === true ? (
-          <span
-            className={
-              timerHoursCurrentTime == 0 && timerMinutesCurrentTime < 30
-                ? "countDowntThirtyMinutesCurentTime"
-                : ""
-            }
-          >
-            {" "}
-            -
-            {timerHoursCurrentTime +
-              ":" +
-              timerMinutesCurrentTime +
-              ":" +
-              timerSecondsCurrentTime}
-          </span>
-        ) : (
-          ""
-        )}
+        <strong>
+          {currentTime}{" "}
+          {displayTimerCurrentTime === true ? (
+            <span
+              className={
+                timerHoursCurrentTime == 0 && timerMinutesCurrentTime < 30
+                  ? "countDowntThirtyMinutesCurentTime"
+                  : ""
+              }
+            >
+              {" "}
+              -
+              {timerHoursCurrentTime +
+                ":" +
+                timerMinutesCurrentTime +
+                ":" +
+                timerSecondsCurrentTime}
+            </span>
+          ) : (
+            ""
+          )}
+        </strong>
       </li>
       <li
         className={
@@ -261,14 +263,16 @@ export const Timer = ({
             : "Pannel__ul--hour-date-countdown__li--countdown-next-times "
         }
       >
-        {currentNextTime}{" "}
-        {displayTimerCurrentNextTime === true
-          ? timerHoursNextTime +
-            ":" +
-            timerMinutesNextTime +
-            ":" +
-            timerSecondsNextTime
-          : ""}
+        <strong>
+          {currentNextTime}{" "}
+          {displayTimerCurrentNextTime === true
+            ? timerHoursNextTime +
+              ":" +
+              timerMinutesNextTime +
+              ":" +
+              timerSecondsNextTime
+            : ""}
+        </strong>
       </li>
     </>
   );
