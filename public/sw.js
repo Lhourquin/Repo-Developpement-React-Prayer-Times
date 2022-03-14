@@ -151,7 +151,10 @@ const urlsToCache = [
   "https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap",
 ];
 const Cached_Files = [
-  "/static/js/bundle.js",
+  "./static/js/index.js",
+  "/static/js/",
+  "./static/js/main.839286ae.js",
+  "./index.html",
   "index.html",
   "/",
   "ws",
@@ -197,11 +200,25 @@ self.addEventListener("activate", () => {
   const cacheWhiteList = [];
   cacheWhiteList.push(CACHE_NAME);
 });
-
+/*
 self.addEventListener('fetch', function(event) {
   event.respondWith(
     caches.match(event.request).then(function(response) {
-      return response || fetch(event.request);
+      return fetch(event.request);
+    })
+  );
+});*/
+self.addEventListener('fetch', (e) => {
+  e.respondWith(
+    caches.match(e.request).then((r) => {
+          console.log('[Service Worker] Récupération de la ressource: '+e.request.url);
+      return r || fetch(e.request).then((response) => {
+                return caches.open(cacheName).then((cache) => {
+          console.log('[Service Worker] Mise en cache de la nouvelle ressource: '+e.request.url);
+          cache.put(e.request, response.clone());
+          return response;
+        });
+      });
     })
   );
 });
