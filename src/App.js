@@ -9,6 +9,7 @@ import { Routes, Route } from "react-router-dom";
 import "./App.css";
 
 const App = () => {
+  const [isOnLine, setIsOnLine] = useState(navigator.onLine);
   const [inputCityValue, setInputCityValue] = useState("");
   const [inputCountryValue, setInputCountryValue] = useState("");
   const [city, setCity] = useState("");
@@ -77,7 +78,6 @@ const App = () => {
     const lat = position.coords.latitude;
     const long = position.coords.longitude;
     //const API_KEY = `8be0f83c6058dc08796bea8b8309a808`;
-    if (navigator.onLine) {
       fetch(
         `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${long}&localityLanguage=fr`
 
@@ -91,7 +91,7 @@ const App = () => {
           setCountry(localStorage.getItem("Country"));
           //  console.log(data)
         });
-    }
+    
 
     //setErrorMessageLocation("Le service de localisation est momentanément indisponible.");
 
@@ -161,7 +161,7 @@ const App = () => {
 
   useEffect(() => {
     let timer = null;
-    if (city && country && methodValue) {
+    if (city && country && methodValue && isOnLine) {
       let params = new URLSearchParams();
 
       params.append("country", country);
@@ -183,11 +183,11 @@ const App = () => {
     return () => {
       clearTimeout(timer);
     };
-  }, [city, country, methodValue]);
+  }, [city, country, methodValue, isOnLine]);
 
   useEffect(() => {
     let timer = null;
-    if (city && country && methodValue) {
+    if (city && country && methodValue && isOnLine) {
       let params = new URLSearchParams();
       params.append("country", country);
       params.append("city", city);
@@ -209,7 +209,7 @@ const App = () => {
     return () => {
       clearTimeout(timer);
     };
-  }, [city, country, methodValue]);
+  }, [city, country, methodValue, isOnLine]);
 
   /* const [JSONTodayTimesSalat, setJSONTodayTimesSalat] = useState("");
 
@@ -224,7 +224,7 @@ const App = () => {
   useEffect(() => {
     setTodayTimesSalat(JSON.parse(localStorage.getItem("TodayTimes") || "[]"));
   }, [JSONTodayTimesSalat]);*/
-  console.log(city);
+  console.log(isOnLine);
   return (
     <>
       <header>
