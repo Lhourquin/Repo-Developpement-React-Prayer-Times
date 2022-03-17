@@ -77,19 +77,22 @@ const App = () => {
     const lat = position.coords.latitude;
     const long = position.coords.longitude;
     //const API_KEY = `8be0f83c6058dc08796bea8b8309a808`;
-    fetch(
-      `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${long}&localityLanguage=fr`
+    if (navigator.onLine) {
+      fetch(
+        `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${long}&localityLanguage=fr`
 
-      /** `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${API_KEY}`*/
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        localStorage.setItem("City", data.city);
-        localStorage.setItem("Country", data.countryName);
-        setCity(localStorage.getItem("City"));
-        setCountry(localStorage.getItem("Country"));
-        //  console.log(data)
-      });
+        /** `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${API_KEY}`*/
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          localStorage.setItem("City", data.city);
+          localStorage.setItem("Country", data.countryName);
+          setCity(localStorage.getItem("City"));
+          setCountry(localStorage.getItem("Country"));
+          //  console.log(data)
+        });
+    }
+
     //setErrorMessageLocation("Le service de localisation est momentanément indisponible.");
 
     setTimeout(() => {
@@ -221,7 +224,7 @@ const App = () => {
   useEffect(() => {
     setTodayTimesSalat(JSON.parse(localStorage.getItem("TodayTimes") || "[]"));
   }, [JSONTodayTimesSalat]);*/
-
+  console.log(city);
   return (
     <>
       <header>
@@ -238,6 +241,7 @@ const App = () => {
           }
           handleSubmitValue={(event) => {
             event.preventDefault();
+
             const key = event.keyCode;
 
             if (key === 13) {
@@ -276,7 +280,6 @@ const App = () => {
         {errorMessageLocation}
       </div>
       <NavBarTodayAndMounth />
-
       <Routes>
         <Route
           path="/"
