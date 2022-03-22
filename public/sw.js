@@ -124,7 +124,7 @@ const urlsToCache = [
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CASHNAME).then((cache) => {
-      console.log("cache opened");
+    //  console.log("cache opened");
       return cache.addAll(urlsToCache);
     })
   );
@@ -146,17 +146,17 @@ self.addEventListener("fetch", (event) => {
 */
 // When there's an incoming fetch request, try and respond with a precached resource, otherwise fall back to the network
 self.addEventListener("fetch", (event) => {
-  console.log("Fetch intercepted for:", event.request.url);
+ // console.log("Fetch intercepted for:", event.request.url);
   event.respondWith(
     caches
       .match(event.request)
       .then((cachedResponse) => {
         if (cachedResponse) {
-          console.log("online mode");
+        //  console.log("online mode");
           return cachedResponse;
         }
         if(!navigator.onLine){
-          console.log(`EVENT REQUEST =>  ${event.request.url}`);
+       //   console.log(`EVENT REQUEST =>  ${event.request.url}`);
 
         }
         return fetch(event.request);
@@ -166,7 +166,7 @@ self.addEventListener("fetch", (event) => {
           caches.match("index.html") &&
           caches.match("./static/js/bundle.js")
         ) {
-          console.log("offline mode");
+        //  console.log("offline mode");
           return caches
             .match("/static/js/bundle.js")
             .then(() => caches.match("/static/js/bundle.js"))

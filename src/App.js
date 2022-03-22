@@ -224,7 +224,7 @@ const App = () => {
   useEffect(() => {
     setTodayTimesSalat(JSON.parse(localStorage.getItem("TodayTimes") || "[]"));
   }, [JSONTodayTimesSalat]);*/
-  console.log(isOnLine);
+  //console.log(isOnLine);
   return (
     <>
       <header>

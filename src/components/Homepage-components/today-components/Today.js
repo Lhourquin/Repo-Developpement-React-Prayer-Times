@@ -178,13 +178,20 @@ export const Today = ({
             midnightTime.substring(0, 1) == "0"
           ) {
             // localStorage.setItem("DateMidnight", JSON.stringify(new Date(`${month} ${Number(day)}, ${year} ${midnight}:00`) + ""))
-            if (now > dateIchaLastDay && now < dateFajr) {
+            if (now > dateIchaLastDay && now < dateFajr ) {
+              console.log("1 : problem midnight here ?")
+              console.log(now > dateIchaLastDay)
+              console.log("ok")
+
               return new Date(
                 `${obj.data.date.gregorian.month.en} ${
                   Number(obj.data.date.gregorian.day)
                 }, ${obj.data.date.gregorian.year} ${midnightTime}:00`
               );
             } else {
+            //  console.log("2 : problem midnight here ?")
+            //  console.log(now > dateIchaLastDay)
+            //  console.log("ok")
               return new Date(
                 `${obj.data.date.gregorian.month.en} ${
                   Number(obj.data.date.gregorian.day) + 1
@@ -192,11 +199,11 @@ export const Today = ({
               );
             }
           } else if (
-            dateIcha < dateStartOfTheNextDay &&
+            now > dateIcha && dateIcha < dateStartOfTheNextDay &&
             midnightTime.substring(0, 1) !== "0"
           ) {
             // localStorage.setItem("DateMidnight", JSON.stringify(new Date(`${month} ${Number(day)}, ${year} ${midnight}:00`) + ""))
-
+           // console.log('3')
             return new Date(
               `${obj.data.date.gregorian.month.en} ${Number(
                 obj.data.date.gregorian.day
