@@ -27,7 +27,7 @@ export const NavBar = () => {
           </div>
           <div className="menu-items">
             <li><Link
-            to="/today"
+            to="/"
             >
 
               <strong>Acceuil</strong>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import moment from "moment";
+import { useLocation } from "react-router-dom";
 import "./Today.css";
 import { TodayTimesList } from "./today-time-list/TodayTimesList";
 import { Pannel } from "./pannel-time-today/Pannel";
@@ -219,9 +220,26 @@ export const Today = ({
 
    //console.log(dateFajr);
   // console.log(dateMidnight);
+
+  const Location = useLocation();
+  const [isCalendar, setIsCalendar] = useState(false);
+
+  useEffect(()=> {
+    if(Location.pathname === "/calendar"){
+      setIsCalendar(true);
+    }else{
+      setIsCalendar(false)
+    }
+  }, [Location])
+ 
+ // console.log(isCalendar);
   return (
     <>
-      <div className="Today__div--container-list-pannel">
+      <div 
+      style={
+        isCalendar ? { transition : "0.2s" , opacity : "0", marginTop : "100px"} : {transition : "0.2s" , opacity : "1"}
+      }
+      className="Today__div--container-list-pannel">
         <TodayTimesList
           today={today}
           now={now}

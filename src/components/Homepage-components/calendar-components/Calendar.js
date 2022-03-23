@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { RowList } from "./calendar-list/row-list";
+import { useLocation } from "react-router-dom";
+
 import { CalculMidnightCalendar } from "./calcul-mignight-calendar/CalculMidnightCalandar";
 import "./Calendar.css";
 
@@ -113,6 +115,19 @@ export const Calendar = ({
   const closeDisplayInfosMonth = () => {
     setClickedDisplayInfosMonth(false);
   };
+
+
+  const Location = useLocation();
+  const [isCalendar, setIsCalendar] = useState(false);
+
+  useEffect(()=> {
+    if(Location.pathname === "/calendar"){
+      setIsCalendar(true);
+    }else{
+      setIsCalendar(false)
+    }
+  }, [Location])
+
   return (
     <>
       {displayTimesOfTheDateClicked ? (
@@ -266,7 +281,11 @@ export const Calendar = ({
       ) : (
         ""
       )}
-      <div className="calendar">
+      <div 
+      style={
+        isCalendar ? { transition : "0.2s" , opacity : "1"} : {transition : "0.2s" , opacity : "0", marginTop : "100px"}
+      }
+      className="calendar">
         <div className="calendar-container-month-degreeSeclect">
           <div>
             <h2 className="calendar-title-month">

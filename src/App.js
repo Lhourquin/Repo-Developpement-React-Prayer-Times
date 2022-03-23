@@ -7,7 +7,7 @@ import { Home } from "./components/Homepage-components/Home";
 import { Calendar } from "./components/Homepage-components/calendar-components/Calendar";
 import { Today } from "./components/Homepage-components/today-components/Today";
 import { Masjid } from "./components/masjid-component/Masjid";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
 
 const App = () => {
@@ -283,74 +283,101 @@ const App = () => {
       </div>
       <Routes>
 
-        <Route
-          path="/"
-          element={
-            <Home />
-          }
-        >
           <Route
-            path="/today/*"
-
+          path="/*"
             element={
+              <>
+                <NavBarTodayAndMounth />
               <Today
-                city={city}
-                country={country}
-                method={method}
-                getAngleOptionValue={(event) => {
-                  let index = event.nativeEvent.target.selectedIndex;
-                  localStorage.setItem("SelectedMethodValue", event.target.value);
-                  localStorage.setItem(
-                    "SelectedMethodStringValue",
-                    event.target[index].innerHTML
-                  );
+              city={city}
+              country={country}
+              method={method}
+              getAngleOptionValue={(event) => {
+                let index = event.nativeEvent.target.selectedIndex;
+                localStorage.setItem("SelectedMethodValue", event.target.value);
+                localStorage.setItem(
+                  "SelectedMethodStringValue",
+                  event.target[index].innerHTML
+                );
 
-                  setSelectedMethodValue(
-                    localStorage.getItem("SelectedMethodValue")
-                  );
-                  setSelectedMethodStringValue(
-                    localStorage.getItem("SelectedMethodStringValue")
-                  );
-                }}
-                selectedMethodValue={selectedMethodValue}
-                selectedMethodStringValue={selectedMethodStringValue}
-              />
+                setSelectedMethodValue(
+                  localStorage.getItem("SelectedMethodValue")
+                );
+                setSelectedMethodStringValue(
+                  localStorage.getItem("SelectedMethodStringValue")
+                );
+              }}
+              selectedMethodValue={selectedMethodValue}
+              selectedMethodStringValue={selectedMethodStringValue}
+            />
+              </>
+            
             }
-          />
-          <Route
-            path="/calendar"
-            element={
-              <Calendar
-                city={city}
-                country={country}
-                method={method}
-                getAngleOptionValue={(event) => {
-                  let index = event.nativeEvent.target.selectedIndex;
-                  localStorage.setItem("SelectedMethodValue", event.target.value);
-                  localStorage.setItem(
-                    "SelectedMethodStringValue",
-                    event.target[index].innerHTML
-                  );
-                  setSelectedMethodValue(
-                    localStorage.getItem("SelectedMethodValue")
-                  );
-                  setSelectedMethodStringValue(
-                    localStorage.getItem("SelectedMethodStringValue")
-                  );
-                }}
-                selectedMethodValue={selectedMethodValue}
-                selectedMethodStringValue={selectedMethodStringValue}
-              />
-            }
-          />
-        </Route>
+          >
+            <Route
+             // path=""
+
+              //element={
+              /*  <Today
+                  city={city}
+                  country={country}
+                  method={method}
+                  getAngleOptionValue={(event) => {
+                    let index = event.nativeEvent.target.selectedIndex;
+                    localStorage.setItem("SelectedMethodValue", event.target.value);
+                    localStorage.setItem(
+                      "SelectedMethodStringValue",
+                      event.target[index].innerHTML
+                    );
+
+                    setSelectedMethodValue(
+                      localStorage.getItem("SelectedMethodValue")
+                    );
+                    setSelectedMethodStringValue(
+                      localStorage.getItem("SelectedMethodStringValue")
+                    );
+                  }}
+                  selectedMethodValue={selectedMethodValue}
+                  selectedMethodStringValue={selectedMethodStringValue}
+                />*/
+            //  }
+            />
+            
+            <Route
+              path="calendar"
+              element={
+                <Calendar
+                  city={city}
+                  country={country}
+                  method={method}
+                  getAngleOptionValue={(event) => {
+                    let index = event.nativeEvent.target.selectedIndex;
+                    localStorage.setItem("SelectedMethodValue", event.target.value);
+                    localStorage.setItem(
+                      "SelectedMethodStringValue",
+                      event.target[index].innerHTML
+                    );
+                    setSelectedMethodValue(
+                      localStorage.getItem("SelectedMethodValue")
+                    );
+                    setSelectedMethodStringValue(
+                      localStorage.getItem("SelectedMethodStringValue")
+                    );
+                  }}
+                  selectedMethodValue={selectedMethodValue}
+                  selectedMethodStringValue={selectedMethodStringValue}
+                />
+              }
+            />
+          </Route>
+
         <Route
-            path="/masjid"
+          path="/masjid"
 
-            element={
-              <Masjid />
-            }
-          />
+          element={
+            <Masjid />
+          }
+        />
 
 
       </Routes>

@@ -27,7 +27,7 @@ const NavBarTodayAndMounth = () => {
             }
           >
             <Link
-              to="/today"
+              to=""
               className="NavBarTodayAndMounth__nav__ul__li__Link-today"
               onClick={() => clickedComponent(0)}
             >
@@ -43,7 +43,7 @@ const NavBarTodayAndMounth = () => {
             }
           >
             <Link
-              to="/calendar"
+              to="calendar"
               className="NavBarTodayAndMounth__nav__ul__li__Link-mounth"
               onClick={() => clickedComponent(1)}
             >
