@@ -3,6 +3,7 @@ import axios from "axios";
 import { NavBar } from "./components/navbar/NavBar";
 import { SearchBar } from "./components/search-bar/SearchBar";
 import NavBarTodayAndMounth from "./components/Homepage-components/navbar-today-mounth/NavBarTodayAndMounth";
+import { Home } from "./components/Homepage-components/Home";
 import { Calendar } from "./components/Homepage-components/calendar-components/Calendar";
 import { Today } from "./components/Homepage-components/today-components/Today";
 import { Masjid } from "./components/masjid-component/Masjid";
@@ -230,15 +231,6 @@ const App = () => {
     <>
       <header>
         <NavBar />
-        <Routes>
-        <Route 
-          path="/masjid"
-
-          element={
-            <Masjid/>
-          }
-          />
-        </Routes>
         <SearchBar
           inputCity={inputCityValue}
           inputCountry={inputCountryValue}
@@ -289,67 +281,78 @@ const App = () => {
       <div style={{ textAlign: "center", color: "#bc4749" }}>
         {errorMessageLocation}
       </div>
-      <NavBarTodayAndMounth />
-
       <Routes>
-          
-
 
         <Route
-          path="/*"
-          
+          path="/"
           element={
-            <Today
-              city={city}
-              country={country}
-              method={method}
-              getAngleOptionValue={(event) => {
-                let index = event.nativeEvent.target.selectedIndex;
-                localStorage.setItem("SelectedMethodValue", event.target.value);
-                localStorage.setItem(
-                  "SelectedMethodStringValue",
-                  event.target[index].innerHTML
-                );
-
-                setSelectedMethodValue(
-                  localStorage.getItem("SelectedMethodValue")
-                );
-                setSelectedMethodStringValue(
-                  localStorage.getItem("SelectedMethodStringValue")
-                );
-              }}
-              selectedMethodValue={selectedMethodValue}
-              selectedMethodStringValue={selectedMethodStringValue}
-            />
+            <Home />
           }
-        />
+        >
+          <Route
+            path="/today/*"
 
+            element={
+              <Today
+                city={city}
+                country={country}
+                method={method}
+                getAngleOptionValue={(event) => {
+                  let index = event.nativeEvent.target.selectedIndex;
+                  localStorage.setItem("SelectedMethodValue", event.target.value);
+                  localStorage.setItem(
+                    "SelectedMethodStringValue",
+                    event.target[index].innerHTML
+                  );
+
+                  setSelectedMethodValue(
+                    localStorage.getItem("SelectedMethodValue")
+                  );
+                  setSelectedMethodStringValue(
+                    localStorage.getItem("SelectedMethodStringValue")
+                  );
+                }}
+                selectedMethodValue={selectedMethodValue}
+                selectedMethodStringValue={selectedMethodStringValue}
+              />
+            }
+          />
+          <Route
+            path="/calendar"
+            element={
+              <Calendar
+                city={city}
+                country={country}
+                method={method}
+                getAngleOptionValue={(event) => {
+                  let index = event.nativeEvent.target.selectedIndex;
+                  localStorage.setItem("SelectedMethodValue", event.target.value);
+                  localStorage.setItem(
+                    "SelectedMethodStringValue",
+                    event.target[index].innerHTML
+                  );
+                  setSelectedMethodValue(
+                    localStorage.getItem("SelectedMethodValue")
+                  );
+                  setSelectedMethodStringValue(
+                    localStorage.getItem("SelectedMethodStringValue")
+                  );
+                }}
+                selectedMethodValue={selectedMethodValue}
+                selectedMethodStringValue={selectedMethodStringValue}
+              />
+            }
+          />
+        </Route>
         <Route
-          path="/calendar"
-          element={
-            <Calendar
-              city={city}
-              country={country}
-              method={method}
-              getAngleOptionValue={(event) => {
-                let index = event.nativeEvent.target.selectedIndex;
-                localStorage.setItem("SelectedMethodValue", event.target.value);
-                localStorage.setItem(
-                  "SelectedMethodStringValue",
-                  event.target[index].innerHTML
-                );
-                setSelectedMethodValue(
-                  localStorage.getItem("SelectedMethodValue")
-                );
-                setSelectedMethodStringValue(
-                  localStorage.getItem("SelectedMethodStringValue")
-                );
-              }}
-              selectedMethodValue={selectedMethodValue}
-              selectedMethodStringValue={selectedMethodStringValue}
-            />
-          }
-        />
+            path="/masjid"
+
+            element={
+              <Masjid />
+            }
+          />
+
+
       </Routes>
     </>
   );
