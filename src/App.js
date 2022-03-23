@@ -5,6 +5,7 @@ import { SearchBar } from "./components/search-bar/SearchBar";
 import NavBarTodayAndMounth from "./components/Homepage-components/navbar-today-mounth/NavBarTodayAndMounth";
 import { Calendar } from "./components/Homepage-components/calendar-components/Calendar";
 import { Today } from "./components/Homepage-components/today-components/Today";
+import { Masjid } from "./components/masjid-component/Masjid";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 
@@ -229,6 +230,15 @@ const App = () => {
     <>
       <header>
         <NavBar />
+        <Routes>
+        <Route 
+          path="/masjid"
+
+          element={
+            <Masjid/>
+          }
+          />
+        </Routes>
         <SearchBar
           inputCity={inputCityValue}
           inputCountry={inputCountryValue}
@@ -282,6 +292,7 @@ const App = () => {
       <NavBarTodayAndMounth />
 
       <Routes>
+          
 
 
         <Route

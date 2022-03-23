@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./NavBar.css";
 
 export const NavBar = () => {
@@ -7,34 +8,50 @@ export const NavBar = () => {
   const handleNavButtonBurgerClick = () => {
     setButtonBurgerIsClicked((isFalse) => !isFalse);
   };
-  
+
 
   return (
- 
+
 
     <nav>
-    <div className="navbar">
-      <div className="container nav-container">
+      <div className="navbar">
+        <div className="container nav-container">
           <input className="checkbox" type="checkbox" name="" id="" />
           <div className="hamburger-lines">
             <span className="line line1"></span>
             <span className="line line2"></span>
             <span className="line line3"></span>
-          </div>  
-        <div className="logo">
-          <span>Waqt Al Falaah</span>
-        </div>
-        <div className="menu-items">
-          <li><a href="#"><strong>Acceuil</strong></a></li>
-          <li><a href="#"><strong>Mosquées</strong></a></li>
-     
+          </div>
+          <div className="logo">
+            <span>Waqt Al Falaah</span>
+          </div>
+          <div className="menu-items">
+            <li><Link
+            to="/"
+            >
+
+              <strong>Acceuil</strong>
+            </Link>
+
+            </li>
+            <li>
+
+              <Link
+                to="/masjid"
+              >
+                <strong>Mosquées</strong>
+
+              </Link>
+
+            </li>
+
+          </div>
         </div>
       </div>
-    </div>
-  </nav>
+    </nav>
   );
 };
- {/*  <nav className={buttonBurgerIsClicked ? "NavBar__nav openEffect" : "NavBar__nav closeEffect"}>
+{/*  <nav className={buttonBurgerIsClicked ? "NavBar__nav openEffect" : "NavBar__nav closeEffect"}>
         <span className="NavBar__nav__span--site-name">Waqt Al Falaah</span>
         <button
           className="NavBar__nav__button--button-burger"
