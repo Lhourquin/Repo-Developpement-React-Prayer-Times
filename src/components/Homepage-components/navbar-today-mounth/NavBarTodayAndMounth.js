@@ -25,30 +25,30 @@ const NavBarTodayAndMounth = () => {
               : "NavBarTodayAndMounth__nav__ul__li--today"
           }
         >
-          <Link
-            to="/"
-            className="NavBarTodayAndMounth__nav__ul__li__Link-today"
-            onClick={() => clickedComponent(0)}
+        <Link
+              to=""
+              className="NavBarTodayAndMounth__nav__ul__li__Link-today"
+              onClick={() => clickedComponent(0)}
+            >
+              <span>AUJOURD'HUI</span>
+              <i className="fa-solid fa-clock"></i>{" "}
+            </Link>
+          </li>
+          <li
+            className={
+              localStorage.getItem("NavBarTodayAndMounth") == 1
+                ? "NavBarTodayAndMounth__nav__ul__li--month currentComponent"
+                : "NavBarTodayAndMounth__nav__ul__li--month"
+            }
           >
-            <span>AUJOURD'HUI</span>
-            <i className="fa-solid fa-clock"></i>{" "}
-          </Link>
-        </li>
-        <li
-          className={
-            localStorage.getItem("NavBarTodayAndMounth") == 1
-              ? "NavBarTodayAndMounth__nav__ul__li--month currentComponent"
-              : "NavBarTodayAndMounth__nav__ul__li--month"
-          }
-        >
-          <Link
-            to="/calendar"
-            className="NavBarTodayAndMounth__nav__ul__li__Link-mounth"
-            onClick={() => clickedComponent(1)}
-          >
-            <span>CALENDRIER</span>
-            <i className="fa-solid fa-calendar-days"></i>
-          </Link>
+            <Link
+              to="calendar"
+              className="NavBarTodayAndMounth__nav__ul__li__Link-mounth"
+              onClick={() => clickedComponent(1)}
+            >
+              <span>CALENDRIER</span>
+              <i className="fa-solid fa-calendar-days"></i>
+            </Link>
         </li>
       </ul>
     </nav>
