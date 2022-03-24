@@ -227,6 +227,7 @@ const App = () => {
     setTodayTimesSalat(JSON.parse(localStorage.getItem("TodayTimes") || "[]"));
   }, [JSONTodayTimesSalat]);*/
   //console.log(isOnLine);
+
   function submitChannel(cityInputClient) {
     fetch("http://localhost:8000/mosques", {
       method: 'POST',
@@ -236,19 +237,55 @@ const App = () => {
       },
       body: JSON.stringify({ cityInputClient }),
     })
-      .then((response) => response.json())
+      .then((response) => {
+        return response.json()
+      })
       .then((data) => {
-        console.log('Succes : ', data)
+        console.log('Succes : ', data);
       })
       .catch((err) => {
         console.error('Error: ', err)
+
       });
     console.log(cityInputClient)
+
   }
 
-  useEffect(()=> {
-    submitChannel(city);
-  }, [city]);
+  const [newCity, setNewCity] = useState("")
+  useEffect(() => {
+    if (city && country) {
+
+      submitChannel(city);
+      setNewCity(city);
+    }
+  }, [city, country]);
+
+  const [dataMasjid, setDataMasjid] = useState([]);
+  async function loadCitys() {
+     /* const res =*/await fetch("http://localhost:8000/mosques")
+      .then((response) => response.json())
+      .then((mosques) => setDataMasjid(mosques)
+      )
+      //  .then((result)=> console.log(result))
+      .catch(err => console.log(err));
+    // const mosques = await res.json();
+    // const container = document.querySelector(".container");
+    //   const card = newElements("div", { class: "card" });
+    //container.appendChild(card);
+
+    // console.log(mosques);
+  }
+
+  useEffect(() => {
+
+      loadCitys();
+      // setDataSend("Await")
+    
+
+  }, [newCity])
+
+  console.log(dataMasjid);
+  console.log(newCity)
 
   return (
     <>
@@ -299,7 +336,7 @@ const App = () => {
                 setInputCountryValue("");
               });
             }
-           // submitChannel(city);
+            // submitChannel(city);
 
           }}
         />
@@ -402,6 +439,7 @@ const App = () => {
 
           element={
             <Masjid
+              dataMasjid={dataMasjid}
               city={city}
               country={country}
             />
