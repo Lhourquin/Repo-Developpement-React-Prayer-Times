@@ -237,7 +237,7 @@ export const Today = ({
     <>
       <div 
       style={
-        isCalendar ? { transition : "0.2s" , opacity : "0", marginTop : "100px"} : {transition : "0.2s" , opacity : "1"}
+        isCalendar ? { transition : "0.2s" ,display : "none"} : {transition : "9s" , opacity : "1"}
       }
       className="Today__div--container-list-pannel">
         <TodayTimesList

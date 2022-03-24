@@ -283,7 +283,7 @@ export const Calendar = ({
       )}
       <div 
       style={
-        isCalendar ? { transition : "0.2s" , opacity : "1"} : {transition : "0.2s" , opacity : "0", marginTop : "100px"}
+        isCalendar ? { transition : "9s" , opacity : "1"} : {transition : "0.2s" , opacity : "0", display : "none"}
       }
       className="calendar">
         <div className="calendar-container-month-degreeSeclect">

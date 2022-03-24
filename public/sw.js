@@ -108,6 +108,35 @@ self.addEventListener('fetch', function(e) {
       );
   });
 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 ////////////////////////////////////
 
 // test 15 mars 22h
@@ -131,19 +160,6 @@ self.addEventListener("install", (event) => {
   self.skipWaiting();
 });
 
-// LIsten for requests
-/*
-self.addEventListener("fetch", (event) => {
-  event.respondWith(
-    caches.match(event.request).then(() => {
-      return fetch(event.request).catch(() =>
-      
-        caches.match(event.request)
-      );
-    })
-  );
-});
-*/
 // When there's an incoming fetch request, try and respond with a precached resource, otherwise fall back to the network
 self.addEventListener("fetch", (event) => {
  // console.log("Fetch intercepted for:", event.request.url);
@@ -197,3 +213,4 @@ self.addEventListener("activate", (event) => {
 
   clients.claim();
 });
+*/

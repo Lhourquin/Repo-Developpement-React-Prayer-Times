@@ -227,6 +227,29 @@ const App = () => {
     setTodayTimesSalat(JSON.parse(localStorage.getItem("TodayTimes") || "[]"));
   }, [JSONTodayTimesSalat]);*/
   //console.log(isOnLine);
+  function submitChannel(cityInputClient) {
+    fetch("http://localhost:8000/mosques", {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ cityInputClient }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('Succes : ', data)
+      })
+      .catch((err) => {
+        console.error('Error: ', err)
+      });
+    console.log(cityInputClient)
+  }
+
+  useEffect(()=> {
+    submitChannel(city);
+  }, [city]);
+
   return (
     <>
       <header>
@@ -259,6 +282,7 @@ const App = () => {
                   setInputCityValue("");
                   setInputCountryValue("");
                 });
+
               }
             }
 
@@ -275,6 +299,8 @@ const App = () => {
                 setInputCountryValue("");
               });
             }
+           // submitChannel(city);
+
           }}
         />
       </header>
@@ -283,12 +309,42 @@ const App = () => {
       </div>
       <Routes>
 
-          <Route
+        <Route
           path="/*"
-            element={
-              <>
-                <NavBarTodayAndMounth />
+          element={
+            <>
+              <NavBarTodayAndMounth />
               <Today
+                city={city}
+                country={country}
+                method={method}
+                getAngleOptionValue={(event) => {
+                  let index = event.nativeEvent.target.selectedIndex;
+                  localStorage.setItem("SelectedMethodValue", event.target.value);
+                  localStorage.setItem(
+                    "SelectedMethodStringValue",
+                    event.target[index].innerHTML
+                  );
+
+                  setSelectedMethodValue(
+                    localStorage.getItem("SelectedMethodValue")
+                  );
+                  setSelectedMethodStringValue(
+                    localStorage.getItem("SelectedMethodStringValue")
+                  );
+                }}
+                selectedMethodValue={selectedMethodValue}
+                selectedMethodStringValue={selectedMethodStringValue}
+              />
+            </>
+
+          }
+        >
+          <Route
+          // path=""
+
+          //element={
+          /*  <Today
               city={city}
               country={country}
               method={method}
@@ -309,73 +365,46 @@ const App = () => {
               }}
               selectedMethodValue={selectedMethodValue}
               selectedMethodStringValue={selectedMethodStringValue}
-            />
-              </>
-            
+            />*/
+          //  }
+          />
+
+          <Route
+            path="calendar"
+            element={
+              <Calendar
+                city={city}
+                country={country}
+                method={method}
+                getAngleOptionValue={(event) => {
+                  let index = event.nativeEvent.target.selectedIndex;
+                  localStorage.setItem("SelectedMethodValue", event.target.value);
+                  localStorage.setItem(
+                    "SelectedMethodStringValue",
+                    event.target[index].innerHTML
+                  );
+                  setSelectedMethodValue(
+                    localStorage.getItem("SelectedMethodValue")
+                  );
+                  setSelectedMethodStringValue(
+                    localStorage.getItem("SelectedMethodStringValue")
+                  );
+                }}
+                selectedMethodValue={selectedMethodValue}
+                selectedMethodStringValue={selectedMethodStringValue}
+              />
             }
-          >
-            <Route
-             // path=""
-
-              //element={
-              /*  <Today
-                  city={city}
-                  country={country}
-                  method={method}
-                  getAngleOptionValue={(event) => {
-                    let index = event.nativeEvent.target.selectedIndex;
-                    localStorage.setItem("SelectedMethodValue", event.target.value);
-                    localStorage.setItem(
-                      "SelectedMethodStringValue",
-                      event.target[index].innerHTML
-                    );
-
-                    setSelectedMethodValue(
-                      localStorage.getItem("SelectedMethodValue")
-                    );
-                    setSelectedMethodStringValue(
-                      localStorage.getItem("SelectedMethodStringValue")
-                    );
-                  }}
-                  selectedMethodValue={selectedMethodValue}
-                  selectedMethodStringValue={selectedMethodStringValue}
-                />*/
-            //  }
-            />
-            
-            <Route
-              path="calendar"
-              element={
-                <Calendar
-                  city={city}
-                  country={country}
-                  method={method}
-                  getAngleOptionValue={(event) => {
-                    let index = event.nativeEvent.target.selectedIndex;
-                    localStorage.setItem("SelectedMethodValue", event.target.value);
-                    localStorage.setItem(
-                      "SelectedMethodStringValue",
-                      event.target[index].innerHTML
-                    );
-                    setSelectedMethodValue(
-                      localStorage.getItem("SelectedMethodValue")
-                    );
-                    setSelectedMethodStringValue(
-                      localStorage.getItem("SelectedMethodStringValue")
-                    );
-                  }}
-                  selectedMethodValue={selectedMethodValue}
-                  selectedMethodStringValue={selectedMethodStringValue}
-                />
-              }
-            />
-          </Route>
+          />
+        </Route>
 
         <Route
           path="/masjid"
 
           element={
-            <Masjid />
+            <Masjid
+              city={city}
+              country={country}
+            />
           }
         />
 
