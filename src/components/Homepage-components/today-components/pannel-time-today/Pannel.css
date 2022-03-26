@@ -104,20 +104,20 @@
     font-size: 15px;
   }
   .Pannel__div--container-times-today .Pannel__ul--hour-date-countdown .Pannel__ul--hour-date-countdown__li--countdown-current-times {
-    font-size: 17px;
+    font-size: 15px;
     color: #65d977;
   }
   .Pannel__div--container-times-today .Pannel__ul--hour-date-countdown .Pannel__ul--hour-date-countdown__li--countdown-next-times {
     color: #92bfee;
-    font-size: 14px;
+    font-size: 19px;
   }
   .Pannel__div--container-times-today .countDowntThirtyMinutesNextTime {
     color: #ee9292;
-    font-size: 14px;
+    font-size: 19px;
   }
   .Pannel__div--container-times-today .countDowntThirtyMinutesCurentTime {
     color: #ee9292;
-    font-size: 17px;
+    font-size: 15px;
   }
 }
 
@@ -175,20 +175,20 @@
     font-size: 15px;
   }
   .Pannel__div--container-times-today .Pannel__ul--hour-date-countdown .Pannel__ul--hour-date-countdown__li--countdown-current-times {
-    font-size: 22px;
+    font-size: 15px;
     color: #65d977;
   }
   .Pannel__div--container-times-today .Pannel__ul--hour-date-countdown .Pannel__ul--hour-date-countdown__li--countdown-next-times {
     color: #92bfee;
-    font-size: 13px;
+    font-size: 19px;
   }
   .countDowntThirtyMinutesNextTime {
     color: #ee9292;
-    font-size: 13px;
+    font-size: 19px;
   }
   .countDowntThirtyMinutesCurentTime {
     color: #ee9292;
-    font-size: 22px;
+    font-size: 15px;
   }
 }
 
@@ -246,20 +246,20 @@
     font-size: 21px;
   }
   .Pannel__div--container-times-today .Pannel__ul--hour-date-countdown .Pannel__ul--hour-date-countdown__li--countdown-current-times {
-    font-size: 26px;
+    font-size: 20px;
     color: #65d977;
   }
   .Pannel__div--container-times-today .Pannel__ul--hour-date-countdown .Pannel__ul--hour-date-countdown__li--countdown-next-times {
     color: #92bfee;
-    font-size: 20px;
+    font-size: 26px;
   }
   .countDowntThirtyMinutesNextTime {
     color: #ee9292;
-    font-size: 20px;
+    font-size: 26px;
   }
   .countDowntThirtyMinutesCurentTime {
     color: #ee9292;
-    font-size: 26px;
+    font-size: 20px;
   }
 }
 /*# sourceMappingURL=Pannel.css.map */
