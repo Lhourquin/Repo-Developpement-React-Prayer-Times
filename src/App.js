@@ -286,7 +286,6 @@ const App = () => {
 
   console.log(dataMasjid);
   console.log(newCity)
-
   return (
     <>
       <header>
