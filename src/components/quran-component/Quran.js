@@ -31,15 +31,20 @@ export const Quran = () => {
         let arrayOfSurat = [];
         setTimeout(() => {
             for (let i = 0; i < quran.length; i++) {
-                console.log(quran[i][0].sura)
-                console.log(quran[i].map(x => x.translation))
+                // console.log(quran[i][0].sura)
+                // console.log(quran[i].map(x => x.translation))
                 arrayOfSurat.push({
+                    id: Number(quran[i][0].sura),
                     sourate: quran[i][0].sura,
-                    verset: quran[i].map(x => <p>{x.aya} <br />{x.translation}</p>)
+                    verset: quran[i].map(x => <p>{x.aya} <br />
+                        {x.arabic_text}
+                        <br />
+                        {x.translation}</p>)
                 })
 
             }
             //  console.log(arrayOfSurat)
+            arrayOfSurat.sort((a, b)=> a.id - b.id )
             setSurat(arrayOfSurat)
 
         }, 1000)
@@ -54,8 +59,8 @@ export const Quran = () => {
             style={{ color: "black", textAlign: "center" }}
         >
             {
-                surat.map((obj, idx) => {
-                    return <div key={idx}>
+                surat.map((obj) => {
+                    return <div key={obj.id}>
                         <h2>{obj.sourate}</h2>
                         {  /*  <p>{obj.arabic_text}</p>
                         <p>{obj.translation}</p>*/}
