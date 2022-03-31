@@ -44,6 +44,16 @@ export const NavBar = () => {
               </Link>
 
             </li>
+            <li>
+
+              <Link
+                to="/quran"
+              >
+                <strong>Coran</strong>
+
+              </Link>
+
+            </li>
 
           </div>
         </div>

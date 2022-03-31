@@ -3,7 +3,7 @@ import axios from "axios";
 import { NavBar } from "./components/navbar/NavBar";
 import { SearchBar } from "./components/search-bar/SearchBar";
 import NavBarTodayAndMounth from "./components/Homepage-components/navbar-today-mounth/NavBarTodayAndMounth";
-import { Home } from "./components/Homepage-components/Home";
+import { Quran } from "./components/quran-component/Quran";
 import { Calendar } from "./components/Homepage-components/calendar-components/Calendar";
 import { Today } from "./components/Homepage-components/today-components/Today";
 import { Masjid } from "./components/masjid-component/Masjid";
@@ -286,6 +286,9 @@ const App = () => {
 
   console.log(dataMasjid);
   console.log(newCity)
+
+  
+  
   return (
     <>
       <header>
@@ -441,6 +444,16 @@ const App = () => {
               dataMasjid={dataMasjid}
               city={city}
               country={country}
+            />
+          }
+        />
+
+<Route
+          path="/quran"
+
+          element={
+            <Quran
+         
             />
           }
         />
