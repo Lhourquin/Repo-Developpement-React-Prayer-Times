@@ -44,7 +44,7 @@ export const Quran = () => {
 
             }
             //  console.log(arrayOfSurat)
-            arrayOfSurat.sort((a, b)=> a.id - b.id )
+            arrayOfSurat.sort((a, b) => a.id - b.id)
             setSurat(arrayOfSurat)
 
         }, 1000)
@@ -54,24 +54,43 @@ export const Quran = () => {
     console.log(quran)
     console.log(surat)
 
+    const [indexSurat, setIndexSurat] = useState("");
+
+    const open = (index, objSourate) => {
+        let number = index + 1;
+        console.log(number == objSourate);
+        setIndexSurat(number);
+    }
+
+    const close = () => {
+        setIndexSurat(0);
+    }
+
     return (
         <div
             style={{ color: "black", textAlign: "center" }}
         >
+
             {
-                surat.map((obj) => {
+                surat.map((obj, idx) => {
                     return <div key={obj.id}>
                         <h2>{obj.sourate}</h2>
                         {  /*  <p>{obj.arabic_text}</p>
                         <p>{obj.translation}</p>*/}
+                        <button onClick={() => open(idx, obj.sourate)}>Lire</button>
 
-                        <div>{obj.verset}</div>
+                        <div style={indexSurat == obj.sourate ? { display: "block" } : { display: "none" }}>
+                            <button onClick={() => close()}>X</button>
+                            <div>{obj.verset}</div>
 
+
+                        </div>
                     </div>
                 })
 
             }
-            <button onClick={() => getQuran(115)}>click</button>
+
+
         </div>
     )
 }
