@@ -30,7 +30,7 @@
           flex-direction: column;
   -webkit-text-decoration-line: none;
           text-decoration-line: none;
-  color: #605b56;
+  color: #aa75ff;
   font-weight: bold;
 }
 
@@ -44,7 +44,7 @@
           flex-direction: column;
   -webkit-text-decoration-line: none;
           text-decoration-line: none;
-  color: #605b56;
+  color: #aa75ff;
   font-weight: bold;
 }
 
@@ -58,8 +58,8 @@
   padding: 3%;
   background-color: #eaeaea;
   border: none;
-  box-shadow: 0px 3px 6px 1px #00000042;
-  -webkit-box-shadow: 0px 3px 6px 1px #00000042;
+  -webkit-box-shadow: 1px 2px 4px 0px #00000042;
+          box-shadow: 1px 2px 4px 0px #00000042;
   -webkit-transition: 2s;
   transition: 2s;
   -webkit-tap-highlight-color: transparent;
@@ -80,8 +80,8 @@
   border-radius: 0 8px 8px 0;
   padding: 3%;
   border: none;
-  -webkit-box-shadow: 0px 3px 6px 1px #00000042;
-  box-shadow: 0px 3px 6px 1px #00000042;
+  -webkit-box-shadow: 1px 2px 4px 0px #00000042;
+          box-shadow: 1px 2px 4px 0px #00000042;
   -webkit-transition: 2s;
   transition: 2s;
   -webkit-tap-highlight-color: transparent;
@@ -95,7 +95,7 @@
 .NavBarTodayAndMounth__nav .NavBarTodayAndMounth__nav__ul .currentComponent {
   -webkit-transition: 2s;
   transition: 2s;
-  background-color: #605b56;
+  background-image: linear-gradient(135deg, #9147ff 0%, #9a57ff 21%, #9e61ff 30%, #a46bff 39%, #aa75ff 46%, #b080ff 54%, #b78aff 61%, #bc8fff 69%, #c299ff 79%, #c69eff 100%);
 }
 
 .NavBarTodayAndMounth__nav .NavBarTodayAndMounth__nav__ul .currentComponent a {

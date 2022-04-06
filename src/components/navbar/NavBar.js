@@ -23,7 +23,7 @@ export const NavBar = () => {
             <span className="line line3"></span>
           </div>
           <div className="logo">
-            <span>Waqt Al Falaah</span>
+            <span>React Prayer Time</span>
           </div>
           <div className="menu-items">
             <li><Link

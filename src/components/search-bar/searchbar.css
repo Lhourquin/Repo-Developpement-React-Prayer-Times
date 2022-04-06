@@ -13,9 +13,9 @@
     transition: 1s;
   }
   .button-location .localisation-marker {
-    color: #605b56;
+    color: #aa75ff;
     font-size: 25px;
-    text-shadow: -2px 2px 3px #00000042;
+    text-shadow: 2px 3px 3px #00000042;
   }
   .isClose {
     display: none;
@@ -34,7 +34,7 @@
     margin-bottom: 10px;
   }
   .cross {
-    color: #605b56;
+    color: #aa75ff;
     font-size: 26px;
     background: none;
     cursor: pointer;
@@ -44,7 +44,7 @@
     position: absolute;
     -webkit-transition: 1s;
     transition: 1s;
-    text-shadow: -2px 2px 3px #00000042;
+    text-shadow: 2px 3px 3px #00000042;
   }
   .transition-input {
     display: -webkit-box;
@@ -93,10 +93,10 @@
     -webkit-box-shadow: #ccdbe8 3px 3px 6px 1px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
   }
   .transition-input .SearchBar__form__div--find-country-container .SearchBar__form__div--find-country-container__submit {
-    background-color: #acc18a;
+    background-image: linear-gradient(135deg, #9147ff 0%, #9a57ff 21%, #9e61ff 30%, #a46bff 39%, #aa75ff 46%, #b080ff 54%, #b78aff 61%, #bc8fff 69%, #c299ff 79%, #c69eff 100%);
     color: #eaeaea;
-    -webkit-box-shadow: -1px 2px 6px 1px #00000042;
-            box-shadow: -1px 2px 6px 1px #00000042;
+    -webkit-box-shadow: 1px 2px 4px 0px #00000042;
+            box-shadow: 1px 2px 4px 0px #00000042;
   }
 }
 
@@ -151,10 +151,10 @@
 }
 
 .SearchBar__form .SearchBar__form__div--find-country-container .SearchBar__form__div--find-country-container__submit {
-  background-color: #acc18a;
+  background-image: linear-gradient(135deg, #9147ff 0%, #9a57ff 21%, #9e61ff 30%, #a46bff 39%, #aa75ff 46%, #b080ff 54%, #b78aff 61%, #bc8fff 69%, #c299ff 79%, #c69eff 100%);
   color: #eaeaea;
-  -webkit-box-shadow: -1px 2px 6px 1px #00000042;
-          box-shadow: -1px 2px 6px 1px #00000042;
+  -webkit-box-shadow: 1px 2px 4px 0px #00000042;
+          box-shadow: 1px 2px 4px 0px #00000042;
 }
 
 @media (min-width: 471px) {
@@ -170,9 +170,9 @@
     position: absolute;
   }
   .button-location .localisation-marker {
-    color: #605b56;
+    color: #aa75ff;
     font-size: 26px;
-    text-shadow: -2px 2px 3px #00000042;
+    text-shadow: 2px 3px 3px #00000042;
   }
   .SearchBar__form {
     display: -webkit-box;
@@ -222,10 +222,10 @@
     margin-top: 7px;
     height: 36px;
     color: #eaeaea;
-    background-color: #acc18a;
+    background-image: linear-gradient(135deg, #9147ff 0%, #9a57ff 21%, #9e61ff 30%, #a46bff 39%, #aa75ff 46%, #b080ff 54%, #b78aff 61%, #bc8fff 69%, #c299ff 79%, #c69eff 100%);
     font-size: 17px;
-    -webkit-box-shadow: -1px 2px 6px 1px #00000042;
-            box-shadow: -1px 2px 6px 1px #00000042;
+    -webkit-box-shadow: 1px 2px 4px 0px #00000042;
+            box-shadow: 1px 2px 4px 0px #00000042;
   }
   .transition-input {
     display: -webkit-box;
@@ -281,11 +281,11 @@
     height: 36px;
     color: #eaeaea;
     font-size: 17px;
-    background-color: #acc18a;
+    background-image: linear-gradient(135deg, #9147ff 0%, #9a57ff 21%, #9e61ff 30%, #a46bff 39%, #aa75ff 46%, #b080ff 54%, #b78aff 61%, #bc8fff 69%, #c299ff 79%, #c69eff 100%);
     -webkit-transition: opacity 0.9 2s;
     transition: opacity 0.9 2s;
-    -webkit-box-shadow: -1px 2px 6px 1px #00000042;
-            box-shadow: -1px 2px 6px 1px #00000042;
+    -webkit-box-shadow: 1px 2px 4px 0px #00000042;
+            box-shadow: 1px 2px 4px 0px #00000042;
   }
   .SearchBar__form {
     display: -webkit-box;
@@ -338,8 +338,10 @@
     margin-top: 7px;
     height: 36px;
     color: #eaeaea;
-    background-color: #acc18a;
+    background-image: linear-gradient(135deg, #9147ff 0%, #9a57ff 21%, #9e61ff 30%, #a46bff 39%, #aa75ff 46%, #b080ff 54%, #b78aff 61%, #bc8fff 69%, #c299ff 79%, #c69eff 100%);
     font-size: 17px;
+    -webkit-box-shadow: 1px 2px 4px 0px #00000042;
+            box-shadow: 1px 2px 4px 0px #00000042;
   }
   .isClose {
     display: none;
@@ -359,7 +361,7 @@
     width: 100%;
   }
   .cross {
-    color: #605b56;
+    color: #aa75ff;
     font-size: 26px;
     background: none;
     cursor: pointer;
@@ -367,7 +369,7 @@
     margin-top: 5.5%;
     margin-left: 75%;
     position: absolute;
-    text-shadow: -2px 2px 3px #00000042;
+    text-shadow: 2px 3px 3px #00000042;
   }
 }
 
@@ -384,9 +386,9 @@
     position: absolute;
   }
   .button-location .localisation-marker {
-    color: #605b56;
+    color: #aa75ff;
     font-size: 28px;
-    text-shadow: -2px 2px 3px #00000042;
+    text-shadow: 2px 3px 3px #00000042;
   }
   .transition-input {
     display: -webkit-box;
@@ -442,11 +444,11 @@
     height: 36px;
     color: #eaeaea;
     font-size: 17px;
-    background-color: #acc18a;
+    background-image: linear-gradient(135deg, #9147ff 0%, #9a57ff 21%, #9e61ff 30%, #a46bff 39%, #aa75ff 46%, #b080ff 54%, #b78aff 61%, #bc8fff 69%, #c299ff 79%, #c69eff 100%);
     -webkit-transition: opacity 0.9 2s;
     transition: opacity 0.9 2s;
-    -webkit-box-shadow: -1px 2px 6px 1px #00000042;
-            box-shadow: -1px 2px 6px 1px #00000042;
+    -webkit-box-shadow: 1px 2px 4px 0px #00000042;
+            box-shadow: 1px 2px 4px 0px #00000042;
   }
   .SearchBar__form {
     display: -webkit-box;
@@ -499,9 +501,9 @@
     height: 36px;
     color: #eaeaea;
     font-size: 17px;
-    background-color: #acc18a;
-    -webkit-box-shadow: -1px 2px 6px 1px #00000042;
-            box-shadow: -1px 2px 6px 1px #00000042;
+    background-image: linear-gradient(135deg, #9147ff 0%, #9a57ff 21%, #9e61ff 30%, #a46bff 39%, #aa75ff 46%, #b080ff 54%, #b78aff 61%, #bc8fff 69%, #c299ff 79%, #c69eff 100%);
+    -webkit-box-shadow: 1px 2px 4px 0px #00000042;
+            box-shadow: 1px 2px 4px 0px #00000042;
   }
   .isClose {
     display: none;
@@ -520,7 +522,7 @@
     margin-bottom: 10px;
   }
   .cross {
-    color: #605b56;
+    color: #aa75ff;
     font-size: 28px;
     background: none;
     cursor: pointer;
@@ -528,7 +530,7 @@
     margin-top: 5%;
     margin-left: 71.3%;
     position: absolute;
-    text-shadow: -2px 2px 3px #00000042;
+    text-shadow: 2px 3px 3px #00000042;
   }
 }
 /*# sourceMappingURL=searchbar.css.map */

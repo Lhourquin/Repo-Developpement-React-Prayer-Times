@@ -49,7 +49,6 @@ export const Today = ({
   const [dateMaghreb, setDateMaghreb] = useState("");
   const [dateIcha, setDateIcha] = useState("");
   const [dateIchaLastDay, setDateIchaLastDay] = useState("");
-  const [dateMidnight, setDateMidnight] = useState("");
   const [dateStartOfTheNextDay, setdateStartOfTheNextDay] = useState("");
   const [day, setDay] = useState("");
   const [fajrTime, setFajrTime] = useState("");
@@ -94,10 +93,8 @@ export const Today = ({
 
       setDateIchaLastDay(
         new Date(
-          `${obj.data.date.gregorian.month.en} ${
-            Number(obj.data.date.gregorian.day) - 1
-          }, ${obj.data.date.gregorian.year} ${
-            obj.data.timings.Isha
+          `${obj.data.date.gregorian.month.en} ${Number(obj.data.date.gregorian.day) - 1
+          }, ${obj.data.date.gregorian.year} ${obj.data.timings.Isha
           }:00` /** ${obj.data.timings.Isha}  */
         )
       );
@@ -121,8 +118,7 @@ export const Today = ({
     today.map((obj) => {
       setdateStartOfTheNextDay(
         new Date(
-          `${obj.data.date.gregorian.month.en} ${Number(day) + 1}, ${
-            obj.data.date.gregorian.year
+          `${obj.data.date.gregorian.month.en} ${Number(day) + 1}, ${obj.data.date.gregorian.year
           } 00:00:00`
         )
       );
@@ -161,6 +157,10 @@ export const Today = ({
     });
   }, [fajrTime, maghrebTime]);
 
+
+  const [dateMidnight, setDateMidnight] = useState("");
+
+
   useEffect(() => {
     let timer = setTimeout(() => {
       today.map((obj) => {
@@ -179,23 +179,21 @@ export const Today = ({
             midnightTime.substring(0, 1) == "0"
           ) {
             // localStorage.setItem("DateMidnight", JSON.stringify(new Date(`${month} ${Number(day)}, ${year} ${midnight}:00`) + ""))
-            if (now > dateIchaLastDay && now < dateFajr ) {
+            if (now > dateIchaLastDay && now < dateFajr) {
               console.log("1 : problem midnight here ?")
               console.log(now > dateIchaLastDay)
               console.log("ok")
 
               return new Date(
-                `${obj.data.date.gregorian.month.en} ${
-                  Number(obj.data.date.gregorian.day)
+                `${obj.data.date.gregorian.month.en} ${Number(obj.data.date.gregorian.day)
                 }, ${obj.data.date.gregorian.year} ${midnightTime}:00`
               );
             } else {
-            //  console.log("2 : problem midnight here ?")
-            //  console.log(now > dateIchaLastDay)
-            //  console.log("ok")
+              //  console.log("2 : problem midnight here ?")
+              //  console.log(now > dateIchaLastDay)
+              //  console.log("ok")
               return new Date(
-                `${obj.data.date.gregorian.month.en} ${
-                  Number(obj.data.date.gregorian.day) + 1
+                `${obj.data.date.gregorian.month.en} ${Number(obj.data.date.gregorian.day) + 1
                 }  , ${obj.data.date.gregorian.year} ${midnightTime}:00`
               );
             }
@@ -204,7 +202,7 @@ export const Today = ({
             midnightTime.substring(0, 1) !== "0"
           ) {
             // localStorage.setItem("DateMidnight", JSON.stringify(new Date(`${month} ${Number(day)}, ${year} ${midnight}:00`) + ""))
-           // console.log('3')
+            // console.log('3')
             return new Date(
               `${obj.data.date.gregorian.month.en} ${Number(
                 obj.data.date.gregorian.day
@@ -212,34 +210,37 @@ export const Today = ({
             );
           }
         });
+
+        
       });
     });
 
     return () => clearTimeout(timer);
   }, [midnightTime, dateStartOfTheNextDay]);
 
-   //console.log(dateFajr);
-  // console.log(dateMidnight);
+
+  //console.log(dateFajr);
+  // console.log(lastDateMidnight);
 
   const Location = useLocation();
   const [isCalendar, setIsCalendar] = useState(false);
 
-  useEffect(()=> {
-    if(Location.pathname === "/calendar"){
+  useEffect(() => {
+    if (Location.pathname === "/calendar") {
       setIsCalendar(true);
-    }else{
+    } else {
       setIsCalendar(false)
     }
   }, [Location])
- 
- // console.log(isCalendar);
+
+  // console.log(isCalendar);
   return (
     <>
-      <div 
-      style={
-        isCalendar ? { transition : "0.2s" ,display : "none"} : {transition : "9s" , opacity : "1"}
-      }
-      className="Today__div--container-list-pannel">
+      <div
+        style={
+          isCalendar ? { transition: "0.2s", display: "none" } : { transition: "9s", opacity: "1" }
+        }
+        className="Today__div--container-list-pannel">
         <TodayTimesList
           today={today}
           now={now}

@@ -230,7 +230,7 @@ export const Timer = ({
   return (
     <>
       <li
-        style={displayTimerCurrentTime === true ? { color: "#92BFEE" } : {}}
+        style={displayTimerCurrentTime === true ? { color: "white" } : {}}
         className="Pannel__ul--hour-date-countdown__li--countdown-current-times"
       >
         <strong>

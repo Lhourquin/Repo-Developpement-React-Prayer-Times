@@ -68,18 +68,31 @@ export const Quran = () => {
 
     return (
         <div
-            style={{ color: "black", textAlign: "center" }}
+            style={indexSurat !== 0 ? {  overflow: "hidden", color: "black", textAlign: "center ", postion: "fixed"} : { color: "black", textAlign: "center ", display: "block" }}
+
         >
 
             {
                 surat.map((obj, idx) => {
-                    return <div key={obj.id}>
-                        <h2>{obj.sourate}</h2>
-                        {  /*  <p>{obj.arabic_text}</p>
+                    return <div key={obj.id} >
+                        <div style={indexSurat == obj.sourate ? { display: "none" } : { display: "block" }}>
+                            <h2>{obj.sourate}</h2>
+                            {  /*  <p>{obj.arabic_text}</p>
                         <p>{obj.translation}</p>*/}
-                        <button onClick={() => open(idx, obj.sourate)}>Lire</button>
+                            <button onClick={() => open(idx, obj.sourate)}>Lire</button>
 
-                        <div style={indexSurat == obj.sourate ? { display: "block" } : { display: "none" }}>
+
+                        </div>
+
+                        <div style={indexSurat == obj.sourate ? {
+                            display: "block",
+                            position: "fixed",
+                            backgroundColor: "white",
+                            top: 0,
+                            height: "100vh",
+                            overflow: "auto"
+                        }
+                            : { display: "none" }}>
                             <button onClick={() => close()}>X</button>
                             <div>{obj.verset}</div>
 
@@ -91,6 +104,6 @@ export const Quran = () => {
             }
 
 
-        </div>
+        </div >
     )
 }

@@ -10,7 +10,8 @@
     text-align: left;
   }
   select {
-    color: #acc18a;
+    /*
+    color: white;
     font-size: 10px;
     text-align: left;
     appearance: none;
@@ -21,6 +22,16 @@
     background-color: var(--darkgray);
     background-image: none;
     cursor: pointer;
+*/
+    margin-top: 5px;
+    color: #aa75ff;
+    outline: 0;
+    border: 0;
+    background-color: white;
+    cursor: pointer;
+    width: 177px;
+    height: 20px;
+    border-radius: 4px;
   }
 
   .select {
@@ -34,17 +45,30 @@
 }
 @media (min-width: 0px) and (max-width: 621px) {
   .Pannel__div--container-times-today {
-    -webkit-box-shadow: -2px 5px 6px 1px rgba(0,0,0,0.26); 
-    box-shadow: -2px 5px 6px 1px rgba(0,0,0,0.26);
+    -webkit-box-shadow: -2px 5px 6px 1px rgba(0, 0, 0, 0.26);
+    box-shadow: -2px 5px 6px 1px rgba(0, 0, 0, 0.26);
+    -webkit-box-shadow: 4px 4px 17px -3px #5e5e5ead;
     width: 90%;
-    background-color: #605b56f0;
+    background-image: linear-gradient(
+      135deg,
+      #9147ff 0%,
+      #9a57ff 21%,
+      #9e61ff 30%,
+      #a46bff 39%,
+      #aa75ff 46%,
+      #b080ff 54%,
+      #b78aff 61%,
+      #bc8fff 69%,
+      #c299ff 79%,
+      #c69eff 100%
+    );
     margin: auto;
     text-align: center;
     border-radius: 8px;
     font-size: 12px;
 
     .localisation-marker-pannel {
-      color: #acc18a;
+      color: white;
     }
     .Pannel__div--container-times-today__div--title-container-angle-select {
       .Pannel__div--container-times-today__div--title__h2 {
@@ -82,10 +106,10 @@
 
       .Pannel__ul--hour-date-countdown__li--countdown-current-times {
         font-size: 15px;
-        color: #65d977;
+        color: #eaeaea;
       }
       .Pannel__ul--hour-date-countdown__li--countdown-next-times {
-        color: #92bfee;
+        color: white;
         font-size: 19px;
       }
     }
@@ -102,16 +126,28 @@
 
 @media (min-width: 622px) {
   .Pannel__div--container-times-today {
-    -webkit-box-shadow: -2px 5px 6px 1px rgba(0,0,0,0.26); 
-    box-shadow: -2px 5px 6px 1px rgba(0,0,0,0.26);
+    -webkit-box-shadow: -2px 5px 6px 1px rgba(0, 0, 0, 0.26);
+    box-shadow: -2px 5px 6px 1px rgba(0, 0, 0, 0.26);
     width: 90%;
-    background-color: #605b56f0;
+    background-image: linear-gradient(
+      135deg,
+      #9147ff 0%,
+      #9a57ff 21%,
+      #9e61ff 30%,
+      #a46bff 39%,
+      #aa75ff 46%,
+      #b080ff 54%,
+      #b78aff 61%,
+      #bc8fff 69%,
+      #c299ff 79%,
+      #c69eff 100%
+    );
     margin: 5% 5% 6% 5%;
     text-align: center;
     border-radius: 8px;
     font-size: 12px;
     .localisation-marker-pannel {
-      color: #acc18a;
+      color: white;
     }
     .Pannel__div--container-times-today__div--title-container-angle-select {
       .Pannel__div--container-times-today__div--title__h2 {
@@ -138,6 +174,7 @@
       list-style: none;
       margin: 0;
       padding: 12px;
+      margin-top: 45px;
       .Pannel__ul--hour-date-countdown__li--date {
         font-size: 10px;
       }
@@ -147,10 +184,10 @@
 
       .Pannel__ul--hour-date-countdown__li--countdown-current-times {
         font-size: 15px;
-        color: #65d977;
+        color: #eaeaea;
       }
       .Pannel__ul--hour-date-countdown__li--countdown-next-times {
-        color: #92bfee;
+        color: white;
         font-size: 19px;
       }
     }
@@ -166,16 +203,29 @@
 }
 @media (min-width: 830px) {
   .Pannel__div--container-times-today {
-    -webkit-box-shadow: -2px 5px 6px 1px rgba(0,0,0,0.26); 
-    box-shadow: -2px 5px 6px 1px rgba(0,0,0,0.26);
+    -webkit-box-shadow: 7px 6px 15px -3px #5e5e5ead;
+    box-shadow: 7px 6px 15px -3px #5e5e5ead;
+
     width: 90%;
-    background-color: #605b56f0;
+    background-image: linear-gradient(
+      135deg,
+      #9147ff 0%,
+      #9a57ff 21%,
+      #9e61ff 30%,
+      #a46bff 39%,
+      #aa75ff 46%,
+      #b080ff 54%,
+      #b78aff 61%,
+      #bc8fff 69%,
+      #c299ff 79%,
+      #c69eff 100%
+    );
     margin: 5% 5% 6% 5%;
     text-align: center;
     border-radius: 8px;
     font-size: 12px;
     .localisation-marker-pannel {
-      color: #acc18a;
+      color: white;
     }
     .Pannel__div--container-times-today__div--title-container-angle-select {
       .Pannel__div--container-times-today__div--title__h2 {
@@ -202,6 +252,7 @@
       list-style: none;
       margin: 0;
       padding: 12px;
+      margin-top: 45px;
       .Pannel__ul--hour-date-countdown__li--date {
         font-size: 13px;
       }
@@ -211,10 +262,10 @@
 
       .Pannel__ul--hour-date-countdown__li--countdown-current-times {
         font-size: 20px;
-        color: #65d977;
+        color: #eaeaea;
       }
       .Pannel__ul--hour-date-countdown__li--countdown-next-times {
-        color: #92bfee;
+        color: white;
         font-size: 26px;
       }
     }

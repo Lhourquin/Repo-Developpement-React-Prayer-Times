@@ -120,13 +120,23 @@ export const Calendar = ({
   const Location = useLocation();
   const [isCalendar, setIsCalendar] = useState(false);
 
-  useEffect(()=> {
-    if(Location.pathname === "/calendar"){
+  useEffect(() => {
+    if (Location.pathname === "/calendar") {
       setIsCalendar(true);
-    }else{
+    } else {
       setIsCalendar(false)
     }
-  }, [Location])
+  }, [Location]);
+
+  useEffect(() => {
+    let body = document.getElementsByTagName("body")[0];
+    if (clickedDisplayInfosMonth === true || displayTimesOfTheDateClicked === true) {
+      body.style.overflow = "hidden";
+    } else {
+      body.style.removeProperty("overflow");
+    }
+
+  }, [displayTimesOfTheDateClicked, clickedDisplayInfosMonth])
 
   return (
     <>
@@ -141,10 +151,38 @@ export const Calendar = ({
           }}
         >
           <div style={{ color: "black" }}>
-            <button className="closeTimesOfDates" onClick={closeTimesOfTheDate}>
+            <button className="closeTimesOfDates"
+              onClick={closeTimesOfTheDate}
+              style={
+                now >
+                  new Date(
+                    `${currentTimesOfTheDateClicked.date.gregorian.month.en} ${currentTimesOfTheDateClicked.date.gregorian.day}, ${currentTimesOfTheDateClicked.date.gregorian.year} 00:00:00`
+                  )
+                  ? { color: "#aa75ff" }
+                  : now ===
+                    new Date(
+                      `${currentTimesOfTheDateClicked.date.gregorian.month.en} ${currentTimesOfTheDateClicked.date.gregorian.day}, ${currentTimesOfTheDateClicked.date.gregorian.year} 00:00:00`
+                    ).setHours(0, 0, 0, 0)
+                    ? { color: "white" }
+                    : { color: "#aa75ff" }
+              }>
               <i className="fas fa-times-circle"></i>
             </button>
-            <div className="containerCurrentTimesClicked">
+            <div //className="containerCurrentTimesClicked"
+              className={
+                now >
+                  new Date(
+                    `${currentTimesOfTheDateClicked.date.gregorian.month.en} ${currentTimesOfTheDateClicked.date.gregorian.day}, ${currentTimesOfTheDateClicked.date.gregorian.year} 00:00:00`
+                  )
+                  ? "containerCurrentTimesClicked-passed"
+                  : now ===
+                    new Date(
+                      `${currentTimesOfTheDateClicked.date.gregorian.month.en} ${currentTimesOfTheDateClicked.date.gregorian.day}, ${currentTimesOfTheDateClicked.date.gregorian.year} 00:00:00`
+                    ).setHours(0, 0, 0, 0)
+                    ? "containerCurrentTimesClicked-today"
+                    : "containerCurrentTimesClicked-normal"
+              }
+            >
               <ul className="ClickedTimesList__ul-times-list">
                 <li className="ClickedTimesList__ul-times-list__li-date">
                   {currentTimesOfTheDateClicked.date.gregorian.date}
@@ -155,16 +193,16 @@ export const Calendar = ({
                 <li
                   className={
                     now >
-                    new Date(
-                      `${currentTimesOfTheDateClicked.date.gregorian.month.en} ${currentTimesOfTheDateClicked.date.gregorian.day}, ${currentTimesOfTheDateClicked.date.gregorian.year} 00:00:00`
-                    )
+                      new Date(
+                        `${currentTimesOfTheDateClicked.date.gregorian.month.en} ${currentTimesOfTheDateClicked.date.gregorian.day}, ${currentTimesOfTheDateClicked.date.gregorian.year} 00:00:00`
+                      )
                       ? "ClickedTimesList__ul-times-list__li-passed"
                       : now ===
                         new Date(
                           `${currentTimesOfTheDateClicked.date.gregorian.month.en} ${currentTimesOfTheDateClicked.date.gregorian.day}, ${currentTimesOfTheDateClicked.date.gregorian.year} 00:00:00`
                         ).setHours(0, 0, 0, 0)
-                      ? "ClickedTimesList__ul-times-list__li-today"
-                      : "ClickedTimesList__ul-times-list__li-normal"
+                        ? "ClickedTimesList__ul-times-list__li-today"
+                        : "ClickedTimesList__ul-times-list__li-normal"
                   }
                 >
                   FAJR {currentTimesOfTheDateClicked.timings.Fajr.substr(0, 6)}{" "}
@@ -174,16 +212,16 @@ export const Calendar = ({
                 <li
                   className={
                     now >
-                    new Date(
-                      `${currentTimesOfTheDateClicked.date.gregorian.month.en} ${currentTimesOfTheDateClicked.date.gregorian.day}, ${currentTimesOfTheDateClicked.date.gregorian.year} 00:00:00`
-                    )
+                      new Date(
+                        `${currentTimesOfTheDateClicked.date.gregorian.month.en} ${currentTimesOfTheDateClicked.date.gregorian.day}, ${currentTimesOfTheDateClicked.date.gregorian.year} 00:00:00`
+                      )
                       ? "ClickedTimesList__ul-times-list__li-passed"
                       : now ===
                         new Date(
                           `${currentTimesOfTheDateClicked.date.gregorian.month.en} ${currentTimesOfTheDateClicked.date.gregorian.day}, ${currentTimesOfTheDateClicked.date.gregorian.year} 00:00:00`
                         ).setHours(0, 0, 0, 0)
-                      ? "ClickedTimesList__ul-times-list__li-today"
-                      : "ClickedTimesList__ul-times-list__li-normal"
+                        ? "ClickedTimesList__ul-times-list__li-today"
+                        : "ClickedTimesList__ul-times-list__li-normal"
                   }
                 >
                   DHOHR{" "}
@@ -192,16 +230,16 @@ export const Calendar = ({
                 <li
                   className={
                     now >
-                    new Date(
-                      `${currentTimesOfTheDateClicked.date.gregorian.month.en} ${currentTimesOfTheDateClicked.date.gregorian.day}, ${currentTimesOfTheDateClicked.date.gregorian.year} 00:00:00`
-                    )
+                      new Date(
+                        `${currentTimesOfTheDateClicked.date.gregorian.month.en} ${currentTimesOfTheDateClicked.date.gregorian.day}, ${currentTimesOfTheDateClicked.date.gregorian.year} 00:00:00`
+                      )
                       ? "ClickedTimesList__ul-times-list__li-passed"
                       : now ===
                         new Date(
                           `${currentTimesOfTheDateClicked.date.gregorian.month.en} ${currentTimesOfTheDateClicked.date.gregorian.day}, ${currentTimesOfTheDateClicked.date.gregorian.year} 00:00:00`
                         ).setHours(0, 0, 0, 0)
-                      ? "ClickedTimesList__ul-times-list__li-today"
-                      : "ClickedTimesList__ul-times-list__li-normal"
+                        ? "ClickedTimesList__ul-times-list__li-today"
+                        : "ClickedTimesList__ul-times-list__li-normal"
                   }
                 >
                   ASR {currentTimesOfTheDateClicked.timings.Asr.substr(0, 6)}
@@ -209,16 +247,16 @@ export const Calendar = ({
                 <li
                   className={
                     now >
-                    new Date(
-                      `${currentTimesOfTheDateClicked.date.gregorian.month.en} ${currentTimesOfTheDateClicked.date.gregorian.day}, ${currentTimesOfTheDateClicked.date.gregorian.year} 00:00:00`
-                    )
+                      new Date(
+                        `${currentTimesOfTheDateClicked.date.gregorian.month.en} ${currentTimesOfTheDateClicked.date.gregorian.day}, ${currentTimesOfTheDateClicked.date.gregorian.year} 00:00:00`
+                      )
                       ? "ClickedTimesList__ul-times-list__li-passed"
                       : now ===
                         new Date(
                           `${currentTimesOfTheDateClicked.date.gregorian.month.en} ${currentTimesOfTheDateClicked.date.gregorian.day}, ${currentTimesOfTheDateClicked.date.gregorian.year} 00:00:00`
                         ).setHours(0, 0, 0, 0)
-                      ? "ClickedTimesList__ul-times-list__li-today"
-                      : "ClickedTimesList__ul-times-list__li-normal"
+                        ? "ClickedTimesList__ul-times-list__li-today"
+                        : "ClickedTimesList__ul-times-list__li-normal"
                   }
                 >
                   MAGHREB{" "}
@@ -227,16 +265,16 @@ export const Calendar = ({
                 <li
                   className={
                     now >
-                    new Date(
-                      `${currentTimesOfTheDateClicked.date.gregorian.month.en} ${currentTimesOfTheDateClicked.date.gregorian.day}, ${currentTimesOfTheDateClicked.date.gregorian.year} 00:00:00`
-                    )
+                      new Date(
+                        `${currentTimesOfTheDateClicked.date.gregorian.month.en} ${currentTimesOfTheDateClicked.date.gregorian.day}, ${currentTimesOfTheDateClicked.date.gregorian.year} 00:00:00`
+                      )
                       ? "ClickedTimesList__ul-times-list__li-passed"
                       : now ===
                         new Date(
                           `${currentTimesOfTheDateClicked.date.gregorian.month.en} ${currentTimesOfTheDateClicked.date.gregorian.day}, ${currentTimesOfTheDateClicked.date.gregorian.year} 00:00:00`
                         ).setHours(0, 0, 0, 0)
-                      ? "ClickedTimesList__ul-times-list__li-today"
-                      : "ClickedTimesList__ul-times-list__li-normal"
+                        ? "ClickedTimesList__ul-times-list__li-today"
+                        : "ClickedTimesList__ul-times-list__li-normal"
                   }
                 >
                   ICHA {currentTimesOfTheDateClicked.timings.Isha.substr(0, 6)}{" "}
@@ -261,16 +299,17 @@ export const Calendar = ({
           style={{
             background: "rgba(255,255,255,0.8)",
             width: "100%",
-            height: "100%",
+            height: "900px",
             top: "0",
             position: "absolute",
           }}
         >
           {" "}
-          <button className="closeInfosMonth" onClick={closeDisplayInfosMonth}>
-            <i className="fas fa-times-circle"></i>
-          </button>
+
           <div className="infos-hijri-month-container">
+            <button className="closeInfosMonth" onClick={closeDisplayInfosMonth}>
+              <i className="fas fa-times-circle"></i>
+            </button>
             <p>
               La date hégirienne n’est qu’à titre informative. Il faut s’en
               tenir aux annonces des organismes officiels et compétents pour
@@ -281,11 +320,11 @@ export const Calendar = ({
       ) : (
         ""
       )}
-      <div 
-      style={
-        isCalendar ? { transition : "9s" , opacity : "1"} : {transition : "0.2s" , opacity : "0", display : "none"}
-      }
-      className="calendar">
+      <div
+        style={
+          isCalendar ? { transition: "9s", opacity: "1" } : { transition: "0.2s", opacity: "0", display: "none" }
+        }
+        className="calendar">
         <div className="calendar-container-month-degreeSeclect">
           <div>
             <h2 className="calendar-title-month">
@@ -300,15 +339,15 @@ export const Calendar = ({
             </h2>
           </div>
           <div className="Calendar__div-container-span-select">
-            <span style={{ fontSize: "10px", color: "#605b56" }}>
-            <i className="fas fa-map-marker-alt localisation-marker-pannel"></i>{" "}
+            <span style={{ fontSize: "10px", color: "#aa75ff" }}>
+              <i className="fas fa-map-marker-alt localisation-marker-pannel"></i>{" "}
 
               {city.charAt(0).toUpperCase() + city.slice(1).toLowerCase()},{" "}
               {country.charAt(0).toUpperCase() + country.slice(1).toLowerCase()}
               <br></br>
               Angle :{" "}
               {selectedMethodStringValue === "" ||
-              selectedMethodStringValue === "Sélectionner un angle"
+                selectedMethodStringValue === "Sélectionner un angle"
                 ? "Amérique du Nord (15°)"
                 : selectedMethodStringValue}
             </span>

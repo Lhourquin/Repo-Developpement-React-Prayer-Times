@@ -13,6 +13,7 @@ export const TodayTimesList = ({
   dateIcha,
   dateMidnight,
   midnightTime,
+  dateIchaLastDay,
 }) => {
   const [displayHadith, setDisplayHadith] = useState(false);
   const [listOfHadith, setListOfHadith] = useState([
@@ -182,6 +183,16 @@ export const TodayTimesList = ({
     setDisplayHadith((boolean) => !boolean);
   };
   //console.log(dateMidnight)
+
+  useEffect(()=> {
+    let body = document.getElementsByTagName("body")[0];
+    if(displayHadith === true){
+      body.style.overflow = "hidden";
+    }else{
+      body.style.removeProperty("overflow");
+    }
+
+  },[displayHadith])
   return (
     <>
       {displayHadith === true ? (
@@ -189,17 +200,18 @@ export const TodayTimesList = ({
           style={{
             background: "rgba(255,255,255,0.8)",
             width: "100%",
-            height: "100%",
+            height: "900px",
             top: "0",
             position: "absolute",
             transition: "2s ease-in 3s",
           }}
         >
           {" "}
+         
+          <div className="hadith-container">
           <button className="closeHadith" onClick={closeHadith}>
             <i className="fas fa-times-circle"></i>
           </button>
-          <div className="hadith-container">
             <div className="hadith-container-current">
               <h2 className="hadith-container-current-title">
                 {currentHadith.title}
@@ -223,13 +235,17 @@ export const TodayTimesList = ({
           <li
             className="TodayTimesList__ul-times-list__li"
             style={
-              now < dateFajr
-                ? { backgroundColor: "#92bfee", color: "#605b56" } /**Next */
+              now < dateFajr && now > dateMidnight
+                ? { backgroundColor: "#eaeaea", color: "#aa75ff" } /**Next */
                 : now > dateFajr && now < dateShourouq
-                ? { backgroundColor: "#605b56", color: "#65d977" } /**Current */
-                : {
-                    backgroundColor: "#a9c18a8a",
-                    color: "#605b568f",
+                  ? {
+                    backgroundImage: "linear-gradient(135deg, #9147ff 0%, #9a57ff 21%, #9e61ff 30%, #a46bff 39%, #aa75ff 46%, #b080ff 54%, #b78aff 61%, #bc8fff 69%, #c299ff 79%, #c69eff 100%)"
+                    , boxShadow: "4px 4px 17px -3px #5e5e5ead"
+                    , color: "white"
+                  } /**Current */
+                  : {
+                    backgroundColor: "#eaeaea",
+                    color: "#aa75ff4f",
                   } /**Passed */
             }
           >
@@ -250,15 +266,19 @@ export const TodayTimesList = ({
             className="TodayTimesList__ul-times-list__li"
             style={
               now > dateShourouq && now < dateDhohr
-              ? { backgroundColor: "#92bfee", color: "#605b56" } /**Next */
-              : now > dateDhohr && now < dateAsr
-              ? { backgroundColor: "#605b56", color: "#65d977" } /**Current */
-              : now > dateAsr 
-              ?  {
-                backgroundColor: "#a9c18a8a",
-                color: "#605b568f",
-              } /**Passed */
-              : {}
+                ? { backgroundColor: "#eaeaea", color: "#aa75ff" } /**Next */
+                : now > dateDhohr && now < dateAsr
+                  ? {
+                    backgroundImage: "linear-gradient(135deg, #9147ff 0%, #9a57ff 21%, #9e61ff 30%, #a46bff 39%, #aa75ff 46%, #b080ff 54%, #b78aff 61%, #bc8fff 69%, #c299ff 79%, #c69eff 100%)"
+                    , boxShadow: "4px 4px 17px -3px #5e5e5ead"
+                    , color: "white"
+                  } /**Current */
+                  : now > dateAsr
+                    ? {
+                      backgroundColor: "#eaeaea",
+                      color: "#aa75ff4f",
+                    } /**Passed */
+                    : {}
             }
           >
             <span>DHOHR {obj.data.timings.Dhuhr} </span>{" "}
@@ -275,15 +295,19 @@ export const TodayTimesList = ({
             className="TodayTimesList__ul-times-list__li"
             style={
               now > dateDhohr && now < dateAsr
-                ? { backgroundColor: "#92bfee", color: "#605b56" } /**Next */
+                ? { backgroundColor: "#eaeaea", color: "#aa75ff" } /**Next */
                 : now > dateAsr && now < dateMaghreb
-                ? { backgroundColor: "#605b56", color: "#65d977" } /**Current */
-                : now > dateMaghreb
-                ? {
-                    backgroundColor: "#a9c18a8a",
-                    color: "#605b568f",
-                  } /**Passed */
-                : {}
+                  ? {
+                    backgroundImage: "linear-gradient(135deg, #9147ff 0%, #9a57ff 21%, #9e61ff 30%, #a46bff 39%, #aa75ff 46%, #b080ff 54%, #b78aff 61%, #bc8fff 69%, #c299ff 79%, #c69eff 100%)"
+                    , boxShadow: "4px 4px 17px -3px #5e5e5ead"
+                    , color: "white"
+                  } /**Current */
+                  : now > dateMaghreb
+                    ? {
+                      backgroundColor: "#eaeaea",
+                      color: "#aa75ff4f",
+                    } /**Passed */
+                    : {}
             }
           >
             <span>
@@ -302,15 +326,19 @@ export const TodayTimesList = ({
             className="TodayTimesList__ul-times-list__li"
             style={
               now > dateAsr && now < dateMaghreb
-                ? { backgroundColor: "#92bfee", color: "#605b56" } /**Next */
+                ? { backgroundColor: "#eaeaea", color: "#aa75ff" } /**Next */
                 : now > dateMaghreb && now < dateIcha
-                ? { backgroundColor: "#605b56", color: "#65d977" } /**Current */
-                : now > dateIcha
-                ? {
-                    backgroundColor: "#a9c18a8a",
-                    color: "#605b568f",
-                  } /**Passed */
-                : {}
+                  ? {
+                    backgroundImage: "linear-gradient(135deg, #9147ff 0%, #9a57ff 21%, #9e61ff 30%, #a46bff 39%, #aa75ff 46%, #b080ff 54%, #b78aff 61%, #bc8fff 69%, #c299ff 79%, #c69eff 100%)"
+                    , boxShadow: "4px 4px 17px -3px #5e5e5ead"
+                    , color: "white"
+                  } /**Current */
+                  : now > dateIcha
+                    ? {
+                      backgroundColor: "#eaeaea",
+                      color: "#aa75ff4f",
+                    } /**Passed */
+                    : {}
             }
           >
             <span>MAGHREB {obj.data.timings.Maghrib} </span>{" "}
@@ -327,14 +355,18 @@ export const TodayTimesList = ({
             className="TodayTimesList__ul-times-list__li "
             style={
               now > dateMaghreb && now < dateIcha
-                ? { backgroundColor: "#92bfee", color: "#605b56" } /**Next */
-                : now > dateIcha && now < dateMidnight
-                ? { backgroundColor: "#605b56", color: "#65d977" } /**Current */
-                : {} /**passed */
+                ? { backgroundColor: "#eaeaea", color: "#aa75ff" } /**Next */
+                : now > dateIcha && now < dateMidnight || now > dateIchaLastDay && now < dateMidnight
+                  ? {
+                    backgroundImage: "linear-gradient(135deg, #9147ff 0%, #9a57ff 21%, #9e61ff 30%, #a46bff 39%, #aa75ff 46%, #b080ff 54%, #b78aff 61%, #bc8fff 69%, #c299ff 79%, #c69eff 100%)"
+                    , boxShadow: "4px 4px 17px -3px #5e5e5ead"
+                    , color: "white"
+                  } /**Current */
+                  : {} /**passed */
             }
           >
             <span>
-              ICHA {obj.data.timings.Isha} - MINUIT {midnightTime}
+              ICHA {obj.data.timings.Isha} - MI-NUIT {midnightTime}
             </span>{" "}
             <span className="TodayTimesList__ul-times-list__li__span--information">
               {" "}

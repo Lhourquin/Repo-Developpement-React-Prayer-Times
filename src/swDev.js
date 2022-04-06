@@ -36,6 +36,8 @@ self.addEventListener("fetch", (event) => {
 });
 
 */
+
+
 /*
 export default function swDev() {
   let swURL = `${process.env.PUBLIC_URL}/sw.js`;
