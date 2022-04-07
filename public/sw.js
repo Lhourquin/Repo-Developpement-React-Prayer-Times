@@ -136,7 +136,7 @@ self.addEventListener('fetch', function(e) {
 
 
 
-/*
+
 ////////////////////////////////////
 
 // test 15 mars 22h
@@ -213,4 +213,3 @@ self.addEventListener("activate", (event) => {
 
   clients.claim();
 });
-*/

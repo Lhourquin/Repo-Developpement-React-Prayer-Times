@@ -38,7 +38,7 @@ self.addEventListener("fetch", (event) => {
 */
 
 
-/*
+
 export default function swDev() {
   let swURL = `${process.env.PUBLIC_URL}/sw.js`;
   navigator.serviceWorker
@@ -49,4 +49,3 @@ export default function swDev() {
     .catch((err) => console.log("error : " + err));
 }
 
-*/

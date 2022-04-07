@@ -5,52 +5,56 @@ import "./NavBar.css";
 export const NavBar = () => {
   const [buttonBurgerIsClicked, setButtonBurgerIsClicked] = useState(false);
 
-  const handleNavButtonBurgerClick = () => {
-    setButtonBurgerIsClicked((isFalse) => !isFalse);
-  };
-
-  useEffect(()=> {
-    let btnLocation= document.getElementsByClassName('button-location')[0];
+  useEffect(() => {
+    let btnLocation = document.getElementsByClassName('button-location')[0];
     let btnInfos = document.getElementsByClassName("TodayTimesList__ul-times-list__li__span--information");
-    if(buttonBurgerIsClicked === true){
-      btnLocation.style.opacity = "0"
+    if (buttonBurgerIsClicked === true) {
+      btnLocation.style.opacity = "0";
       btnLocation.style.pointerEvents = "none";
-      btnInfos[0].style.pointerEvents = "none";
-      btnInfos[1].style.pointerEvents = "none";
-      btnInfos[2].style.pointerEvents = "none";
-      btnInfos[3].style.pointerEvents = "none";
-      btnInfos[4].style.pointerEvents = "none";
-      btnInfos[0].style.opacity = "0";
-      btnInfos[1].style.opacity = "0"
-      btnInfos[2].style.opacity = "0"
-      btnInfos[3].style.opacity = "0"
-      btnInfos[4].style.opacity = "0"
-    }else if(buttonBurgerIsClicked === false){
+      if (btnInfos.length != 0) {
+        btnInfos[0].style.pointerEvents = "none";
+        btnInfos[1].style.pointerEvents = "none";
+        btnInfos[2].style.pointerEvents = "none";
+        btnInfos[3].style.pointerEvents = "none";
+        btnInfos[4].style.pointerEvents = "none";
+        btnInfos[0].style.opacity = "0";
+        btnInfos[1].style.opacity = "0";
+        btnInfos[2].style.opacity = "0";
+        btnInfos[3].style.opacity = "0";
+        btnInfos[4].style.opacity = "0";
+        btnInfos[0].style.transition = "1s";
+        btnInfos[1].style.transition = "1s";
+        btnInfos[2].style.transition = "1s";
+        btnInfos[3].style.transition = "1s";
+        btnInfos[4].style.transition = "1s";
+      }
+
+    } else if (buttonBurgerIsClicked === false) {
+      console.log(btnInfos)
       //btnLocation.style.remove
-      btnLocation.style.pointerEvents = "";
+      btnLocation.style.pointerEvents = "auto";
       btnLocation.style.opacity = "1";
       btnLocation.style.transition = "0.9s";
-      btnInfos[0].style.pointerEvents = "";
-      btnInfos[1].style.pointerEvents = "";
-      btnInfos[2].style.pointerEvents = "";
-      btnInfos[3].style.pointerEvents = "";
-      btnInfos[4].style.pointerEvents = "";
-      btnInfos[0].style.opacity = "1";
-      btnInfos[1].style.opacity = "1"
-      btnInfos[2].style.opacity = "1"
-      btnInfos[3].style.opacity = "1"
-      btnInfos[4].style.opacity = "1"
-      btnInfos[0].style.transition = "1s";
-      btnInfos[1].style.transition = "1s"
-      btnInfos[2].style.transition = "1s"
-      btnInfos[3].style.transition = "1s"
-      btnInfos[4].style.transition = "1s"
-      
-
-
+      if (btnInfos.length != 0) {
+        btnInfos[0].style.pointerEvents = "auto";
+        btnInfos[1].style.pointerEvents = "auto";
+        btnInfos[2].style.pointerEvents = "auto";
+        btnInfos[3].style.pointerEvents = "auto";
+        btnInfos[4].style.pointerEvents = "auto";
+        btnInfos[0].style.opacity = "1";
+        btnInfos[1].style.opacity = "1";
+        btnInfos[2].style.opacity = "1";
+        btnInfos[3].style.opacity = "1";
+        btnInfos[4].style.opacity = "1";
+        btnInfos[0].style.transition = "1s";
+        btnInfos[1].style.transition = "1s";
+        btnInfos[2].style.transition = "1s";
+        btnInfos[3].style.transition = "1s";
+        btnInfos[4].style.transition = "1s";
+      }
 
     }
-  },[buttonBurgerIsClicked])
+  }, [buttonBurgerIsClicked])
 
 
 
@@ -61,8 +65,8 @@ export const NavBar = () => {
       {console.log(buttonBurgerIsClicked)}
       <div className="navbar">
         <div className="container nav-container">
-          <input className="checkbox" type="checkbox" name="" id="" 
-          onClick={()=> setButtonBurgerIsClicked((isFalse) => !isFalse)}/>
+          <input className="checkbox" type="checkbox" name="" id=""
+            onClick={() => setButtonBurgerIsClicked((isFalse) => !isFalse)} />
           <div className="hamburger-lines">
             <span className="line line1"></span>
             <span className="line line2"></span>
@@ -73,7 +77,7 @@ export const NavBar = () => {
           </div>
           <div className="menu-items">
             <li><Link
-            to="/"
+              to="/"
             >
 
               <strong>Acceuil</strong>
