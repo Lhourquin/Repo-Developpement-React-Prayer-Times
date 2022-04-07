@@ -51,7 +51,9 @@ export const Pannel = ({
               {country.charAt(0).toUpperCase() + country.slice(1).toLowerCase()}
             </h2>
             <div className="Pannel__container-select-degree">
-              <span style={{ fontSize: "10px" }}>
+              <span style={{ fontSize: "10px" ,
+                color: "white",
+                fontWeight: 900}}>
                 Angle :{" "}
                 {selectedMethodStringValue === "Sélectionner un angle" ||
                 selectedMethodStringValue === ""

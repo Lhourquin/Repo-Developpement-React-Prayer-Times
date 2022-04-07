@@ -356,7 +356,7 @@ export const TodayTimesList = ({
             style={
               now > dateMaghreb && now < dateIcha
                 ? { backgroundColor: "#eaeaea", color: "#aa75ff" } /**Next */
-                : now > dateIcha && now < dateMidnight || now > dateIchaLastDay && now < dateMidnight
+                : now > dateIcha && now < dateMidnight || now > dateIchaLastDay && now < dateMidnight && now < dateFajr
                   ? {
                     backgroundImage: "linear-gradient(135deg, #9147ff 0%, #9a57ff 21%, #9e61ff 30%, #a46bff 39%, #aa75ff 46%, #b080ff 54%, #b78aff 61%, #bc8fff 69%, #c299ff 79%, #c69eff 100%)"
                     , boxShadow: "4px 4px 17px -3px #5e5e5ead"
