@@ -14,6 +14,7 @@ export const TodayTimesList = ({
   dateMidnight,
   midnightTime,
   dateIchaLastDay,
+  buttonBurgerIsClicked
 }) => {
   const [displayHadith, setDisplayHadith] = useState(false);
   const [listOfHadith, setListOfHadith] = useState([
@@ -184,15 +185,41 @@ export const TodayTimesList = ({
   };
   //console.log(dateMidnight)
 
-  useEffect(()=> {
+  useEffect(() => {
     let body = document.getElementsByTagName("body")[0];
-    if(displayHadith === true){
+    if (displayHadith === true) {
       body.style.overflow = "hidden";
-    }else{
+    } else {
       body.style.removeProperty("overflow");
     }
 
-  },[displayHadith])
+  }, [displayHadith])
+
+  useEffect(() => {
+    let btnInfos = document.getElementsByClassName("TodayTimesList__ul-times-list__li__span--information");
+    let timer = setTimeout(() => {
+      if (buttonBurgerIsClicked === true && btnInfos.length !== 0) {
+        btnInfos[0].style.pointerEvents = "none";
+        btnInfos[1].style.pointerEvents = "none";
+        btnInfos[2].style.pointerEvents = "none";
+        btnInfos[3].style.pointerEvents = "none";
+        btnInfos[4].style.pointerEvents = "none";
+        btnInfos[0].style.opacity = "0";
+        btnInfos[1].style.opacity = "0";
+        btnInfos[2].style.opacity = "0";
+        btnInfos[3].style.opacity = "0";
+        btnInfos[4].style.opacity = "0";
+        btnInfos[0].style.transition = "0.8s";
+        btnInfos[1].style.transition = "0.8s";
+        btnInfos[2].style.transition = "0.8s";
+        btnInfos[3].style.transition = "0.8s";
+        btnInfos[4].style.transition = "0.8s";
+      }
+    },100);
+
+    return () => clearTimeout(timer);
+
+  }, [buttonBurgerIsClicked])
   return (
     <>
       {displayHadith === true ? (
@@ -207,11 +234,11 @@ export const TodayTimesList = ({
           }}
         >
           {" "}
-         
+
           <div className="hadith-container">
-          <button className="closeHadith" onClick={closeHadith}>
-            <i className="fas fa-times-circle"></i>
-          </button>
+            <button className="closeHadith" onClick={closeHadith}>
+              <i className="fas fa-times-circle"></i>
+            </button>
             <div className="hadith-container-current">
               <h2 className="hadith-container-current-title">
                 {currentHadith.title}
@@ -256,7 +283,7 @@ export const TodayTimesList = ({
             <span className="TodayTimesList__ul-times-list__li__span--information">
               {" "}
               <i
-                style={displayHadith ? { opacity: "0.1" } : {}}
+                style={displayHadith ? { opacity: "0.1", pointerEvents: "none" } : {}}
                 className="fas fa-info-circle info-icons"
                 onClick={() => toggleDisplay(1)}
               ></i>
@@ -285,7 +312,7 @@ export const TodayTimesList = ({
             <span className="TodayTimesList__ul-times-list__li__span--information">
               {" "}
               <i
-                style={displayHadith ? { opacity: "0.1" } : {}}
+                style={displayHadith ? { opacity: "0.1", pointerEvents: "none" } : {}}
                 className="fas fa-info-circle info-icons"
                 onClick={() => toggleDisplay(2)}
               ></i>
@@ -316,7 +343,7 @@ export const TodayTimesList = ({
             <span className="TodayTimesList__ul-times-list__li__span--information">
               {" "}
               <i
-                style={displayHadith ? { opacity: "0.1" } : {}}
+                style={displayHadith ? { opacity: "0.1", pointerEvents: "none" } : {}}
                 className="fas fa-info-circle info-icons"
                 onClick={() => toggleDisplay(3)}
               ></i>
@@ -345,7 +372,7 @@ export const TodayTimesList = ({
             <span className="TodayTimesList__ul-times-list__li__span--information">
               {" "}
               <i
-                style={displayHadith ? { opacity: "0.1" } : {}}
+                style={displayHadith ? { opacity: "0.1", pointerEvents: "none" } : {}}
                 className="fas fa-info-circle info-icons"
                 onClick={() => toggleDisplay(4)}
               ></i>
@@ -371,7 +398,7 @@ export const TodayTimesList = ({
             <span className="TodayTimesList__ul-times-list__li__span--information">
               {" "}
               <i
-                style={displayHadith ? { opacity: "0.1" } : {}}
+                style={displayHadith ? { opacity: "0.1", pointerEvents: "none" } : {}}
                 className="fas fa-info-circle info-icons"
                 onClick={() => toggleDisplay(5)}
               ></i>

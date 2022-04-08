@@ -12,6 +12,7 @@ export const Today = ({
   getAngleOptionValue,
   method,
   selectedMethodStringValue,
+  buttonBurgerIsClicked
 }) => {
   const [today, setToday] = useState([]);
   const [inputCity, setInputCity] = useState("");
@@ -242,6 +243,7 @@ export const Today = ({
         }
         className="Today__div--container-list-pannel">
         <TodayTimesList
+        buttonBurgerIsClicked={buttonBurgerIsClicked}
           today={today}
           now={now}
           dateFajr={dateFajr}

@@ -286,10 +286,16 @@ const App = () => {
 
   console.log(dataMasjid);
   console.log(newCity)
+
+  const [buttonBurgerIsClicked, setButtonBurgerIsClicked] = useState(false);
+
   return (
     <>
       <header>
-        <NavBar />
+        <NavBar
+        buttonBurgerIsClicked={buttonBurgerIsClicked}
+        setButtonBurgerIsClicked={setButtonBurgerIsClicked}
+         />
         <SearchBar
           inputCity={inputCityValue}
           inputCountry={inputCountryValue}
@@ -351,6 +357,7 @@ const App = () => {
             <>
               <NavBarTodayAndMounth />
               <Today
+                      buttonBurgerIsClicked={buttonBurgerIsClicked}
                 city={city}
                 country={country}
                 method={method}
