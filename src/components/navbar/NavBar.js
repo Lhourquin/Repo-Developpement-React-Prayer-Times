@@ -101,7 +101,7 @@ export const NavBar = ({buttonBurgerIsClicked, setButtonBurgerIsClicked}) => {
             </Link>
 
             </li>
-            <li>
+           { /*<li>
 
               <Link
                 to="/masjid"
@@ -110,7 +110,7 @@ export const NavBar = ({buttonBurgerIsClicked, setButtonBurgerIsClicked}) => {
 
               </Link>
 
-            </li>
+            </li>*/}
             <li>
 
               <Link

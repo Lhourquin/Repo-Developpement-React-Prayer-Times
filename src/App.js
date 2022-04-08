@@ -440,7 +440,7 @@ const App = () => {
           />
         </Route>
 
-        <Route
+        {/*<Route
           path="/masjid"
 
           element={
@@ -450,7 +450,7 @@ const App = () => {
               country={country}
             />
           }
-        />
+        />*/}
 
 <Route
           path="/quran"
