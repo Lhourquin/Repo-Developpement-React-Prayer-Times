@@ -3,16 +3,15 @@ import "./Quran.css";
 
 export const Quran = ({ surat }) => {
 
-    localStorage.setItem("Quran", JSON.stringify(surat))
 
     const [sourate, setSOurate] = useState(JSON.parse(localStorage.getItem("Quran") || "[]"))
 
-    useEffect(()=> {
+    useEffect(() => {
         setSOurate(JSON.parse(localStorage.getItem("Quran") || "[]"))
     }, [surat])
 
     const [indexSurat, setIndexSurat] = useState(0);
- 
+
     const open = (index, objSourate) => {
         let number = index + 1;
         console.log(number == objSourate);
@@ -85,7 +84,17 @@ export const Quran = ({ surat }) => {
                                 <div className="surat-title-number"> {obj.id} {obj.sourate}</div>
 
 
-                                <div className="surat-content">{obj.verset}</div>
+                                <div className="surat-content">
+                                    {obj.verset.map((x) => <div className="surat-aya">
+                                        <p className="aya-number">{x.ayaNumber}</p>
+                                        <p className="aya-arabic" >{x.ayaArabic}</p>
+
+                                        <p className="aya-translate">{x.ayaTranslate}</p>
+                                    </div>)
+                                        /*   */
+                                    }
+
+                                </div>
 
 
                             </div>

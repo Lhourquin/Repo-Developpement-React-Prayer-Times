@@ -363,19 +363,29 @@ const App = () => {
         arrayOfSurat.push({
           id: Number(quran[i][0].sura),
           sourate: suratName[Number(quran[i][0].sura) - 1],
-          verset: quran[i].map((x, id) => <div key={id} className="surat-aya">
+          verset: quran[i].map((x) =>/* <div key={id} className="surat-aya">
             <p className="aya-number">{x.aya}</p>
             <p className="aya-arabic" >{x.arabic_text}</p>
 
             <p className="aya-translate">{x.translation}</p>
-          </div>
+          </div>*/ {
+            return {
+              ayaNumber: x.aya,
+              ayaArabic: x.arabic_text,
+              ayaTranslate: x.translation
+            }
+
+
+          }
+
           )
         })
 
       }
       //  console.log(arrayOfSurat)
       arrayOfSurat.sort((a, b) => a.id - b.id)
-      setSurat(arrayOfSurat)
+      localStorage.setItem("Quran", JSON.stringify(arrayOfSurat))
+      setSurat(JSON.parse(localStorage.getItem("Quran") || "[]"))
 
 
     }, 1000)
@@ -385,11 +395,11 @@ const App = () => {
 
   }, [quran])
 
-   useEffect(() => {
-      
-       console.log(surat)
-       
-    }, [surat])
+  useEffect(() => {
+
+    console.log(surat)
+
+  }, [surat])
 
 
   //console.log(surat)
