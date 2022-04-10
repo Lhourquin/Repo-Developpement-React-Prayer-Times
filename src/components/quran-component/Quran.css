@@ -1,3 +1,14 @@
+.quran-title {
+  color: #aa75ff;
+  margin: 50px;
+  display: block;
+  text-align: center;
+}
+
+.quran-title span {
+  font-size: 14px;
+}
+
 .container-quran {
   text-align: center;
   margin: auto;

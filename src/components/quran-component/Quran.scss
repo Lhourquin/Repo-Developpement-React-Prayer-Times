@@ -1,3 +1,12 @@
+.quran-title {
+  color: #aa75ff;
+  margin: 50px;
+  display: block;
+  text-align: center;
+  span{
+    font-size : 14px
+  }
+}
 .container-quran {
   text-align: center;
   margin: auto;
@@ -13,35 +22,32 @@
     font-size: 14px;
     padding-top: 5px;
   }
-  .surat-title-number{
+  .surat-title-number {
     margin: 30px;
     font-size: 20px;
   }
-  .surat-content{
-      margin-top: 30px;
-      border-bottom: 1px solid;
-      
+  .surat-content {
+    margin-top: 30px;
+    border-bottom: 1px solid;
   }
-  .surat-aya{
-      border-bottom: 1px solid;
-      width: 100%;
-      margin: 0;
-      text-align: center;
-      .aya-number{
-          font-size: 16px;
-       
-      }
-      .aya-arabic{
-          font-size : 28px;
-          width: 80%;
-          margin : auto;
-      }
-      .aya-translate{
-          font-size : 15px;
-          width: 80%;
-          margin : auto;
-      }
-    
+  .surat-aya {
+    border-bottom: 1px solid;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    .aya-number {
+      font-size: 16px;
+    }
+    .aya-arabic {
+      font-size: 28px;
+      width: 80%;
+      margin: auto;
+    }
+    .aya-translate {
+      font-size: 15px;
+      width: 80%;
+      margin: auto;
+    }
   }
   .container-surat {
     height: 100px;
@@ -55,7 +61,7 @@
     font-weight: 900;
     cursor: pointer;
   }
-  .return{
+  .return {
     display: block;
     position: fixed;
     background: none;
@@ -64,6 +70,6 @@
     font: inherit;
     cursor: pointer;
     outline: inherit;
-    font-size: 30px
+    font-size: 30px;
   }
 }

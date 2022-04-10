@@ -213,138 +213,195 @@ const App = () => {
     };
   }, [city, country, methodValue, isOnLine]);
 
-  /* const [JSONTodayTimesSalat, setJSONTodayTimesSalat] = useState("");
-
-  useEffect(() => {
-    setJSONTodayTimesSalat(
-      localStorage.setItem("TodayTimes", JSON.stringify(todayTest))
-    );
-  },[todayTest]);
-
-  const [todayTimesSalat, setTodayTimesSalat] = useState("");
-
-  useEffect(() => {
-    setTodayTimesSalat(JSON.parse(localStorage.getItem("TodayTimes") || "[]"));
-  }, [JSONTodayTimesSalat]);*/
-  //console.log(isOnLine);
-
-  function submitChannel(cityInputClient) {
-    fetch("http://localhost:8000/mosques", {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ cityInputClient }),
-    })
-      .then((response) => {
-        return response.json()
-      })
-      .then((data) => {
-        console.log('Succes : ', data);
-      })
-      .catch((err) => {
-        console.error('Error: ', err)
-
-      });
-    console.log(cityInputClient)
-
-  }
-
-  const [newCity, setNewCity] = useState("")
-  useEffect(() => {
-    if (city && country) {
-
-      submitChannel(city);
-      setNewCity(city);
-    }
-  }, [city, country]);
-
-  const [dataMasjid, setDataMasjid] = useState([]);
-  async function loadCitys() {
-     /* const res =*/await fetch("http://localhost:8000/mosques")
-      .then((response) => response.json())
-      .then((mosques) => setDataMasjid(mosques)
-      )
-      //  .then((result)=> console.log(result))
-      .catch(err => console.log(err));
-    // const mosques = await res.json();
-    // const container = document.querySelector(".container");
-    //   const card = newElements("div", { class: "card" });
-    //container.appendChild(card);
-
-    // console.log(mosques);
-  }
-
-  useEffect(() => {
-
-      loadCitys();
-      // setDataSend("Await")
-    
-
-  }, [newCity])
-
-  console.log(dataMasjid);
-  console.log(newCity)
-
   const [buttonBurgerIsClicked, setButtonBurgerIsClicked] = useState(false);
+
+  const [surat, setSurat] = useState([]);
+  const [quran, setQuran] = useState([]);
+  const [suratName, setSuratName] = useState([
+    ["Prologue (Al-Fatiha)."],
+    ["La vache (Al-Baqarah)."],
+    ["La famille d'Imran (Al-Imran)."],
+    ["Les femmes (An-Nisa')."],
+    ["La table servie (Al-Maidah)."],
+    ["Les bestiaux (Al-Anam)."],
+    ["Al-Araf."],
+    ["Le butin (Al-Anfal)."],
+    ["Le repentir (At-Tawbah)."],
+    ["Jonas (Yunus)."],
+    ["Hud."],
+    ["Joseph (Yusuf)."],
+    ["Le tonnerre (Ar-Raad)."],
+    ["Abraham (Ibrahim)."],
+    ["Al-Hijr."],
+    ["Les abeilles (An-Nahl)."],
+    ["Le voyage nocturne (Al-Isra)."],
+    ["La caverne (Al-Kahf)."],
+    ["Marie (Maryam)."],
+    ["Ta-Ha."],
+    ["Les prophètes (Al-Anbiya)."],
+    ["Le pélerinage (Al-Hajj)."],
+    ["Les croyants (Al-Muminune)."],
+    ["La lumière (An-Nur)."],
+    ["Le discernement (Al Furqane)."],
+    ["Les poètes (As-Shuaraa)."],
+    ["Les fourmis (An-Naml)."],
+    ["Le récit (Al-Qasas)."],
+    ["L'araignée (Al-Ankabut)."],
+    ["Les romains (Ar-Rum)."],
+    ["Luqman."],
+    ["La prosternation (As-Sajda)."],
+    ["Les coalisés (Al-Ahzab)."],
+    ["Saba."],
+    ["Le Créateur (Fatir)."],
+    ["Ya-Sin."],
+    ["Les rangés (As-Saffat)."],
+    ["Sad."],
+    ["Les groupes (Az-Zumar)."],
+    ["Le pardonneur (Gafir)."],
+    ["Les versets détaillés (Fussilat)."],
+    ["La consultation (Achoura)."],
+    ["L'ornement (Azzukhruf)."],
+    ["La fumée (Ad-Dukhan)."],
+    ["L'agenouillée (Al-Jathya)."],
+    ["Al-Ahqaf."],
+    ["Muhammad."],
+    ["La victoire éclatante (Al-Fath)."],
+    ["Les appartements (Al-Hujurat)."],
+    ["Qaf."],
+    ["Qui éparpillent (Ad-Dariyat)."],
+    ["At-Tur."],
+    ["L'étoile (An-Najm)."],
+    ["La lune (Al-Qamar)."],
+    ["Le Tout Miséricordieux (Ar-Rahman)."],
+    ["L'événement (Al-Waqi'a)."],
+    ["Le fer (Al-Hadid)."],
+    ["La discussion (Al-Mujadalah)."],
+    ["L'exode (Al-Hasr)."],
+    ["L'éprouvée (Al-Mumtahanah)."],
+    ["Le rang (As-Saff)."],
+    ["Le vendredi (Al-Jumua)."],
+    ["Les hypocrites (Al-Munafiqun)."],
+    ["La grande perte (At-Tagabun)."],
+    ["Le divorce (At-Talaq)."],
+    ["L'interdiction (At-Tahrim)."],
+    ["La royauté (Al-Mulk)."],
+    ["La plume (Al-Qalam)."],
+    ["Celle qui montre la vérité (Al- Haqqah)."],
+    ["Les voies d'ascension (Al- Maarij)."],
+    ["Noé (Nuh)."],
+    ["Les djinns (Al-Jinn)."],
+    ["L'enveloppé (Al-Muzzamil)."],
+    ["Le revêtu d'un manteau (Al-Muddattir)."],
+    ["La résurrection (Al-Qiyamah)."],
+    ["L'homme (Al-Insan)."],
+    ["Les envoyés (Al-Mursalate)."],
+    ["La nouvelle (An-Naba)."],
+    ["Les anges qui arrachent les âmes (An-Naziate)."],
+    ["Il s'est renfrogné (Abasa)."],
+    ["L'obscurcissement (At-Takwir)."],
+    ["La rupture (Al-Infitar)."],
+    ["Les fraudeurs (Al-Mutaffifune)."],
+    ["La déchirure (Al-Insiqaq)."],
+    ["Les constellations (Al-Buruj)."],
+    ["L'astre nocturne (At-Tariq)."],
+    ["Le Très-Haut (Al-Ala)."],
+    ["L'enveloppante (Al-Gasiyah)."],
+    ["L'aube (Al-Fajr)."],
+    ["La cité (Al-Balad)."],
+    ["Le soleil (Ach-Chams)."],
+    ["La nuit (Al-Layl)."],
+    ["Le jour montant (Ad-Duha)."],
+    ["L'ouverture (As-Sarh)."],
+    ["Le figuier (At-Tin)."],
+    ["L'adhérence (Al-Alaq)."],
+    ["La Destinée (Al-Qadr)."],
+    ["La preuve (Al-Bayyinah)."],
+    ["La secousse (Az-Zalzalah)."],
+    ["Les coursiers (Al-Adiyate)."],
+    ["Le fracas (Al-Qariah)."],
+    ["La course aux richesses (At-Takatur)."],
+    ["Le temps (Al-Asr)."],
+    ["Les calomniateurs (Al-Humazah)."],
+    ["L'éléphant (Al-Fil)."],
+    ["Qoraïsh."],
+    ["L'ustensile (Al-Maun)."],
+    ["L'abondance (Al-Kawtar)."],
+    ["Les infidèles (Al-Kafirune)."],
+    ["Les secours (An-Nasr)."],
+    ["Les fibres (Al-Masad)."],
+    ["Le monothéisme pur (Al-Ihlas)."],
+    ["L'aube naissante (Al-Falaq)."],
+    ["Les hommes (An-Nas)."],
+  ])
+
+  const getQuran = (number) => {
+    let arr = [];
+    for (let i = 1; i < number; i++) {
+
+      fetch(`https://quranenc.com/api/translation/sura/french_hameedullah/${i}`)
+        .then(response => response.json())
+        .then((result) => {
+
+          arr.push(result.result);
+
+          setQuran(arr);
+        })
+    }
+  }
+
+  useEffect(() => {
+    getQuran(115)
+  }, [])
+
+  useEffect(() => {
+
+    let arrayOfSurat = [];
+    let timer = setTimeout(() => {
+      for (let i = 0; i < quran.length; i++) {
+        // console.log(quran[i][0].sura)
+        // console.log(quran[i].map(x => x.translation))
+        arrayOfSurat.push({
+          id: Number(quran[i][0].sura),
+          sourate: suratName[Number(quran[i][0].sura) - 1],
+          verset: quran[i].map((x, id) => <div key={id} className="surat-aya">
+            <p className="aya-number">{x.aya}</p>
+            <p className="aya-arabic" >{x.arabic_text}</p>
+
+            <p className="aya-translate">{x.translation}</p>
+          </div>
+          )
+        })
+
+      }
+      //  console.log(arrayOfSurat)
+      arrayOfSurat.sort((a, b) => a.id - b.id)
+      setSurat(arrayOfSurat)
+
+
+    }, 1000)
+
+    return () => clearTimeout(timer)
+
+
+  }, [quran])
+
+   useEffect(() => {
+      
+       console.log(surat)
+       
+    }, [surat])
+
+
+  //console.log(surat)
 
   return (
     <>
       <header>
         <NavBar
-        buttonBurgerIsClicked={buttonBurgerIsClicked}
-        setButtonBurgerIsClicked={setButtonBurgerIsClicked}
-         />
-        <SearchBar
-          inputCity={inputCityValue}
-          inputCountry={inputCountryValue}
-          getPosition={requestDataPosition}
-          handleChangeInputCityValue={(e) => {
-            setInputCityValue(e.target.value);
-          }}
-          handleChangeInputCountryValue={(e) =>
-            setInputCountryValue(e.target.value)
-          }
-          handleSubmitValue={(event) => {
-            event.preventDefault();
-
-            const key = event.keyCode;
-
-            if (key === 13) {
-              if (inputCityValue === "" || inputCountryValue === "") {
-                setCity("");
-                setCountry("");
-              } else {
-                localStorage.setItem("City", inputCityValue.trim());
-                localStorage.setItem("Country", inputCountryValue.trim());
-                setCity(localStorage.getItem("City"));
-                setCountry(localStorage.getItem("Country"));
-                setTimeout(() => {
-                  setInputCityValue("");
-                  setInputCountryValue("");
-                });
-
-              }
-            }
-
-            if (inputCityValue === "" || inputCountryValue === "") {
-              setCity("");
-              setCountry("");
-            } else {
-              localStorage.setItem("City", inputCityValue.trim());
-              localStorage.setItem("Country", inputCountryValue.trim());
-              setCity(localStorage.getItem("City"));
-              setCountry(localStorage.getItem("Country"));
-              setTimeout(() => {
-                setInputCityValue("");
-                setInputCountryValue("");
-              });
-            }
-            // submitChannel(city);
-
-          }}
+          buttonBurgerIsClicked={buttonBurgerIsClicked}
+          setButtonBurgerIsClicked={setButtonBurgerIsClicked}
         />
+
       </header>
       <div style={{ textAlign: "center", color: "#bc4749" }}>
         {errorMessageLocation}
@@ -355,9 +412,58 @@ const App = () => {
           path="/*"
           element={
             <>
+              <SearchBar
+                inputCity={inputCityValue}
+                inputCountry={inputCountryValue}
+                getPosition={requestDataPosition}
+                handleChangeInputCityValue={(e) => {
+                  setInputCityValue(e.target.value);
+                }}
+                handleChangeInputCountryValue={(e) =>
+                  setInputCountryValue(e.target.value)
+                }
+                handleSubmitValue={(event) => {
+                  event.preventDefault();
+
+                  const key = event.keyCode;
+
+                  if (key === 13) {
+                    if (inputCityValue === "" || inputCountryValue === "") {
+                      setCity("");
+                      setCountry("");
+                    } else {
+                      localStorage.setItem("City", inputCityValue.trim());
+                      localStorage.setItem("Country", inputCountryValue.trim());
+                      setCity(localStorage.getItem("City"));
+                      setCountry(localStorage.getItem("Country"));
+                      setTimeout(() => {
+                        setInputCityValue("");
+                        setInputCountryValue("");
+                      });
+
+                    }
+                  }
+
+                  if (inputCityValue === "" || inputCountryValue === "") {
+                    setCity("");
+                    setCountry("");
+                  } else {
+                    localStorage.setItem("City", inputCityValue.trim());
+                    localStorage.setItem("Country", inputCountryValue.trim());
+                    setCity(localStorage.getItem("City"));
+                    setCountry(localStorage.getItem("Country"));
+                    setTimeout(() => {
+                      setInputCityValue("");
+                      setInputCountryValue("");
+                    });
+                  }
+                  // submitChannel(city);
+
+                }}
+              />
               <NavBarTodayAndMounth />
               <Today
-                      buttonBurgerIsClicked={buttonBurgerIsClicked}
+                buttonBurgerIsClicked={buttonBurgerIsClicked}
                 city={city}
                 country={country}
                 method={method}
@@ -398,7 +504,7 @@ const App = () => {
                   "SelectedMethodStringValue",
                   event.target[index].innerHTML
                 );
-
+  
                 setSelectedMethodValue(
                   localStorage.getItem("SelectedMethodValue")
                 );
@@ -452,12 +558,12 @@ const App = () => {
           }
         />*/}
 
-<Route
+        <Route
           path="/quran"
 
           element={
             <Quran
-         
+              surat={surat}
             />
           }
         />

@@ -396,3 +396,12 @@ nav-container .checkbox {
   color :rgba(96, 91, 86, 95%);
 }
 
+.link-container{
+  display: flex;
+  flex-direction: column;
+  font-size: 26px;
+
+}
+.icons-nav{
+  font-size: 45px;
+}

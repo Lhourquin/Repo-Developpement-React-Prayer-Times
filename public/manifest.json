@@ -1,6 +1,6 @@
 {
-    "short_name": "WAF",
-    "name": "Waqt Al Falaah",
+    "short_name": "React Preyer Time",
+    "name": "React Prayer Time",
     "icons": [
       {
         "src": "img/clock-icon64.png",
