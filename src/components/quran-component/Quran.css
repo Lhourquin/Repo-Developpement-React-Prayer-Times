@@ -44,9 +44,10 @@
 
 .container-quran .surat-aya {
   border-bottom: 1px solid;
-  width: 100%;
-  margin: 0;
+  margin: auto;
   text-align: center;
+  width: 80%;
+  padding-bottom: 17px;
 }
 
 .container-quran .surat-aya .aya-number {
@@ -55,13 +56,11 @@
 
 .container-quran .surat-aya .aya-arabic {
   font-size: 28px;
-  width: 80%;
   margin: auto;
 }
 
 .container-quran .surat-aya .aya-translate {
   font-size: 15px;
-  width: 80%;
   margin: auto;
 }
 
