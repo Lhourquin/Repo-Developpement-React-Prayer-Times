@@ -343,66 +343,89 @@ const App = () => {
         .then((result) => {
 
           arr.push(result.result);
+          localStorage.setItem("Quran", JSON.stringify(arr))
+          setQuran(JSON.parse(localStorage.getItem("Quran")));
 
-          setQuran(arr);
         })
     }
+    console.log("call func")
   }
 
+  const [apiCall, setApiCall] = useState(false);
+
   useEffect(() => {
-    getQuran(115)
+    if (localStorage.getItem("Quran")) {
+      setApiCall(false);
+      console.log("don't call api")
+      console.log(localStorage.getItem("Quran").length)
+      setSurat(JSON.parse(localStorage.getItem("Quran") || "[]"));
+
+    } else if (!localStorage.getItem("Quran") || localStorage.getItem("Quran").length !== 114) {
+      setApiCall(true);
+      console.log("call api")
+      getQuran(115)
+
+    }
   }, [])
 
   useEffect(() => {
 
-    let arrayOfSurat = [];
-    let timer = setTimeout(() => {
-      for (let i = 0; i < quran.length; i++) {
-        // console.log(quran[i][0].sura)
-        // console.log(quran[i].map(x => x.translation))
-        arrayOfSurat.push({
-          id: Number(quran[i][0].sura),
-          sourate: suratName[Number(quran[i][0].sura) - 1],
-          verset: quran[i].map((x) =>/* <div key={id} className="surat-aya">
+
+    if (apiCall) {
+      let arrayOfSurat = [];
+      let timer = setTimeout(() => {
+        for (let i = 0; i < quran.length; i++) {
+          // console.log(quran[i][0].sura)
+          // console.log(quran[i].map(x => x.translation))
+          arrayOfSurat.push({
+            id: Number(quran[i][0].sura),
+            sourate: suratName[Number(quran[i][0].sura) - 1],
+            verset: quran[i].map((x) =>/* <div key={id} className="surat-aya">
             <p className="aya-number">{x.aya}</p>
             <p className="aya-arabic" >{x.arabic_text}</p>
 
             <p className="aya-translate">{x.translation}</p>
           </div>*/ {
-            return {
-              ayaNumber: x.aya,
-              ayaArabic: x.arabic_text,
-              ayaTranslate: x.translation
+              return {
+                ayaNumber: x.aya,
+                ayaArabic: x.arabic_text,
+                ayaTranslate: x.translation
+              }
+
+
             }
 
+            )
+          })
 
-          }
-
-          )
-        })
-
-      }
-      //  console.log(arrayOfSurat)
-      arrayOfSurat.sort((a, b) => a.id - b.id)
-      localStorage.setItem("Quran", JSON.stringify(arrayOfSurat))
-      setSurat(JSON.parse(localStorage.getItem("Quran") || "[]"))
+        }
+        //  console.log(arrayOfSurat)
+        arrayOfSurat.sort((a, b) => a.id - b.id)
+        console.log(quran)
+        console.log("mounted")
+        localStorage.setItem("Quran", JSON.stringify(arrayOfSurat))
+        setSurat(JSON.parse(localStorage.getItem("Quran") || "[]"))
 
 
-    }, 1000)
+      }, 1000)
 
-    return () => clearTimeout(timer)
+      return () => clearTimeout(timer)
+
+
+    }
+
+
 
 
   }, [quran])
 
   useEffect(() => {
 
-    console.log(surat)
+    // console.log(surat)
 
   }, [surat])
 
 
-  //console.log(surat)
 
   return (
     <>

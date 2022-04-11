@@ -44,71 +44,73 @@ export const Quran = ({ surat }) => {
                 <span>(Avec traduction française des sens des verset)</span></h1>
 
             <div
-                style={indexSurat !== 0 ? { overflow: "hidden", color: "black", textAlign: "center ", postion: "fixed" } : {}}
+                style={indexSurat !== 0 ? {
+                    overflow: "hidden",
+                    textAlign: "center ", postion: "fixed"
+                } : {}}
                 className="container-quran"
             >
 
                 {
-                    surat.map((obj, idx) => {
+                    surat.length === 0 ?
+                        <div
+                            style={{ color : "#aa75ff" }}
+                        >Veillez patienter un instant...</div> :
+                        surat.map((obj, idx) => {
 
-                        return <div key={obj.id} className="container-surat" >
-                            <div
-                                onClick={() => open(idx, obj.sourate)}
-                                style={indexSurat == obj.id ? { display: "none" } : { display: "block" }}>
-                                <div className="surat-number">{obj.id}</div>
-                                <div className="surat-title">{obj.sourate}
-                                </div>
+                            return <div
+                                key={obj.id} className="container-surat" >
+                                <div
+                                    onClick={() => open(idx, obj.sourate)}
+                                    style={indexSurat == obj.id ? { display: "none" } : { display: "block" }}>
+                                    <div className="surat-number">{obj.id}</div>
+                                    <div className="surat-title">{obj.sourate}
+                                    </div>
 
-                                {  /*  <p>{obj.arabic_text}</p>
+                                    {  /*  <p>{obj.arabic_text}</p>
                         <p>{obj.translation}</p>*/}
-                                { /* <button onClick={() => open(idx, obj.sourate)}>Lire</button>*/}
+                                    { /* <button onClick={() => open(idx, obj.sourate)}>Lire</button>*/}
 
-
-                            </div>
-
-                            <div style={indexSurat == obj.id ? {
-                                display: "block",
-                                position: "fixed",
-                                backgroundColor: "white",
-                                left: 0,
-                                top: 0,
-                                right: 0,
-                                height: "100%",
-                                overflow: "auto",
-                                width: "100%",
-                                cursor: "default",
-                                color: "purple"
-                            }
-                                : { display: "none" }}>
-                                <button className="return" onClick={() => close()}>{"<<"}</button>
-                                <div className="surat-title-number"> {obj.id} {obj.sourate}</div>
-
-
-                                <div className="surat-content">
-                                    {obj.verset.map((x) => <div className="surat-aya">
-                                        <p className="aya-number">{x.ayaNumber}</p>
-                                        <p className="aya-arabic" >{x.ayaArabic}</p>
-
-                                        <p className="aya-translate">{x.ayaTranslate}</p>
-                                    </div>)
-                                        /*   */
-                                    }
 
                                 </div>
 
+                                <div style={indexSurat == obj.id ? {
+                                    display: "block",
+                                    position: "fixed",
+                                    backgroundColor: "white",
+                                    left: 0,
+                                    top: 0,
+                                    right: 0,
+                                    height: "100%",
+                                    overflow: "auto",
+                                    width: "100%",
+                                    cursor: "default",
+                                    color: "purple"
+                                }
+                                    : { display: "none" }}>
+                                    <button className="return" onClick={() => close()}>{"<<"}</button>
+                                    <div className="surat-title-number"> {obj.id} {obj.sourate}</div>
 
+
+                                    <div className="surat-content">
+                                        {obj.verset.map((x) => <div className="surat-aya">
+                                            <p className="aya-number">{x.ayaNumber}</p>
+                                            <p className="aya-arabic" >{x.ayaArabic}</p>
+
+                                            <p className="aya-translate">{x.ayaTranslate}</p>
+                                        </div>)
+                                            /*   */
+                                        }
+
+                                    </div>
+
+
+                                </div>
                             </div>
-                        </div>
-                    })
+                        })
 
                 }
-                {console.log("surat")}
-                {
-                    surat.map(x => console.log(x))
-                }
-                {console.log("sourate")}
-                {console.log(sourate)
-                }
+
 
             </div >
         </>
