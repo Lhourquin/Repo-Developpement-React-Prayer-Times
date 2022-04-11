@@ -11,7 +11,6 @@ export const Calendar = ({
   country,
   getAngleOptionValue,
   method,
-  // selectedMethodValue,
   selectedMethodStringValue,
 }) => {
   const [calendar, setCalendar] = useState([]);
@@ -22,41 +21,7 @@ export const Calendar = ({
     });
     return () => clearTimeout(timer);
   });
-  /*  const [methodValue, setMethodValue] = useState("");
-
- useEffect(() => {
-    if (selectedMethodValue === "") {
-      setMethodValue(method[0].value);
-    } else if (selectedMethodValue !== "") {
-      setMethodValue(selectedMethodValue);
-    }
-  }, [method, selectedMethodValue]);
-
-  useEffect(() => {
-    let timer = null;
-    if (city && country && methodValue) {
-      let params = new URLSearchParams();
-      params.append("country", country);
-      params.append("city", city);
-      params.append("method", methodValue);
-
-      let request = {
-        params: params,
-      };
-      timer = setTimeout(async () => {
-        const { data } = await axios
-          .get(`https://api.aladhan.com/v1/calendarByCity`, request)
-          .then(
-            (currentTimesOfTheDateClicked) => currentTimesOfTheDateClicked.data
-          );
-        setCalendar(data);
-      }, 1000);
-    }
-
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [city, country, methodValue]);*/
+ 
 
   const [acutalMonth, setActualMonth] = useState(
     new Date(Date.now()).toLocaleString(undefined, {
@@ -168,7 +133,7 @@ export const Calendar = ({
               }>
               <i className="fas fa-times-circle"></i>
             </button>
-            <div //className="containerCurrentTimesClicked"
+            <div 
               className={
                 now >
                   new Date(

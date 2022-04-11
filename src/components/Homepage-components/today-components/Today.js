@@ -18,7 +18,6 @@ export const Today = ({
   const [inputCity, setInputCity] = useState("");
   const [lastCity, setLastCity] = useState("");
   const [now, setNow] = useState(new Date(Date.now()).getTime());
-  //console.log(dateIcha)
   useEffect(() => {
     let interval = setInterval(() => {
       setNow(new Date(Date.now()).getTime());
@@ -57,14 +56,12 @@ export const Today = ({
 
   useEffect(() => {
     today.map((obj) => {
-      // console.log(Number(obj.data.date.gregorian.day))
       setDay(Number(obj.data.date.gregorian.day));
       setDateFajr(
         new Date(
           `${obj.data.date.gregorian.month.en} ${obj.data.date.gregorian.day}, ${obj.data.date.gregorian.year} ${obj.data.timings.Fajr}:00`
         )
-        /* { ${obj.data.timings.Fajr} }
-         */
+
       );
       setDateShourouq(
         new Date(
@@ -96,7 +93,7 @@ export const Today = ({
         new Date(
           `${obj.data.date.gregorian.month.en} ${Number(obj.data.date.gregorian.day) - 1
           }, ${obj.data.date.gregorian.year} ${obj.data.timings.Isha
-          }:00` /** ${obj.data.timings.Isha}  */
+          }:00`
         )
       );
 
@@ -126,11 +123,6 @@ export const Today = ({
     });
   }, [day]);
 
-  /* useEffect(() => {
-    today.map((obj) => {
-      
-    });
-  }, today);*/
   const [midnightTime, setMidnightTime] = useState("");
 
   useEffect(() => {
@@ -170,7 +162,6 @@ export const Today = ({
             dateIcha > dateStartOfTheNextDay ||
             dateIcha == dateStartOfTheNextDay
           ) {
-            // localStorage.setItem("DateMidnight", JSON.stringify(new Date(`${month} ${Number(day)}, ${year} ${midnight}:00`) + ""))
 
             return new Date(
               `${obj.data.date.gregorian.month.en} ${obj.data.date.gregorian.day}, ${obj.data.date.gregorian.year} ${midnightTime}:00`
@@ -179,7 +170,6 @@ export const Today = ({
             dateIcha < dateStartOfTheNextDay &&
             midnightTime.substring(0, 1) == "0"
           ) {
-            // localStorage.setItem("DateMidnight", JSON.stringify(new Date(`${month} ${Number(day)}, ${year} ${midnight}:00`) + ""))
             if (now > dateIchaLastDay && now < dateFajr) {
               console.log("1 : problem midnight here ?")
               console.log(now > dateIchaLastDay)
@@ -190,9 +180,7 @@ export const Today = ({
                 }, ${obj.data.date.gregorian.year} ${midnightTime}:00`
               );
             } else {
-              //  console.log("2 : problem midnight here ?")
-              //  console.log(now > dateIchaLastDay)
-              //  console.log("ok")
+
               return new Date(
                 `${obj.data.date.gregorian.month.en} ${Number(obj.data.date.gregorian.day) + 1
                 }  , ${obj.data.date.gregorian.year} ${midnightTime}:00`
@@ -202,8 +190,7 @@ export const Today = ({
             now > dateIcha && dateIcha < dateStartOfTheNextDay &&
             midnightTime.substring(0, 1) !== "0"
           ) {
-            // localStorage.setItem("DateMidnight", JSON.stringify(new Date(`${month} ${Number(day)}, ${year} ${midnight}:00`) + ""))
-            // console.log('3')
+
             return new Date(
               `${obj.data.date.gregorian.month.en} ${Number(
                 obj.data.date.gregorian.day
@@ -212,7 +199,7 @@ export const Today = ({
           }
         });
 
-        
+
       });
     });
 
@@ -220,8 +207,6 @@ export const Today = ({
   }, [midnightTime, dateStartOfTheNextDay]);
 
 
-  //console.log(dateFajr);
-  // console.log(lastDateMidnight);
 
   const Location = useLocation();
   const [isCalendar, setIsCalendar] = useState(false);
@@ -234,7 +219,6 @@ export const Today = ({
     }
   }, [Location])
 
-  // console.log(isCalendar);
   return (
     <>
       <div
@@ -243,7 +227,7 @@ export const Today = ({
         }
         className="Today__div--container-list-pannel">
         <TodayTimesList
-        buttonBurgerIsClicked={buttonBurgerIsClicked}
+          buttonBurgerIsClicked={buttonBurgerIsClicked}
           today={today}
           now={now}
           dateFajr={dateFajr}

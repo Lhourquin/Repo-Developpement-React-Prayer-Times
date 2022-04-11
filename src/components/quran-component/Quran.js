@@ -4,11 +4,7 @@ import "./Quran.css";
 export const Quran = ({ surat }) => {
 
 
-    const [sourate, setSOurate] = useState(JSON.parse(localStorage.getItem("Quran") || "[]"))
 
-    useEffect(() => {
-        setSOurate(JSON.parse(localStorage.getItem("Quran") || "[]"))
-    }, [surat])
 
     const [indexSurat, setIndexSurat] = useState(0);
 
@@ -54,7 +50,7 @@ export const Quran = ({ surat }) => {
                 {
                     surat.length === 0 ?
                         <div
-                            style={{ color : "#aa75ff" }}
+                            style={{ color: "#aa75ff" }}
                         >Veillez patienter un instant...</div> :
                         surat.map((obj, idx) => {
 
@@ -66,11 +62,6 @@ export const Quran = ({ surat }) => {
                                     <div className="surat-number">{obj.id}</div>
                                     <div className="surat-title">{obj.sourate}
                                     </div>
-
-                                    {  /*  <p>{obj.arabic_text}</p>
-                        <p>{obj.translation}</p>*/}
-                                    { /* <button onClick={() => open(idx, obj.sourate)}>Lire</button>*/}
-
 
                                 </div>
 
@@ -93,13 +84,12 @@ export const Quran = ({ surat }) => {
 
 
                                     <div className="surat-content">
-                                        {obj.verset.map((x) => <div className="surat-aya">
-                                            <p className="aya-number">{x.ayaNumber}</p>
-                                            <p className="aya-arabic" >{x.ayaArabic}</p>
+                                        {obj.verset.map((verset, idx) => <div key={idx} className="surat-aya">
+                                            <p className="aya-number">{verset.ayaNumber}</p>
+                                            <p className="aya-arabic" >{verset.ayaArabic}</p>
 
-                                            <p className="aya-translate">{x.ayaTranslate}</p>
+                                            <p className="aya-translate">{verset.ayaTranslate}</p>
                                         </div>)
-                                            /*   */
                                         }
 
                                     </div>

@@ -6,8 +6,7 @@ import NavBarTodayAndMounth from "./components/Homepage-components/navbar-today-
 import { Quran } from "./components/quran-component/Quran";
 import { Calendar } from "./components/Homepage-components/calendar-components/Calendar";
 import { Today } from "./components/Homepage-components/today-components/Today";
-import { Masjid } from "./components/masjid-component/Masjid";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
 
 const App = () => {
@@ -79,11 +78,9 @@ const App = () => {
   const getPosition = (position) => {
     const lat = position.coords.latitude;
     const long = position.coords.longitude;
-    //const API_KEY = `8be0f83c6058dc08796bea8b8309a808`;
     fetch(
       `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${long}&localityLanguage=fr`
 
-      /** `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${API_KEY}`*/
     )
       .then((response) => response.json())
       .then((data) => {
@@ -91,11 +88,7 @@ const App = () => {
         localStorage.setItem("Country", data.countryName);
         setCity(localStorage.getItem("City"));
         setCountry(localStorage.getItem("Country"));
-        //  console.log(data)
       });
-
-
-    //setErrorMessageLocation("Le service de localisation est momentanément indisponible.");
 
     setTimeout(() => {
       setErrorMessageLocation("");
@@ -348,7 +341,6 @@ const App = () => {
 
         })
     }
-    console.log("call func")
   }
 
   const [apiCall, setApiCall] = useState(false);
@@ -356,13 +348,11 @@ const App = () => {
   useEffect(() => {
     if (localStorage.getItem("Quran")) {
       setApiCall(false);
-      console.log("don't call api")
-      console.log(localStorage.getItem("Quran").length)
+
       setSurat(JSON.parse(localStorage.getItem("Quran") || "[]"));
 
     } else if (!localStorage.getItem("Quran") || localStorage.getItem("Quran").length !== 114) {
       setApiCall(true);
-      console.log("call api")
       getQuran(115)
 
     }
@@ -375,17 +365,11 @@ const App = () => {
       let arrayOfSurat = [];
       let timer = setTimeout(() => {
         for (let i = 0; i < quran.length; i++) {
-          // console.log(quran[i][0].sura)
-          // console.log(quran[i].map(x => x.translation))
+
           arrayOfSurat.push({
             id: Number(quran[i][0].sura),
             sourate: suratName[Number(quran[i][0].sura) - 1],
-            verset: quran[i].map((x) =>/* <div key={id} className="surat-aya">
-            <p className="aya-number">{x.aya}</p>
-            <p className="aya-arabic" >{x.arabic_text}</p>
-
-            <p className="aya-translate">{x.translation}</p>
-          </div>*/ {
+            verset: quran[i].map((x) => {
               return {
                 ayaNumber: x.aya,
                 ayaArabic: x.arabic_text,
@@ -399,10 +383,8 @@ const App = () => {
           })
 
         }
-        //  console.log(arrayOfSurat)
         arrayOfSurat.sort((a, b) => a.id - b.id)
-        console.log(quran)
-        console.log("mounted")
+
         localStorage.setItem("Quran", JSON.stringify(arrayOfSurat))
         setSurat(JSON.parse(localStorage.getItem("Quran") || "[]"))
 
@@ -419,11 +401,6 @@ const App = () => {
 
   }, [quran])
 
-  useEffect(() => {
-
-    // console.log(surat)
-
-  }, [surat])
 
 
 
@@ -490,7 +467,6 @@ const App = () => {
                       setInputCountryValue("");
                     });
                   }
-                  // submitChannel(city);
 
                 }}
               />
@@ -522,34 +498,6 @@ const App = () => {
 
           }
         >
-          <Route
-          // path=""
-
-          //element={
-          /*  <Today
-              city={city}
-              country={country}
-              method={method}
-              getAngleOptionValue={(event) => {
-                let index = event.nativeEvent.target.selectedIndex;
-                localStorage.setItem("SelectedMethodValue", event.target.value);
-                localStorage.setItem(
-                  "SelectedMethodStringValue",
-                  event.target[index].innerHTML
-                );
-  
-                setSelectedMethodValue(
-                  localStorage.getItem("SelectedMethodValue")
-                );
-                setSelectedMethodStringValue(
-                  localStorage.getItem("SelectedMethodStringValue")
-                );
-              }}
-              selectedMethodValue={selectedMethodValue}
-              selectedMethodStringValue={selectedMethodStringValue}
-            />*/
-          //  }
-          />
 
           <Route
             path="calendar"
@@ -578,18 +526,6 @@ const App = () => {
             }
           />
         </Route>
-
-        {/*<Route
-          path="/masjid"
-
-          element={
-            <Masjid
-              dataMasjid={dataMasjid}
-              city={city}
-              country={country}
-            />
-          }
-        />*/}
 
         <Route
           path="/quran"

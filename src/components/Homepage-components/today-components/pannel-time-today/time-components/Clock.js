@@ -9,7 +9,6 @@ export const Clock = () => {
 
     return () => clearInterval(interval);
   });
-  //console.log(curentPrayerTimes);
 
   return (
     <>

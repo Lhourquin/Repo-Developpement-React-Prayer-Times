@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./row-list.css";
 import { CalculMidnightCalendar } from "../calcul-mignight-calendar/CalculMidnightCalandar";
 import "./row-list.css";
@@ -29,7 +29,6 @@ export const RowList = ({ calendar, displayTimesOfTheDate }) => {
             onClick={()=>displayTimesOfTheDate(obj)}
           >
             <td className="count">{count++}</td>
-            {/*console.log(obj.date.gregorian.month.en  + " " + obj.date.gregorian.day + " " + obj.date.gregorian.year)*/}
 
             <td className="td-list-times-date">{obj.date.gregorian.date}</td>
             <td className="td-list-times-date">{obj.date.hijri.date}</td>

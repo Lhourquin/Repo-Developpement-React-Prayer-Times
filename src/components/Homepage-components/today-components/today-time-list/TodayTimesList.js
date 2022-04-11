@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./TodayTimesList.css";
-import { CalculMidnight } from "./calcul-midnigh-today/CalculMidnightToday";
 
 export const TodayTimesList = ({
   today,
@@ -183,7 +182,6 @@ export const TodayTimesList = ({
   const closeHadith = () => {
     setDisplayHadith((boolean) => !boolean);
   };
-  //console.log(dateMidnight)
 
   useEffect(() => {
     let body = document.getElementsByTagName("body")[0];
@@ -338,7 +336,7 @@ export const TodayTimesList = ({
             }
           >
             <span>
-              ASR {obj.data.timings.Asr} {/*- PALEUR DU SOLEIL 16:45 */}
+              ASR {obj.data.timings.Asr} 
             </span>
             <span className="TodayTimesList__ul-times-list__li__span--information">
               {" "}
@@ -404,17 +402,6 @@ export const TodayTimesList = ({
               ></i>
             </span>{" "}
           </li>
-          {/* <li className="TodayTimesList__ul-times-list__li">
-            <span>QIYAMM AL LAYL 03:45</span>
-            <span className="TodayTimesList__ul-times-list__li__span--information">
-              {" "}
-              <i
-                style={displayHadith ? { opacity: "0.1" } : {}}
-                className="fas fa-info-circle info-icons"
-                onClick={() => toggleDisplay(6)}
-              ></i>
-            </span>{" "}
-          </li>*/}
         </ul>
       ))}
     </>

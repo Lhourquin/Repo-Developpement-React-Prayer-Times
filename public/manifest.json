@@ -1,5 +1,5 @@
 {
-    "short_name": "React Preyer Time",
+    "short_name": "React Prayer Time",
     "name": "React Prayer Time",
     "icons": [
       {
@@ -33,7 +33,7 @@
         "type": "image/png"
       }
     ],
-    "start_url": "index.html",
+    "start_url": "/index.html",
     "display": "standalone",
     "orientation": "portrait",
     "theme_color": "#000000",

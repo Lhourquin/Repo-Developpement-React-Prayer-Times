@@ -38,59 +38,6 @@ export const Timer = ({
     return () => clearTimeout(timer);
   }, arrayOfTimesSalatOfTheDay);
 
-  /*  const [dateStartOfTheNextDay, setdateStartOfTheNextDay] = useState(
-    new Date(`${month} ${Number(day) + 1}, ${year} 00:00:00`)
-  );
-  const [dateMidnight, setDateMidnight] = useState(() => {
-    if (dateIcha > dateStartOfTheNextDay || dateIcha == dateStartOfTheNextDay) {
-      return new Date(`${month} ${Number(day)}, ${year} ${midnight}:00`);
-    } else if (
-      dateIcha < dateStartOfTheNextDay &&
-      midnight.substring(0, 1) == "0"
-    ) {
-      return new Date(
-        `${month} ${(Number(day) + 1).toString()}, ${year} ${midnight}:00`
-      );
-    } else if (
-      dateIcha < dateStartOfTheNextDay &&
-      midnight.substring(0, 1) !== "0"
-    ) {
-      return new Date(`${month} ${Number(day)}, ${year} ${midnight}:00`);
-    }
-  });
-  useEffect(() => {
-    let timer = setTimeout(() => {
-      setDateMidnight(() => {
-        if (
-          dateIcha > dateStartOfTheNextDay ||
-          dateIcha == dateStartOfTheNextDay
-        ) {
-         // localStorage.setItem("DateMidnight", JSON.stringify(new Date(`${month} ${Number(day)}, ${year} ${midnight}:00`) + ""))
-
-          return new Date(`${month} ${Number(day)}, ${year} ${midnight}:00`);
-        } else if (
-          dateIcha < dateStartOfTheNextDay &&
-          midnight.substring(0, 1) == "0"
-        ) {
-         // localStorage.setItem("DateMidnight", JSON.stringify(new Date(`${month} ${Number(day)}, ${year} ${midnight}:00`) + ""))
-
-          return new Date(
-            `${month} ${(Number(day) + 1)}, ${year} ${midnight}:00`
-          );
-        } else if (
-          dateIcha < dateStartOfTheNextDay &&
-          midnight.substring(0, 1) !== "0"
-        ) {
-         // localStorage.setItem("DateMidnight", JSON.stringify(new Date(`${month} ${Number(day)}, ${year} ${midnight}:00`) + ""))
-
-          return new Date(`${month} ${Number(day)}, ${year} ${midnight}:00`);
-        }
-      });
-    });
-
-    return () => clearTimeout(timer);
-  }, [midnight]);*/
-
   const [timerHoursCurrentTime, setTimerHoursCurrentTime] = useState("");
   const [timerMinutesCurrentTime, setTimerMinutesCurrentTime] = useState("");
   const [timerSecondsCurrentTime, setTimerSecondsCurrentTime] = useState("");
@@ -143,7 +90,6 @@ export const Timer = ({
       if (distance < 0) {
         clearInterval(intervalCountDown.current);
       } else {
-        // setTimerDays(days);
         setTimerHoursCurrentTime(hours < 10 ? ("0" + hours).slice(-2) : hours);
         setTimerMinutesCurrentTime(
           minutes < 10 ? ("0" + minutes).slice(-2) : minutes
@@ -165,7 +111,6 @@ export const Timer = ({
   useEffect(() => {
     if (now < dateFajr) {
       if (now > dateIchaLastDay && now < dateMidnight) {
-        // console.log(dateMidnight)
         setCurrentTime("ICHA " + icha);
         startTimerNextTimeCountDown(dateMidnight);
         setDisplayTimerCurrentTime(false);
@@ -224,8 +169,7 @@ export const Timer = ({
       return () => clearInterval(intervalCountDown.current);
     }
   }, [now]);
-  //console.log(currentNextTime)
-  //console.log(dateMidnight)
+
 
   return (
     <>

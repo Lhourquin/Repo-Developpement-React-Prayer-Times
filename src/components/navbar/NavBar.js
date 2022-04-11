@@ -11,10 +11,8 @@ export const NavBar = ({ buttonBurgerIsClicked, setButtonBurgerIsClicked }) => {
 
   useEffect(() => {
     if (Location.pathname === "/") {
-      console.log("i'm here")
       setIsHomePageLocation(true);
     } else {
-      console.log("i'm not here")
       setIsHomePageLocation(false)
     }
   }, [Location]);
@@ -22,18 +20,14 @@ export const NavBar = ({ buttonBurgerIsClicked, setButtonBurgerIsClicked }) => {
   useEffect(() => {
     let btnLocation = document.getElementsByClassName('button-location')[0];
     let btnInfos = document.getElementsByClassName("TodayTimesList__ul-times-list__li__span--information");
-    if (buttonBurgerIsClicked === true && btnInfos.length === 0 &&  isHomePageLocation === true || buttonBurgerIsClicked === true && btnInfos.length === 0 && Location.pathname === "/index.html" ) {
-      console.log("brgr true")
-      console.log(btnInfos)
+    if (buttonBurgerIsClicked === true && btnInfos.length === 0 && isHomePageLocation === true || buttonBurgerIsClicked === true && btnInfos.length === 0 && Location.pathname === "/index.html") {
 
-      console.log("i'm here")
       btnLocation.style.opacity = "0";
       btnLocation.style.pointerEvents = "none";
 
 
 
-    } else if (btnInfos.length !== 0 && buttonBurgerIsClicked === true &&  isHomePageLocation === true ||btnInfos.length !== 0 && buttonBurgerIsClicked === true && Location.pathname === "/index.html") {
-      console.log("i'm here")
+    } else if (btnInfos.length !== 0 && buttonBurgerIsClicked === true && isHomePageLocation === true || btnInfos.length !== 0 && buttonBurgerIsClicked === true && Location.pathname === "/index.html") {
       btnLocation.style.opacity = "0";
       btnLocation.style.pointerEvents = "none";
       btnInfos[0].style.pointerEvents = "none";
@@ -54,12 +48,11 @@ export const NavBar = ({ buttonBurgerIsClicked, setButtonBurgerIsClicked }) => {
 
 
     } else if (buttonBurgerIsClicked === false && isHomePageLocation === true || buttonBurgerIsClicked === false && Location.pathname === "/index.html") {
-      //btnLocation.style.remove
       btnLocation.style.pointerEvents = "auto";
       btnLocation.style.opacity = "1";
       btnLocation.style.transition = "0.8s";
       if (btnInfos.length !== 0) {
-       
+
         btnInfos[0].style.pointerEvents = "auto";
         btnInfos[1].style.pointerEvents = "auto";
         btnInfos[2].style.pointerEvents = "auto";
@@ -110,16 +103,6 @@ export const NavBar = ({ buttonBurgerIsClicked, setButtonBurgerIsClicked }) => {
             </Link>
 
             </li>
-            { /*<li>
-
-              <Link
-                to="/masjid"
-              >
-                <strong>Mosquées</strong>
-
-              </Link>
-
-            </li>*/}
             <li>
 
               <Link
@@ -141,22 +124,3 @@ export const NavBar = ({ buttonBurgerIsClicked, setButtonBurgerIsClicked }) => {
     </nav>
   );
 };
-{/*  <nav className={buttonBurgerIsClicked ? "NavBar__nav openEffect" : "NavBar__nav closeEffect"}>
-        <span className="NavBar__nav__span--site-name">Waqt Al Falaah</span>
-        <button
-          className="NavBar__nav__button--button-burger"
-          onClick={handleNavButtonBurgerClick}
-        >
-          <i className="fas fa-bars web-font NavBar__nav__button__i--button-burger"></i>
-        </button>
-
-      <ul
-        className={
-          
-          (buttonBurgerIsClicked ?  "NavBar__nav__ul openNavigation " : "NavBar__nav__ul  closeNavigation")
-        }
-      >
-        <li className="NavBar__nav__ul__li--home">Acceuil</li>
-        <li className="NavBar__nav__ul__li--masjid">Mosquées</li>
-      </ul>
-    </nav>*/}
