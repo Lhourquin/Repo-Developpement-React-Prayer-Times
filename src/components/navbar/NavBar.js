@@ -48,6 +48,7 @@ export const NavBar = ({ buttonBurgerIsClicked, setButtonBurgerIsClicked }) => {
 
 
     } else if (buttonBurgerIsClicked === false && isHomePageLocation === true || buttonBurgerIsClicked === false && Location.pathname === "/index.html") {
+
       btnLocation.style.pointerEvents = "auto";
       btnLocation.style.opacity = "1";
       btnLocation.style.transition = "0.8s";
@@ -73,8 +74,6 @@ export const NavBar = ({ buttonBurgerIsClicked, setButtonBurgerIsClicked }) => {
     }
   }, [buttonBurgerIsClicked, isHomePageLocation])
 
-
-
   return (
 
 
@@ -94,6 +93,10 @@ export const NavBar = ({ buttonBurgerIsClicked, setButtonBurgerIsClicked }) => {
           <div className="menu-items">
             <li><Link
               to="/"
+              onClick={() => {
+                document.getElementsByClassName("checkbox")[0].checked = false;
+                setButtonBurgerIsClicked((isFalse) => !isFalse)
+              }}
             >
               <div className="link-container">
                 <i className="far fa-clock icons-nav"></i>
@@ -107,6 +110,15 @@ export const NavBar = ({ buttonBurgerIsClicked, setButtonBurgerIsClicked }) => {
 
               <Link
                 to="/quran"
+                onClick={() => {
+                  document.getElementsByClassName("checkbox")[0].checked = false;
+                  setTimeout(() => {
+                    setButtonBurgerIsClicked((isFalse) => !isFalse)
+
+                  }, 1000)
+
+                }}
+
               >
                 <div className="link-container">
                   <i className="fas fa-quran icons-nav"></i>

@@ -9,8 +9,6 @@
     margin-top: 6%;
     margin-left: 81%;
     position: absolute;
-    -webkit-transition: 1s;
-    transition: 1s;
   }
   .button-location .localisation-marker {
     color: #aa75ff;

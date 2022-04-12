@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import moment from "moment";
 import { useLocation } from "react-router-dom";
 import "./Today.css";
@@ -171,10 +170,6 @@ export const Today = ({
             midnightTime.substring(0, 1) == "0"
           ) {
             if (now > dateIchaLastDay && now < dateFajr) {
-              console.log("1 : problem midnight here ?")
-              console.log(now > dateIchaLastDay)
-              console.log("ok")
-
               return new Date(
                 `${obj.data.date.gregorian.month.en} ${Number(obj.data.date.gregorian.day)
                 }, ${obj.data.date.gregorian.year} ${midnightTime}:00`
@@ -223,7 +218,7 @@ export const Today = ({
     <>
       <div
         style={
-          isCalendar ? { transition: "0.2s", display: "none" } : { transition: "9s", opacity: "1" }
+          isCalendar ? { display: "none" } : { opacity: "1" }
         }
         className="Today__div--container-list-pannel">
         <TodayTimesList
