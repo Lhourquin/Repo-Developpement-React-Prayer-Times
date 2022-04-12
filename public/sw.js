@@ -3,8 +3,10 @@ const CASHNAME = "V-1";
 const urlsToCache = [
   "index.html",
   "offline.html",
-  "./static/css/main.3b820726.css",
-  "./static/js/main.ea5f6244.js",
+ // "./static/css/main.3b820726.css",
+ // "./static/js/main.ea5f6244.js",
+ "./static/css/main.3b820726.css",
+ "./static/js/bundle.js",
   "https://kit.fontawesome.com/565d41f5d4.js",
   "https://fonts.gstatic.com/s/nunito/v22/XRXI3I6Li01BKofiOc5wtlZ2di8HDDshdTQ3jw.woff2",
   "https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap",
@@ -36,9 +38,9 @@ self.addEventListener("fetch", (event) => {
           caches.match("./static/js/main.ea5f6244.js")
         ) {
           return caches
-            .match("./static/js/main.ea5f6244.js")
+            .match("./static/js/bundle.js")
             .then(() => caches.match("./static/css/main.3b820726.css"))
-            .then(()=> caches.match("./static/js/main.ea5f6244.js"))
+            .then(()=> caches.match("./static/js/bundle.js"))
             .then(() => caches.match("index.html"));
         }
       })

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { RowList } from "./calendar-list/row-list";
 import { useLocation } from "react-router-dom";
 
@@ -21,7 +20,7 @@ export const Calendar = ({
     });
     return () => clearTimeout(timer);
   });
- 
+
 
   const [acutalMonth, setActualMonth] = useState(
     new Date(Date.now()).toLocaleString(undefined, {
@@ -133,7 +132,7 @@ export const Calendar = ({
               }>
               <i className="fas fa-times-circle"></i>
             </button>
-            <div 
+            <div
               className={
                 now >
                   new Date(
@@ -287,47 +286,50 @@ export const Calendar = ({
       )}
       <div
         style={
-          isCalendar ? { transition: "9s", opacity: "1" } : { transition: "0.2s", opacity: "0", display: "none" }
+          isCalendar ? { opacity: "1", height: 0 } : {  opacity: "0", display: "none" }
         }
         className="calendar">
-        <div className="calendar-container-month-degreeSeclect">
-          <div>
-            <h2 className="calendar-title-month">
-              {acutalMonth.charAt(0).toUpperCase() + acutalMonth.slice(1)}{" "}
-              <span
-                onClick={displayInfosMonth}
-                className="calendar-span-infos-month"
-              >
-                {" "}
-                <i className="fas fa-info-circle info-icons-calendar"></i>
+        {
+          calendar.length === 0 ? "" : 
+          <>
+          <div className="calendar-container-month-degreeSeclect">
+            <div>
+              <h2 className="calendar-title-month">
+                {acutalMonth.charAt(0).toUpperCase() + acutalMonth.slice(1)}{" "}
+                <span
+                  onClick={displayInfosMonth}
+                  className="calendar-span-infos-month"
+                >
+                  {" "}
+                  <i className="fas fa-info-circle info-icons-calendar"></i>
+                </span>
+              </h2>
+            </div>
+
+            <div className="Calendar__div-container-span-select">
+              <span style={{ fontSize: "10px", color: "#aa75ff" }}>
+                <i className="fas fa-map-marker-alt localisation-marker-pannel"></i>{" "}
+
+                {city.charAt(0).toUpperCase() + city.slice(1).toLowerCase()},{" "}
+                {country.charAt(0).toUpperCase() + country.slice(1).toLowerCase()}
+                <br></br>
+                Angle :{" "}
+                {selectedMethodStringValue === "" ||
+                  selectedMethodStringValue === "Sélectionner un angle"
+                  ? "Amérique du Nord (15°)"
+                  : selectedMethodStringValue}
               </span>
-            </h2>
+
+              <select onChange={getAngleOptionValue}>
+                {method.map((currentTimesOfTheDateClicked, index) => (
+                  <option key={index} value={currentTimesOfTheDateClicked.value}>
+                    {currentTimesOfTheDateClicked.stringValue}
+                  </option>
+                ))}
+              </select>
+            </div>
           </div>
-          <div className="Calendar__div-container-span-select">
-            <span style={{ fontSize: "10px", color: "#aa75ff" }}>
-              <i className="fas fa-map-marker-alt localisation-marker-pannel"></i>{" "}
-
-              {city.charAt(0).toUpperCase() + city.slice(1).toLowerCase()},{" "}
-              {country.charAt(0).toUpperCase() + country.slice(1).toLowerCase()}
-              <br></br>
-              Angle :{" "}
-              {selectedMethodStringValue === "" ||
-                selectedMethodStringValue === "Sélectionner un angle"
-                ? "Amérique du Nord (15°)"
-                : selectedMethodStringValue}
-            </span>
-
-            <select onChange={getAngleOptionValue}>
-              {method.map((currentTimesOfTheDateClicked, index) => (
-                <option key={index} value={currentTimesOfTheDateClicked.value}>
-                  {currentTimesOfTheDateClicked.stringValue}
-                </option>
-              ))}
-            </select>
-          </div>
-        </div>
-
-        <table>
+          <table>
           <thead className="thead-name-of-times">
             <tr className="name-of-times-list">
               <td>Date</td>
@@ -349,6 +351,9 @@ export const Calendar = ({
             mediaSize={mediaSize}
           />
         </table>
+        </>
+        }
+        
       </div>
     </>
   );
