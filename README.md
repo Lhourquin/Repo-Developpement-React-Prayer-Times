@@ -13,20 +13,20 @@ Application web progressive d'horaires de prières développer avec React JS, ut
 
 - Instalation
 
-  ![Instalation](./image-presentation/instalation.gif)
+![Instalation](./image-presentation/instalation.gif)
 
 - Localisation
 
-  ![Localisation](./image-presentation/location.gif)
+![Localisation](./image-presentation/location.gif)
 
 - Recherche par ville et par pays
 
-  ![Recherche](./image-presentation/search-by-city-country.gif)
+![Recherche](./image-presentation/search-by-city-country.gif)
 
 - Avoir les horaires du mois
 
-  ![Calendrier](./image-presentation/calendar.gif)
+![Calendrier](./image-presentation/calendar.gif)
 
 - Lecture du Coran et de la traduction française
 
-  ![Coran](./image-presentation/quran.gif)
+![Coran](./image-presentation/quran.gif)
