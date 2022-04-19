@@ -6,7 +6,6 @@ Application web progressive d'horaires de prières développer avec React JS, ut
 
 ## Fonctionalités
 
-- Changer l'angle de prières
 
 - Mode hors ligne
 
@@ -24,15 +23,9 @@ Application web progressive d'horaires de prières développer avec React JS, ut
 
   ![Recherche](./image-presentation/search-by-city-country.gif)
 
-- Avoir les horaires du jour
-
-  ![React Prayer Times](./image-presentation/hmp-today.png)
-
 - Avoir les horaires du mois
 
   ![Calendrier](./image-presentation/calendar.gif)
-
-- Timer montrant le temps limite de prières
 
 - Lecture du Coran et de la traduction française
 
