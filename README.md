@@ -2,7 +2,7 @@
 
 Application web progressive d'horaires de prières développer avec React JS, utilisation des Service Worker, Web Worker, et plusieurs API.
 
-![React Prayer Times](./image-presentation/hmp-today.png)
+![React Prayer Times](./image-presentation/hmp-today.png =200x)
 
 ## Fonctionalités
 
