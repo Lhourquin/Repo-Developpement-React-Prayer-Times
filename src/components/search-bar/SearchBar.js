@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+//import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+//import {FontAwesomeIcon} from '@fortawesome/free-solid-svg-icons';
+import { ReactComponent as LocationIcon } from "./icons/test.svg";
 import "./searchbar.css";
 
 export const SearchBar = ({
@@ -21,9 +24,20 @@ export const SearchBar = ({
 
   return (
     <>
+    {/*  <div>
+        <LocationIcon style={{
+          height : "39px",
+
+          fill: "currentColor",
+          color: " #aa75ff",
+        }} />
+      </div>*/}
+
+
       <button
+
         className="button-location noSelect"
-        style={toggleInput ? {} : { display: "none" }}
+        style={toggleInput ? {} : { display: "none", height: "30px", width: "30px" }}
         onClick={getPosition}
       >
         <i className="fas fa-map-marker-alt localisation-marker"></i>
@@ -36,9 +50,9 @@ export const SearchBar = ({
         <i className="fas fa-times-circle"></i>
       </span>
       <form
-        className={(toggleInput ? "SearchBar__form" :  "transition-input ")}
+        className={(toggleInput ? "SearchBar__form" : "transition-input ")}
         onSubmit={handleSubmitValue}
-    
+
       >
         <div className="SearchBar__form__div--find-city-container">
           <input
@@ -76,8 +90,8 @@ export const SearchBar = ({
               inputCountry != "" && inputCity != ""
                 ? closeSearch
                 : () => {
-                    return;
-                  }
+                  return;
+                }
             }
           >
             Rechercher
